@@ -42,6 +42,7 @@
 		25E117051C147401004385F9 /* AccountInfoCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E117041C147401004385F9 /* AccountInfoCustomTableViewCell.m */; };
 		25E117091C14817A004385F9 /* SCUIUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E117081C14817A004385F9 /* SCUIUtility.m */; };
 		25E1170C1C14A47B004385F9 /* VehicleInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E1170B1C14A47B004385F9 /* VehicleInfoTableViewCell.m */; };
+		DFF375BC1C17787F0097B53C /* CarrierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF375BB1C17787F0097B53C /* CarrierViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,8 @@
 		25E117081C14817A004385F9 /* SCUIUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCUIUtility.m; sourceTree = "<group>"; };
 		25E1170A1C14A47B004385F9 /* VehicleInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleInfoTableViewCell.h; sourceTree = "<group>"; };
 		25E1170B1C14A47B004385F9 /* VehicleInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehicleInfoTableViewCell.m; sourceTree = "<group>"; };
+		DFF375BA1C17787F0097B53C /* CarrierViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarrierViewController.h; sourceTree = "<group>"; };
+		DFF375BB1C17787F0097B53C /* CarrierViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarrierViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,6 +412,7 @@
 		25E116E61C12C7C6004385F9 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				DFF375B91C1778650097B53C /* Carrier */,
 				2587C84F1C1682BF00163357 /* Notifications */,
 				2587C84B1C1679F200163357 /* Signature */,
 				25E116FE1C146DB7004385F9 /* AccountSettings */,
@@ -487,6 +491,15 @@
 				25E117081C14817A004385F9 /* SCUIUtility.m */,
 			);
 			path = UIUtility;
+			sourceTree = "<group>";
+		};
+		DFF375B91C1778650097B53C /* Carrier */ = {
+			isa = PBXGroup;
+			children = (
+				DFF375BA1C17787F0097B53C /* CarrierViewController.h */,
+				DFF375BB1C17787F0097B53C /* CarrierViewController.m */,
+			);
+			path = Carrier;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -623,6 +636,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25E116F41C141F75004385F9 /* CustomLogsInfoTableViewCell.m in Sources */,
+				DFF375BC1C17787F0097B53C /* CarrierViewController.m in Sources */,
 				2587C8461C15F50800163357 /* ChangePasswordViewController.m in Sources */,
 				25E116B91C0DEF6F004385F9 /* RegistrationFualTableViewCell.m in Sources */,
 				25E116B61C0D44D9004385F9 /* RegistrationTableViewCell.m in Sources */,

@@ -11,6 +11,7 @@
 #import "AccountSettingsViewController.h"
 #import "SignatureViewController.h"
 #import "NotificationsViewController.h"
+#import "CarrierViewController.h"
 
 @interface SettingsViewController () {
     NSArray *settingNamesArray, *settingImgArray;
@@ -103,6 +104,11 @@
         }
         case 2: {
             NotificationsViewController *notificationVC = [kSettingsStoryboard instantiateViewControllerWithIdentifier:@"NotificationID"];
+            [UIAppDelegate.navigationController pushViewController:notificationVC animated:YES];
+            break;
+        }
+        case 3: {
+            CarrierViewController *notificationVC = [kSettingsStoryboard instantiateViewControllerWithIdentifier:@"CarrierID"];
             [UIAppDelegate.navigationController pushViewController:notificationVC animated:YES];
             break;
         }
