@@ -15,6 +15,10 @@
 }
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (weak, nonatomic) IBOutlet UIView *violationsView;
+@property (weak, nonatomic) IBOutlet UIButton *violationsBtn;
+@property (weak, nonatomic) IBOutlet UIView *logsView;
+@property (weak, nonatomic) IBOutlet UIButton *logsBtn;
 
 @end
 
@@ -28,7 +32,7 @@
     
     self.navigationController.navigationBarHidden = NO;
     [self setNavigationBarNameWithNameAttribute:@"Dashboard"];
-//    [self setBackBarButtonItem];
+    [self setBackBarButtonItem];
     [self loadHomeViewComponents];
 }
 
@@ -63,6 +67,12 @@
     self.revealViewController.frontViewShadowColor = kGrayColor;
     self.revealViewController.frontViewShadowOffset = CGSizeMake(0, 1.5);
     [self.navigationController.navigationBar setBarTintColor:kNavBarColor];
+
+    _violationsView.layer.masksToBounds = YES;
+    _logsView.layer.masksToBounds = YES;
+    [SCUIUtility setLayerForView:_violationsView WithColor:kLightGrayColor];
+    [SCUIUtility setLayerForView:_logsView WithColor:kLightGrayColor];
+
 }
 
 - (void)didReceiveMemoryWarning {
