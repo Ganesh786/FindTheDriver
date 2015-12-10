@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LogsViewController : UIViewController
+- (IBAction)btnSaveClicked:(id)sender;
+- (IBAction)btnCancelClicked:(id)sender;
 
 @end

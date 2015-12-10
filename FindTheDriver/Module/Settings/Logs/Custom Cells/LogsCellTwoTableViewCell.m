@@ -17,4 +17,9 @@
     [super setSelected:selected animated:animated];
 }
 
+- (IBAction)btnToggleOneClicked:(id)sender {
+}
+
+- (IBAction)btnToggleTwoClicked:(id)sender {
+}
 @end

@@ -20,4 +20,8 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)btnTimeZoneClicked:(id)sender {
+}
+- (IBAction)btnCycleClicked:(id)sender {
+}
 @end

@@ -2527,6 +2527,9 @@ Torrance, CA 90504</string>
                                                             <include reference="pA5-wm-tC2"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="btnTimeZoneClicked:" destination="9rL-4b-eTu" eventType="touchUpInside" id="zfN-Y3-Vsq"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frT-zO-WDv">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -2547,6 +2550,9 @@ Torrance, CA 90504</string>
                                                             <include reference="mLB-ov-T4w"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="btnCycleClicked:" destination="9rL-4b-eTu" eventType="touchUpInside" id="Asc-3Z-njj"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -2618,6 +2624,10 @@ Torrance, CA 90504</string>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnCycle" destination="frT-zO-WDv" id="sTD-aW-jiX"/>
+                                            <outlet property="btnTimeZone" destination="elT-se-woB" id="0N7-WW-JFf"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellTwo" rowHeight="150" id="CbI-vo-GKF" customClass="LogsCellTwoTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -2706,6 +2716,9 @@ Torrance, CA 90504</string>
                                                             <include reference="kwn-Lg-LV3"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="btnToggleOneClicked:" destination="CbI-vo-GKF" eventType="touchUpInside" id="RPr-MO-JJr"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ue-YY-Aii">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -2726,6 +2739,9 @@ Torrance, CA 90504</string>
                                                             <include reference="i9W-Az-TZJ"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="btnToggleTwoClicked:" destination="CbI-vo-GKF" eventType="touchUpInside" id="TbY-6K-yhA"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kilometers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8W-5M-yPb">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -2813,6 +2829,13 @@ Torrance, CA 90504</string>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnToggleOne" destination="hB2-zN-TSB" id="8HO-EY-X9H"/>
+                                            <outlet property="btnToggleTwo" destination="5Ue-YY-Aii" id="PUQ-yH-LYn"/>
+                                            <outlet property="lblTitle" destination="Vtv-cf-0hv" id="sfB-qh-L35"/>
+                                            <outlet property="lblToggleOne" destination="O8W-5M-yPb" id="2IG-Vw-41D"/>
+                                            <outlet property="lblToggleTwo" destination="tYk-oL-Dbe" id="O0e-8d-sIi"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="default">
@@ -2851,6 +2874,7 @@ Torrance, CA 90504</string>
                                 </variation>
                                 <connections>
                                     <action selector="btnCancelClicked:" destination="0yT-y1-OnP" eventType="touchUpInside" id="3mw-a9-x8d"/>
+                                    <action selector="btnCancelClicked:" destination="nhW-KA-W4L" eventType="touchUpInside" id="COm-tp-czw"/>
                                     <action selector="cancelBtnClicked:" destination="Wlc-DM-jbi" eventType="touchUpInside" id="DTs-m1-dmv"/>
                                 </connections>
                             </button>
@@ -2873,6 +2897,7 @@ Torrance, CA 90504</string>
                                 </variation>
                                 <connections>
                                     <action selector="btnSaveClicked:" destination="0yT-y1-OnP" eventType="touchUpInside" id="2Fq-Wh-Yfq"/>
+                                    <action selector="btnSaveClicked:" destination="nhW-KA-W4L" eventType="touchUpInside" id="UsV-t6-kde"/>
                                     <action selector="saveBtnClicked:" destination="Wlc-DM-jbi" eventType="touchUpInside" id="keJ-s8-VqZ"/>
                                 </connections>
                             </button>

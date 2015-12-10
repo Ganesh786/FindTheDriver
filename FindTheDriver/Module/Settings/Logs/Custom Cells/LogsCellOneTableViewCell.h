@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface LogsCellOneTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *btnTimeZone;
+- (IBAction)btnTimeZoneClicked:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btnCycle;
+- (IBAction)btnCycleClicked:(id)sender;
 
 @end

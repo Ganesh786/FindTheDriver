@@ -23,4 +23,9 @@
 }
 
 
+- (IBAction)btnSaveClicked:(id)sender {
+}
+
+- (IBAction)btnCancelClicked:(id)sender {
+}
 @end
