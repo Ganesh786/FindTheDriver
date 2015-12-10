@@ -2411,6 +2411,52 @@ Torrance, CA 90504</string>
                     <view key="view" contentMode="scaleToFill" id="sK1-fL-3kF">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZT-LJ-h8M">
+                                <rect key="frame" x="0.0" y="-216" width="320" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="U81-xp-s4u"/>
+                                    <constraint firstAttribute="width" constant="400" id="aY3-nD-Scw"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="U81-xp-s4u"/>
+                                        <exclude reference="aY3-nD-Scw"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="U81-xp-s4u"/>
+                                        <include reference="aY3-nD-Scw"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="nhW-KA-W4L" id="EsR-fh-6Bg"/>
+                                    <outlet property="delegate" destination="nhW-KA-W4L" id="078-wD-tPB"/>
+                                </connections>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gd4-lt-CKq">
+                                <rect key="frame" x="0.0" y="-216" width="320" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="JWU-kl-DRp"/>
+                                    <constraint firstAttribute="width" constant="400" id="Qhg-zS-TlA"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="JWU-kl-DRp"/>
+                                        <exclude reference="Qhg-zS-TlA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="JWU-kl-DRp"/>
+                                        <include reference="Qhg-zS-TlA"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="nhW-KA-W4L" id="5HM-oD-Pcb"/>
+                                    <outlet property="delegate" destination="nhW-KA-W4L" id="NKJ-vo-zFz"/>
+                                </connections>
+                            </pickerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YXP-ew-jt4">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2928,15 +2974,23 @@ Torrance, CA 90504</string>
                                 <variation key="heightClass=regular-widthClass=compact" constant="40"/>
                             </constraint>
                             <constraint firstItem="ijc-sz-6b2" firstAttribute="leading" secondItem="1Pm-C3-Vo5" secondAttribute="trailing" id="ca3-df-vkX"/>
+                            <constraint firstItem="VZT-LJ-h8M" firstAttribute="leading" secondItem="sK1-fL-3kF" secondAttribute="leading" id="dg6-1b-d7Y"/>
+                            <constraint firstItem="RdT-Fb-lan" firstAttribute="top" secondItem="gd4-lt-CKq" secondAttribute="bottom" id="ftx-WD-qTi"/>
                             <constraint firstItem="RdT-Fb-lan" firstAttribute="top" secondItem="1Pm-C3-Vo5" secondAttribute="bottom" id="hGC-j9-A7h"/>
                             <constraint firstItem="1Pm-C3-Vo5" firstAttribute="leading" secondItem="sK1-fL-3kF" secondAttribute="leading" id="lBk-rc-emD"/>
                             <constraint firstItem="ijc-sz-6b2" firstAttribute="width" secondItem="1Pm-C3-Vo5" secondAttribute="width" id="lIN-dy-tYf"/>
+                            <constraint firstAttribute="trailing" secondItem="gd4-lt-CKq" secondAttribute="trailing" id="mqR-wU-xni"/>
                             <constraint firstItem="YXP-ew-jt4" firstAttribute="top" secondItem="sK1-fL-3kF" secondAttribute="top" id="o50-6h-nZ4"/>
+                            <constraint firstAttribute="trailing" secondItem="VZT-LJ-h8M" secondAttribute="trailing" id="rLX-NT-baM"/>
+                            <constraint firstItem="RdT-Fb-lan" firstAttribute="top" secondItem="VZT-LJ-h8M" secondAttribute="bottom" id="rbN-1b-RG6"/>
+                            <constraint firstItem="gd4-lt-CKq" firstAttribute="leading" secondItem="sK1-fL-3kF" secondAttribute="leading" id="sxB-oj-zQz"/>
                             <constraint firstItem="RdT-Fb-lan" firstAttribute="top" secondItem="ijc-sz-6b2" secondAttribute="bottom" id="yWG-O7-Arr"/>
                             <constraint firstAttribute="trailing" secondItem="YXP-ew-jt4" secondAttribute="trailing" id="yap-4L-1Us"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="VZT-LJ-h8M"/>
+                                <exclude reference="gd4-lt-CKq"/>
                                 <exclude reference="YXP-ew-jt4"/>
                                 <exclude reference="1Pm-C3-Vo5"/>
                                 <exclude reference="ijc-sz-6b2"/>
@@ -2945,17 +2999,25 @@ Torrance, CA 90504</string>
                                 <exclude reference="K3w-Vb-skJ"/>
                                 <exclude reference="o50-6h-nZ4"/>
                                 <exclude reference="yap-4L-1Us"/>
+                                <exclude reference="dg6-1b-d7Y"/>
+                                <exclude reference="rLX-NT-baM"/>
+                                <exclude reference="mqR-wU-xni"/>
+                                <exclude reference="sxB-oj-zQz"/>
                                 <exclude reference="lBk-rc-emD"/>
                                 <exclude reference="J29-aR-UJg"/>
                                 <exclude reference="ca3-df-vkX"/>
                                 <exclude reference="lIN-dy-tYf"/>
                                 <exclude reference="Uxd-qy-Cre"/>
+                                <exclude reference="ftx-WD-qTi"/>
                                 <exclude reference="hGC-j9-A7h"/>
+                                <exclude reference="rbN-1b-RG6"/>
                                 <exclude reference="yWG-O7-Arr"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
+                                <include reference="VZT-LJ-h8M"/>
+                                <include reference="gd4-lt-CKq"/>
                                 <include reference="YXP-ew-jt4"/>
                                 <include reference="1Pm-C3-Vo5"/>
                                 <include reference="ijc-sz-6b2"/>
@@ -2964,16 +3026,26 @@ Torrance, CA 90504</string>
                                 <include reference="K3w-Vb-skJ"/>
                                 <include reference="o50-6h-nZ4"/>
                                 <include reference="yap-4L-1Us"/>
+                                <include reference="dg6-1b-d7Y"/>
+                                <include reference="rLX-NT-baM"/>
+                                <include reference="mqR-wU-xni"/>
+                                <include reference="sxB-oj-zQz"/>
                                 <include reference="lBk-rc-emD"/>
                                 <include reference="J29-aR-UJg"/>
                                 <include reference="ca3-df-vkX"/>
                                 <include reference="lIN-dy-tYf"/>
                                 <include reference="Uxd-qy-Cre"/>
+                                <include reference="ftx-WD-qTi"/>
                                 <include reference="hGC-j9-A7h"/>
+                                <include reference="rbN-1b-RG6"/>
                                 <include reference="yWG-O7-Arr"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="pickerCycle" destination="gd4-lt-CKq" id="JA0-CI-6HI"/>
+                        <outlet property="pickerTimeZone" destination="VZT-LJ-h8M" id="hMY-cN-7wT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKA-kU-XQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,8 +10,10 @@
 #import "LogsCellOneTableViewCell.h"
 #import "LogsCellTwoTableViewCell.h"
 
-@interface LogsViewController : UIViewController
+@interface LogsViewController : UIViewController<UIPickerViewDataSource,UIPickerViewDelegate,CellOneDelegate>
 - (IBAction)btnSaveClicked:(id)sender;
 - (IBAction)btnCancelClicked:(id)sender;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerTimeZone;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerCycle;
 
 @end

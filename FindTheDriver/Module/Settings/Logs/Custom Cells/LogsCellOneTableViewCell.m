@@ -21,7 +21,9 @@
 }
 
 - (IBAction)btnTimeZoneClicked:(id)sender {
+    [self.delegate showPicker:YES];
 }
 - (IBAction)btnCycleClicked:(id)sender {
+    [self.delegate showPicker:NO];
 }
 @end

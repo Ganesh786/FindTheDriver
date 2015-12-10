@@ -13,5 +13,11 @@
 - (IBAction)btnTimeZoneClicked:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *btnCycle;
 - (IBAction)btnCycleClicked:(id)sender;
+@property (nonatomic, strong) id delegate;
+@end
+
+@protocol CellOneDelegate <NSObject>
+
+-(void)showPicker:(BOOL)isTimeZone;
 
 @end
