@@ -20,6 +20,7 @@
 		25AF26681C04BEB2001FA4A8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AF26671C04BEB2001FA4A8 /* LoginViewController.m */; };
 		25AF266A1C04D60F001FA4A8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25AF26691C04D60F001FA4A8 /* QuartzCore.framework */; };
 		25BE7E431C193AA700A96D4F /* HomeWeekDayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BE7E421C193AA700A96D4F /* HomeWeekDayTableViewCell.m */; };
+		25BE7E491C19D9CD00A96D4F /* CustomHomeActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BE7E481C19D9CD00A96D4F /* CustomHomeActionViewController.m */; };
 		25E116A61C0CB853004385F9 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E116A51C0CB853004385F9 /* RegistrationViewController.m */; };
 		25E116AA1C0CBB7D004385F9 /* UIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E116A91C0CBB7D004385F9 /* UIViewController+Additions.m */; };
 		25E116AE1C0CBC69004385F9 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E116AD1C0CBC69004385F9 /* UIColor+Additions.m */; };
@@ -90,6 +91,8 @@
 		25AF26691C04D60F001FA4A8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		25BE7E411C193AA700A96D4F /* HomeWeekDayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeWeekDayTableViewCell.h; sourceTree = "<group>"; };
 		25BE7E421C193AA700A96D4F /* HomeWeekDayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeWeekDayTableViewCell.m; sourceTree = "<group>"; };
+		25BE7E471C19D9CD00A96D4F /* CustomHomeActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHomeActionViewController.h; sourceTree = "<group>"; };
+		25BE7E481C19D9CD00A96D4F /* CustomHomeActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHomeActionViewController.m; sourceTree = "<group>"; };
 		25E116A41C0CB853004385F9 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		25E116A51C0CB853004385F9 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		25E116A81C0CBB7D004385F9 /* UIViewController+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Additions.h"; sourceTree = "<group>"; };
@@ -384,6 +387,8 @@
 				25E116C51C0E9E74004385F9 /* SideBar */,
 				25E116C61C0E9E92004385F9 /* HomeViewController.h */,
 				25E116C71C0E9E92004385F9 /* HomeViewController.m */,
+				25BE7E471C19D9CD00A96D4F /* CustomHomeActionViewController.h */,
+				25BE7E481C19D9CD00A96D4F /* CustomHomeActionViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -660,6 +665,7 @@
 				25E116F91C1441BC004385F9 /* SettingsViewController.m in Sources */,
 				25E116AA1C0CBB7D004385F9 /* UIViewController+Additions.m in Sources */,
 				25E116E31C12B870004385F9 /* SideBarCustomTableViewCell.m in Sources */,
+				25BE7E491C19D9CD00A96D4F /* CustomHomeActionViewController.m in Sources */,
 				25E116AE1C0CBC69004385F9 /* UIColor+Additions.m in Sources */,
 				25E116CB1C0E9EA5004385F9 /* SideBarViewController.m in Sources */,
 				25AF26681C04BEB2001FA4A8 /* LoginViewController.m in Sources */,

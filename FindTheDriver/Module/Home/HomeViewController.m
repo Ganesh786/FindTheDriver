@@ -110,7 +110,12 @@
 }
 
 - (IBAction)changeStatusBtnClicked:(id)sender {
+    CustomHomeActionViewController *myController = [self.storyboard instantiateViewControllerWithIdentifier:@"CustomHomeAction"];
+    self.customHomeActionViewController = myController;
     
+    [self.navigationController.view addSubview:self.customHomeActionViewController.view];
+    [self.customHomeActionViewController viewWillAppear:NO];
+   
 }
 
 /*

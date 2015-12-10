@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "SWRevealViewController.h"
+#import "CustomHomeActionViewController.h"
 
 @interface HomeViewController : UIViewController
 
+@property(nonatomic, retain) IBOutlet CustomHomeActionViewController *customHomeActionViewController;
 
 @end
