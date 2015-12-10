@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LogsCellOneTableViewCell.h"
+#import "LogsCellTwoTableViewCell.h"
 
 @interface LogsViewController : UIViewController
 - (IBAction)btnSaveClicked:(id)sender;

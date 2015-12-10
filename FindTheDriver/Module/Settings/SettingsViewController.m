@@ -12,6 +12,7 @@
 #import "SignatureViewController.h"
 #import "NotificationsViewController.h"
 #import "CarrierViewController.h"
+#import "LogsViewController.h"
 
 @interface SettingsViewController () {
     NSArray *settingNamesArray, *settingImgArray;
@@ -108,23 +109,17 @@
             break;
         }
         case 3: {
-            CarrierViewController *notificationVC = [kSettingsStoryboard instantiateViewControllerWithIdentifier:@"CarrierID"];
-            [UIAppDelegate.navigationController pushViewController:notificationVC animated:YES];
+            CarrierViewController *carrierVC = [kSettingsStoryboard instantiateViewControllerWithIdentifier:@"CarrierID"];
+            [UIAppDelegate.navigationController pushViewController:carrierVC animated:YES];
+            break;
+        }
+        case 4: {
+            LogsViewController *logsVC = [kSettingsStoryboard instantiateViewControllerWithIdentifier:@"LogsID"];
+            [UIAppDelegate.navigationController pushViewController:logsVC animated:YES];
             break;
         }
         default:
             break;
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
