@@ -109,6 +109,10 @@
     return weekCell;
 }
 
+- (IBAction)changeStatusBtnClicked:(id)sender {
+    
+}
+
 /*
 #pragma mark - Navigation
 
