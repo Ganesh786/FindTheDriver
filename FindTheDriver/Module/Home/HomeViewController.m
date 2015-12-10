@@ -7,10 +7,11 @@
 //
 
 #import "HomeViewController.h"
-//#import "SWRevealViewController.h"
+#import "HomeWeekDayTableViewCell.h"
 
 @interface HomeViewController () <SWRevealViewControllerDelegate> {
     SWRevealViewController *revealController;
+    NSArray *weekDayNameArray, *timeArray;
 
 }
 
@@ -49,6 +50,11 @@
     [revealController removePanGestureRecognizer];
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 #pragma mark - User defined methods
 
 - (void)loadHomeViewComponents {
@@ -72,12 +78,35 @@
     _logsView.layer.masksToBounds = YES;
     [SCUIUtility setLayerForView:_violationsView WithColor:kLightGrayColor];
     [SCUIUtility setLayerForView:_logsView WithColor:kLightGrayColor];
-
+    weekDayNameArray = [NSArray arrayWithObjects:@"Sunday", @"Saturday", @"Friday", @"Thursday", @"Wednesday", @"TuesDay", @"Monday", nil];
+    timeArray = [NSArray arrayWithObjects:@"10.45", @"09.25", @"07.03", @"02.45", @"00.00", @"00.00", @"00.00", nil];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - TableView Delegate methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return weekDayNameArray.count+1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 30;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *defaultCellID = @"DefaultCellID";
+    static NSString *dayNameCellID = @"WeekDayCellID";
+
+    if (indexPath.row == 0) {
+        UITableViewCell *defaultCell = [tableView dequeueReusableCellWithIdentifier:defaultCellID];
+        defaultCell.textLabel.font = [UIFont fontWithName:kHelveticaNeueFontName size:14];
+        defaultCell.textLabel.text = @"RECAP - WORKED HOURS";
+        return defaultCell;
+    }
+    
+    HomeWeekDayTableViewCell *weekCell = (HomeWeekDayTableViewCell *)[tableView dequeueReusableCellWithIdentifier:dayNameCellID];
+    weekCell.dayNameLbl.text = weekDayNameArray[indexPath.row-1];
+    weekCell.hoursLbl.text = timeArray[indexPath.row-1];;
+    return weekCell;
 }
 
 /*

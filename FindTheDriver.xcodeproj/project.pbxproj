@@ -19,6 +19,7 @@
 		25AF26651C04BE95001FA4A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AF26611C04BE95001FA4A8 /* AppDelegate.m */; };
 		25AF26681C04BEB2001FA4A8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AF26671C04BEB2001FA4A8 /* LoginViewController.m */; };
 		25AF266A1C04D60F001FA4A8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25AF26691C04D60F001FA4A8 /* QuartzCore.framework */; };
+		25BE7E431C193AA700A96D4F /* HomeWeekDayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BE7E421C193AA700A96D4F /* HomeWeekDayTableViewCell.m */; };
 		25E116A61C0CB853004385F9 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E116A51C0CB853004385F9 /* RegistrationViewController.m */; };
 		25E116AA1C0CBB7D004385F9 /* UIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E116A91C0CBB7D004385F9 /* UIViewController+Additions.m */; };
 		25E116AE1C0CBC69004385F9 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E116AD1C0CBC69004385F9 /* UIColor+Additions.m */; };
@@ -87,6 +88,8 @@
 		25AF26661C04BEB2001FA4A8 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		25AF26671C04BEB2001FA4A8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		25AF26691C04D60F001FA4A8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		25BE7E411C193AA700A96D4F /* HomeWeekDayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeWeekDayTableViewCell.h; sourceTree = "<group>"; };
+		25BE7E421C193AA700A96D4F /* HomeWeekDayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeWeekDayTableViewCell.m; sourceTree = "<group>"; };
 		25E116A41C0CB853004385F9 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		25E116A51C0CB853004385F9 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		25E116A81C0CBB7D004385F9 /* UIViewController+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Additions.h"; sourceTree = "<group>"; };
@@ -301,6 +304,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		25BE7E401C193A8E00A96D4F /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				25BE7E411C193AA700A96D4F /* HomeWeekDayTableViewCell.h */,
+				25BE7E421C193AA700A96D4F /* HomeWeekDayTableViewCell.m */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
 		25E116A31C0CB83E004385F9 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +380,7 @@
 		25E116C41C0E9E74004385F9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				25BE7E401C193A8E00A96D4F /* CustomCell */,
 				25E116C51C0E9E74004385F9 /* SideBar */,
 				25E116C61C0E9E92004385F9 /* HomeViewController.h */,
 				25E116C71C0E9E92004385F9 /* HomeViewController.m */,
@@ -651,6 +664,7 @@
 				25E116CB1C0E9EA5004385F9 /* SideBarViewController.m in Sources */,
 				25AF26681C04BEB2001FA4A8 /* LoginViewController.m in Sources */,
 				25AF26331C04BD43001FA4A8 /* FindTheDriver.xcdatamodeld in Sources */,
+				25BE7E431C193AA700A96D4F /* HomeWeekDayTableViewCell.m in Sources */,
 				25E116A61C0CB853004385F9 /* RegistrationViewController.m in Sources */,
 				25AF26271C04BD43001FA4A8 /* main.m in Sources */,
 				25E117091C14817A004385F9 /* SCUIUtility.m in Sources */,
