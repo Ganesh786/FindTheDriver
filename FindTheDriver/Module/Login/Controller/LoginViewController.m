@@ -69,6 +69,8 @@
 - (IBAction)helpBtnClicked:(id)sender {
     Forgot_PasswordViewController *myController = [self.storyboard instantiateViewControllerWithIdentifier:@"ForgotPwdID"];
     self.forgotPwdViewController = myController;
+    self.forgotPwdViewController.isFirstTime = YES;
+    self.forgotPwdViewController.delegate = self;
     [self.navigationController.view addSubview:self.forgotPwdViewController.view];
     [self.forgotPwdViewController viewWillAppear:NO];
 }
@@ -99,6 +101,15 @@
     [UIView setAnimationCurve:UIViewAnimationCurveLinear];
     layoutView.frame = CGRectMake(xValue, yValue, layoutView.frame.size.width, layoutView.frame.size.height);
     [UIView commitAnimations];
+}
+
+#pragma mark - Forgot Action view delegate methods
+
+- (void)dismissTheForgotPasswordView {
+    self.forgotPwdViewController.isFirstTime = NO;
+//    [self.forgotPwdViewController slideIn];
+    [self.navigationController.view addSubview:self.forgotPwdViewController.view];
+    [self.forgotPwdViewController viewWillAppear:NO];
 }
 
 /*

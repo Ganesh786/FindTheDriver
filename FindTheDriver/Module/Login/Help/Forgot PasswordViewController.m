@@ -8,10 +8,14 @@
 
 #import "Forgot PasswordViewController.h"
 
-@interface Forgot_PasswordViewController ()
+@interface Forgot_PasswordViewController () {
+    BOOL isInstructionBtnClicked;
+}
 
 @property (weak, nonatomic) IBOutlet UIButton *sendYourInstructions;
 @property (weak, nonatomic) IBOutlet UIView *forgotPwdView;
+@property (weak, nonatomic) IBOutlet UIView *resetPwdView;
+@property (weak, nonatomic) IBOutlet UIView *emailSentView;
 
 @end
 
@@ -22,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    isInstructionBtnClicked = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,15 +41,16 @@
 #pragma mark - User Action methods
 
 - (IBAction)closeBtnClicked:(id)sender {
+    isInstructionBtnClicked = NO;
     [self slideOut];
 }
 
 - (IBAction)sendInstructionBtnClicked:(id)sender {
-
+    isInstructionBtnClicked = YES;
+    [self slideOut];
 }
 
 - (void)slideIn {
-    
     //set initial location at bottom of view
     CGRect frame = self.forgotPwdView.frame;
     frame.origin = CGPointMake(0.0, self.view.bounds.size.height);
@@ -60,11 +66,17 @@
     [SCUIUtility setLayerForView:_forgotPwdView WithColor:kClearColor];
     [SCUIUtility setLayerForView:_sendYourInstructions WithColor:kClearColor];
 
+    if (_isFirstTime) {
+        _resetPwdView.hidden = NO;
+        _emailSentView.hidden = YES;
+    } else {
+        _resetPwdView.hidden = YES;
+        _emailSentView.hidden = NO;
+    }
     [UIView commitAnimations];
 }
 
 - (void) slideOut {
-    
     //do what you need to do with information gathered from the custom action sheet. E.g., apply data filter on parent view.
     
     [UIView beginAnimations:@"removeFromSuperviewWithAnimation" context:nil];
@@ -85,8 +97,9 @@
 - (void)animationDidStop:(NSString *)animationID {
     if ([animationID isEqualToString:@"removeFromSuperviewWithAnimation"]) {
         [self.view removeFromSuperview];
-        //        if (checkedString!=nil)
-        //            [self.cellSelectorDelegate didMakeCellSelectionName:checkedString WithId:[self.actionSheetDataSourceDict valueForKey:checkedString] ascOrDesc:ascOrDesc WithDelegateName:@"Sort"];
+        if (isInstructionBtnClicked) {
+            [_delegate dismissTheForgotPasswordView];
+        }
     }
 }
 
