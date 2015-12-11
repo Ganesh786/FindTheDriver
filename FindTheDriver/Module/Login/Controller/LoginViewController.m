@@ -66,6 +66,13 @@
     [self.navigationController pushViewController:registrationVC animated:YES];
 }
 
+- (IBAction)helpBtnClicked:(id)sender {
+    Forgot_PasswordViewController *myController = [self.storyboard instantiateViewControllerWithIdentifier:@"ForgotPwdID"];
+    self.forgotPwdViewController = myController;
+    [self.navigationController.view addSubview:self.forgotPwdViewController.view];
+    [self.forgotPwdViewController viewWillAppear:NO];
+}
+
 #pragma mark - UItextfiled delegate methods
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {

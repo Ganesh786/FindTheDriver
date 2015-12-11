@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Forgot PasswordViewController.h"
 
 @interface LoginViewController : UIViewController
+
+@property (nonatomic, retain) IBOutlet Forgot_PasswordViewController *forgotPwdViewController;
 
 @end
