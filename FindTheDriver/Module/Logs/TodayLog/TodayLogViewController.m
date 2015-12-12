@@ -10,6 +10,9 @@
 
 @interface TodayLogViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *time1Btn;
+@property (weak, nonatomic) IBOutlet UIButton *time2Btn;
+
 @end
 
 @implementation TodayLogViewController
@@ -30,9 +33,9 @@
 #pragma mark - User defined methods
 
 - (void)loadTodayViewComponents {
-    self.navigationItem.title = @"gani";
     [self setBackBarButtonItem];
-//    [self setNavigationBarNameWithNameAttribute:@"Monday | October 10"];
+    [SCUIUtility setLayerForView:_time1Btn WithColor:kClearColor];
+    [SCUIUtility setLayerForView:_time2Btn WithColor:kClearColor];
 }
 
 /*

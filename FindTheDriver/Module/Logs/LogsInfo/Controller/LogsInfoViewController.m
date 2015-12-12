@@ -70,8 +70,9 @@
 }
 
 - (IBAction)logsScaleTransaparentBtnClicked:(id)sender {
-    UITabBarController *tabbarController = (UITabBarController *)[kLogsStoryboard instantiateViewControllerWithIdentifier:@"LogsTabBarID"];
-    [self.navigationController pushViewController:tabbarController animated:YES];
+    UITabBarController *tabbarVC = [[UIStoryboard storyboardWithName:@"LogsStoryboard" bundle: [NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LogsTabBarID"];
+    [self presentViewController:tabbarVC animated:NO completion:nil];
+//    [UIAppDelegate.navigationController pushViewController:tabbarVC animated:YES];
 }
 
 #pragma mark - Tableview Delegate methods
