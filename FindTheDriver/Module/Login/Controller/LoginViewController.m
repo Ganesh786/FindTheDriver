@@ -39,7 +39,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden  = YES;
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -107,7 +106,6 @@
 
 - (void)dismissTheForgotPasswordView {
     self.forgotPwdViewController.isFirstTime = NO;
-//    [self.forgotPwdViewController slideIn];
     [self.navigationController.view addSubview:self.forgotPwdViewController.view];
     [self.forgotPwdViewController viewWillAppear:NO];
 }

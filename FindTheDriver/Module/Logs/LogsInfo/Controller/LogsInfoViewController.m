@@ -8,6 +8,7 @@
 
 #import "LogsInfoViewController.h"
 #import "CustomLogsInfoTableViewCell.h"
+#import "TodayLogViewController.h"
 
 @interface LogsInfoViewController ()  {
 
@@ -61,11 +62,16 @@
 }
 
 - (IBAction)calenderBtnClicked:(id)sender {
-    CustomLogSearchViewController *myController = [self.storyboard instantiateViewControllerWithIdentifier:@"LogSearchID"];
+    CustomLogSearchViewController *myController = [kLogsStoryboard instantiateViewControllerWithIdentifier:@"LogSearchID"];
     self.customLogSearchViewController = myController;
 
     [self.navigationController.view addSubview:self.customLogSearchViewController.view];
     [self.customLogSearchViewController viewWillAppear:NO];
+}
+
+- (IBAction)logsScaleTransaparentBtnClicked:(id)sender {
+    UITabBarController *tabbarController = (UITabBarController *)[kLogsStoryboard instantiateViewControllerWithIdentifier:@"LogsTabBarID"];
+    [self.navigationController pushViewController:tabbarController animated:YES];
 }
 
 #pragma mark - Tableview Delegate methods
