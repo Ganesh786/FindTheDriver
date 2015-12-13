@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Monday | October 10";
 }
 
 - (void)didReceiveMemoryWarning {

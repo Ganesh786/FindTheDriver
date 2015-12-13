@@ -2141,7 +2141,10 @@
                                                             <constraint firstAttribute="height" constant="21" id="5wY-d6-uOP"/>
                                                             <constraint firstAttribute="width" constant="195" id="YsO-md-XQR"/>
                                                         </constraints>
-                                                        <state key="normal" title="Add/Remove vehicle defects"/>
+                                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal" title="Add/Remove vehicle defects">
+                                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
                                                         <variation key="default">
                                                             <mask key="constraints">
                                                                 <exclude reference="5wY-d6-uOP"/>
@@ -2161,6 +2164,10 @@
                                                             <constraint firstAttribute="height" constant="22" id="RYR-OW-Bd2"/>
                                                             <constraint firstAttribute="width" constant="22" id="yVm-iu-2qc"/>
                                                         </constraints>
+                                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
                                                         <variation key="default">
                                                             <mask key="constraints">
                                                                 <exclude reference="RYR-OW-Bd2"/>
@@ -2261,7 +2268,9 @@
                                         <constraints>
                                             <constraint firstItem="Y4a-vA-b7I" firstAttribute="top" secondItem="m5G-Sp-Unv" secondAttribute="top" constant="29" id="0B6-dx-mw0"/>
                                             <constraint firstItem="OBV-6h-mrF" firstAttribute="top" secondItem="mVO-Uh-MtH" secondAttribute="bottom" constant="8" id="4Qv-1D-i8x"/>
-                                            <constraint firstItem="y5c-aq-yhY" firstAttribute="top" secondItem="kHp-99-bAf" secondAttribute="bottom" constant="35" id="61M-xc-4T3"/>
+                                            <constraint firstItem="y5c-aq-yhY" firstAttribute="top" secondItem="kHp-99-bAf" secondAttribute="bottom" constant="35" id="61M-xc-4T3">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="21"/>
+                                            </constraint>
                                             <constraint firstItem="ohJ-lU-lfm" firstAttribute="top" secondItem="m5G-Sp-Unv" secondAttribute="top" constant="8" id="6Lt-gJ-wAe"/>
                                             <constraint firstItem="hEy-Tr-Wrt" firstAttribute="top" secondItem="awn-uX-9cc" secondAttribute="bottom" constant="5" id="7nT-7q-jqb"/>
                                             <constraint firstItem="y5c-aq-yhY" firstAttribute="leading" secondItem="o8M-Ah-m4b" secondAttribute="trailing" constant="8" id="8lf-7i-Bsh"/>
@@ -2284,7 +2293,9 @@
                                             <constraint firstAttribute="trailing" secondItem="kHp-99-bAf" secondAttribute="trailing" constant="20" id="cTi-V2-SuA"/>
                                             <constraint firstAttribute="trailing" secondItem="mVO-Uh-MtH" secondAttribute="trailing" id="dsi-Aw-BDt"/>
                                             <constraint firstItem="PsQ-1o-Wp5" firstAttribute="top" secondItem="mVO-Uh-MtH" secondAttribute="bottom" constant="8" id="g8V-3W-PTa"/>
-                                            <constraint firstItem="o8M-Ah-m4b" firstAttribute="top" secondItem="kHp-99-bAf" secondAttribute="bottom" constant="40" id="gmE-aN-XLf"/>
+                                            <constraint firstItem="o8M-Ah-m4b" firstAttribute="top" secondItem="kHp-99-bAf" secondAttribute="bottom" constant="40" id="gmE-aN-XLf">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="26"/>
+                                            </constraint>
                                             <constraint firstItem="52R-pK-fO2" firstAttribute="top" secondItem="m5G-Sp-Unv" secondAttribute="top" constant="28" id="hCj-Mr-IjD"/>
                                             <constraint firstItem="a1P-1t-W9D" firstAttribute="top" secondItem="OQK-k2-kWm" secondAttribute="bottom" constant="5" id="jFn-S9-NMy"/>
                                             <constraint firstItem="ohJ-lU-lfm" firstAttribute="leading" secondItem="m5G-Sp-Unv" secondAttribute="leading" constant="8" id="khG-sv-It4"/>
