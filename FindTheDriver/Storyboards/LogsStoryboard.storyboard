@@ -1791,6 +1791,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                         <color key="barTintColor" red="0.1019607843" green="0.46274509800000002" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1801,10 +1804,10 @@
             </objects>
             <point key="canvasLocation" x="1978.5" y="-300"/>
         </scene>
-        <!--View Controller-->
+        <!--Inspect Logs View Controller-->
         <scene sceneID="aka-HF-4Mt">
             <objects>
-                <viewController id="th0-qV-hfR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InspectLogsID" id="th0-qV-hfR" customClass="InspectLogsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qZX-t9-TOy"/>
                         <viewControllerLayoutGuide type="bottom" id="V1t-4J-e2U"/>
@@ -1814,16 +1817,18 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ozC-yk-zzz"/>
+                    <navigationItem key="navigationItem" id="ozC-yk-zzz">
+                        <barButtonItem key="leftBarButtonItem" image="Back" id="qsg-vV-SoC"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aL-0o-Fhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2664" y="350.25"/>
         </scene>
-        <!--View Controller-->
+        <!--Driver Signature View Controller-->
         <scene sceneID="u5F-Hs-kHs">
             <objects>
-                <viewController id="XSv-Qo-OJI" sceneMemberID="viewController">
+                <viewController id="XSv-Qo-OJI" customClass="DriverSignatureViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cBx-mr-uK8"/>
                         <viewControllerLayoutGuide type="bottom" id="mP8-vv-rUa"/>
@@ -1849,6 +1854,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="barTintColor" red="0.1019607843" green="0.45882352939999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1869,6 +1875,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="barTintColor" red="0.1019607843" green="0.45882352939999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
