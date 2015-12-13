@@ -140,7 +140,6 @@
     {
         _pickerCycle.hidden = NO;
         [self.view bringSubviewToFront:_pickerCycle];
-
     }
 }
 
