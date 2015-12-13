@@ -2409,6 +2409,7 @@ Torrance, CA 90504</string>
                         <viewControllerLayoutGuide type="bottom" id="RdT-Fb-lan"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sK1-fL-3kF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZT-LJ-h8M">
@@ -2470,6 +2471,7 @@ Torrance, CA 90504</string>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellOne" rowHeight="200" id="9rL-4b-eTu" customClass="LogsCellOneTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9rL-4b-eTu" id="uTO-l6-m9k">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Steering" translatesAutoresizingMaskIntoConstraints="NO" id="bJT-qE-8Eq">
@@ -2627,20 +2629,20 @@ Torrance, CA 90504</string>
                                                     <exclude reference="frT-zO-WDv"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="0yT-W4-ADu"/>
-                                                    <exclude reference="hCZ-ur-vnJ"/>
-                                                    <exclude reference="RiQ-5n-naY"/>
-                                                    <exclude reference="jlK-bu-niM"/>
                                                     <exclude reference="6k3-r3-gGM"/>
                                                     <exclude reference="9n9-VP-oJh"/>
                                                     <exclude reference="okg-eC-gJJ"/>
-                                                    <exclude reference="3HB-N3-LL2"/>
-                                                    <exclude reference="ih8-Pl-Y7d"/>
-                                                    <exclude reference="XOL-8H-kvb"/>
-                                                    <exclude reference="uFa-1X-kgs"/>
                                                     <exclude reference="2Qi-wp-IqN"/>
                                                     <exclude reference="X7S-dt-SoN"/>
                                                     <exclude reference="w3g-Wj-fH4"/>
+                                                    <exclude reference="RiQ-5n-naY"/>
+                                                    <exclude reference="jlK-bu-niM"/>
+                                                    <exclude reference="XOL-8H-kvb"/>
+                                                    <exclude reference="uFa-1X-kgs"/>
+                                                    <exclude reference="3HB-N3-LL2"/>
+                                                    <exclude reference="ih8-Pl-Y7d"/>
+                                                    <exclude reference="0yT-W4-ADu"/>
+                                                    <exclude reference="hCZ-ur-vnJ"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -2653,20 +2655,20 @@ Torrance, CA 90504</string>
                                                     <include reference="frT-zO-WDv"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="0yT-W4-ADu"/>
-                                                    <include reference="hCZ-ur-vnJ"/>
-                                                    <include reference="RiQ-5n-naY"/>
-                                                    <include reference="jlK-bu-niM"/>
                                                     <include reference="6k3-r3-gGM"/>
                                                     <include reference="9n9-VP-oJh"/>
                                                     <include reference="okg-eC-gJJ"/>
-                                                    <include reference="3HB-N3-LL2"/>
-                                                    <include reference="ih8-Pl-Y7d"/>
-                                                    <include reference="XOL-8H-kvb"/>
-                                                    <include reference="uFa-1X-kgs"/>
                                                     <include reference="2Qi-wp-IqN"/>
                                                     <include reference="X7S-dt-SoN"/>
                                                     <include reference="w3g-Wj-fH4"/>
+                                                    <include reference="RiQ-5n-naY"/>
+                                                    <include reference="jlK-bu-niM"/>
+                                                    <include reference="XOL-8H-kvb"/>
+                                                    <include reference="uFa-1X-kgs"/>
+                                                    <include reference="3HB-N3-LL2"/>
+                                                    <include reference="ih8-Pl-Y7d"/>
+                                                    <include reference="0yT-W4-ADu"/>
+                                                    <include reference="hCZ-ur-vnJ"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -2678,6 +2680,7 @@ Torrance, CA 90504</string>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellTwo" rowHeight="150" id="CbI-vo-GKF" customClass="LogsCellTwoTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CbI-vo-GKF" id="uwR-iR-HvA">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Steering" translatesAutoresizingMaskIntoConstraints="NO" id="dm9-6R-GdI">
@@ -2854,18 +2857,18 @@ Torrance, CA 90504</string>
                                                     <exclude reference="tYk-oL-Dbe"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="AMU-uD-lo0"/>
-                                                    <exclude reference="Qqw-7q-MCu"/>
-                                                    <exclude reference="GoC-HS-F2W"/>
-                                                    <exclude reference="Lg5-6I-RIa"/>
+                                                    <exclude reference="ZRR-Yh-sWR"/>
+                                                    <exclude reference="gqT-HS-UPh"/>
                                                     <exclude reference="DFX-cW-fGA"/>
                                                     <exclude reference="hne-ZL-AVI"/>
                                                     <exclude reference="Dzn-mp-p3C"/>
                                                     <exclude reference="WWD-6x-iSG"/>
-                                                    <exclude reference="ZRR-Yh-sWR"/>
-                                                    <exclude reference="gqT-HS-UPh"/>
+                                                    <exclude reference="GoC-HS-F2W"/>
+                                                    <exclude reference="Lg5-6I-RIa"/>
                                                     <exclude reference="bWb-z6-th6"/>
                                                     <exclude reference="t2A-mt-mTu"/>
+                                                    <exclude reference="AMU-uD-lo0"/>
+                                                    <exclude reference="Qqw-7q-MCu"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -2878,18 +2881,18 @@ Torrance, CA 90504</string>
                                                     <include reference="tYk-oL-Dbe"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="AMU-uD-lo0"/>
-                                                    <include reference="Qqw-7q-MCu"/>
-                                                    <include reference="GoC-HS-F2W"/>
-                                                    <include reference="Lg5-6I-RIa"/>
+                                                    <include reference="ZRR-Yh-sWR"/>
+                                                    <include reference="gqT-HS-UPh"/>
                                                     <include reference="DFX-cW-fGA"/>
                                                     <include reference="hne-ZL-AVI"/>
                                                     <include reference="Dzn-mp-p3C"/>
                                                     <include reference="WWD-6x-iSG"/>
-                                                    <include reference="ZRR-Yh-sWR"/>
-                                                    <include reference="gqT-HS-UPh"/>
+                                                    <include reference="GoC-HS-F2W"/>
+                                                    <include reference="Lg5-6I-RIa"/>
                                                     <include reference="bWb-z6-th6"/>
                                                     <include reference="t2A-mt-mTu"/>
+                                                    <include reference="AMU-uD-lo0"/>
+                                                    <include reference="Qqw-7q-MCu"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -2996,9 +2999,11 @@ Torrance, CA 90504</string>
                                 <exclude reference="ijc-sz-6b2"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="K3w-Vb-skJ"/>
-                                <exclude reference="o50-6h-nZ4"/>
-                                <exclude reference="yap-4L-1Us"/>
+                                <exclude reference="Uxd-qy-Cre"/>
+                                <exclude reference="ftx-WD-qTi"/>
+                                <exclude reference="hGC-j9-A7h"/>
+                                <exclude reference="rbN-1b-RG6"/>
+                                <exclude reference="yWG-O7-Arr"/>
                                 <exclude reference="dg6-1b-d7Y"/>
                                 <exclude reference="rLX-NT-baM"/>
                                 <exclude reference="mqR-wU-xni"/>
@@ -3007,11 +3012,9 @@ Torrance, CA 90504</string>
                                 <exclude reference="J29-aR-UJg"/>
                                 <exclude reference="ca3-df-vkX"/>
                                 <exclude reference="lIN-dy-tYf"/>
-                                <exclude reference="Uxd-qy-Cre"/>
-                                <exclude reference="ftx-WD-qTi"/>
-                                <exclude reference="hGC-j9-A7h"/>
-                                <exclude reference="rbN-1b-RG6"/>
-                                <exclude reference="yWG-O7-Arr"/>
+                                <exclude reference="K3w-Vb-skJ"/>
+                                <exclude reference="o50-6h-nZ4"/>
+                                <exclude reference="yap-4L-1Us"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -3023,9 +3026,11 @@ Torrance, CA 90504</string>
                                 <include reference="ijc-sz-6b2"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="K3w-Vb-skJ"/>
-                                <include reference="o50-6h-nZ4"/>
-                                <include reference="yap-4L-1Us"/>
+                                <include reference="Uxd-qy-Cre"/>
+                                <include reference="ftx-WD-qTi"/>
+                                <include reference="hGC-j9-A7h"/>
+                                <include reference="rbN-1b-RG6"/>
+                                <include reference="yWG-O7-Arr"/>
                                 <include reference="dg6-1b-d7Y"/>
                                 <include reference="rLX-NT-baM"/>
                                 <include reference="mqR-wU-xni"/>
@@ -3034,11 +3039,9 @@ Torrance, CA 90504</string>
                                 <include reference="J29-aR-UJg"/>
                                 <include reference="ca3-df-vkX"/>
                                 <include reference="lIN-dy-tYf"/>
-                                <include reference="Uxd-qy-Cre"/>
-                                <include reference="ftx-WD-qTi"/>
-                                <include reference="hGC-j9-A7h"/>
-                                <include reference="rbN-1b-RG6"/>
-                                <include reference="yWG-O7-Arr"/>
+                                <include reference="K3w-Vb-skJ"/>
+                                <include reference="o50-6h-nZ4"/>
+                                <include reference="yap-4L-1Us"/>
                             </mask>
                         </variation>
                     </view>
@@ -3054,7 +3057,7 @@ Torrance, CA 90504</string>
     </scenes>
     <resources>
         <image name="Car" width="96" height="96"/>
-        <image name="Close" width="24" height="24"/>
+        <image name="Close" width="32" height="26"/>
         <image name="Steering" width="45" height="45"/>
         <image name="profilePIC" width="70" height="70"/>
     </resources>
