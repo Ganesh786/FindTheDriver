@@ -7,6 +7,7 @@
 //
 
 #import "TodayLogViewController.h"
+#import "TodayLogCustomTableViewCell.h"
 
 @interface TodayLogViewController ()
 
@@ -36,6 +37,34 @@
     [self setBackBarButtonItem];
     [SCUIUtility setLayerForView:_time1Btn WithColor:kClearColor];
     [SCUIUtility setLayerForView:_time2Btn WithColor:kClearColor];
+}
+
+#pragma mark - TableView Delegate methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 4;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 40;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *todayLogCellID = @"TodayLogID";
+    
+    TodayLogCustomTableViewCell *todayLogCell = (TodayLogCustomTableViewCell *)[tableView dequeueReusableCellWithIdentifier:todayLogCellID];
+    [todayLogCell.statusBtn setTitle:@"SB" forState:UIControlStateNormal];
+
+    NSMutableAttributedString *timeLblMuAtrStr = [[NSMutableAttributedString alloc] init];
+    NSAttributedString *timeAttStr = [[NSAttributedString alloc]initWithString:[NSString stringWithFormat:@"12:00 AM CDT | "] attributes:@{NSFontAttributeName : [UIFont fontWithName:kHelveticaNeueFontName size:16]}];
+    NSAttributedString *totalHoursAttStr = [[NSAttributedString alloc]initWithString:[NSString stringWithFormat:@"2h 9m"] attributes:@{NSFontAttributeName : [UIFont fontWithName:kHelveticaNeueFontName size:16], NSForegroundColorAttributeName : [UIColor colorFromHexString:@"#3E81D4"]}];
+
+    [timeLblMuAtrStr appendAttributedString:timeAttStr];
+    [timeLblMuAtrStr appendAttributedString:totalHoursAttStr];
+    
+    todayLogCell.timeLbl.attributedText = timeLblMuAtrStr;
+    [todayLogCell.locationBtn setTitle:@"Huston,TX" forState:UIControlStateNormal];
+    return todayLogCell;
 }
 
 /*
