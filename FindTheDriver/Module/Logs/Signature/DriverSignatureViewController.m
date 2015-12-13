@@ -10,6 +10,9 @@
 
 @interface DriverSignatureViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *previewLogBtn;
+@property (weak, nonatomic) IBOutlet UIButton *addSignatureBtn;
+
 @end
 
 @implementation DriverSignatureViewController
@@ -30,7 +33,8 @@
 #pragma mark - User defined methods
 
 - (void)loadDriverSignatureViewComponents {
-    
+    [SCUIUtility setLayerForView:_previewLogBtn WithColor:kClearColor];
+    [SCUIUtility setLayerForView:_addSignatureBtn WithColor:kClearColor];
 }
 /*
 #pragma mark - Navigation
