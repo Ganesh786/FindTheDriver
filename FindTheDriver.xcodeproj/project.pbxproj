@@ -73,6 +73,7 @@
 		DF2A2D711C1A175E005C232F /* LogsCellOneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2A2D701C1A175E005C232F /* LogsCellOneTableViewCell.m */; };
 		DF2A2D741C1A176D005C232F /* LogsCellTwoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2A2D731C1A176D005C232F /* LogsCellTwoTableViewCell.m */; };
 		DF2A2D781C1DDEAF005C232F /* InspectLogsCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2A2D771C1DDEAF005C232F /* InspectLogsCustomTableViewCell.m */; };
+		DF2A2D7B1C1F3DFD005C232F /* AddNewDVIRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2A2D7A1C1F3DFD005C232F /* AddNewDVIRViewController.m */; };
 		DFF375BC1C17787F0097B53C /* CarrierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF375BB1C17787F0097B53C /* CarrierViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -227,6 +228,8 @@
 		DF2A2D731C1A176D005C232F /* LogsCellTwoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogsCellTwoTableViewCell.m; sourceTree = "<group>"; };
 		DF2A2D761C1DDEAF005C232F /* InspectLogsCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectLogsCustomTableViewCell.h; sourceTree = "<group>"; };
 		DF2A2D771C1DDEAF005C232F /* InspectLogsCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectLogsCustomTableViewCell.m; sourceTree = "<group>"; };
+		DF2A2D791C1F3DFD005C232F /* AddNewDVIRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewDVIRViewController.h; sourceTree = "<group>"; };
+		DF2A2D7A1C1F3DFD005C232F /* AddNewDVIRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewDVIRViewController.m; sourceTree = "<group>"; };
 		DFF375BA1C17787F0097B53C /* CarrierViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarrierViewController.h; sourceTree = "<group>"; };
 		DFF375BB1C17787F0097B53C /* CarrierViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarrierViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -723,6 +726,8 @@
 				DF2A2D751C1DDE8A005C232F /* Custom Cells */,
 				25ECFD5F1C1D61C7006CA2B5 /* InspectLogsViewController.h */,
 				25ECFD601C1D61C7006CA2B5 /* InspectLogsViewController.m */,
+				DF2A2D791C1F3DFD005C232F /* AddNewDVIRViewController.h */,
+				DF2A2D7A1C1F3DFD005C232F /* AddNewDVIRViewController.m */,
 			);
 			path = InspectLogs;
 			sourceTree = "<group>";
@@ -956,6 +961,7 @@
 				04C782991C1F10DC00E3C46F /* AFURLSessionManager.m in Sources */,
 				04C7829E1C1F10DC00E3C46F /* UIImageView+AFNetworking.m in Sources */,
 				04C782911C1F10DC00E3C46F /* AFHTTPRequestOperation.m in Sources */,
+				DF2A2D7B1C1F3DFD005C232F /* AddNewDVIRViewController.m in Sources */,
 				25E116C81C0E9E92004385F9 /* HomeViewController.m in Sources */,
 				25BE7E4D1C1A7B5C00A96D4F /* Forgot PasswordViewController.m in Sources */,
 				25ECFD611C1D61C7006CA2B5 /* InspectLogsViewController.m in Sources */,
