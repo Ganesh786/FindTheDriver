@@ -8,6 +8,7 @@
 
 #import "InspectLogsViewController.h"
 #import "InspectLogsCustomTableViewCell.h"
+#import "AddNewDVIRViewController.h"
 
 @interface InspectLogsViewController ()
 {
@@ -72,5 +73,7 @@
 }
 
 - (IBAction)btnAddNewDVIRPressed:(id)sender {
+    AddNewDVIRViewController *newDVIRViewController = [kLogsStoryboard instantiateViewControllerWithIdentifier:@"addNewDVIRVC"];
+    [self.navigationController pushViewController:newDVIRViewController animated:NO];
 }
 @end
