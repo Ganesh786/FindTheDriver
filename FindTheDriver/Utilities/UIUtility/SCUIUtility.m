@@ -151,4 +151,31 @@
         return 0;
 }
 
+#pragma mark:- email validation
++(BOOL)validateEmailWithString:(NSString *)email{
+    
+    NSString *emailRegEx = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegEx];
+    if ([emailTest evaluateWithObject:email] == YES)
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+    
+}
+
+#pragma mark:- phone number validation
++(BOOL)validateMobileNumber:(NSString*)number
+{
+    NSString *numberRegEx = @"[0-9]{10}";
+    NSPredicate *numberTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", numberRegEx];
+    if ([numberTest evaluateWithObject:number] == YES)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 @end

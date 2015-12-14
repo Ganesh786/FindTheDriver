@@ -59,17 +59,21 @@
     NSString *email=[NSString stringWithFormat:@"%@",_emailTxtFld.text];
     NSString *password=[NSString stringWithFormat:@"%@",_passwordTxtFld.text];
     if (email.length>0 && password.length>0) {
-        [_emailTxtFld resignFirstResponder];
-        [_passwordTxtFld resignFirstResponder];
-        [[WebServiceInvoker sharedInstance]loginAPICall:[NSString stringWithFormat:@"%@/%@",email,password] completionBlock:^(BOOL success, NSString *message, NSDictionary *dataDict) {
-            if (success) {
-                DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
+        if ([SCUIUtility validateEmailWithString:_emailTxtFld.text]) {
+            [_emailTxtFld resignFirstResponder];
+            [_passwordTxtFld resignFirstResponder];
+            [[WebServiceInvoker sharedInstance]loginAPICall:[NSString stringWithFormat:@"%@/%@",email,password] completionBlock:^(BOOL success, NSString *message, NSDictionary *dataDict) {
+                if (success) {
+                    DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
                     HomeViewController *homeViewController = [kHomeStoryboard instantiateInitialViewController];
                     [self.navigationController pushViewController:homeViewController animated:NO];
-            }else{
-                [self showAlert:@"" message:message];
-            }
-        }];
+                }else{
+                    [self showAlert:@"" message:message];
+                }
+            }];
+         }else{
+             [self showAlert:@"" message:@"Enter Valid Email ID"]; 
+        }
     }else{
         [self showAlert:@"" message:@"Please Enter Username/Password"];
     }

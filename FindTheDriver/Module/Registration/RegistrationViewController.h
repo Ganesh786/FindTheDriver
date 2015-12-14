@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "WebServiceInvoker.h"
 @interface RegistrationViewController : UIViewController
 
 @end

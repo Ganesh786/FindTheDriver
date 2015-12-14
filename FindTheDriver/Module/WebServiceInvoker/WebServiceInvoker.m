@@ -92,9 +92,19 @@
     }];
 }
 
-
+#pragma mark:-Login API Call
 -(void)loginAPICall:(NSString*)url completionBlock:(ServerResponseBlock)block{
     [self postToPath:[NSString stringWithFormat:@"%@%@%@",BASE_URL,LOGIN_URI,url] withParams:nil completion:^(BOOL success, NSString *message, NSDictionary *dataDict) {
+        if (success) {
+            //Update DB
+        }
+        block(success,message,dataDict);
+    }];
+}
+
+#pragma mark:-Registration API Call
+-(void)registrationAPICall:(NSMutableDictionary*)params completionBlock:(ServerResponseBlock)block{
+    [self postToPath:[NSString stringWithFormat:@"%@%@",BASE_URL,REGISTRATION_URI] withParams:params completion:^(BOOL success, NSString *message, NSDictionary *dataDict) {
         if (success) {
             //Update DB
         }

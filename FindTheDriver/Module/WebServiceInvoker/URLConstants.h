@@ -13,6 +13,7 @@
 #define BASE_URL @"http://121.244.199.9:9090/"
 
 #define LOGIN_URI @"api/V1/LogIn/"
+#define REGISTRATION_URI @"api/V1/Registration"
 
 //------------------------- Network Error Message --------------
 #define NETWORK_ERROR_TITLE @"Network Error"

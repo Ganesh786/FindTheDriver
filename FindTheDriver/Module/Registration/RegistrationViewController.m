@@ -10,6 +10,8 @@
 #import "RegistrationTableViewCell.h"
 #import "RegistrationFualTableViewCell.h"
 
+#define ACCEPTABLE_CHARECTERS @"0123456789"
+
 @interface RegistrationViewController () <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource> {
     NSArray *headerLblsArray;
     UITextField *driverNameTxtFld, *driverEmailTxtFld, *driverPhoneTxtFld, *carNickNameTxtFld, *colorTxtFld, *regPlateTextFld;
@@ -121,6 +123,32 @@
 
 - (IBAction)registerBtnClicked:(id)sender {
     
+    if (driverNameTxtFld.text.length>0 && driverEmailTxtFld.text.length>0 && carNickNameTxtFld.text.length>0 && colorTxtFld.text.length>0 && regPlateTextFld.text.length>0) {
+        if ([SCUIUtility validateEmailWithString:driverEmailTxtFld.text]) {
+            NSMutableDictionary *regDict=[NSMutableDictionary new];
+            [regDict setObject:driverNameTxtFld.text forKey:@"DriverName"];
+            [regDict setObject:driverPhoneTxtFld.text forKey:@"Phoneno"];
+            [regDict setObject:@"" forKey:@"Address"];
+            [regDict setObject:driverEmailTxtFld.text forKey:@"Email"];
+            [regDict setObject:carNickNameTxtFld.text forKey:@"CarName"];
+            [regDict setObject:colorTxtFld.text forKey:@"Color"];
+            [regDict setObject:regPlateTextFld.text forKey:@"RegistrationPlate"];
+            [regDict setObject:isDieselSelected?@"Diesel":@"Gas" forKey:@"FuelType"];
+            
+            [[WebServiceInvoker sharedInstance]registrationAPICall:regDict completionBlock:^(BOOL success, NSString *message, NSDictionary *dataDict) {
+                DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
+                if (success) {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }else{
+                    [self showAlert:@"" message:message];
+                }
+            }];
+        }else{
+            [self showAlert:@"" message:@"Enter Valid Email ID"];
+        }
+    }else{
+        [self showAlert:@"" message:@"All fields are mandatory."];
+    }
 }
 
 #pragma mark - Tableview Delegate methods
@@ -189,6 +217,15 @@
 //        }
 //        return NO;
 //    }
+    
+    if (textField == driverPhoneTxtFld) {
+        NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:ACCEPTABLE_CHARECTERS] invertedSet];
+        NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+        NSString *updatedText = [textField.text stringByReplacingCharactersInRange:range withString:string];
+        if (updatedText.length > 25)
+        {return NO;}
+        return [string isEqualToString:filtered];
+    }
     return YES;
 }
 

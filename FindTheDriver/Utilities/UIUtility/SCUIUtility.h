@@ -87,4 +87,6 @@
 
 + (void)setButtonLayerPropertiesForTimesheetModuleWithButton:(UIButton *)btn;
 
++(BOOL)validateEmailWithString:(NSString *)email;
++(BOOL)validateMobileNumber:(NSString*)number;
 @end

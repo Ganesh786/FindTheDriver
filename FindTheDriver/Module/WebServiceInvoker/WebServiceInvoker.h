@@ -15,6 +15,15 @@ typedef void (^ServerResponseBlock)(BOOL success, NSString *message, NSDictionar
 
 +(WebServiceInvoker*)sharedInstance;
 
+/*!
+ * Login API Call
+ * @param pass username and password in url
+ */
 -(void)loginAPICall:(NSString*)url completionBlock:(ServerResponseBlock)block;
 
+/*!
+ * registration API Call
+ * @param pass dictionary
+ */
+-(void)registrationAPICall:(NSMutableDictionary*)params completionBlock:(ServerResponseBlock)block;
 @end
