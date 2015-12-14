@@ -3027,12 +3027,18 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="800" id="5EW-EW-TC3"/>
+                                    <constraint firstAttribute="height" constant="800" id="5EW-EW-TC3">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="940"/>
+                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="CWX-MT-Waa" secondAttribute="trailing" id="Dkq-ae-kQZ"/>
-                                    <constraint firstItem="CWX-MT-Waa" firstAttribute="centerY" secondItem="VXX-Ak-JsP" secondAttribute="centerY" id="K7G-O8-fMO"/>
+                                    <constraint firstItem="CWX-MT-Waa" firstAttribute="centerY" secondItem="VXX-Ak-JsP" secondAttribute="centerY" id="K7G-O8-fMO">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" constant="400" id="M3p-Px-UXH"/>
                                     <constraint firstItem="CWX-MT-Waa" firstAttribute="centerX" secondItem="VXX-Ak-JsP" secondAttribute="centerX" id="Vkm-qs-SRk"/>
-                                    <constraint firstAttribute="bottom" secondItem="CWX-MT-Waa" secondAttribute="bottom" id="bck-ui-ijd"/>
+                                    <constraint firstAttribute="bottom" secondItem="CWX-MT-Waa" secondAttribute="bottom" id="bck-ui-ijd">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                    </constraint>
                                     <constraint firstItem="CWX-MT-Waa" firstAttribute="leading" secondItem="VXX-Ak-JsP" secondAttribute="leading" id="hOt-vo-P8T"/>
                                     <constraint firstItem="CWX-MT-Waa" firstAttribute="top" secondItem="VXX-Ak-JsP" secondAttribute="top" id="lTl-Nz-D8i"/>
                                 </constraints>
@@ -3072,7 +3078,9 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="VXX-Ak-JsP" secondAttribute="trailing" id="7h8-5c-3zA"/>
                             <constraint firstItem="VXX-Ak-JsP" firstAttribute="leading" secondItem="bGG-Rj-JeX" secondAttribute="leading" id="7tg-JK-Ra2"/>
-                            <constraint firstItem="8va-ql-7I0" firstAttribute="top" secondItem="VXX-Ak-JsP" secondAttribute="bottom" id="ECZ-Rt-YA4"/>
+                            <constraint firstItem="8va-ql-7I0" firstAttribute="top" secondItem="VXX-Ak-JsP" secondAttribute="bottom" id="ECZ-Rt-YA4">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-140"/>
+                            </constraint>
                             <constraint firstItem="VXX-Ak-JsP" firstAttribute="top" secondItem="bGG-Rj-JeX" secondAttribute="top" id="KUr-9a-RiO"/>
                         </constraints>
                         <variation key="default">
