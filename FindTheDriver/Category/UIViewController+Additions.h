@@ -45,4 +45,10 @@
  */
 - (CAShapeLayer *)getLineBorderLayerWithColorCode:(NSString *)colorCode;
 
+/*!
+ * show alert methods
+ */
+-(void)showAlert:(NSString*)title message:(NSString*)message;
+
+
 @end

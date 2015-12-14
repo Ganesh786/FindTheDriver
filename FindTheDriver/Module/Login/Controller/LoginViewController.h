@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Forgot PasswordViewController.h"
+#import "WebServiceInvoker.h"
 
 @interface LoginViewController : UIViewController <ForgotPasswordDelegate>
 

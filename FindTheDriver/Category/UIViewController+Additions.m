@@ -51,4 +51,18 @@
     return border;
 }
 
+-(void)showAlert:(NSString*)title message:(NSString*)message{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
+        [alertController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alertController addAction: ok];
+    id rootViewController=[UIApplication sharedApplication].delegate.window.rootViewController;
+    if([rootViewController isKindOfClass:[UINavigationController class]])
+    {
+        rootViewController=[((UINavigationController *)rootViewController).viewControllers objectAtIndex:0];
+    }
+    [rootViewController presentViewController:alertController animated:YES completion:nil];
+}
+
 @end
