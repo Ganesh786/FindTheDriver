@@ -11,6 +11,7 @@
 #import "LogsInfoViewController.h"
 #import "SWRevealViewController.h"
 #import "SettingsViewController.h"
+#import "InspectLogsViewController.h"
 
 @interface SideBarViewController () <SWRevealViewControllerDelegate> {
     NSArray *sideBarNamesArray, *sideBarImgsArray;
@@ -92,6 +93,12 @@
             LogsInfoViewController *logsInfovc = [kLogsStoryboard instantiateViewControllerWithIdentifier:@"LogsInfoID"];
             [UIAppDelegate.navigationController pushViewController:logsInfovc animated:YES];
             [logsInfovc revealToggle];
+            break;
+        }
+        case 2: {
+            InspectLogsViewController *inspectLogsVC = [kLogsStoryboard instantiateViewControllerWithIdentifier:@"LogsTabBarID"];
+            [inspectLogsVC.tabBarController setSelectedIndex:2];
+            [UIAppDelegate.navigationController pushViewController:inspectLogsVC animated:YES];
             break;
         }
         case 3: {

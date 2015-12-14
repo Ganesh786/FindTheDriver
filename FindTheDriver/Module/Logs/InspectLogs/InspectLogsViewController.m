@@ -38,6 +38,10 @@
     _mechanicSignatureView.backgroundColor = [UIColor lightGrayColor];
 }
 
+- (void)revealToggle {
+    [UIAppDelegate.revealViewController revealToggleAnimated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

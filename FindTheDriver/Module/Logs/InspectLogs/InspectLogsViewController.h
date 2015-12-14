@@ -20,5 +20,5 @@
 - (IBAction)btnAddRemoveDefectsPressed:(id)sender;
 - (IBAction)btnAddNewDVIRPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *btnAddNewDVIR;
-
+- (void)revealToggle;
 @end

@@ -58,6 +58,8 @@
 - (IBAction)loginBtnClicked:(id)sender {
     NSString *email=[NSString stringWithFormat:@"%@",_emailTxtFld.text];
     NSString *password=[NSString stringWithFormat:@"%@",_passwordTxtFld.text];
+    email = @"admin@gmail.com";
+    password = @"welcome";
     if (email.length>0 && password.length>0) {
         if ([SCUIUtility validateEmailWithString:_emailTxtFld.text]) {
             [_emailTxtFld resignFirstResponder];
