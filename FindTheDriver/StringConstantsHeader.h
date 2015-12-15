@@ -11,6 +11,9 @@
 
 #import "AppDelegate.h"
 
+#define USER_NAME @"admin@gmail.com" // Remove later from hardcoded places
+#define PASSWORD @"welcome"
+
 //---------------------------------- Color Constants  ---------------------------
 #pragma mark - Color Constants
 

@@ -56,28 +56,39 @@
 #pragma mark - User action methods
 
 - (IBAction)loginBtnClicked:(id)sender {
+    
+    HomeViewController *homeViewController = [kHomeStoryboard instantiateInitialViewController];
+    [self.navigationController pushViewController:homeViewController animated:NO];
+    
     NSString *email=[SCUIUtility validateString:_emailTxtFld.text];
     NSString *password=[SCUIUtility validateString:_passwordTxtFld.text];
-    email = @"admin@gmail.com";
-    password = @"welcome";
-    if (email.length>0 && password.length>0) {
-        if ([SCUIUtility validateEmailWithString:_emailTxtFld.text]) {
-            [_emailTxtFld resignFirstResponder];
-            [_passwordTxtFld resignFirstResponder];
-            [[LoginModel alloc]loginAPICall:[NSString stringWithFormat:@"%@/%@",email,password] completionBlock:^(BOOL success, NSString *message, NSDictionary *dataDict) {
-                if (success) {
-                    DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
-                    HomeViewController *homeViewController = [kHomeStoryboard instantiateInitialViewController];
-                    [self.navigationController pushViewController:homeViewController animated:NO];
+    if (email.length>0 || password.length>0) {
+        if (email.length>0) {
+            if ([SCUIUtility validateEmailWithString:_emailTxtFld.text]) {
+                if (password.length>0) {
+                    [_emailTxtFld resignFirstResponder];
+                    [_passwordTxtFld resignFirstResponder];
+                    [[LoginModel alloc]loginAPICall:[NSString stringWithFormat:@"%@/%@",email,password] completionBlock:^(BOOL success, NSString *message, NSDictionary *dataDict) {
+                        if (success) {
+                            DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
+                            HomeViewController *homeViewController = [kHomeStoryboard instantiateInitialViewController];
+                            [self.navigationController pushViewController:homeViewController animated:NO];
+                        }else{
+                            [self showAlert:@"" message:message];
+                        }
+                    }];
                 }else{
-                    [self showAlert:@"" message:message];
+                    [self showAlert:@"" message:@"Please Enter Password"];
                 }
-            }];
-         }else{
-             [self showAlert:@"" message:@"Enter Valid Email ID"]; 
+            }else{
+                [self showAlert:@"" message:@"Please Enter a Valid Email ID"];
+            }
+        }else{
+            [self showAlert:@"" message:@"Please Enter Email ID"];
         }
+ 
     }else{
-        [self showAlert:@"" message:@"Please Enter a Valid Email/Password"];
+        [self showAlert:@"" message:@"Please Enter a Valid Email ID and Password"];
     }
 }
 

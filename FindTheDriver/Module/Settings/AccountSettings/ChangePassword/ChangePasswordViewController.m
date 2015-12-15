@@ -39,11 +39,36 @@
 }
 
 - (IBAction)cancelBtnClicked:(id)sender {
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)saveBtnClicked:(id)sender {
-    
+    NSString *oldPwd=[SCUIUtility validateString:_currentPwdTxtfld.text];
+    NSString *newPwd=[SCUIUtility validateString:_nePwdTextfld.text];
+    if (oldPwd.length>0 || newPwd.length>0) {
+        if (oldPwd.length>0) {
+            if (newPwd.length>0) {
+                [_currentPwdTxtfld resignFirstResponder];
+                [_nePwdTextfld resignFirstResponder];
+                [[ChangePasswordModel alloc]changePwdAPICall:[NSString stringWithFormat:@"%@/%@/%@",USER_NAME,oldPwd,newPwd] completionBlock:^(BOOL success, NSString *message, NSDictionary *dataDict) {
+                    if (success) {
+                        DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
+                        [self.navigationController popViewControllerAnimated:YES];
+                    }else{
+                        [self showAlert:@"" message:message];
+                    }
+                }];
+            }else{
+                [self showAlert:@"" message:@"Please Enter New Password"];
+            }
+        }else{
+            [self showAlert:@"" message:@"Please Enter Current Password"];
+        }
+
+    }else{
+        [self showAlert:@"" message:@"Please Enter a Current Password and New Password"];
+    }
+
 }
 
 /*

@@ -28,6 +28,7 @@
 		04C7ED921C205D5F00A7B6B1 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7ED911C205D5F00A7B6B1 /* LoginModel.m */; };
 		04C7ED961C205FD800A7B6B1 /* RegistrationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7ED951C205FD800A7B6B1 /* RegistrationModel.m */; };
 		04C7ED9D1C206FCA00A7B6B1 /* RegistrationDataMadel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7ED9C1C206FCA00A7B6B1 /* RegistrationDataMadel.m */; };
+		04C7EDA11C207E8F00A7B6B1 /* ChangePasswordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7EDA01C207E8F00A7B6B1 /* ChangePasswordModel.m */; };
 		2587C8461C15F50800163357 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2587C8451C15F50800163357 /* ChangePasswordViewController.m */; };
 		2587C84A1C15FC1E00163357 /* RegisterNewVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2587C8491C15FC1E00163357 /* RegisterNewVehicleViewController.m */; };
 		2587C84E1C167A0500163357 /* SignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2587C84D1C167A0500163357 /* SignatureViewController.m */; };
@@ -157,6 +158,8 @@
 		04C7ED951C205FD800A7B6B1 /* RegistrationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationModel.m; sourceTree = "<group>"; };
 		04C7ED9B1C206FCA00A7B6B1 /* RegistrationDataMadel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationDataMadel.h; sourceTree = "<group>"; };
 		04C7ED9C1C206FCA00A7B6B1 /* RegistrationDataMadel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationDataMadel.m; sourceTree = "<group>"; };
+		04C7ED9F1C207E8F00A7B6B1 /* ChangePasswordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordModel.h; sourceTree = "<group>"; };
+		04C7EDA01C207E8F00A7B6B1 /* ChangePasswordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordModel.m; sourceTree = "<group>"; };
 		2587C8441C15F50800163357 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangePasswordViewController.h; path = FindTheDriver/Module/Settings/AccountSettings/ChangePassword/ChangePasswordViewController.h; sourceTree = SOURCE_ROOT; };
 		2587C8451C15F50800163357 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangePasswordViewController.m; path = FindTheDriver/Module/Settings/AccountSettings/ChangePassword/ChangePasswordViewController.m; sourceTree = SOURCE_ROOT; };
 		2587C8481C15FC1E00163357 /* RegisterNewVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterNewVehicleViewController.h; sourceTree = "<group>"; };
@@ -395,9 +398,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		04C7ED9E1C207E6F00A7B6B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04C7ED9F1C207E8F00A7B6B1 /* ChangePasswordModel.h */,
+				04C7EDA01C207E8F00A7B6B1 /* ChangePasswordModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2587C8431C15F4E800163357 /* ChangePassword */ = {
 			isa = PBXGroup;
 			children = (
+				04C7ED9E1C207E6F00A7B6B1 /* Model */,
 				2587C8441C15F50800163357 /* ChangePasswordViewController.h */,
 				2587C8451C15F50800163357 /* ChangePasswordViewController.m */,
 			);
@@ -1116,6 +1129,7 @@
 				DF2A2D741C1A176D005C232F /* LogsCellTwoTableViewCell.m in Sources */,
 				04C7829D1C1F10DC00E3C46F /* UIButton+AFNetworking.m in Sources */,
 				25E117011C146DD2004385F9 /* AccountSettingsViewController.m in Sources */,
+				04C7EDA11C207E8F00A7B6B1 /* ChangePasswordModel.m in Sources */,
 				2587C84E1C167A0500163357 /* SignatureViewController.m in Sources */,
 				04C7829B1C1F10DC00E3C46F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				25E116F91C1441BC004385F9 /* SettingsViewController.m in Sources */,

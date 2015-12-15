@@ -124,7 +124,6 @@
 - (IBAction)registerBtnClicked:(id)sender {
     if ([SCUIUtility validateString:driverNameTxtFld.text].length>0 && [SCUIUtility validateString:driverEmailTxtFld.text].length>0 && [SCUIUtility validateString:carNickNameTxtFld.text].length>0 && [SCUIUtility validateString:colorTxtFld.text].length>0 && [SCUIUtility validateString:regPlateTextFld.text].length>0) {
         if ([SCUIUtility validateEmailWithString:driverEmailTxtFld.text]) {
-            
             RegistrationDataMadel *regModel=[[RegistrationDataMadel alloc]init];
             regModel.DriverName=driverNameTxtFld.text;
             regModel.Email=driverEmailTxtFld.text;

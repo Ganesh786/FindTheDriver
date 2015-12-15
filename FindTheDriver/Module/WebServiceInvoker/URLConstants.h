@@ -14,6 +14,13 @@
 
 #define LOGIN_URI @"api/V1/LogIn/"
 #define REGISTRATION_URI @"api/V1/Registration"
+#define ACTIVATION_URI @"api/V1/Activation/"
+#define PASSWORD_RESET_URI @"api/V1/PasswordReset/"
+#define CHANGE_PASSWORD_URI @"api/V1/ChangePassword/"
+#define UPDATE_PROFILE_URI @"api/V1/Profile/"
+#define GET_VEHICLE_URI @"api/V1/Vehicles/"
+#define UPDATE_VEHICLE_URI @"api/V1/Vehicle/"
+#define DELETE_VEHICLE_URI @"api/V1/Vehicle/"
 
 //------------------------- Network Error Message --------------
 #define NETWORK_ERROR_TITLE @"Network Error"

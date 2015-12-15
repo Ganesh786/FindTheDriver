@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface RegistrationDataMadel : NSObject
-@property(nonatomic,copy)NSString *DriverName;
-@property(nonatomic,copy)NSString *Email;
-@property(nonatomic,copy)NSString *Phoneno;
-@property(nonatomic,copy)NSString *CarName;
-@property(nonatomic,copy)NSString *Color;
-@property(nonatomic,copy)NSString *RegistrationPlate;
-@property(nonatomic,copy)NSString *FuelType;
-@property(nonatomic,copy)NSString *Address;
+@property(nonatomic,strong)NSString *DriverName;
+@property(nonatomic,strong)NSString *Email;
+@property(nonatomic,strong)NSString *Phoneno;
+@property(nonatomic,strong)NSString *CarName;
+@property(nonatomic,strong)NSString *Color;
+@property(nonatomic,strong)NSString *RegistrationPlate;
+@property(nonatomic,strong)NSString *FuelType;
+@property(nonatomic,strong)NSString *Address;
 @end

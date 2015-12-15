@@ -78,7 +78,7 @@
             } else {
                 success = (operation.response.statusCode == 200);
             }
-            message = [contentDict valueForKey:@"message"];
+            message = [contentDict valueForKey:@"RequestMessage"];
             dict = contentDict;
         }
         if (block) {
@@ -117,7 +117,87 @@
             } else {
                 success = (operation.response.statusCode == 200);
             }
-            message = [contentDict valueForKey:@"message"];
+            message = [contentDict valueForKey:@"RequestMessage"];
+            dict = contentDict;
+        }
+        if (block) {
+            block(success, message, dict);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (block) {
+            block(NO, error.description, nil);
+        }
+        
+    }];
+}
+
+- (void)putToPath:(NSString*)path withParams:(NSDictionary*)params completion:(ServerResponseBlock)block{
+    if (![AFNetworkReachabilityManager sharedManager].reachable){
+        block(NO,NETWORK_ERROR_MESSAGE,nil);
+        return;
+    }
+    [self PUT:path parameters:params  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (![NSThread isMainThread]) {
+            abort();
+        }
+        NSString *message = nil;
+        BOOL success = NO;
+        NSDictionary *dict = nil;
+        
+        if (!responseObject) {
+            message = @"Returned no data";
+        } else  {
+            if ([responseObject isKindOfClass:[NSArray class]]) {
+                block(NO,@"No results found",nil);
+                return;
+            }
+            NSDictionary *contentDict = (NSDictionary*)responseObject;
+            if (!contentDict) {
+                message = @"Invalid Response";
+            } else {
+                success = (operation.response.statusCode == 200);
+            }
+            message = [contentDict valueForKey:@"RequestMessage"];
+            dict = contentDict;
+        }
+        if (block) {
+            block(success, message, dict);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (block) {
+            block(NO, error.description, nil);
+        }
+        
+    }];
+}
+
+- (void)deleteToPath:(NSString*)path withParams:(NSDictionary*)params completion:(ServerResponseBlock)block{
+    if (![AFNetworkReachabilityManager sharedManager].reachable){
+        block(NO,NETWORK_ERROR_MESSAGE,nil);
+        return;
+    }
+    [self DELETE:path parameters:params  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (![NSThread isMainThread]) {
+            abort();
+        }
+        NSString *message = nil;
+        BOOL success = NO;
+        NSDictionary *dict = nil;
+        
+        if (!responseObject) {
+            message = @"Returned no data";
+        } else  {
+            if ([responseObject isKindOfClass:[NSArray class]]) {
+                block(NO,@"No results found",nil);
+                return;
+            }
+            NSDictionary *contentDict = (NSDictionary*)responseObject;
+            if (!contentDict) {
+                message = @"Invalid Response";
+            } else {
+                success = (operation.response.statusCode == 200);
+            }
+            message = [contentDict valueForKey:@"RequestMessage"];
             dict = contentDict;
         }
         if (block) {

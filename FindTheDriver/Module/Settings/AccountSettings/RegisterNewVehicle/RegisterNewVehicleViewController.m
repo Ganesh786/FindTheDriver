@@ -46,7 +46,7 @@
 #pragma mark - User action methods
 
 - (IBAction)cancelBtnClicked:(id)sender {
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)addBtnClicked:(id)sender {
