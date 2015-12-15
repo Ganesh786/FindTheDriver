@@ -69,6 +69,20 @@
 		25ECFD5D1C1D45E3006CA2B5 /* LogFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25ECFD5C1C1D45E3006CA2B5 /* LogFormViewController.m */; };
 		25ECFD611C1D61C7006CA2B5 /* InspectLogsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25ECFD601C1D61C7006CA2B5 /* InspectLogsViewController.m */; };
 		25ECFD681C1D664D006CA2B5 /* DriverSignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25ECFD671C1D664D006CA2B5 /* DriverSignatureViewController.m */; };
+		25ECFD8D1C1FC344006CA2B5 /* SCDataValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 25ECFD6E1C1FC344006CA2B5 /* SCDataValidation.m */; };
+		25ECFD8E1C1FC344006CA2B5 /* SCNetworkUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 25ECFD711C1FC344006CA2B5 /* SCNetworkUtility.m */; };
+		25ECFD8F1C1FC344006CA2B5 /* NSDictionary+ObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 25ECFD761C1FC344006CA2B5 /* NSDictionary+ObjectMapper.m */; };
+		25ECFD901C1FC344006CA2B5 /* NSObject+ObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 25ECFD781C1FC344006CA2B5 /* NSObject+ObjectMapper.m */; };
+		25ECFD911C1FC344006CA2B5 /* ManagedObjectInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 25ECFD7C1C1FC344006CA2B5 /* ManagedObjectInstanceProvider.m */; };
+		25ECFD921C1FC344006CA2B5 /* ObjectInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 25ECFD7E1C1FC344006CA2B5 /* ObjectInstanceProvider.m */; };
+		25ECFD931C1FC344006CA2B5 /* CommonLoggingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 25ECFD811C1FC344006CA2B5 /* CommonLoggingProvider.m */; };
+		25ECFD941C1FC344006CA2B5 /* InCodeMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 25ECFD861C1FC344006CA2B5 /* InCodeMappingProvider.m */; };
+		25ECFD951C1FC344006CA2B5 /* ObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 25ECFD891C1FC344006CA2B5 /* ObjectMapper.m */; };
+		25ECFD961C1FC344006CA2B5 /* ObjectMappingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 25ECFD8B1C1FC344006CA2B5 /* ObjectMappingInfo.m */; };
+		25ECFD991C1FC359006CA2B5 /* UIAlertView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25ECFD981C1FC359006CA2B5 /* UIAlertView+Additions.m */; };
+		25ECFD9F1C1FC3AF006CA2B5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 25ECFD9C1C1FC3AF006CA2B5 /* Reachability.m */; };
+		25ECFDA01C1FC3AF006CA2B5 /* SCNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25ECFD9E1C1FC3AF006CA2B5 /* SCNetworkManager.m */; };
+		25ECFDA41C1FC42A006CA2B5 /* SCDataUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 25ECFDA31C1FC42A006CA2B5 /* SCDataUtility.m */; };
 		DF2A2D6E1C1A174B005C232F /* LogsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2A2D6D1C1A174B005C232F /* LogsViewController.m */; };
 		DF2A2D711C1A175E005C232F /* LogsCellOneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2A2D701C1A175E005C232F /* LogsCellOneTableViewCell.m */; };
 		DF2A2D741C1A176D005C232F /* LogsCellTwoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2A2D731C1A176D005C232F /* LogsCellTwoTableViewCell.m */; };
@@ -221,6 +235,38 @@
 		25ECFD601C1D61C7006CA2B5 /* InspectLogsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectLogsViewController.m; sourceTree = "<group>"; };
 		25ECFD661C1D664D006CA2B5 /* DriverSignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriverSignatureViewController.h; sourceTree = "<group>"; };
 		25ECFD671C1D664D006CA2B5 /* DriverSignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverSignatureViewController.m; sourceTree = "<group>"; };
+		25ECFD6D1C1FC344006CA2B5 /* SCDataValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCDataValidation.h; sourceTree = "<group>"; };
+		25ECFD6E1C1FC344006CA2B5 /* SCDataValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCDataValidation.m; sourceTree = "<group>"; };
+		25ECFD701C1FC344006CA2B5 /* SCNetworkUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNetworkUtility.h; sourceTree = "<group>"; };
+		25ECFD711C1FC344006CA2B5 /* SCNetworkUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNetworkUtility.m; sourceTree = "<group>"; };
+		25ECFD751C1FC344006CA2B5 /* NSDictionary+ObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ObjectMapper.h"; sourceTree = "<group>"; };
+		25ECFD761C1FC344006CA2B5 /* NSDictionary+ObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ObjectMapper.m"; sourceTree = "<group>"; };
+		25ECFD771C1FC344006CA2B5 /* NSObject+ObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ObjectMapper.h"; sourceTree = "<group>"; };
+		25ECFD781C1FC344006CA2B5 /* NSObject+ObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ObjectMapper.m"; sourceTree = "<group>"; };
+		25ECFD7A1C1FC344006CA2B5 /* InstanceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstanceProvider.h; sourceTree = "<group>"; };
+		25ECFD7B1C1FC344006CA2B5 /* ManagedObjectInstanceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedObjectInstanceProvider.h; sourceTree = "<group>"; };
+		25ECFD7C1C1FC344006CA2B5 /* ManagedObjectInstanceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedObjectInstanceProvider.m; sourceTree = "<group>"; };
+		25ECFD7D1C1FC344006CA2B5 /* ObjectInstanceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectInstanceProvider.h; sourceTree = "<group>"; };
+		25ECFD7E1C1FC344006CA2B5 /* ObjectInstanceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectInstanceProvider.m; sourceTree = "<group>"; };
+		25ECFD801C1FC344006CA2B5 /* CommonLoggingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonLoggingProvider.h; sourceTree = "<group>"; };
+		25ECFD811C1FC344006CA2B5 /* CommonLoggingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonLoggingProvider.m; sourceTree = "<group>"; };
+		25ECFD821C1FC344006CA2B5 /* LoggingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggingProvider.h; sourceTree = "<group>"; };
+		25ECFD851C1FC344006CA2B5 /* InCodeMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InCodeMappingProvider.h; sourceTree = "<group>"; };
+		25ECFD861C1FC344006CA2B5 /* InCodeMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InCodeMappingProvider.m; sourceTree = "<group>"; };
+		25ECFD871C1FC344006CA2B5 /* MappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappingProvider.h; sourceTree = "<group>"; };
+		25ECFD881C1FC344006CA2B5 /* ObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectMapper.h; sourceTree = "<group>"; };
+		25ECFD891C1FC344006CA2B5 /* ObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectMapper.m; sourceTree = "<group>"; };
+		25ECFD8A1C1FC344006CA2B5 /* ObjectMappingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectMappingInfo.h; sourceTree = "<group>"; };
+		25ECFD8B1C1FC344006CA2B5 /* ObjectMappingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectMappingInfo.m; sourceTree = "<group>"; };
+		25ECFD8C1C1FC344006CA2B5 /* OCMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMapper.h; sourceTree = "<group>"; };
+		25ECFD971C1FC359006CA2B5 /* UIAlertView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Additions.h"; sourceTree = "<group>"; };
+		25ECFD981C1FC359006CA2B5 /* UIAlertView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Additions.m"; sourceTree = "<group>"; };
+		25ECFD9B1C1FC3AF006CA2B5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		25ECFD9C1C1FC3AF006CA2B5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		25ECFD9D1C1FC3AF006CA2B5 /* SCNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNetworkManager.h; sourceTree = "<group>"; };
+		25ECFD9E1C1FC3AF006CA2B5 /* SCNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNetworkManager.m; sourceTree = "<group>"; };
+		25ECFDA21C1FC42A006CA2B5 /* SCDataUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCDataUtility.h; sourceTree = "<group>"; };
+		25ECFDA31C1FC42A006CA2B5 /* SCDataUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCDataUtility.m; sourceTree = "<group>"; };
 		DF2A2D6C1C1A174B005C232F /* LogsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogsViewController.h; sourceTree = "<group>"; };
 		DF2A2D6D1C1A174B005C232F /* LogsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogsViewController.m; sourceTree = "<group>"; };
 		DF2A2D6F1C1A175E005C232F /* LogsCellOneTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogsCellOneTableViewCell.h; sourceTree = "<group>"; };
@@ -506,6 +552,8 @@
 		25E116A71C0CBB7D004385F9 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				25ECFD971C1FC359006CA2B5 /* UIAlertView+Additions.h */,
+				25ECFD981C1FC359006CA2B5 /* UIAlertView+Additions.m */,
 				25E116AF1C0D3CC1004385F9 /* UINavigationController+Addition.h */,
 				25E116B01C0D3CC1004385F9 /* UINavigationController+Addition.m */,
 				25E116AC1C0CBC69004385F9 /* UIColor+Additions.h */,
@@ -541,6 +589,11 @@
 		25E116BF1C0E9A4D004385F9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				25ECFDA11C1FC42A006CA2B5 /* Data Utility */,
+				25ECFD9A1C1FC3AF006CA2B5 /* NetworkHandler */,
+				25ECFD6C1C1FC344006CA2B5 /* Data Validation */,
+				25ECFD6F1C1FC344006CA2B5 /* Network Utility */,
+				25ECFD721C1FC344006CA2B5 /* ObjectMapper */,
 				04C7826B1C1F10DC00E3C46F /* AFNetworking */,
 				04C7827F1C1F10DC00E3C46F /* UIKit+AFNetworking */,
 				25E117061C14817A004385F9 /* UIUtility */,
@@ -744,6 +797,119 @@
 			path = Signature;
 			sourceTree = "<group>";
 		};
+		25ECFD6C1C1FC344006CA2B5 /* Data Validation */ = {
+			isa = PBXGroup;
+			children = (
+				25ECFD6D1C1FC344006CA2B5 /* SCDataValidation.h */,
+				25ECFD6E1C1FC344006CA2B5 /* SCDataValidation.m */,
+			);
+			path = "Data Validation";
+			sourceTree = "<group>";
+		};
+		25ECFD6F1C1FC344006CA2B5 /* Network Utility */ = {
+			isa = PBXGroup;
+			children = (
+				25ECFD701C1FC344006CA2B5 /* SCNetworkUtility.h */,
+				25ECFD711C1FC344006CA2B5 /* SCNetworkUtility.m */,
+			);
+			path = "Network Utility";
+			sourceTree = "<group>";
+		};
+		25ECFD721C1FC344006CA2B5 /* ObjectMapper */ = {
+			isa = PBXGroup;
+			children = (
+				25ECFD731C1FC344006CA2B5 /* Source */,
+			);
+			path = ObjectMapper;
+			sourceTree = "<group>";
+		};
+		25ECFD731C1FC344006CA2B5 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				25ECFD741C1FC344006CA2B5 /* Categories */,
+				25ECFD791C1FC344006CA2B5 /* Instance Provider */,
+				25ECFD7F1C1FC344006CA2B5 /* Logging Provider */,
+				25ECFD831C1FC344006CA2B5 /* Mapping Provider */,
+				25ECFD881C1FC344006CA2B5 /* ObjectMapper.h */,
+				25ECFD891C1FC344006CA2B5 /* ObjectMapper.m */,
+				25ECFD8A1C1FC344006CA2B5 /* ObjectMappingInfo.h */,
+				25ECFD8B1C1FC344006CA2B5 /* ObjectMappingInfo.m */,
+				25ECFD8C1C1FC344006CA2B5 /* OCMapper.h */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		25ECFD741C1FC344006CA2B5 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				25ECFD751C1FC344006CA2B5 /* NSDictionary+ObjectMapper.h */,
+				25ECFD761C1FC344006CA2B5 /* NSDictionary+ObjectMapper.m */,
+				25ECFD771C1FC344006CA2B5 /* NSObject+ObjectMapper.h */,
+				25ECFD781C1FC344006CA2B5 /* NSObject+ObjectMapper.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		25ECFD791C1FC344006CA2B5 /* Instance Provider */ = {
+			isa = PBXGroup;
+			children = (
+				25ECFD7A1C1FC344006CA2B5 /* InstanceProvider.h */,
+				25ECFD7B1C1FC344006CA2B5 /* ManagedObjectInstanceProvider.h */,
+				25ECFD7C1C1FC344006CA2B5 /* ManagedObjectInstanceProvider.m */,
+				25ECFD7D1C1FC344006CA2B5 /* ObjectInstanceProvider.h */,
+				25ECFD7E1C1FC344006CA2B5 /* ObjectInstanceProvider.m */,
+			);
+			path = "Instance Provider";
+			sourceTree = "<group>";
+		};
+		25ECFD7F1C1FC344006CA2B5 /* Logging Provider */ = {
+			isa = PBXGroup;
+			children = (
+				25ECFD801C1FC344006CA2B5 /* CommonLoggingProvider.h */,
+				25ECFD811C1FC344006CA2B5 /* CommonLoggingProvider.m */,
+				25ECFD821C1FC344006CA2B5 /* LoggingProvider.h */,
+			);
+			path = "Logging Provider";
+			sourceTree = "<group>";
+		};
+		25ECFD831C1FC344006CA2B5 /* Mapping Provider */ = {
+			isa = PBXGroup;
+			children = (
+				25ECFD841C1FC344006CA2B5 /* In Code Mapping */,
+				25ECFD871C1FC344006CA2B5 /* MappingProvider.h */,
+			);
+			path = "Mapping Provider";
+			sourceTree = "<group>";
+		};
+		25ECFD841C1FC344006CA2B5 /* In Code Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				25ECFD851C1FC344006CA2B5 /* InCodeMappingProvider.h */,
+				25ECFD861C1FC344006CA2B5 /* InCodeMappingProvider.m */,
+			);
+			path = "In Code Mapping";
+			sourceTree = "<group>";
+		};
+		25ECFD9A1C1FC3AF006CA2B5 /* NetworkHandler */ = {
+			isa = PBXGroup;
+			children = (
+				25ECFD9B1C1FC3AF006CA2B5 /* Reachability.h */,
+				25ECFD9C1C1FC3AF006CA2B5 /* Reachability.m */,
+				25ECFD9D1C1FC3AF006CA2B5 /* SCNetworkManager.h */,
+				25ECFD9E1C1FC3AF006CA2B5 /* SCNetworkManager.m */,
+			);
+			path = NetworkHandler;
+			sourceTree = "<group>";
+		};
+		25ECFDA11C1FC42A006CA2B5 /* Data Utility */ = {
+			isa = PBXGroup;
+			children = (
+				25ECFDA21C1FC42A006CA2B5 /* SCDataUtility.h */,
+				25ECFDA31C1FC42A006CA2B5 /* SCDataUtility.m */,
+			);
+			path = "Data Utility";
+			sourceTree = "<group>";
+		};
 		DF2A2D6A1C1A1733005C232F /* Logs */ = {
 			isa = PBXGroup;
 			children = (
@@ -921,6 +1087,8 @@
 				25E116F41C141F75004385F9 /* CustomLogsInfoTableViewCell.m in Sources */,
 				04C782951C1F10DC00E3C46F /* AFSecurityPolicy.m in Sources */,
 				DFF375BC1C17787F0097B53C /* CarrierViewController.m in Sources */,
+				25ECFD951C1FC344006CA2B5 /* ObjectMapper.m in Sources */,
+				25ECFD9F1C1FC3AF006CA2B5 /* Reachability.m in Sources */,
 				2587C8461C15F50800163357 /* ChangePasswordViewController.m in Sources */,
 				25E116B91C0DEF6F004385F9 /* RegistrationFualTableViewCell.m in Sources */,
 				04C782A91C1F11B600E3C46F /* FormDataGenerator.m in Sources */,
@@ -938,10 +1106,14 @@
 				25E116E31C12B870004385F9 /* SideBarCustomTableViewCell.m in Sources */,
 				25BE7E491C19D9CD00A96D4F /* CustomHomeActionViewController.m in Sources */,
 				04C782AA1C1F11B600E3C46F /* WebServiceInvoker.m in Sources */,
+				25ECFD8F1C1FC344006CA2B5 /* NSDictionary+ObjectMapper.m in Sources */,
 				25ECFD5D1C1D45E3006CA2B5 /* LogFormViewController.m in Sources */,
 				DF2A2D781C1DDEAF005C232F /* InspectLogsCustomTableViewCell.m in Sources */,
 				25E116AE1C0CBC69004385F9 /* UIColor+Additions.m in Sources */,
 				25E116CB1C0E9EA5004385F9 /* SideBarViewController.m in Sources */,
+				25ECFD8D1C1FC344006CA2B5 /* SCDataValidation.m in Sources */,
+				25ECFD921C1FC344006CA2B5 /* ObjectInstanceProvider.m in Sources */,
+				25ECFD8E1C1FC344006CA2B5 /* SCNetworkUtility.m in Sources */,
 				DF2A2D711C1A175E005C232F /* LogsCellOneTableViewCell.m in Sources */,
 				25AF26681C04BEB2001FA4A8 /* LoginViewController.m in Sources */,
 				04C7829F1C1F10DC00E3C46F /* UIProgressView+AFNetworking.m in Sources */,
@@ -951,24 +1123,30 @@
 				25E116A61C0CB853004385F9 /* RegistrationViewController.m in Sources */,
 				25AF26271C04BD43001FA4A8 /* main.m in Sources */,
 				04C7829C1C1F10DC00E3C46F /* UIAlertView+AFNetworking.m in Sources */,
+				25ECFD911C1FC344006CA2B5 /* ManagedObjectInstanceProvider.m in Sources */,
 				25E117091C14817A004385F9 /* SCUIUtility.m in Sources */,
 				25E116EB1C12C941004385F9 /* LogsInfoViewController.m in Sources */,
 				DF2A2D6E1C1A174B005C232F /* LogsViewController.m in Sources */,
 				25E116FD1C1458A2004385F9 /* SettingsCustomTableViewCell.m in Sources */,
 				25E116C31C0E9A82004385F9 /* SWRevealViewController.m in Sources */,
 				04C782971C1F10DC00E3C46F /* AFURLRequestSerialization.m in Sources */,
+				25ECFD901C1FC344006CA2B5 /* NSObject+ObjectMapper.m in Sources */,
 				25E116F01C134DF5004385F9 /* CustomLogSearchViewController.m in Sources */,
+				25ECFD941C1FC344006CA2B5 /* InCodeMappingProvider.m in Sources */,
 				DF2A2D7E1C1F5EC4005C232F /* AddNewDVIRCustomTableViewCell.m in Sources */,
 				25AF26651C04BE95001FA4A8 /* AppDelegate.m in Sources */,
 				04C782921C1F10DC00E3C46F /* AFHTTPRequestOperationManager.m in Sources */,
 				25E116B11C0D3CC1004385F9 /* UINavigationController+Addition.m in Sources */,
 				25ECFD2D1C1C542C006CA2B5 /* TodayLogViewController.m in Sources */,
 				04C782961C1F10DC00E3C46F /* AFURLConnectionOperation.m in Sources */,
+				25ECFD961C1FC344006CA2B5 /* ObjectMappingInfo.m in Sources */,
+				25ECFDA01C1FC3AF006CA2B5 /* SCNetworkManager.m in Sources */,
 				04C782991C1F10DC00E3C46F /* AFURLSessionManager.m in Sources */,
 				04C7829E1C1F10DC00E3C46F /* UIImageView+AFNetworking.m in Sources */,
 				04C782911C1F10DC00E3C46F /* AFHTTPRequestOperation.m in Sources */,
 				DF2A2D7B1C1F3DFD005C232F /* AddNewDVIRViewController.m in Sources */,
 				25E116C81C0E9E92004385F9 /* HomeViewController.m in Sources */,
+				25ECFDA41C1FC42A006CA2B5 /* SCDataUtility.m in Sources */,
 				25BE7E4D1C1A7B5C00A96D4F /* Forgot PasswordViewController.m in Sources */,
 				25ECFD611C1D61C7006CA2B5 /* InspectLogsViewController.m in Sources */,
 				25ECFD591C1D2FD2006CA2B5 /* TodayLogCustomTableViewCell.m in Sources */,
@@ -977,6 +1155,8 @@
 				25E1170C1C14A47B004385F9 /* VehicleInfoTableViewCell.m in Sources */,
 				04C782A11C1F10DC00E3C46F /* UIWebView+AFNetworking.m in Sources */,
 				04C782941C1F10DC00E3C46F /* AFNetworkReachabilityManager.m in Sources */,
+				25ECFD931C1FC344006CA2B5 /* CommonLoggingProvider.m in Sources */,
+				25ECFD991C1FC359006CA2B5 /* UIAlertView+Additions.m in Sources */,
 				04C782981C1F10DC00E3C46F /* AFURLResponseSerialization.m in Sources */,
 				2587C8521C1682CD00163357 /* NotificationsViewController.m in Sources */,
 			);
