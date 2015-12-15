@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="i91-Fb-3Hd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="i91-Fb-3Hd">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -273,7 +273,8 @@
                                                             <exclude reference="321-hP-OG6"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="10" y="8" width="192" height="21"/>
                                                         <mask key="constraints">
                                                             <include reference="321-hP-OG6"/>
                                                         </mask>
@@ -3183,7 +3184,9 @@
                                             </constraint>
                                             <constraint firstItem="zbL-9V-28v" firstAttribute="top" secondItem="Rbm-hg-76P" secondAttribute="bottom" constant="8" id="wGN-vg-wpl"/>
                                             <constraint firstItem="Rbm-hg-76P" firstAttribute="top" secondItem="TKM-Mf-b0D" secondAttribute="bottom" constant="8" id="wU5-hi-FIx"/>
-                                            <constraint firstAttribute="height" constant="800" id="zWm-fm-XDi"/>
+                                            <constraint firstAttribute="height" constant="800" id="zWm-fm-XDi">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="750"/>
+                                            </constraint>
                                             <constraint firstItem="1yk-Oq-a3k" firstAttribute="top" secondItem="USN-dU-zTC" secondAttribute="bottom" constant="10" id="zvk-FJ-7kv"/>
                                         </constraints>
                                         <variation key="default">
@@ -3293,12 +3296,12 @@
                                     </constraint>
                                     <constraint firstAttribute="trailing" secondItem="CWX-MT-Waa" secondAttribute="trailing" id="Dkq-ae-kQZ"/>
                                     <constraint firstItem="CWX-MT-Waa" firstAttribute="centerY" secondItem="VXX-Ak-JsP" secondAttribute="centerY" id="K7G-O8-fMO">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="-25"/>
                                     </constraint>
                                     <constraint firstAttribute="width" constant="400" id="M3p-Px-UXH"/>
                                     <constraint firstItem="CWX-MT-Waa" firstAttribute="centerX" secondItem="VXX-Ak-JsP" secondAttribute="centerX" id="Vkm-qs-SRk"/>
                                     <constraint firstAttribute="bottom" secondItem="CWX-MT-Waa" secondAttribute="bottom" id="bck-ui-ijd">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
                                     </constraint>
                                     <constraint firstItem="CWX-MT-Waa" firstAttribute="leading" secondItem="VXX-Ak-JsP" secondAttribute="leading" id="hOt-vo-P8T"/>
                                     <constraint firstItem="CWX-MT-Waa" firstAttribute="top" secondItem="VXX-Ak-JsP" secondAttribute="top" id="lTl-Nz-D8i"/>
@@ -3482,7 +3485,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jpW-AK-hnv" id="IBS-u8-VNX">
-                                            <rect key="frame" x="0.0" y="0.0" width="207" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="207" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Email" translatesAutoresizingMaskIntoConstraints="NO" id="fnY-cb-Vpi">
@@ -3511,6 +3514,9 @@
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="54" y="8" width="146" height="21"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <animations/>
@@ -3529,13 +3535,13 @@
                                                     <exclude reference="Not-1M-bWf"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="IYN-ta-rzN"/>
-                                                    <exclude reference="YIo-RB-nIU"/>
-                                                    <exclude reference="xrG-ae-n18"/>
                                                     <exclude reference="2TS-h6-i8I"/>
                                                     <exclude reference="9zp-3R-fN3"/>
                                                     <exclude reference="ToI-VT-FbE"/>
                                                     <exclude reference="oi3-Vl-QIZ"/>
+                                                    <exclude reference="IYN-ta-rzN"/>
+                                                    <exclude reference="YIo-RB-nIU"/>
+                                                    <exclude reference="xrG-ae-n18"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -3544,13 +3550,13 @@
                                                     <include reference="Not-1M-bWf"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="IYN-ta-rzN"/>
-                                                    <include reference="YIo-RB-nIU"/>
-                                                    <include reference="xrG-ae-n18"/>
                                                     <include reference="2TS-h6-i8I"/>
                                                     <include reference="9zp-3R-fN3"/>
                                                     <include reference="ToI-VT-FbE"/>
                                                     <include reference="oi3-Vl-QIZ"/>
+                                                    <include reference="IYN-ta-rzN"/>
+                                                    <include reference="YIo-RB-nIU"/>
+                                                    <include reference="xrG-ae-n18"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
