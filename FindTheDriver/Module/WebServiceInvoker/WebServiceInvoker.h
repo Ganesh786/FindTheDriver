@@ -15,4 +15,5 @@ typedef void (^ServerResponseBlock)(BOOL success, NSString *message, NSDictionar
 
 +(WebServiceInvoker*)sharedInstance;
 - (void)postToPath:(NSString*)path withParams:(NSDictionary*)params completion:(ServerResponseBlock)block;
+- (void)getToPath:(NSString*)path withParams:(NSDictionary*)params completion:(ServerResponseBlock)block;
 @end

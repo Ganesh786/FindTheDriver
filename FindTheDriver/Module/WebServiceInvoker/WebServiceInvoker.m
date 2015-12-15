@@ -91,5 +91,44 @@
         
     }];
 }
+- (void)getToPath:(NSString*)path withParams:(NSDictionary*)params completion:(ServerResponseBlock)block{
+    if (![AFNetworkReachabilityManager sharedManager].reachable){
+        block(NO,NETWORK_ERROR_MESSAGE,nil);
+        return;
+    }
+    [self GET:path parameters:params  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (![NSThread isMainThread]) {
+            abort();
+        }
+        NSString *message = nil;
+        BOOL success = NO;
+        NSDictionary *dict = nil;
+        
+        if (!responseObject) {
+            message = @"Returned no data";
+        } else  {
+            if ([responseObject isKindOfClass:[NSArray class]]) {
+                block(NO,@"No results found",nil);
+                return;
+            }
+            NSDictionary *contentDict = (NSDictionary*)responseObject;
+            if (!contentDict) {
+                message = @"Invalid Response";
+            } else {
+                success = (operation.response.statusCode == 200);
+            }
+            message = [contentDict valueForKey:@"message"];
+            dict = contentDict;
+        }
+        if (block) {
+            block(success, message, dict);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (block) {
+            block(NO, error.description, nil);
+        }
+        
+    }];
+}
 
 @end

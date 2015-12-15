@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RegistrationModel.h"
+#import "RegistrationDataMadel.h"
 @interface RegistrationViewController : UIViewController
 
 @end
