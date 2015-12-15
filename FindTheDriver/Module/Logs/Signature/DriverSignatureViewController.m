@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *previewLogBtn;
 @property (weak, nonatomic) IBOutlet UIButton *addSignatureBtn;
+@property (weak, nonatomic) IBOutlet UITableView *actionTblView;
 
 @end
 
