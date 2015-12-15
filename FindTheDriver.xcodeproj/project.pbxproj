@@ -24,8 +24,9 @@
 		04C7829F1C1F10DC00E3C46F /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7828C1C1F10DC00E3C46F /* UIProgressView+AFNetworking.m */; };
 		04C782A01C1F10DC00E3C46F /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7828E1C1F10DC00E3C46F /* UIRefreshControl+AFNetworking.m */; };
 		04C782A11C1F10DC00E3C46F /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C782901C1F10DC00E3C46F /* UIWebView+AFNetworking.m */; };
-		04C782A91C1F11B600E3C46F /* FormDataGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C782A51C1F11B600E3C46F /* FormDataGenerator.m */; };
 		04C782AA1C1F11B600E3C46F /* WebServiceInvoker.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C782A81C1F11B600E3C46F /* WebServiceInvoker.m */; };
+		04C7ED921C205D5F00A7B6B1 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7ED911C205D5F00A7B6B1 /* LoginModel.m */; };
+		04C7ED961C205FD800A7B6B1 /* RegistrationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7ED951C205FD800A7B6B1 /* RegistrationModel.m */; };
 		2587C8461C15F50800163357 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2587C8451C15F50800163357 /* ChangePasswordViewController.m */; };
 		2587C84A1C15FC1E00163357 /* RegisterNewVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2587C8491C15FC1E00163357 /* RegisterNewVehicleViewController.m */; };
 		2587C84E1C167A0500163357 /* SignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2587C84D1C167A0500163357 /* SignatureViewController.m */; };
@@ -146,11 +147,13 @@
 		04C7828E1C1F10DC00E3C46F /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		04C7828F1C1F10DC00E3C46F /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		04C782901C1F10DC00E3C46F /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
-		04C782A41C1F11B600E3C46F /* FormDataGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormDataGenerator.h; sourceTree = "<group>"; };
-		04C782A51C1F11B600E3C46F /* FormDataGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormDataGenerator.m; sourceTree = "<group>"; };
 		04C782A61C1F11B600E3C46F /* URLConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLConstants.h; sourceTree = "<group>"; };
 		04C782A71C1F11B600E3C46F /* WebServiceInvoker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceInvoker.h; sourceTree = "<group>"; };
 		04C782A81C1F11B600E3C46F /* WebServiceInvoker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceInvoker.m; sourceTree = "<group>"; };
+		04C7ED901C205D5F00A7B6B1 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
+		04C7ED911C205D5F00A7B6B1 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
+		04C7ED941C205FD800A7B6B1 /* RegistrationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationModel.h; sourceTree = "<group>"; };
+		04C7ED951C205FD800A7B6B1 /* RegistrationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationModel.m; sourceTree = "<group>"; };
 		2587C8441C15F50800163357 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangePasswordViewController.h; path = FindTheDriver/Module/Settings/AccountSettings/ChangePassword/ChangePasswordViewController.h; sourceTree = SOURCE_ROOT; };
 		2587C8451C15F50800163357 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangePasswordViewController.m; path = FindTheDriver/Module/Settings/AccountSettings/ChangePassword/ChangePasswordViewController.m; sourceTree = SOURCE_ROOT; };
 		2587C8481C15FC1E00163357 /* RegisterNewVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterNewVehicleViewController.h; sourceTree = "<group>"; };
@@ -362,7 +365,6 @@
 		04C782A21C1F117B00E3C46F /* WebServiceInvoker */ = {
 			isa = PBXGroup;
 			children = (
-				04C782A31C1F11B600E3C46F /* FormDataGenerator */,
 				04C782A61C1F11B600E3C46F /* URLConstants.h */,
 				04C782A71C1F11B600E3C46F /* WebServiceInvoker.h */,
 				04C782A81C1F11B600E3C46F /* WebServiceInvoker.m */,
@@ -370,13 +372,22 @@
 			path = WebServiceInvoker;
 			sourceTree = "<group>";
 		};
-		04C782A31C1F11B600E3C46F /* FormDataGenerator */ = {
+		04C7ED8F1C205D4800A7B6B1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				04C782A41C1F11B600E3C46F /* FormDataGenerator.h */,
-				04C782A51C1F11B600E3C46F /* FormDataGenerator.m */,
+				04C7ED901C205D5F00A7B6B1 /* LoginModel.h */,
+				04C7ED911C205D5F00A7B6B1 /* LoginModel.m */,
 			);
-			path = FormDataGenerator;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04C7ED931C205FB200A7B6B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04C7ED941C205FD800A7B6B1 /* RegistrationModel.h */,
+				04C7ED951C205FD800A7B6B1 /* RegistrationModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		2587C8431C15F4E800163357 /* ChangePassword */ = {
@@ -506,6 +517,7 @@
 		25AF26631C04BE95001FA4A8 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				04C7ED8F1C205D4800A7B6B1 /* Model */,
 				25BE7E4A1C1A7B3E00A96D4F /* Help */,
 				25AF26641C04BE95001FA4A8 /* Controller */,
 			);
@@ -542,6 +554,7 @@
 		25E116A31C0CB83E004385F9 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				04C7ED931C205FB200A7B6B1 /* Model */,
 				25E116B31C0D44BF004385F9 /* CustomCell */,
 				25E116A41C0CB853004385F9 /* RegistrationViewController.h */,
 				25E116A51C0CB853004385F9 /* RegistrationViewController.m */,
@@ -1091,7 +1104,6 @@
 				25ECFD9F1C1FC3AF006CA2B5 /* Reachability.m in Sources */,
 				2587C8461C15F50800163357 /* ChangePasswordViewController.m in Sources */,
 				25E116B91C0DEF6F004385F9 /* RegistrationFualTableViewCell.m in Sources */,
-				04C782A91C1F11B600E3C46F /* FormDataGenerator.m in Sources */,
 				25E116B61C0D44D9004385F9 /* RegistrationTableViewCell.m in Sources */,
 				2587C84A1C15FC1E00163357 /* RegisterNewVehicleViewController.m in Sources */,
 				25E117051C147401004385F9 /* AccountInfoCustomTableViewCell.m in Sources */,
@@ -1129,7 +1141,9 @@
 				DF2A2D6E1C1A174B005C232F /* LogsViewController.m in Sources */,
 				25E116FD1C1458A2004385F9 /* SettingsCustomTableViewCell.m in Sources */,
 				25E116C31C0E9A82004385F9 /* SWRevealViewController.m in Sources */,
+				04C7ED921C205D5F00A7B6B1 /* LoginModel.m in Sources */,
 				04C782971C1F10DC00E3C46F /* AFURLRequestSerialization.m in Sources */,
+				04C7ED961C205FD800A7B6B1 /* RegistrationModel.m in Sources */,
 				25ECFD901C1FC344006CA2B5 /* NSObject+ObjectMapper.m in Sources */,
 				25E116F01C134DF5004385F9 /* CustomLogSearchViewController.m in Sources */,
 				25ECFD941C1FC344006CA2B5 /* InCodeMappingProvider.m in Sources */,

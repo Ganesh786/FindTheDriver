@@ -18,6 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+
     [self.window setTintColor:kWhiteColor];
 
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]

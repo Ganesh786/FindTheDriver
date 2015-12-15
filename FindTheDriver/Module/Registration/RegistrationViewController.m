@@ -122,8 +122,7 @@
 }
 
 - (IBAction)registerBtnClicked:(id)sender {
-    
-    if (driverNameTxtFld.text.length>0 && driverEmailTxtFld.text.length>0 && carNickNameTxtFld.text.length>0 && colorTxtFld.text.length>0 && regPlateTextFld.text.length>0) {
+    if ([SCUIUtility validateString:driverNameTxtFld.text].length>0 && [SCUIUtility validateString:driverEmailTxtFld.text].length>0 && [SCUIUtility validateString:carNickNameTxtFld.text].length>0 && [SCUIUtility validateString:colorTxtFld.text].length>0 && [SCUIUtility validateString:regPlateTextFld.text].length>0) {
         if ([SCUIUtility validateEmailWithString:driverEmailTxtFld.text]) {
             NSMutableDictionary *regDict=[NSMutableDictionary new];
             [regDict setObject:driverNameTxtFld.text forKey:@"DriverName"];
@@ -135,7 +134,7 @@
             [regDict setObject:regPlateTextFld.text forKey:@"RegistrationPlate"];
             [regDict setObject:isDieselSelected?@"Diesel":@"Gas" forKey:@"FuelType"];
             
-            [[WebServiceInvoker sharedInstance]registrationAPICall:regDict completionBlock:^(BOOL success, NSString *message, NSDictionary *dataDict) {
+            [[RegistrationModel alloc]registrationAPICall:regDict completionBlock:^(BOOL success, NSString *message, NSDictionary *dataDict) {
                 DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
                 if (success) {
                     [self.navigationController popViewControllerAnimated:YES];

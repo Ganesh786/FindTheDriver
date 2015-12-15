@@ -178,4 +178,13 @@
         return FALSE;
 }
 
+#pragma mark:- validate String
++(NSString*)validateString:(NSString*)str{
+    NSString *trimedstr  = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if(trimedstr == (id)[NSNull null] || [trimedstr isEqualToString:@""] || [trimedstr isKindOfClass:[NSNull class]])
+    {
+            trimedstr=@"";
+    }
+    return trimedstr;
+}
 @end

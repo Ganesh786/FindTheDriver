@@ -56,15 +56,15 @@
 #pragma mark - User action methods
 
 - (IBAction)loginBtnClicked:(id)sender {
-    NSString *email=[NSString stringWithFormat:@"%@",_emailTxtFld.text];
-    NSString *password=[NSString stringWithFormat:@"%@",_passwordTxtFld.text];
+    NSString *email=[SCUIUtility validateString:_emailTxtFld.text];
+    NSString *password=[SCUIUtility validateString:_passwordTxtFld.text];
     email = @"admin@gmail.com";
     password = @"welcome";
     if (email.length>0 && password.length>0) {
         if ([SCUIUtility validateEmailWithString:_emailTxtFld.text]) {
             [_emailTxtFld resignFirstResponder];
             [_passwordTxtFld resignFirstResponder];
-            [[WebServiceInvoker sharedInstance]loginAPICall:[NSString stringWithFormat:@"%@/%@",email,password] completionBlock:^(BOOL success, NSString *message, NSDictionary *dataDict) {
+            [[LoginModel alloc]loginAPICall:[NSString stringWithFormat:@"%@/%@",email,password] completionBlock:^(BOOL success, NSString *message, NSDictionary *dataDict) {
                 if (success) {
                     DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
                     HomeViewController *homeViewController = [kHomeStoryboard instantiateInitialViewController];
@@ -77,7 +77,7 @@
              [self showAlert:@"" message:@"Enter Valid Email ID"]; 
         }
     }else{
-        [self showAlert:@"" message:@"Please Enter Username/Password"];
+        [self showAlert:@"" message:@"Please Enter a Valid Email/Password"];
     }
 }
 
