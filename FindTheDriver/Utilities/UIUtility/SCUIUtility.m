@@ -20,7 +20,7 @@
               WithPlaceholderText:(NSString *)txt
                     WithTextColor:(UIColor *)color {
     
-    txtFld.attributedPlaceholder = [[NSAttributedString alloc] initWithString:txt attributes: @{NSForegroundColorAttributeName: color, NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue" size:14]}];
+    txtFld.attributedPlaceholder = [[NSAttributedString alloc] initWithString:txt attributes: @{NSForegroundColorAttributeName: color, NSFontAttributeName:[UIFont fontWithName:kHelveticaNeueFontName size:14]}];
 }
 
 + (void)setLeftViewForTheTextField:(UITextField *)txtFld WithImage:(UIImage *)img {

@@ -3478,7 +3478,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="jpW-AK-hnv">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DriverActionID" rowHeight="40" id="jpW-AK-hnv" customClass="DriverActionCustomTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jpW-AK-hnv" id="IBS-u8-VNX">
@@ -3488,26 +3488,83 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Email" translatesAutoresizingMaskIntoConstraints="NO" id="fnY-cb-Vpi">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <animations/>
-                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="10" y="5" width="30" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="Aea-4T-TC4"/>
+                                                        <constraint firstAttribute="width" constant="30" id="FlG-PS-ZZg"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Aea-4T-TC4"/>
+                                                            <exclude reference="FlG-PS-ZZg"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="Aea-4T-TC4"/>
+                                                            <include reference="FlG-PS-ZZg"/>
+                                                        </mask>
                                                     </variation>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Not-1M-bWf">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="Not-1M-bWf" firstAttribute="leading" secondItem="fnY-cb-Vpi" secondAttribute="trailing" constant="14" id="2TS-h6-i8I"/>
+                                                <constraint firstAttribute="bottom" secondItem="Not-1M-bWf" secondAttribute="bottom" constant="10" id="9zp-3R-fN3"/>
+                                                <constraint firstAttribute="bottom" secondItem="fnY-cb-Vpi" secondAttribute="bottom" constant="8" id="IYN-ta-rzN"/>
+                                                <constraint firstItem="Not-1M-bWf" firstAttribute="top" secondItem="IBS-u8-VNX" secondAttribute="top" constant="8" id="ToI-VT-FbE"/>
+                                                <constraint firstItem="fnY-cb-Vpi" firstAttribute="leading" secondItem="IBS-u8-VNX" secondAttribute="leading" constant="10" id="YIo-RB-nIU"/>
+                                                <constraint firstAttribute="trailing" secondItem="Not-1M-bWf" secondAttribute="trailing" constant="7" id="oi3-Vl-QIZ"/>
+                                                <constraint firstItem="fnY-cb-Vpi" firstAttribute="top" secondItem="IBS-u8-VNX" secondAttribute="top" constant="6" id="xrG-ae-n18"/>
+                                            </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="fnY-cb-Vpi"/>
+                                                    <exclude reference="Not-1M-bWf"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="IYN-ta-rzN"/>
+                                                    <exclude reference="YIo-RB-nIU"/>
+                                                    <exclude reference="xrG-ae-n18"/>
+                                                    <exclude reference="2TS-h6-i8I"/>
+                                                    <exclude reference="9zp-3R-fN3"/>
+                                                    <exclude reference="ToI-VT-FbE"/>
+                                                    <exclude reference="oi3-Vl-QIZ"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="fnY-cb-Vpi"/>
+                                                    <include reference="Not-1M-bWf"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="IYN-ta-rzN"/>
+                                                    <include reference="YIo-RB-nIU"/>
+                                                    <include reference="xrG-ae-n18"/>
+                                                    <include reference="2TS-h6-i8I"/>
+                                                    <include reference="9zp-3R-fN3"/>
+                                                    <include reference="ToI-VT-FbE"/>
+                                                    <include reference="oi3-Vl-QIZ"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="actionImgView" destination="fnY-cb-Vpi" id="eaY-1X-z9L"/>
+                                            <outlet property="nameLbl" destination="Not-1M-bWf" id="ahr-9a-aRd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XSv-Qo-OJI" id="pBm-vp-7Yl"/>
+                                    <outlet property="delegate" destination="XSv-Qo-OJI" id="WaR-oq-pHX"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <animations/>
