@@ -66,4 +66,6 @@
 #define kSettingsStoryboard            ([UIStoryboard storyboardWithName:@"SettingsStoryboard" bundle: [NSBundle mainBundle]])
 
 
+#define kComingSoon     @"Coming Soon"
+
 #endif /* StringConstantsHeader_h */

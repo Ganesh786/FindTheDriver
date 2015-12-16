@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *addSignatureBtn;
 @property (weak, nonatomic) IBOutlet UITableView *actionTblView;
 @property (weak, nonatomic) IBOutlet UINavigationItem *signatureNavigationItem;
+@property (weak, nonatomic) IBOutlet UIView *signatureBGView;
 
 @end
 
@@ -43,11 +44,29 @@
     imagesArray = [NSArray arrayWithObjects:@"Email.png", @"Printer.png", nil];
     _actionTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _signatureNavigationItem.title = @"Monday | October 10";
+    _signatureBGView.hidden = YES;
 }
+
+#pragma mark - User Action Methods
 
 - (IBAction)backBtnClicked:(id)sender {
     [self dismissViewControllerAnimated:NO completion:nil];
 }
+
+- (IBAction)touchAndSignatureBtnClicked:(id)sender {
+    _signatureBGView.hidden = NO;
+    _addSignatureBtn.hidden = YES;
+}
+
+- (IBAction)previewLogBtnClicked:(id)sender {
+    [UIAlertView showAlertViewWithTitle:@"" Message:kComingSoon];
+}
+
+- (IBAction)closeBtnClicked:(id)sender {
+    _signatureBGView.hidden = YES;
+    _addSignatureBtn.hidden = NO;
+}
+
 
 #pragma mark - Tableview delegate methods
 
@@ -67,6 +86,10 @@
     driverActionCell.actionImgView.image = [UIImage imageNamed:imagesArray[indexPath.row]];
 
     return driverActionCell;
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

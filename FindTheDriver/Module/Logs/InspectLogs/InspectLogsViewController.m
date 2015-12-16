@@ -23,7 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     defectsArray = [NSMutableArray array];
-    self.title = @"Monday | October 10";
     NSMutableDictionary *dict1 = [NSMutableDictionary dictionary];
     [dict1 setValue:@"Defects" forKey:@"Name"];
     [dict1 setValue:@"Air Compressor" forKey:@"Title"];

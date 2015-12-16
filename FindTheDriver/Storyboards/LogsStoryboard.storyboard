@@ -1815,7 +1815,7 @@
             </objects>
             <point key="canvasLocation" x="1978.5" y="-300"/>
         </scene>
-        <!--Inspect Logs View Controller-->
+        <!--Monday | October 10-->
         <scene sceneID="aka-HF-4Mt">
             <objects>
                 <viewController storyboardIdentifier="InspectLogsID" id="th0-qV-hfR" customClass="InspectLogsViewController" sceneMemberID="viewController">
@@ -2550,7 +2550,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="ozC-yk-zzz">
+                    <navigationItem key="navigationItem" title="Monday | October 10" id="ozC-yk-zzz">
                         <barButtonItem key="leftBarButtonItem" image="Back" id="qsg-vV-SoC">
                             <connections>
                                 <action selector="backBtnClciked:" destination="th0-qV-hfR" id="ZhR-hO-MuZ"/>
@@ -3428,6 +3428,9 @@
                                         <include reference="n06-dm-sXE"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="previewLogBtnClicked:" destination="XSv-Qo-OJI" eventType="touchUpInside" id="dzD-B7-0W8"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I certify these entries are true and correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tig-0q-sXK">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -3449,6 +3452,65 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a40-Vy-nxb">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSX-NV-gjs">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="3jN-dW-lpO"/>
+                                            <constraint firstAttribute="width" constant="20" id="6y9-Yc-olf"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" backgroundImage="Close"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="3jN-dW-lpO"/>
+                                                <exclude reference="6y9-Yc-olf"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="3jN-dW-lpO"/>
+                                                <include reference="6y9-Yc-olf"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="closeBtnClicked:" destination="XSv-Qo-OJI" eventType="touchUpInside" id="4uU-yo-qYe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="NSX-NV-gjs" secondAttribute="bottom" constant="27" id="1PN-qm-c4f"/>
+                                    <constraint firstItem="NSX-NV-gjs" firstAttribute="top" secondItem="a40-Vy-nxb" secondAttribute="top" constant="27" id="Igq-AN-oCk"/>
+                                    <constraint firstAttribute="trailing" secondItem="NSX-NV-gjs" secondAttribute="trailing" id="PcL-70-cp3"/>
+                                    <constraint firstAttribute="height" constant="74" id="fQf-69-vQs"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="NSX-NV-gjs"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="fQf-69-vQs"/>
+                                        <exclude reference="1PN-qm-c4f"/>
+                                        <exclude reference="Igq-AN-oCk"/>
+                                        <exclude reference="PcL-70-cp3"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="NSX-NV-gjs"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="fQf-69-vQs"/>
+                                        <include reference="1PN-qm-c4f"/>
+                                        <include reference="Igq-AN-oCk"/>
+                                        <include reference="PcL-70-cp3"/>
+                                    </mask>
+                                </variation>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fj2-RV-xSo">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
@@ -3469,6 +3531,9 @@
                                         <include reference="tuH-NS-3Dd"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="touchAndSignatureBtnClicked:" destination="XSv-Qo-OJI" eventType="touchUpInside" id="Cde-6B-cO7"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Sg-cB-52Q">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -3590,16 +3655,20 @@
                             <constraint firstItem="Tig-0q-sXK" firstAttribute="top" secondItem="vQY-Fa-ZZA" secondAttribute="bottom" constant="25" id="314-Ia-7ka"/>
                             <constraint firstAttribute="trailing" secondItem="Tig-0q-sXK" secondAttribute="trailing" constant="10" id="47K-lA-zMW"/>
                             <constraint firstItem="3Sg-cB-52Q" firstAttribute="top" secondItem="fj2-RV-xSo" secondAttribute="bottom" constant="27" id="4ib-I2-NvD"/>
+                            <constraint firstItem="3Sg-cB-52Q" firstAttribute="top" secondItem="a40-Vy-nxb" secondAttribute="bottom" constant="8" id="4wi-bL-KYv"/>
                             <constraint firstItem="mP8-vv-rUa" firstAttribute="top" secondItem="cmQ-5O-duR" secondAttribute="bottom" id="5cO-0C-yfC"/>
                             <constraint firstItem="3Sg-cB-52Q" firstAttribute="leading" secondItem="617-zL-QOc" secondAttribute="leading" constant="10" id="6wR-4P-P8x"/>
                             <constraint firstAttribute="trailing" secondItem="vQY-Fa-ZZA" secondAttribute="trailing" constant="10" id="Can-rO-qfi"/>
                             <constraint firstItem="Tig-0q-sXK" firstAttribute="leading" secondItem="617-zL-QOc" secondAttribute="leading" constant="10" id="DjF-cu-heU"/>
                             <constraint firstItem="vQY-Fa-ZZA" firstAttribute="leading" secondItem="617-zL-QOc" secondAttribute="leading" constant="10" id="E7F-9l-ByM"/>
                             <constraint firstItem="fj2-RV-xSo" firstAttribute="leading" secondItem="617-zL-QOc" secondAttribute="leading" constant="65" id="F4L-p3-H1h"/>
+                            <constraint firstItem="a40-Vy-nxb" firstAttribute="top" secondItem="Tig-0q-sXK" secondAttribute="bottom" constant="8" id="GoT-Lo-B0U"/>
                             <constraint firstItem="fj2-RV-xSo" firstAttribute="top" secondItem="Tig-0q-sXK" secondAttribute="bottom" constant="28" id="Hal-Z7-tYG"/>
+                            <constraint firstItem="a40-Vy-nxb" firstAttribute="leading" secondItem="617-zL-QOc" secondAttribute="leading" constant="26" id="Q3Q-mA-bRH"/>
                             <constraint firstAttribute="trailing" secondItem="3Sg-cB-52Q" secondAttribute="trailing" constant="10" id="VUw-JX-87M"/>
                             <constraint firstItem="vQY-Fa-ZZA" firstAttribute="top" secondItem="cBx-mr-uK8" secondAttribute="bottom" constant="16" id="hKY-Sa-bFz"/>
                             <constraint firstAttribute="trailing" secondItem="fj2-RV-xSo" secondAttribute="trailing" constant="66" id="kV2-0B-etR"/>
+                            <constraint firstAttribute="trailing" secondItem="a40-Vy-nxb" secondAttribute="trailing" constant="27" id="pmo-Y2-4Y3"/>
                             <constraint firstAttribute="trailing" secondItem="cmQ-5O-duR" secondAttribute="trailing" id="tO0-uq-Zle"/>
                             <constraint firstItem="cmQ-5O-duR" firstAttribute="top" secondItem="3Sg-cB-52Q" secondAttribute="bottom" constant="50" id="u5z-KT-rmn"/>
                         </constraints>
@@ -3607,54 +3676,64 @@
                             <mask key="subviews">
                                 <exclude reference="vQY-Fa-ZZA"/>
                                 <exclude reference="Tig-0q-sXK"/>
+                                <exclude reference="a40-Vy-nxb"/>
                                 <exclude reference="fj2-RV-xSo"/>
                                 <exclude reference="3Sg-cB-52Q"/>
                                 <exclude reference="cmQ-5O-duR"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5cO-0C-yfC"/>
-                                <exclude reference="F4L-p3-H1h"/>
-                                <exclude reference="Hal-Z7-tYG"/>
-                                <exclude reference="kV2-0B-etR"/>
                                 <exclude reference="Can-rO-qfi"/>
                                 <exclude reference="E7F-9l-ByM"/>
                                 <exclude reference="hKY-Sa-bFz"/>
                                 <exclude reference="314-Ia-7ka"/>
                                 <exclude reference="47K-lA-zMW"/>
                                 <exclude reference="DjF-cu-heU"/>
+                                <exclude reference="GoT-Lo-B0U"/>
+                                <exclude reference="Q3Q-mA-bRH"/>
+                                <exclude reference="pmo-Y2-4Y3"/>
+                                <exclude reference="F4L-p3-H1h"/>
+                                <exclude reference="Hal-Z7-tYG"/>
+                                <exclude reference="kV2-0B-etR"/>
                                 <exclude reference="4ib-I2-NvD"/>
+                                <exclude reference="4wi-bL-KYv"/>
                                 <exclude reference="6wR-4P-P8x"/>
                                 <exclude reference="VUw-JX-87M"/>
                                 <exclude reference="2SK-ce-7e6"/>
                                 <exclude reference="tO0-uq-Zle"/>
                                 <exclude reference="u5z-KT-rmn"/>
+                                <exclude reference="5cO-0C-yfC"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="vQY-Fa-ZZA"/>
                                 <include reference="Tig-0q-sXK"/>
+                                <include reference="a40-Vy-nxb"/>
                                 <include reference="fj2-RV-xSo"/>
                                 <include reference="3Sg-cB-52Q"/>
                                 <include reference="cmQ-5O-duR"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="5cO-0C-yfC"/>
-                                <include reference="F4L-p3-H1h"/>
-                                <include reference="Hal-Z7-tYG"/>
-                                <include reference="kV2-0B-etR"/>
                                 <include reference="Can-rO-qfi"/>
                                 <include reference="E7F-9l-ByM"/>
                                 <include reference="hKY-Sa-bFz"/>
                                 <include reference="314-Ia-7ka"/>
                                 <include reference="47K-lA-zMW"/>
                                 <include reference="DjF-cu-heU"/>
+                                <include reference="GoT-Lo-B0U"/>
+                                <include reference="Q3Q-mA-bRH"/>
+                                <include reference="pmo-Y2-4Y3"/>
+                                <include reference="F4L-p3-H1h"/>
+                                <include reference="Hal-Z7-tYG"/>
+                                <include reference="kV2-0B-etR"/>
                                 <include reference="4ib-I2-NvD"/>
+                                <include reference="4wi-bL-KYv"/>
                                 <include reference="6wR-4P-P8x"/>
                                 <include reference="VUw-JX-87M"/>
                                 <include reference="2SK-ce-7e6"/>
                                 <include reference="tO0-uq-Zle"/>
                                 <include reference="u5z-KT-rmn"/>
+                                <include reference="5cO-0C-yfC"/>
                             </mask>
                         </variation>
                     </view>
@@ -3669,6 +3748,7 @@
                         <outlet property="actionTblView" destination="cmQ-5O-duR" id="S7f-Pn-s19"/>
                         <outlet property="addSignatureBtn" destination="fj2-RV-xSo" id="JxD-0r-YBj"/>
                         <outlet property="previewLogBtn" destination="vQY-Fa-ZZA" id="P6L-Fl-gyl"/>
+                        <outlet property="signatureBGView" destination="a40-Vy-nxb" id="Y3f-dQ-NYw"/>
                         <outlet property="signatureNavigationItem" destination="lmi-Bb-lL0" id="xjq-Qe-qbr"/>
                     </connections>
                 </viewController>
@@ -3732,6 +3812,7 @@
         <image name="BgStrip" width="400" height="40"/>
         <image name="Calender" width="33" height="32"/>
         <image name="Car" width="96" height="96"/>
+        <image name="Close" width="32" height="26"/>
         <image name="Email" width="49" height="33"/>
         <image name="InspectLogsDisable" width="55" height="43"/>
         <image name="LocationGray" width="15" height="22"/>
