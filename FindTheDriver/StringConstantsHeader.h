@@ -11,8 +11,10 @@
 
 #import "AppDelegate.h"
 
-#define USER_NAME @"admin@gmail.com" // Remove later from hardcoded places
-#define PASSWORD @"welcome"
+//------------------------------- NSUSerDefaults Constants  ----------------------
+#define USER_NAME @"USER_NAME"
+#define USER_PASSWORD @"USER_PASSWORD"
+#define USER_LOGGEDIN @"USER_LOGGEDIN"
 
 //---------------------------------- Color Constants  ---------------------------
 #pragma mark - Color Constants

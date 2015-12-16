@@ -57,9 +57,6 @@
 
 - (IBAction)loginBtnClicked:(id)sender {
     
-    HomeViewController *homeViewController = [kHomeStoryboard instantiateInitialViewController];
-    [self.navigationController pushViewController:homeViewController animated:NO];
-    
     NSString *email=[SCUIUtility validateString:_emailTxtFld.text];
     NSString *password=[SCUIUtility validateString:_passwordTxtFld.text];
     if (email.length>0 || password.length>0) {
@@ -71,6 +68,10 @@
                     [[LoginModel alloc]loginAPICall:[NSString stringWithFormat:@"%@/%@",email,password] completionBlock:^(BOOL success, NSString *message, NSDictionary *dataDict) {
                         if (success) {
                             DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
+                            [[NSUserDefaults standardUserDefaults]setBool:YES forKey:USER_LOGGEDIN];
+                            [[NSUserDefaults standardUserDefaults]setObject:email forKey:USER_NAME];
+                            [[NSUserDefaults standardUserDefaults]setObject:password forKey:USER_PASSWORD];
+                            [[NSUserDefaults standardUserDefaults] synchronize];
                             HomeViewController *homeViewController = [kHomeStoryboard instantiateInitialViewController];
                             [self.navigationController pushViewController:homeViewController animated:NO];
                         }else{

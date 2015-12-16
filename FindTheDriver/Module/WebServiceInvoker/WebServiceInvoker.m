@@ -61,13 +61,10 @@
         if (![NSThread isMainThread]) {
             abort();
         }
-        NSString *message = nil;
+        NSString *message = NETWORK_RESPONSE_ERROR_MESSAGE;
         BOOL success = NO;
         NSDictionary *dict = nil;
-        
-        if (!responseObject) {
-            message = @"Returned no data";
-        } else  {
+        if (responseObject) {
             if ([responseObject isKindOfClass:[NSArray class]]) {
                 block(NO,@"No results found",nil);
                 return;
@@ -75,7 +72,7 @@
             NSDictionary *contentDict = (NSDictionary*)responseObject;
             if (!contentDict) {
                 message = @"Invalid Response";
-            } else {
+            }else{
                 success = (operation.response.statusCode == 200);
             }
             message = [contentDict valueForKey:@"RequestMessage"];
@@ -88,7 +85,6 @@
         if (block) {
             block(NO, error.description, nil);
         }
-        
     }];
 }
 - (void)getToPath:(NSString*)path withParams:(NSDictionary*)params completion:(ServerResponseBlock)block{

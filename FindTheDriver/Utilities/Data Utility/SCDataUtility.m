@@ -75,4 +75,12 @@
     return NSLocalizedString(dict[statusCodeStr], nil);
 }
 
++(NSString*)getUserName{
+    return [[NSUserDefaults standardUserDefaults]objectForKey:USER_NAME];
+}
+
++(NSString*)getUserPassword{
+    return [[NSUserDefaults standardUserDefaults]objectForKey:USER_PASSWORD];
+}
+
 @end

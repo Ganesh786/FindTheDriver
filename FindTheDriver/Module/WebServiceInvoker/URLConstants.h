@@ -18,12 +18,13 @@
 #define PASSWORD_RESET_URI @"api/V1/PasswordReset/"
 #define CHANGE_PASSWORD_URI @"api/V1/ChangePassword/"
 #define UPDATE_PROFILE_URI @"api/V1/Profile/"
-#define GET_VEHICLE_URI @"api/V1/Vehicles/"
-#define UPDATE_VEHICLE_URI @"api/V1/Vehicle/"
+#define GET_VEHICLES_URI @"api/V1/Vehicles/"
+#define ADD_NEW_VEHICLE_URI @"api/V1/Vehicle/"
 #define DELETE_VEHICLE_URI @"api/V1/Vehicle/"
 
 //------------------------- Network Error Message --------------
 #define NETWORK_ERROR_TITLE @"Network Error"
 #define NETWORK_ERROR_MESSAGE @"Please check you network connection!"
+#define NETWORK_RESPONSE_ERROR_MESSAGE @"Something went wrong, please try again after some time"
 
 #endif /* URLConstants_h */

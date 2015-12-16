@@ -29,6 +29,9 @@
 		04C7ED961C205FD800A7B6B1 /* RegistrationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7ED951C205FD800A7B6B1 /* RegistrationModel.m */; };
 		04C7ED9D1C206FCA00A7B6B1 /* RegistrationDataMadel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7ED9C1C206FCA00A7B6B1 /* RegistrationDataMadel.m */; };
 		04C7EDA11C207E8F00A7B6B1 /* ChangePasswordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7EDA01C207E8F00A7B6B1 /* ChangePasswordModel.m */; };
+		04CBF11C1C21BC1C00255913 /* RegisterNewVehicleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBF11B1C21BC1C00255913 /* RegisterNewVehicleModel.m */; };
+		04CBF11F1C21BDF700255913 /* RegisterNewVehicleDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBF11E1C21BDF700255913 /* RegisterNewVehicleDataModel.m */; };
+		04CBF1231C21CD1400255913 /* GetVehicleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBF1221C21CD1400255913 /* GetVehicleModel.m */; };
 		2587C8461C15F50800163357 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2587C8451C15F50800163357 /* ChangePasswordViewController.m */; };
 		2587C84A1C15FC1E00163357 /* RegisterNewVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2587C8491C15FC1E00163357 /* RegisterNewVehicleViewController.m */; };
 		2587C84E1C167A0500163357 /* SignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2587C84D1C167A0500163357 /* SignatureViewController.m */; };
@@ -161,6 +164,12 @@
 		04C7ED9C1C206FCA00A7B6B1 /* RegistrationDataMadel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationDataMadel.m; sourceTree = "<group>"; };
 		04C7ED9F1C207E8F00A7B6B1 /* ChangePasswordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordModel.h; sourceTree = "<group>"; };
 		04C7EDA01C207E8F00A7B6B1 /* ChangePasswordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordModel.m; sourceTree = "<group>"; };
+		04CBF11A1C21BC1C00255913 /* RegisterNewVehicleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterNewVehicleModel.h; sourceTree = "<group>"; };
+		04CBF11B1C21BC1C00255913 /* RegisterNewVehicleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterNewVehicleModel.m; sourceTree = "<group>"; };
+		04CBF11D1C21BDF700255913 /* RegisterNewVehicleDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterNewVehicleDataModel.h; sourceTree = "<group>"; };
+		04CBF11E1C21BDF700255913 /* RegisterNewVehicleDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterNewVehicleDataModel.m; sourceTree = "<group>"; };
+		04CBF1211C21CD1400255913 /* GetVehicleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetVehicleModel.h; sourceTree = "<group>"; };
+		04CBF1221C21CD1400255913 /* GetVehicleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetVehicleModel.m; sourceTree = "<group>"; };
 		2587C8441C15F50800163357 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangePasswordViewController.h; path = FindTheDriver/Module/Settings/AccountSettings/ChangePassword/ChangePasswordViewController.h; sourceTree = SOURCE_ROOT; };
 		2587C8451C15F50800163357 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangePasswordViewController.m; path = FindTheDriver/Module/Settings/AccountSettings/ChangePassword/ChangePasswordViewController.m; sourceTree = SOURCE_ROOT; };
 		2587C8481C15FC1E00163357 /* RegisterNewVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterNewVehicleViewController.h; sourceTree = "<group>"; };
@@ -410,6 +419,26 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		04CBF1191C21BC0100255913 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04CBF11A1C21BC1C00255913 /* RegisterNewVehicleModel.h */,
+				04CBF11B1C21BC1C00255913 /* RegisterNewVehicleModel.m */,
+				04CBF11D1C21BDF700255913 /* RegisterNewVehicleDataModel.h */,
+				04CBF11E1C21BDF700255913 /* RegisterNewVehicleDataModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04CBF1201C21CCDD00255913 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04CBF1211C21CD1400255913 /* GetVehicleModel.h */,
+				04CBF1221C21CD1400255913 /* GetVehicleModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2587C8431C15F4E800163357 /* ChangePassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,6 +452,7 @@
 		2587C8471C15FC0900163357 /* RegisterNewVehicle */ = {
 			isa = PBXGroup;
 			children = (
+				04CBF1191C21BC0100255913 /* Model */,
 				2587C8481C15FC1E00163357 /* RegisterNewVehicleViewController.h */,
 				2587C8491C15FC1E00163357 /* RegisterNewVehicleViewController.m */,
 			);
@@ -758,6 +788,7 @@
 				25E117021C147390004385F9 /* CustomCell */,
 				25E116FF1C146DD2004385F9 /* AccountSettingsViewController.h */,
 				25E117001C146DD2004385F9 /* AccountSettingsViewController.m */,
+				04CBF1201C21CCDD00255913 /* Model */,
 			);
 			path = AccountSettings;
 			sourceTree = "<group>";
@@ -1132,9 +1163,11 @@
 				04C782951C1F10DC00E3C46F /* AFSecurityPolicy.m in Sources */,
 				DFF375BC1C17787F0097B53C /* CarrierViewController.m in Sources */,
 				25ECFD951C1FC344006CA2B5 /* ObjectMapper.m in Sources */,
+				04CBF11C1C21BC1C00255913 /* RegisterNewVehicleModel.m in Sources */,
 				25ECFD9F1C1FC3AF006CA2B5 /* Reachability.m in Sources */,
 				2587C8461C15F50800163357 /* ChangePasswordViewController.m in Sources */,
 				25E116B91C0DEF6F004385F9 /* RegistrationFualTableViewCell.m in Sources */,
+				04CBF11F1C21BDF700255913 /* RegisterNewVehicleDataModel.m in Sources */,
 				25E116B61C0D44D9004385F9 /* RegistrationTableViewCell.m in Sources */,
 				2587C84A1C15FC1E00163357 /* RegisterNewVehicleViewController.m in Sources */,
 				25E117051C147401004385F9 /* AccountInfoCustomTableViewCell.m in Sources */,
@@ -1193,6 +1226,7 @@
 				DF2A2D7B1C1F3DFD005C232F /* AddNewDVIRViewController.m in Sources */,
 				25E116C81C0E9E92004385F9 /* HomeViewController.m in Sources */,
 				25ECFDA41C1FC42A006CA2B5 /* SCDataUtility.m in Sources */,
+				04CBF1231C21CD1400255913 /* GetVehicleModel.m in Sources */,
 				25BE7E4D1C1A7B5C00A96D4F /* Forgot PasswordViewController.m in Sources */,
 				25ECFD611C1D61C7006CA2B5 /* InspectLogsViewController.m in Sources */,
 				25ECFDA81C208078006CA2B5 /* DriverActionCustomTableViewCell.m in Sources */,

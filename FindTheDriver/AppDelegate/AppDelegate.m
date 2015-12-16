@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "HomeViewController.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -28,7 +30,16 @@
        NSFontAttributeName:[UIFont fontWithName:kHelveticaNeueFontName size:17]
        }
      forState:UIControlStateNormal];
-
+    
+  /*  if ([[NSUserDefaults standardUserDefaults]boolForKey:USER_LOGGEDIN]) {
+        HomeViewController *homeViewController = [kHomeStoryboard instantiateInitialViewController];
+        self.window.rootViewController=homeViewController;
+    }else{
+        LoginViewController *loginViewController = [kLoginStoryboard instantiateInitialViewController];
+        self.window.rootViewController=loginViewController;
+    }
+    [self.window makeKeyAndVisible];
+   */
     return YES;
 }
 

@@ -50,7 +50,7 @@
             if (newPwd.length>0) {
                 [_currentPwdTxtfld resignFirstResponder];
                 [_nePwdTextfld resignFirstResponder];
-                [[ChangePasswordModel alloc]changePwdAPICall:[NSString stringWithFormat:@"%@/%@/%@",USER_NAME,oldPwd,newPwd] completionBlock:^(BOOL success, NSString *message, NSDictionary *dataDict) {
+                [[ChangePasswordModel alloc]changePwdAPICall:[NSString stringWithFormat:@"%@/%@/%@",[SCDataUtility getUserName],oldPwd,newPwd] completionBlock:^(BOOL success, NSString *message, NSDictionary *dataDict) {
                     if (success) {
                         DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
                         [self.navigationController popViewControllerAnimated:YES];

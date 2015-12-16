@@ -131,7 +131,7 @@
             regModel.CarName=carNickNameTxtFld.text;
             regModel.Color=colorTxtFld.text;
             regModel.RegistrationPlate=regPlateTextFld.text;
-            regModel.FuelType=isDieselSelected?@"Diesel":@"Gas";
+            regModel.FuelType=isDieselSelected?@"Diesel":@"Gasoline";
             regModel.Address=@"";
             NSMutableDictionary *inputDict = [SCDataUtility getDictionaryBasaedOnObject:regModel];
             [[RegistrationModel alloc]registrationAPICall:inputDict completionBlock:^(BOOL success, NSString *message, NSDictionary *dataDict) {

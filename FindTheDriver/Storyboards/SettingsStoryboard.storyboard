@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -1036,6 +1036,9 @@
                                         <include reference="Hyp-5g-4xZ"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="eHm-H1-hTT" id="p0P-5Q-TzZ"/>
+                                </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kyL-iZ-0YK">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -1073,6 +1076,9 @@
                                         <include reference="Z5C-c9-6sn"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="eHm-H1-hTT" id="39U-P9-Xyk"/>
+                                </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J4g-vt-ibz">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -1110,6 +1116,9 @@
                                         <include reference="yeJ-vZ-xFQ"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="eHm-H1-hTT" id="Olc-iG-NGU"/>
+                                </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nEp-9I-PBv">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -1474,6 +1483,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="ColorTextField" destination="Cd5-qk-ezV" id="1Up-PW-T6o"/>
+                        <outlet property="RegistrationPlateTextField" destination="Bcp-to-G1Y" id="G1g-BT-BTa"/>
+                        <outlet property="VehicleNickNameTextField" destination="QPV-gd-B18" id="S7A-qh-6yW"/>
                         <outlet property="fualSlider" destination="pV3-bA-zRv" id="ife-VD-h8R"/>
                         <outlet property="registerFualView" destination="Guy-Bn-Low" id="68a-pV-z9f"/>
                     </connections>

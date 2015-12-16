@@ -32,6 +32,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self loadAccountSettingsViewController];
+    
+    [self getVehiclesData]; //Get Vehicles Data
+}
+
+#pragma mark:- Get Vehicles Data
+-(void)getVehiclesData{
+    [[GetVehicleModel alloc]getVehiclesAPICall:[NSString stringWithFormat:@"%@/%@",[SCDataUtility getUserName],[SCDataUtility getUserPassword]] completionBlock:^(BOOL success, NSString *message, NSDictionary *dataDict) {
+        DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
+        if (!success) {
+            [self showAlert:@"" message:message];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -45,4 +45,10 @@
 + (NSString*)perEspEncode:(NSString*)data;
 
 + (NSString *)getShiftStatusFromPlistWithStatusCode:(NSString *)statusCodeStr;
+
+//Get Logged In User Name
++(NSString*)getUserName;
+
+//Get Logged In User Password
++(NSString*)getUserPassword;
 @end
