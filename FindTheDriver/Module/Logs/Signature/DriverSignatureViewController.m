@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *previewLogBtn;
 @property (weak, nonatomic) IBOutlet UIButton *addSignatureBtn;
 @property (weak, nonatomic) IBOutlet UITableView *actionTblView;
+@property (weak, nonatomic) IBOutlet UINavigationItem *signatureNavigationItem;
 
 @end
 
@@ -40,6 +41,12 @@
     
     nameArray = [NSArray arrayWithObjects:@"Send", @"Print", nil];
     imagesArray = [NSArray arrayWithObjects:@"Email.png", @"Printer.png", nil];
+    _actionTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    _signatureNavigationItem.title = @"Monday | October 10";
+}
+
+- (IBAction)backBtnClicked:(id)sender {
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 #pragma mark - Tableview delegate methods

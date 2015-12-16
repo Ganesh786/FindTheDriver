@@ -39,6 +39,10 @@
     [SCUIUtility setLayerForView:_time2Btn WithColor:kClearColor];
 }
 
+- (IBAction)backBtnClicked:(id)sender {
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
 #pragma mark - TableView Delegate methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
