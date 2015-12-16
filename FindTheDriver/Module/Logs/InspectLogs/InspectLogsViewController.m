@@ -46,6 +46,12 @@
     [super didReceiveMemoryWarning];
 }
 
+- (IBAction)backBtnClciked:(id)sender {
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+#pragma mark - TableView delegate methods
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 60;
 }
