@@ -9,8 +9,13 @@
 #import "DriverSignatureViewController.h"
 #import "DriverActionCustomTableViewCell.h"
 
+#pragma PenColor    ([UIColor blackColor])
+
 @interface DriverSignatureViewController () {
     NSArray *nameArray, *imagesArray;
+    CGPoint lastPoint;
+    BOOL mouseSwiped;
+    int mouseMoved;
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *previewLogBtn;
@@ -18,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *actionTblView;
 @property (weak, nonatomic) IBOutlet UINavigationItem *signatureNavigationItem;
 @property (weak, nonatomic) IBOutlet UIView *signatureBGView;
+@property (weak, nonatomic) IBOutlet UIImageView *signatureImgView;
+@property (nonatomic, assign) int tapCount;
 
 @end
 
@@ -45,6 +52,9 @@
     _actionTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _signatureNavigationItem.title = @"Monday | October 10";
     _signatureBGView.hidden = YES;
+    
+    mouseMoved = 0;
+    self.tapCount = 0;
 }
 
 #pragma mark - User Action Methods
@@ -65,8 +75,65 @@
 - (IBAction)closeBtnClicked:(id)sender {
     _signatureBGView.hidden = YES;
     _addSignatureBtn.hidden = NO;
+    _signatureImgView.image = nil;
 }
 
+#pragma mark - UITouch delegate methods
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    self.tapCount = 0;
+    
+    mouseSwiped = NO;
+    UITouch *touch = [touches anyObject];
+    
+    lastPoint = [touch locationInView:self.view];
+    lastPoint.y -= 20;
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    mouseSwiped = YES;
+    UITouch *touch = [touches anyObject];
+    CGPoint currentPoint = [touch locationInView:self.view];
+    currentPoint.y -= 20;
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [_signatureImgView.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
+    
+    CGContextRef bluecontext = UIGraphicsGetCurrentContext();
+    CGContextSetLineWidth(bluecontext, 3.0);
+    CGContextSetStrokeColorWithColor(bluecontext, [UIColor blackColor].CGColor);
+    
+    CGContextBeginPath(UIGraphicsGetCurrentContext());
+    CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
+    CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
+    CGContextStrokePath(UIGraphicsGetCurrentContext());
+    _signatureImgView.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    lastPoint = currentPoint;
+    mouseMoved++;
+    if (mouseMoved == 10) {
+        mouseMoved = 0;
+    }
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    if(!mouseSwiped) {
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [_signatureImgView.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+        CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
+        
+        CGContextRef bluecontext = UIGraphicsGetCurrentContext();
+        CGContextSetLineWidth(bluecontext, 3.0);
+        CGContextSetStrokeColorWithColor(bluecontext, [UIColor blackColor].CGColor);
+        
+        CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
+        CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
+        CGContextStrokePath(UIGraphicsGetCurrentContext());
+        CGContextFlush(UIGraphicsGetCurrentContext());
+        self.signatureImgView.image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
+}
 
 #pragma mark - Tableview delegate methods
 
