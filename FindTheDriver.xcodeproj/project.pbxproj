@@ -32,6 +32,7 @@
 		04CBF11C1C21BC1C00255913 /* RegisterNewVehicleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBF11B1C21BC1C00255913 /* RegisterNewVehicleModel.m */; };
 		04CBF11F1C21BDF700255913 /* RegisterNewVehicleDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBF11E1C21BDF700255913 /* RegisterNewVehicleDataModel.m */; };
 		04CBF1231C21CD1400255913 /* GetVehicleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBF1221C21CD1400255913 /* GetVehicleModel.m */; };
+		2536C38E1C23273900FF19EB /* TodayLogDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2536C38D1C23273900FF19EB /* TodayLogDetailViewController.m */; };
 		2587C8461C15F50800163357 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2587C8451C15F50800163357 /* ChangePasswordViewController.m */; };
 		2587C84A1C15FC1E00163357 /* RegisterNewVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2587C8491C15FC1E00163357 /* RegisterNewVehicleViewController.m */; };
 		2587C84E1C167A0500163357 /* SignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2587C84D1C167A0500163357 /* SignatureViewController.m */; };
@@ -170,6 +171,8 @@
 		04CBF11E1C21BDF700255913 /* RegisterNewVehicleDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterNewVehicleDataModel.m; sourceTree = "<group>"; };
 		04CBF1211C21CD1400255913 /* GetVehicleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetVehicleModel.h; sourceTree = "<group>"; };
 		04CBF1221C21CD1400255913 /* GetVehicleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetVehicleModel.m; sourceTree = "<group>"; };
+		2536C38C1C23273900FF19EB /* TodayLogDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayLogDetailViewController.h; sourceTree = "<group>"; };
+		2536C38D1C23273900FF19EB /* TodayLogDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayLogDetailViewController.m; sourceTree = "<group>"; };
 		2587C8441C15F50800163357 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangePasswordViewController.h; path = FindTheDriver/Module/Settings/AccountSettings/ChangePassword/ChangePasswordViewController.h; sourceTree = SOURCE_ROOT; };
 		2587C8451C15F50800163357 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangePasswordViewController.m; path = FindTheDriver/Module/Settings/AccountSettings/ChangePassword/ChangePasswordViewController.m; sourceTree = SOURCE_ROOT; };
 		2587C8481C15FC1E00163357 /* RegisterNewVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterNewVehicleViewController.h; sourceTree = "<group>"; };
@@ -556,7 +559,6 @@
 			children = (
 				04C782A21C1F117B00E3C46F /* WebServiceInvoker */,
 				25E116E51C12C7C6004385F9 /* Logs */,
-				25E116E41C12C7C6004385F9 /* InspectLogs */,
 				25E116E61C12C7C6004385F9 /* Settings */,
 				25E116C41C0E9E74004385F9 /* Home */,
 				25E116A31C0CB83E004385F9 /* Registration */,
@@ -708,13 +710,6 @@
 			path = CustomCell;
 			sourceTree = "<group>";
 		};
-		25E116E41C12C7C6004385F9 /* InspectLogs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = InspectLogs;
-			sourceTree = "<group>";
-		};
 		25E116E51C12C7C6004385F9 /* Logs */ = {
 			isa = PBXGroup;
 			children = (
@@ -819,6 +814,8 @@
 				25ECFD561C1D2FAA006CA2B5 /* CustomCell */,
 				25ECFD2B1C1C542C006CA2B5 /* TodayLogViewController.h */,
 				25ECFD2C1C1C542C006CA2B5 /* TodayLogViewController.m */,
+				2536C38C1C23273900FF19EB /* TodayLogDetailViewController.h */,
+				2536C38D1C23273900FF19EB /* TodayLogDetailViewController.m */,
 			);
 			path = TodayLog;
 			sourceTree = "<group>";
@@ -1238,6 +1235,7 @@
 				04C782A11C1F10DC00E3C46F /* UIWebView+AFNetworking.m in Sources */,
 				04C782941C1F10DC00E3C46F /* AFNetworkReachabilityManager.m in Sources */,
 				25ECFD931C1FC344006CA2B5 /* CommonLoggingProvider.m in Sources */,
+				2536C38E1C23273900FF19EB /* TodayLogDetailViewController.m in Sources */,
 				25ECFD991C1FC359006CA2B5 /* UIAlertView+Additions.m in Sources */,
 				04C782981C1F10DC00E3C46F /* AFURLResponseSerialization.m in Sources */,
 				2587C8521C1682CD00163357 /* NotificationsViewController.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "TodayLogViewController.h"
 #import "TodayLogCustomTableViewCell.h"
+#import "TodayLogDetailViewController.h"
 
 @interface TodayLogViewController ()
 
@@ -43,11 +44,18 @@
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
+- (IBAction)scaleTransparentBtnClicked:(id)sender {
+    TodayLogDetailViewController *detailVC = [kLogsStoryboard instantiateViewControllerWithIdentifier:@"TodayLogDetailID"];
+//    [self.navigationController pushViewController:detailVC animated:YES];
+    [self presentViewController:detailVC animated:NO completion:nil];
+}
+
 #pragma mark - TableView Delegate methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 4;
 }
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 40;
