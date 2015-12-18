@@ -46,8 +46,8 @@
 
 - (IBAction)scaleTransparentBtnClicked:(id)sender {
     TodayLogDetailViewController *detailVC = [kLogsStoryboard instantiateViewControllerWithIdentifier:@"TodayLogDetailID"];
-//    [self.navigationController pushViewController:detailVC animated:YES];
-    [self presentViewController:detailVC animated:NO completion:nil];
+    [self.navigationController pushViewController:detailVC animated:YES];
+//    [self presentViewController:detailVC animated:NO completion:nil];
 }
 
 #pragma mark - TableView Delegate methods
