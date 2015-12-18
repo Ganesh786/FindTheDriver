@@ -57,12 +57,17 @@
         [alertController dismissViewControllerAnimated:YES completion:nil];
     }];
     [alertController addAction: ok];
+    [[self rootViewController] presentViewController:alertController animated:YES completion:nil];
+}
+
+-(id)rootViewController{
     id rootViewController=[UIApplication sharedApplication].delegate.window.rootViewController;
     if([rootViewController isKindOfClass:[UINavigationController class]])
     {
         rootViewController=[((UINavigationController *)rootViewController).viewControllers objectAtIndex:0];
     }
-    [rootViewController presentViewController:alertController animated:YES completion:nil];
+    return rootViewController;
 }
+
 
 @end

@@ -65,7 +65,11 @@
         BOOL success = NO;
         if (![responseObject isKindOfClass:[NSNull class]]) {
             success =YES;
-            message = @"Success";
+            if ([responseObject isKindOfClass:[NSString class]]) {
+                message = responseObject;
+            }else{
+                message = @"Success";
+            }
         }
         if (block) {
             block(success, message, responseObject);
@@ -89,7 +93,11 @@
         BOOL success = NO;
         if (![responseObject isKindOfClass:[NSNull class]]) {
             success =YES;
-            message = @"Success";
+            if ([responseObject isKindOfClass:[NSString class]]) {
+                message = responseObject;
+            }else{
+                message = @"Success";
+            }
         }
         if (block) {
             block(success, message, responseObject);
@@ -115,7 +123,11 @@
         BOOL success = NO;
         if (![responseObject isKindOfClass:[NSNull class]]) {
             success =YES;
-            message = @"Success";
+            if ([responseObject isKindOfClass:[NSString class]]) {
+                message = responseObject;
+            }else{
+                message = @"Success";
+            }
         }
         if (block) {
             block(success, message, responseObject);
@@ -141,7 +153,11 @@
         BOOL success = NO;
         if (![responseObject isKindOfClass:[NSNull class]]) {
             success =YES;
-            message = @"Success";
+            if ([responseObject isKindOfClass:[NSString class]]) {
+                message = responseObject;
+            }else{
+                message = @"Success";
+            }
         }
         if (block) {
             block(success, message, responseObject);

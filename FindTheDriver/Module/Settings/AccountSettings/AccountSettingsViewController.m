@@ -34,7 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self loadAccountSettingsViewController];
-    _profilePicBtn.layer.cornerRadius=_profilePicBtn.frame.size.height/2;
+    _profilePicBtn.layer.cornerRadius=35;
     _profilePicBtn.layer.masksToBounds=YES;
     vehiclesDataArray=[[NSMutableArray alloc]init];
 }

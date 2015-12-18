@@ -65,7 +65,9 @@
                 if (password.length>0) {
                     [_emailTxtFld resignFirstResponder];
                     [_passwordTxtFld resignFirstResponder];
+                    [self showLoader];
                     [[LoginModel alloc]loginAPICall:[NSString stringWithFormat:@"%@/%@",email,password] completionBlock:^(BOOL success, NSString *message, id dataDict) {
+                        [self hideLoader];
                         if (success) {
                             DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
                             [[NSUserDefaults standardUserDefaults]setBool:YES forKey:USER_LOGGEDIN];
@@ -141,6 +143,18 @@
     self.forgotPwdViewController.isFirstTime = NO;
     [self.navigationController.view addSubview:self.forgotPwdViewController.view];
     [self.forgotPwdViewController viewWillAppear:NO];
+}
+
+#pragma mark:- Show and Hide Loader
+-(void)showLoader{
+    if (!self.customLoaderViewController) {
+        self.customLoaderViewController=[[CustomLoaderViewController alloc]init];
+        [self.navigationController.view addSubview:self.customLoaderViewController.view];
+    }
+}
+
+-(void)hideLoader{
+    [self.customLoaderViewController.view removeFromSuperview];
 }
 
 /*

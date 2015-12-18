@@ -13,5 +13,6 @@
 @interface LoginViewController : UIViewController <ForgotPasswordDelegate>
 
 @property (nonatomic, retain) IBOutlet Forgot_PasswordViewController *forgotPwdViewController;
+@property(nonatomic,strong)CustomLoaderViewController *customLoaderViewController;
 
 @end

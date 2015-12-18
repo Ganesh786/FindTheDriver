@@ -11,6 +11,9 @@
 		041CC0551C23E0C800B1885F /* UpDateProfileDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CC0541C23E0C800B1885F /* UpDateProfileDataModel.m */; };
 		041CC0591C24001300B1885F /* DeleteVehicleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CC0581C24001300B1885F /* DeleteVehicleModel.m */; };
 		041CC05C1C24002E00B1885F /* DeleteVehicleDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CC05B1C24002E00B1885F /* DeleteVehicleDataModel.m */; };
+		041CC0601C24246B00B1885F /* CustomLoaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CC05F1C24246B00B1885F /* CustomLoaderViewController.m */; };
+		041CC0731C243D7100B1885F /* blueArc.png in Resources */ = {isa = PBXBuildFile; fileRef = 041CC0721C243D7100B1885F /* blueArc.png */; };
+		041CC0751C243D8100B1885F /* redArc.png in Resources */ = {isa = PBXBuildFile; fileRef = 041CC0741C243D8100B1885F /* redArc.png */; };
 		04C782911C1F10DC00E3C46F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7826D1C1F10DC00E3C46F /* AFHTTPRequestOperation.m */; };
 		04C782921C1F10DC00E3C46F /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7826F1C1F10DC00E3C46F /* AFHTTPRequestOperationManager.m */; };
 		04C782931C1F10DC00E3C46F /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C782711C1F10DC00E3C46F /* AFHTTPSessionManager.m */; };
@@ -130,6 +133,10 @@
 		041CC0581C24001300B1885F /* DeleteVehicleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteVehicleModel.m; sourceTree = "<group>"; };
 		041CC05A1C24002E00B1885F /* DeleteVehicleDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteVehicleDataModel.h; sourceTree = "<group>"; };
 		041CC05B1C24002E00B1885F /* DeleteVehicleDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteVehicleDataModel.m; sourceTree = "<group>"; };
+		041CC05E1C24246B00B1885F /* CustomLoaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLoaderViewController.h; sourceTree = "<group>"; };
+		041CC05F1C24246B00B1885F /* CustomLoaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLoaderViewController.m; sourceTree = "<group>"; };
+		041CC0721C243D7100B1885F /* blueArc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArc.png; sourceTree = "<group>"; };
+		041CC0741C243D8100B1885F /* redArc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redArc.png; sourceTree = "<group>"; };
 		04C7826C1C1F10DC00E3C46F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		04C7826D1C1F10DC00E3C46F /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		04C7826E1C1F10DC00E3C46F /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -373,6 +380,17 @@
 				041CC05B1C24002E00B1885F /* DeleteVehicleDataModel.m */,
 			);
 			path = DeleteRegisterVehicle;
+			sourceTree = "<group>";
+		};
+		041CC05D1C24244D00B1885F /* CustomLoader */ = {
+			isa = PBXGroup;
+			children = (
+				041CC0721C243D7100B1885F /* blueArc.png */,
+				041CC0741C243D8100B1885F /* redArc.png */,
+				041CC05E1C24246B00B1885F /* CustomLoaderViewController.h */,
+				041CC05F1C24246B00B1885F /* CustomLoaderViewController.m */,
+			);
+			path = CustomLoader;
 			sourceTree = "<group>";
 		};
 		04C7826B1C1F10DC00E3C46F /* AFNetworking */ = {
@@ -697,6 +715,7 @@
 		25E116BF1C0E9A4D004385F9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				041CC05D1C24244D00B1885F /* CustomLoader */,
 				25ECFDA11C1FC42A006CA2B5 /* Data Utility */,
 				25ECFD9A1C1FC3AF006CA2B5 /* NetworkHandler */,
 				25ECFD6C1C1FC344006CA2B5 /* Data Validation */,
@@ -1171,8 +1190,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				041CC0751C243D8100B1885F /* redArc.png in Resources */,
 				25E116F61C143CE9004385F9 /* SettingsStoryboard.storyboard in Resources */,
 				25E116BC1C0E9909004385F9 /* Login.storyboard in Resources */,
+				041CC0731C243D7100B1885F /* blueArc.png in Resources */,
 				25AF26351C04BD43001FA4A8 /* Assets.xcassets in Resources */,
 				25E116ED1C12C9B3004385F9 /* LogsStoryboard.storyboard in Resources */,
 				25E116BE1C0E994D004385F9 /* HomeStoryboard.storyboard in Resources */,
@@ -1224,6 +1245,7 @@
 				04C7829B1C1F10DC00E3C46F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				25E116F91C1441BC004385F9 /* SettingsViewController.m in Sources */,
 				25E116AA1C0CBB7D004385F9 /* UIViewController+Additions.m in Sources */,
+				041CC0601C24246B00B1885F /* CustomLoaderViewController.m in Sources */,
 				25E116E31C12B870004385F9 /* SideBarCustomTableViewCell.m in Sources */,
 				25BE7E491C19D9CD00A96D4F /* CustomHomeActionViewController.m in Sources */,
 				04C782AA1C1F11B600E3C46F /* WebServiceInvoker.m in Sources */,
