@@ -10,8 +10,6 @@
 #import "RegistrationTableViewCell.h"
 #import "RegistrationFualTableViewCell.h"
 
-#define ACCEPTABLE_CHARECTERS @"0123456789"
-
 @interface RegistrationViewController () <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource> {
     NSArray *headerLblsArray;
     UITextField *driverNameTxtFld, *driverEmailTxtFld, *driverPhoneTxtFld, *carNickNameTxtFld, *colorTxtFld, *regPlateTextFld;
@@ -134,7 +132,7 @@
             regModel.FuelType=isDieselSelected?@"Diesel":@"Gasoline";
             regModel.Address=@"";
             NSMutableDictionary *inputDict = [SCDataUtility getDictionaryBasaedOnObject:regModel];
-            [[RegistrationModel alloc]registrationAPICall:inputDict completionBlock:^(BOOL success, NSString *message, NSDictionary *dataDict) {
+            [[RegistrationModel alloc]registrationAPICall:inputDict completionBlock:^(BOOL success, NSString *message, id dataDict) {
                 DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
                 if (success) {
                     [self.navigationController popViewControllerAnimated:YES];
@@ -221,7 +219,7 @@
         NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:ACCEPTABLE_CHARECTERS] invertedSet];
         NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
         NSString *updatedText = [textField.text stringByReplacingCharactersInRange:range withString:string];
-        if (updatedText.length > 25)
+        if (updatedText.length > PHONE_NUMBER_LIMIT)
         {return NO;}
         return [string isEqualToString:filtered];
     }

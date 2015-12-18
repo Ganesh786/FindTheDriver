@@ -24,7 +24,7 @@
 
 
 -(void)changePwdAPICall:(NSString*)url completionBlock:(changePasswordModelCompletionBlock)block{
-    [[WebServiceInvoker sharedInstance]putToPath:[NSString stringWithFormat:@"%@%@%@",BASE_URL,CHANGE_PASSWORD_URI,url] withParams:nil completion:^(BOOL success, NSString *message, NSDictionary *dataDict) {
+    [[WebServiceInvoker sharedInstance]putToPath:[NSString stringWithFormat:@"%@%@%@",BASE_URL,CHANGE_PASSWORD_URI,url] withParams:nil completion:^(BOOL success, NSString *message, id dataDict) {
         if (success) {
             //Update DB
         }

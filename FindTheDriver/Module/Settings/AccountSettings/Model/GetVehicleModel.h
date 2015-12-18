@@ -10,7 +10,7 @@
 #import "WebServiceInvoker.h"
 #import "URLConstants.h"
 
-typedef void (^GetVehicleModelCompletionBlock)(BOOL success, NSString *message, NSDictionary *dataDict);
+typedef void (^GetVehicleModelCompletionBlock)(BOOL success, NSString *message, id dataDict);
 
 @interface GetVehicleModel : NSObject
 

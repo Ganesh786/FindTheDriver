@@ -9,7 +9,7 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "URLConstants.h"
 
-typedef void (^ServerResponseBlock)(BOOL success, NSString *message, NSDictionary *dataDict);
+typedef void (^ServerResponseBlock)(BOOL success, NSString *message, id dataDict);
 
 @interface WebServiceInvoker : AFHTTPRequestOperationManager
 

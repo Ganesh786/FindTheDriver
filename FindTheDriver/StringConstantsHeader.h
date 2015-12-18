@@ -67,5 +67,7 @@
 
 
 #define kComingSoon     @"Coming Soon"
+#define ACCEPTABLE_CHARECTERS @"0123456789"
+#define PHONE_NUMBER_LIMIT 25
 
 #endif /* StringConstantsHeader_h */

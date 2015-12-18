@@ -63,23 +63,12 @@
         }
         NSString *message = NETWORK_RESPONSE_ERROR_MESSAGE;
         BOOL success = NO;
-        NSDictionary *dict = nil;
-        if (responseObject) {
-            if ([responseObject isKindOfClass:[NSArray class]]) {
-                block(NO,@"No results found",nil);
-                return;
-            }
-            NSDictionary *contentDict = (NSDictionary*)responseObject;
-            if (!contentDict) {
-                message = @"Invalid Response";
-            }else{
-                success = (operation.response.statusCode == 200);
-            }
-            message = [contentDict valueForKey:@"RequestMessage"];
-            dict = contentDict;
+        if (![responseObject isKindOfClass:[NSNull class]]) {
+            success =YES;
+            message = @"Success";
         }
         if (block) {
-            block(success, message, dict);
+            block(success, message, responseObject);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (block) {
@@ -96,28 +85,14 @@
         if (![NSThread isMainThread]) {
             abort();
         }
-        NSString *message = nil;
+        NSString *message = NETWORK_RESPONSE_ERROR_MESSAGE;
         BOOL success = NO;
-        NSDictionary *dict = nil;
-        
-        if (!responseObject) {
-            message = @"Returned no data";
-        } else  {
-            if ([responseObject isKindOfClass:[NSArray class]]) {
-                block(NO,@"No results found",nil);
-                return;
-            }
-            NSDictionary *contentDict = (NSDictionary*)responseObject;
-            if (!contentDict) {
-                message = @"Invalid Response";
-            } else {
-                success = (operation.response.statusCode == 200);
-            }
-            message = [contentDict valueForKey:@"RequestMessage"];
-            dict = contentDict;
+        if (![responseObject isKindOfClass:[NSNull class]]) {
+            success =YES;
+            message = @"Success";
         }
         if (block) {
-            block(success, message, dict);
+            block(success, message, responseObject);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (block) {
@@ -136,28 +111,14 @@
         if (![NSThread isMainThread]) {
             abort();
         }
-        NSString *message = nil;
+        NSString *message = NETWORK_RESPONSE_ERROR_MESSAGE;
         BOOL success = NO;
-        NSDictionary *dict = nil;
-        
-        if (!responseObject) {
-            message = @"Returned no data";
-        } else  {
-            if ([responseObject isKindOfClass:[NSArray class]]) {
-                block(NO,@"No results found",nil);
-                return;
-            }
-            NSDictionary *contentDict = (NSDictionary*)responseObject;
-            if (!contentDict) {
-                message = @"Invalid Response";
-            } else {
-                success = (operation.response.statusCode == 200);
-            }
-            message = [contentDict valueForKey:@"RequestMessage"];
-            dict = contentDict;
+        if (![responseObject isKindOfClass:[NSNull class]]) {
+            success =YES;
+            message = @"Success";
         }
         if (block) {
-            block(success, message, dict);
+            block(success, message, responseObject);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (block) {
@@ -176,28 +137,14 @@
         if (![NSThread isMainThread]) {
             abort();
         }
-        NSString *message = nil;
+        NSString *message = NETWORK_RESPONSE_ERROR_MESSAGE;
         BOOL success = NO;
-        NSDictionary *dict = nil;
-        
-        if (!responseObject) {
-            message = @"Returned no data";
-        } else  {
-            if ([responseObject isKindOfClass:[NSArray class]]) {
-                block(NO,@"No results found",nil);
-                return;
-            }
-            NSDictionary *contentDict = (NSDictionary*)responseObject;
-            if (!contentDict) {
-                message = @"Invalid Response";
-            } else {
-                success = (operation.response.statusCode == 200);
-            }
-            message = [contentDict valueForKey:@"RequestMessage"];
-            dict = contentDict;
+        if (![responseObject isKindOfClass:[NSNull class]]) {
+            success =YES;
+            message = @"Success";
         }
         if (block) {
-            block(success, message, dict);
+            block(success, message, responseObject);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (block) {

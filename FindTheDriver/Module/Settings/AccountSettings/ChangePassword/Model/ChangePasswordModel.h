@@ -10,7 +10,7 @@
 #import "WebServiceInvoker.h"
 #import "URLConstants.h"
 
-typedef void (^changePasswordModelCompletionBlock)(BOOL success, NSString *message, NSDictionary *dataDict);
+typedef void (^changePasswordModelCompletionBlock)(BOOL success, NSString *message, id dataDict);
 
 @interface ChangePasswordModel : NSObject
 

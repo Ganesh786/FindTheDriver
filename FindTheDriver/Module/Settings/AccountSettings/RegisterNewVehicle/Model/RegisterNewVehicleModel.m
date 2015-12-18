@@ -25,7 +25,7 @@
 }
 
 -(void)newVehicleAPICall:(NSString*)url params:(NSDictionary*)params completionBlock:(RegisterNewVehicleModelCompletionBlock)block{
-    [[WebServiceInvoker sharedInstance]postToPath:[NSString stringWithFormat:@"%@%@%@",BASE_URL,ADD_NEW_VEHICLE_URI,url] withParams:params completion:^(BOOL success, NSString *message, NSDictionary *dataDict) {
+    [[WebServiceInvoker sharedInstance]postToPath:[NSString stringWithFormat:@"%@%@%@",BASE_URL,ADD_NEW_VEHICLE_URI,url] withParams:params completion:^(BOOL success, NSString *message, id dataDict) {
         if (success) {
             //Update DB
         }

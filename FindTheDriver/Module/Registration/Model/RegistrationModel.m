@@ -26,7 +26,7 @@
 
 #pragma mark:-Registration API Call
 -(void)registrationAPICall:(NSMutableDictionary*)params completionBlock:(ServerResponseBlock)block{
-    [[WebServiceInvoker sharedInstance]postToPath:[NSString stringWithFormat:@"%@%@",BASE_URL,REGISTRATION_URI] withParams:params completion:^(BOOL success, NSString *message, NSDictionary *dataDict) {
+    [[WebServiceInvoker sharedInstance]postToPath:[NSString stringWithFormat:@"%@%@",BASE_URL,REGISTRATION_URI] withParams:params completion:^(BOOL success, NSString *message, id dataDict) {
         if (success) {
             //Update DB
         }

@@ -64,7 +64,7 @@
                     dataModel.FuelType=isDieselSelected?@"Diesel":@"Gasoline";
                     
                     NSDictionary *dict=[SCDataUtility getDictionaryBasaedOnObject:dataModel];
-                    [[RegisterNewVehicleModel alloc] newVehicleAPICall:[NSString stringWithFormat:@"%@/%@",[SCDataUtility getUserName],[SCDataUtility getUserPassword]] params:dict completionBlock:^(BOOL success, NSString *message, NSDictionary *dataDict) {
+                    [[RegisterNewVehicleModel alloc] newVehicleAPICall:[NSString stringWithFormat:@"%@/%@",[SCDataUtility getUserName],[SCDataUtility getUserPassword]] params:dict completionBlock:^(BOOL success, NSString *message, id dataDict) {
                         DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
                         if (success) {
                             [self.navigationController popViewControllerAnimated:YES];

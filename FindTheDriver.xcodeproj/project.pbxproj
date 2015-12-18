@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041CC0521C23E0B200B1885F /* UpDateProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CC0511C23E0B200B1885F /* UpDateProfileModel.m */; };
+		041CC0551C23E0C800B1885F /* UpDateProfileDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CC0541C23E0C800B1885F /* UpDateProfileDataModel.m */; };
+		041CC0591C24001300B1885F /* DeleteVehicleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CC0581C24001300B1885F /* DeleteVehicleModel.m */; };
+		041CC05C1C24002E00B1885F /* DeleteVehicleDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CC05B1C24002E00B1885F /* DeleteVehicleDataModel.m */; };
 		04C782911C1F10DC00E3C46F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7826D1C1F10DC00E3C46F /* AFHTTPRequestOperation.m */; };
 		04C782921C1F10DC00E3C46F /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7826F1C1F10DC00E3C46F /* AFHTTPRequestOperationManager.m */; };
 		04C782931C1F10DC00E3C46F /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C782711C1F10DC00E3C46F /* AFHTTPSessionManager.m */; };
@@ -118,6 +122,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		041CC0501C23E0B200B1885F /* UpDateProfileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpDateProfileModel.h; sourceTree = "<group>"; };
+		041CC0511C23E0B200B1885F /* UpDateProfileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpDateProfileModel.m; sourceTree = "<group>"; };
+		041CC0531C23E0C800B1885F /* UpDateProfileDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpDateProfileDataModel.h; sourceTree = "<group>"; };
+		041CC0541C23E0C800B1885F /* UpDateProfileDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpDateProfileDataModel.m; sourceTree = "<group>"; };
+		041CC0571C24001300B1885F /* DeleteVehicleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteVehicleModel.h; sourceTree = "<group>"; };
+		041CC0581C24001300B1885F /* DeleteVehicleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteVehicleModel.m; sourceTree = "<group>"; };
+		041CC05A1C24002E00B1885F /* DeleteVehicleDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteVehicleDataModel.h; sourceTree = "<group>"; };
+		041CC05B1C24002E00B1885F /* DeleteVehicleDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteVehicleDataModel.m; sourceTree = "<group>"; };
 		04C7826C1C1F10DC00E3C46F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		04C7826D1C1F10DC00E3C46F /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		04C7826E1C1F10DC00E3C46F /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -333,6 +345,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041CC04E1C23E07A00B1885F /* UpDateProfile */ = {
+			isa = PBXGroup;
+			children = (
+				041CC04F1C23E09000B1885F /* Model */,
+			);
+			path = UpDateProfile;
+			sourceTree = "<group>";
+		};
+		041CC04F1C23E09000B1885F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				041CC0501C23E0B200B1885F /* UpDateProfileModel.h */,
+				041CC0511C23E0B200B1885F /* UpDateProfileModel.m */,
+				041CC0531C23E0C800B1885F /* UpDateProfileDataModel.h */,
+				041CC0541C23E0C800B1885F /* UpDateProfileDataModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		041CC0561C23FFFA00B1885F /* DeleteRegisterVehicle */ = {
+			isa = PBXGroup;
+			children = (
+				041CC0571C24001300B1885F /* DeleteVehicleModel.h */,
+				041CC0581C24001300B1885F /* DeleteVehicleModel.m */,
+				041CC05A1C24002E00B1885F /* DeleteVehicleDataModel.h */,
+				041CC05B1C24002E00B1885F /* DeleteVehicleDataModel.m */,
+			);
+			path = DeleteRegisterVehicle;
+			sourceTree = "<group>";
+		};
 		04C7826B1C1F10DC00E3C46F /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -778,6 +820,8 @@
 		25E116FE1C146DB7004385F9 /* AccountSettings */ = {
 			isa = PBXGroup;
 			children = (
+				041CC0561C23FFFA00B1885F /* DeleteRegisterVehicle */,
+				041CC04E1C23E07A00B1885F /* UpDateProfile */,
 				2587C8471C15FC0900163357 /* RegisterNewVehicle */,
 				2587C8431C15F4E800163357 /* ChangePassword */,
 				25E117021C147390004385F9 /* CustomCell */,
@@ -1158,6 +1202,7 @@
 			files = (
 				25E116F41C141F75004385F9 /* CustomLogsInfoTableViewCell.m in Sources */,
 				04C782951C1F10DC00E3C46F /* AFSecurityPolicy.m in Sources */,
+				041CC05C1C24002E00B1885F /* DeleteVehicleDataModel.m in Sources */,
 				DFF375BC1C17787F0097B53C /* CarrierViewController.m in Sources */,
 				25ECFD951C1FC344006CA2B5 /* ObjectMapper.m in Sources */,
 				04CBF11C1C21BC1C00255913 /* RegisterNewVehicleModel.m in Sources */,
@@ -1168,10 +1213,12 @@
 				25E116B61C0D44D9004385F9 /* RegistrationTableViewCell.m in Sources */,
 				2587C84A1C15FC1E00163357 /* RegisterNewVehicleViewController.m in Sources */,
 				25E117051C147401004385F9 /* AccountInfoCustomTableViewCell.m in Sources */,
+				041CC0521C23E0B200B1885F /* UpDateProfileModel.m in Sources */,
 				25ECFD681C1D664D006CA2B5 /* DriverSignatureViewController.m in Sources */,
 				DF2A2D741C1A176D005C232F /* LogsCellTwoTableViewCell.m in Sources */,
 				04C7829D1C1F10DC00E3C46F /* UIButton+AFNetworking.m in Sources */,
 				25E117011C146DD2004385F9 /* AccountSettingsViewController.m in Sources */,
+				041CC0551C23E0C800B1885F /* UpDateProfileDataModel.m in Sources */,
 				04C7EDA11C207E8F00A7B6B1 /* ChangePasswordModel.m in Sources */,
 				2587C84E1C167A0500163357 /* SignatureViewController.m in Sources */,
 				04C7829B1C1F10DC00E3C46F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -1225,6 +1272,7 @@
 				25ECFDA41C1FC42A006CA2B5 /* SCDataUtility.m in Sources */,
 				04CBF1231C21CD1400255913 /* GetVehicleModel.m in Sources */,
 				25BE7E4D1C1A7B5C00A96D4F /* Forgot PasswordViewController.m in Sources */,
+				041CC0591C24001300B1885F /* DeleteVehicleModel.m in Sources */,
 				25ECFD611C1D61C7006CA2B5 /* InspectLogsViewController.m in Sources */,
 				25ECFDA81C208078006CA2B5 /* DriverActionCustomTableViewCell.m in Sources */,
 				25ECFD591C1D2FD2006CA2B5 /* TodayLogCustomTableViewCell.m in Sources */,

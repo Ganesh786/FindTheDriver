@@ -65,7 +65,7 @@
                 if (password.length>0) {
                     [_emailTxtFld resignFirstResponder];
                     [_passwordTxtFld resignFirstResponder];
-                    [[LoginModel alloc]loginAPICall:[NSString stringWithFormat:@"%@/%@",email,password] completionBlock:^(BOOL success, NSString *message, NSDictionary *dataDict) {
+                    [[LoginModel alloc]loginAPICall:[NSString stringWithFormat:@"%@/%@",email,password] completionBlock:^(BOOL success, NSString *message, id dataDict) {
                         if (success) {
                             DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
                             [[NSUserDefaults standardUserDefaults]setBool:YES forKey:USER_LOGGEDIN];

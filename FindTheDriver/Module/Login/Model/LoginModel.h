@@ -10,7 +10,7 @@
 #import "WebServiceInvoker.h"
 #import "URLConstants.h"
 
-typedef void (^loginModelCompletionBlock)(BOOL success, NSString *message, NSDictionary *dataDict);
+typedef void (^loginModelCompletionBlock)(BOOL success, NSString *message, id dataDict);
 
 @interface LoginModel : NSObject
 
