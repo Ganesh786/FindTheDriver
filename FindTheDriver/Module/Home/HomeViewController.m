@@ -59,6 +59,10 @@
 
 #pragma mark - User defined methods
 
+- (void)revealToggle {
+    [UIAppDelegate.revealViewController revealToggleAnimated:YES];
+}
+
 - (void)loadHomeViewComponents {
     revealController = [self revealViewController];
     revealController.delegate = self;
