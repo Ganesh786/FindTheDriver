@@ -39,6 +39,10 @@
 		04CBF11C1C21BC1C00255913 /* RegisterNewVehicleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBF11B1C21BC1C00255913 /* RegisterNewVehicleModel.m */; };
 		04CBF11F1C21BDF700255913 /* RegisterNewVehicleDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBF11E1C21BDF700255913 /* RegisterNewVehicleDataModel.m */; };
 		04CBF1231C21CD1400255913 /* GetVehicleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBF1221C21CD1400255913 /* GetVehicleModel.m */; };
+		04E58FBC1C2531B40026E19A /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E58FBB1C2531B40026E19A /* GraphView.m */; };
+		04E58FC01C25320A0026E19A /* GraphViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E58FBF1C25320A0026E19A /* GraphViewCell.m */; };
+		04E58FC61C258B7C0026E19A /* GridTimerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E58FC51C258B7C0026E19A /* GridTimerViewCell.m */; };
+		04E58FCA1C258E7E0026E19A /* GraphDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E58FC91C258E7E0026E19A /* GraphDataClass.m */; };
 		2536C38E1C23273900FF19EB /* TodayLogDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2536C38D1C23273900FF19EB /* TodayLogDetailViewController.m */; };
 		2587C8461C15F50800163357 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2587C8451C15F50800163357 /* ChangePasswordViewController.m */; };
 		2587C84A1C15FC1E00163357 /* RegisterNewVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2587C8491C15FC1E00163357 /* RegisterNewVehicleViewController.m */; };
@@ -190,6 +194,15 @@
 		04CBF11E1C21BDF700255913 /* RegisterNewVehicleDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterNewVehicleDataModel.m; sourceTree = "<group>"; };
 		04CBF1211C21CD1400255913 /* GetVehicleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetVehicleModel.h; sourceTree = "<group>"; };
 		04CBF1221C21CD1400255913 /* GetVehicleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetVehicleModel.m; sourceTree = "<group>"; };
+		04E58FBA1C2531B40026E19A /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GraphView.h; path = FindTheDriver/Module/Logs/GraphComponent/GraphView.h; sourceTree = SOURCE_ROOT; };
+		04E58FBB1C2531B40026E19A /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GraphView.m; path = FindTheDriver/Module/Logs/GraphComponent/GraphView.m; sourceTree = SOURCE_ROOT; };
+		04E58FBE1C25320A0026E19A /* GraphViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewCell.h; sourceTree = "<group>"; };
+		04E58FBF1C25320A0026E19A /* GraphViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewCell.m; sourceTree = "<group>"; };
+		04E58FC41C258B7C0026E19A /* GridTimerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridTimerViewCell.h; sourceTree = "<group>"; };
+		04E58FC51C258B7C0026E19A /* GridTimerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridTimerViewCell.m; sourceTree = "<group>"; };
+		04E58FC71C258E020026E19A /* GraphConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphConstants.h; sourceTree = "<group>"; };
+		04E58FC81C258E7E0026E19A /* GraphDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GraphDataClass.h; path = FindTheDriver/Module/Logs/GraphComponent/GraphDataClass.h; sourceTree = SOURCE_ROOT; };
+		04E58FC91C258E7E0026E19A /* GraphDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GraphDataClass.m; path = FindTheDriver/Module/Logs/GraphComponent/GraphDataClass.m; sourceTree = SOURCE_ROOT; };
 		2536C38C1C23273900FF19EB /* TodayLogDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayLogDetailViewController.h; sourceTree = "<group>"; };
 		2536C38D1C23273900FF19EB /* TodayLogDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayLogDetailViewController.m; sourceTree = "<group>"; };
 		2587C8441C15F50800163357 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangePasswordViewController.h; path = FindTheDriver/Module/Settings/AccountSettings/ChangePassword/ChangePasswordViewController.h; sourceTree = SOURCE_ROOT; };
@@ -502,6 +515,46 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		04E58FB91C25316E0026E19A /* GraphComponent */ = {
+			isa = PBXGroup;
+			children = (
+				04E58FC71C258E020026E19A /* GraphConstants.h */,
+				04E58FBD1C2531D00026E19A /* CustomCell */,
+				04E58FCB1C25946B0026E19A /* GraphDataClass */,
+				04E58FCC1C2594820026E19A /* GraphView */,
+			);
+			path = GraphComponent;
+			sourceTree = "<group>";
+		};
+		04E58FBD1C2531D00026E19A /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				04E58FBE1C25320A0026E19A /* GraphViewCell.h */,
+				04E58FBF1C25320A0026E19A /* GraphViewCell.m */,
+				04E58FC41C258B7C0026E19A /* GridTimerViewCell.h */,
+				04E58FC51C258B7C0026E19A /* GridTimerViewCell.m */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		04E58FCB1C25946B0026E19A /* GraphDataClass */ = {
+			isa = PBXGroup;
+			children = (
+				04E58FC81C258E7E0026E19A /* GraphDataClass.h */,
+				04E58FC91C258E7E0026E19A /* GraphDataClass.m */,
+			);
+			path = GraphDataClass;
+			sourceTree = "<group>";
+		};
+		04E58FCC1C2594820026E19A /* GraphView */ = {
+			isa = PBXGroup;
+			children = (
+				04E58FBA1C2531B40026E19A /* GraphView.h */,
+				04E58FBB1C2531B40026E19A /* GraphView.m */,
+			);
+			path = GraphView;
+			sourceTree = "<group>";
+		};
 		2587C8431C15F4E800163357 /* ChangePassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -774,6 +827,7 @@
 		25E116E51C12C7C6004385F9 /* Logs */ = {
 			isa = PBXGroup;
 			children = (
+				04E58FB91C25316E0026E19A /* GraphComponent */,
 				25ECFD621C1D6396006CA2B5 /* Signature */,
 				25ECFD5E1C1D6184006CA2B5 /* InspectLogs */,
 				25ECFD5A1C1D45CA006CA2B5 /* LogForm */,
@@ -1230,6 +1284,7 @@
 				25ECFD9F1C1FC3AF006CA2B5 /* Reachability.m in Sources */,
 				2587C8461C15F50800163357 /* ChangePasswordViewController.m in Sources */,
 				25E116B91C0DEF6F004385F9 /* RegistrationFualTableViewCell.m in Sources */,
+				04E58FCA1C258E7E0026E19A /* GraphDataClass.m in Sources */,
 				04CBF11F1C21BDF700255913 /* RegisterNewVehicleDataModel.m in Sources */,
 				25E116B61C0D44D9004385F9 /* RegistrationTableViewCell.m in Sources */,
 				2587C84A1C15FC1E00163357 /* RegisterNewVehicleViewController.m in Sources */,
@@ -1242,6 +1297,7 @@
 				041CC0551C23E0C800B1885F /* UpDateProfileDataModel.m in Sources */,
 				04C7EDA11C207E8F00A7B6B1 /* ChangePasswordModel.m in Sources */,
 				2587C84E1C167A0500163357 /* SignatureViewController.m in Sources */,
+				04E58FBC1C2531B40026E19A /* GraphView.m in Sources */,
 				04C7829B1C1F10DC00E3C46F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				25E116F91C1441BC004385F9 /* SettingsViewController.m in Sources */,
 				25E116AA1C0CBB7D004385F9 /* UIViewController+Additions.m in Sources */,
@@ -1267,6 +1323,7 @@
 				25AF26271C04BD43001FA4A8 /* main.m in Sources */,
 				04C7829C1C1F10DC00E3C46F /* UIAlertView+AFNetworking.m in Sources */,
 				25ECFD911C1FC344006CA2B5 /* ManagedObjectInstanceProvider.m in Sources */,
+				04E58FC01C25320A0026E19A /* GraphViewCell.m in Sources */,
 				25E117091C14817A004385F9 /* SCUIUtility.m in Sources */,
 				25E116EB1C12C941004385F9 /* LogsInfoViewController.m in Sources */,
 				DF2A2D6E1C1A174B005C232F /* LogsViewController.m in Sources */,
@@ -1309,6 +1366,7 @@
 				25ECFD991C1FC359006CA2B5 /* UIAlertView+Additions.m in Sources */,
 				04C782981C1F10DC00E3C46F /* AFURLResponseSerialization.m in Sources */,
 				2587C8521C1682CD00163357 /* NotificationsViewController.m in Sources */,
+				04E58FC61C258B7C0026E19A /* GridTimerViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
