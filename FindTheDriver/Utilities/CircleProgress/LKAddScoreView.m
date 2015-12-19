@@ -179,7 +179,7 @@
     [self addSubview:_lb_message];
 }
 
--(void)showMessage:(NSString *)message subMes:(NSString *)subMes fromScore:(float)from toScore:(float)to {
+-(void)showMessage:(NSString *)message subMes:(NSString *)subMes fromScore:(float)from toScore:(float)to WithView:(UIView *)view {
     [self addLabelWithText:message withColor:kBlackColor WithFrame:CGRectMake(6, 30, 84, 14) WithFont:[UIFont fontWithName:kHelveticaNeueFontName size:12]];
     [self addLabelWithText:@"REMAINING" withColor:kWhiteColor WithFrame:CGRectMake(6, 55, 84, 14) WithFont:[UIFont fontWithName:kHelveticaNeueBoldFontName size:7]];
     [self addLabelWithText:subMes withColor:kWhiteColor WithFrame:CGRectMake(6, 64, 84, 14) WithFont:[UIFont fontWithName:kHelveticaNeueBoldFontName size:11]];
@@ -203,12 +203,13 @@
         
         _nowTo = to;
         
-        UIWindow* window = [self.class getShowWindow];
+//        UIWindow* window = [self.class getShowWindow];
 //        self.center = CGPointMake(window.center.x + 5, window.center.y + 1);
-        self.center = CGPointMake(55, 200);
+//        self.center = CGPointMake(55, 200);
 
         self.alpha = 0;
-        [window addSubview:self];
+//        [window addSubview:self];
+//        [view addSubview:self];
         
         _fadeIn = YES;
         

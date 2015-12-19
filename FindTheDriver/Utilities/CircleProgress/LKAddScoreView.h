@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface LKAddScoreView : UIImageView
+
 +(instancetype)shareInstance;
 
--(void)showMessage:(NSString*)message subMes:(NSString*)subMes fromScore:(float)from toScore:(float)to;
+//-(void)showMessage:(NSString*)message subMes:(NSString*)subMes fromScore:(float)from toScore:(float)to;
+-(void)showMessage:(NSString *)message subMes:(NSString *)subMes fromScore:(float)from toScore:(float)to WithView:(UIView *)view;
 -(void)dismiss;
 @end

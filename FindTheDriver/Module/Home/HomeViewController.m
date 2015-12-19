@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *violationsBtn;
 @property (weak, nonatomic) IBOutlet UIView *logsView;
 @property (weak, nonatomic) IBOutlet UIButton *logsBtn;
+@property (weak, nonatomic) IBOutlet UIView *detailView;
 
 @end
 
@@ -83,7 +84,11 @@
     timeArray = [NSArray arrayWithObjects:@"10.45", @"09.25", @"07.03", @"02.45", @"00.00", @"00.00", @"00.00", nil];
     
     float minutes = 45;
-    [[LKAddScoreView shareInstance] showMessage:@"DRIVING" subMes:[NSString stringWithFormat:@"%0.f MIN",minutes] fromScore:0 toScore:MIN(1, minutes/100)];
+    LKAddScoreView *progressView = [LKAddScoreView shareInstance];
+    [progressView setFrame:CGRectMake(6, 55, 86, 74)];
+    [_detailView addSubview:progressView];
+    
+    [progressView showMessage:@"DRIVING" subMes:[NSString stringWithFormat:@"%0.f MIN",minutes] fromScore:0 toScore:MIN(1, minutes/100) WithView:self.view];
 }
 
 #pragma mark - TableView Delegate methods
