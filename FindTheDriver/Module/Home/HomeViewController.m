@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "HomeWeekDayTableViewCell.h"
+#import "LKAddScoreView.h"
 
 @interface HomeViewController () <SWRevealViewControllerDelegate> {
     SWRevealViewController *revealController;
@@ -80,6 +81,9 @@
     [SCUIUtility setLayerForView:_logsView WithColor:kLightGrayColor];
     weekDayNameArray = [NSArray arrayWithObjects:@"Sunday", @"Saturday", @"Friday", @"Thursday", @"Wednesday", @"TuesDay", @"Monday", nil];
     timeArray = [NSArray arrayWithObjects:@"10.45", @"09.25", @"07.03", @"02.45", @"00.00", @"00.00", @"00.00", nil];
+    
+    float minutes = 45;
+    [[LKAddScoreView shareInstance] showMessage:@"DRIVING" subMes:[NSString stringWithFormat:@"%0.f MIN",minutes] fromScore:0 toScore:MIN(1, minutes/100)];
 }
 
 #pragma mark - TableView Delegate methods
