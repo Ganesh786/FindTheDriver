@@ -27,6 +27,12 @@
     [self loadTodayViewComponents];
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    GraphView *grapView=[[GraphView alloc]initWithFrame:CGRectMake(0, 60, [[UIScreen mainScreen] bounds].size.width, 140)];
+    [self.view addSubview:grapView];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
