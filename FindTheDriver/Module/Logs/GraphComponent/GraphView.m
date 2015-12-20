@@ -86,7 +86,7 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"GraphViewCell";
     GraphViewCell *cell =(GraphViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    cell.rightBottomBorder.backgroundColor=indexPath.row%2?kLightGrayColor.CGColor:kGreenColor.CGColor;
+    cell.rightBottomBorder.backgroundColor=kLightGrayColor.CGColor;
     cell.rightTopBorder.backgroundColor=kLightGrayColor.CGColor;
 //    cell.gridHorView.backgroundColor=indexPath.row%4?kNavBarColor:kClearColor;
     return cell;

@@ -16,6 +16,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *logInfoTblView;
+@property (weak, nonatomic) IBOutlet UIView *topGraphView;
 
 @end
 
@@ -34,6 +35,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.revealViewController panGestureRecognizer];
+    GraphView *grapView=[GraphView sharedComponent];
+    [self.topGraphView addSubview:grapView];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
