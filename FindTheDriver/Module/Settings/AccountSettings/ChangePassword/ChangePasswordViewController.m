@@ -50,9 +50,11 @@
             if (newPwd.length>0) {
                 [_currentPwdTxtfld resignFirstResponder];
                 [_nePwdTextfld resignFirstResponder];
+                [[CustomLoaderView sharedView] showLoader];
                 [[ChangePasswordModel alloc]changePwdAPICall:[NSString stringWithFormat:@"%@/%@/%@",[SCDataUtility getUserName],oldPwd,newPwd] completionBlock:^(BOOL success, NSString *message, id dataDict) {
                     if (success) {
                         DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
+                        [[CustomLoaderView sharedView] dismissLoader];
                         [[NSUserDefaults standardUserDefaults]setObject:newPwd forKey:USER_PASSWORD];
                         [[NSUserDefaults standardUserDefaults] synchronize];
                         [self.navigationController popViewControllerAnimated:YES];

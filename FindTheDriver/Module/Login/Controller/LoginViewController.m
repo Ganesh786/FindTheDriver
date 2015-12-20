@@ -61,7 +61,6 @@
 #pragma mark - User action methods
 
 - (IBAction)loginBtnClicked:(id)sender {
-    
     NSString *email=[SCUIUtility validateString:_emailTxtFld.text];
     NSString *password=[SCUIUtility validateString:_passwordTxtFld.text];
     if (email.length>0 || password.length>0) {
@@ -70,9 +69,9 @@
                 if (password.length>0) {
                     [_emailTxtFld resignFirstResponder];
                     [_passwordTxtFld resignFirstResponder];
-                    [self showLoader];
+                    [[CustomLoaderView sharedView] showLoader];
                     [[LoginModel alloc]loginAPICall:[NSString stringWithFormat:@"%@/%@",email,password] completionBlock:^(BOOL success, NSString *message, id dataDict) {
-                        [self hideLoader];
+                        [[CustomLoaderView sharedView] dismissLoader];
                         if (success) {
                             DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
                             [[NSUserDefaults standardUserDefaults]setBool:YES forKey:USER_LOGGEDIN];
@@ -161,27 +160,5 @@
     [self.navigationController.view addSubview:self.forgotPwdViewController.view];
     [self.forgotPwdViewController viewWillAppear:NO];
 }
-
-#pragma mark:- Show and Hide Loader
--(void)showLoader{
-    if (!self.customLoaderViewController) {
-        self.customLoaderViewController=[[CustomLoaderViewController alloc]init];
-        [self.navigationController.view addSubview:self.customLoaderViewController.view];
-    }
-}
-
--(void)hideLoader{
-    [self.customLoaderViewController.view removeFromSuperview];
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
