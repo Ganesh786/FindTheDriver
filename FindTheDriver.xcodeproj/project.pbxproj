@@ -13,6 +13,12 @@
 		041CC05C1C24002E00B1885F /* DeleteVehicleDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CC05B1C24002E00B1885F /* DeleteVehicleDataModel.m */; };
 		045BCE751C267E5E0045A761 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045BCE741C267E5E0045A761 /* DACircularProgressView.m */; };
 		045BCE781C2685260045A761 /* CustomLoaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045BCE771C2685260045A761 /* CustomLoaderView.m */; };
+		045BCE851C26E9ED0045A761 /* TodayLogDetailCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045BCE841C26E9ED0045A761 /* TodayLogDetailCustomTableViewCell.m */; };
+		045BCE8F1C26EDFF0045A761 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045BCE881C26EDFF0045A761 /* TPKeyboardAvoidingCollectionView.m */; };
+		045BCE901C26EDFF0045A761 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045BCE8A1C26EDFF0045A761 /* TPKeyboardAvoidingScrollView.m */; };
+		045BCE911C26EDFF0045A761 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045BCE8C1C26EDFF0045A761 /* TPKeyboardAvoidingTableView.m */; };
+		045BCE921C26EDFF0045A761 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 045BCE8E1C26EDFF0045A761 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		045BCE951C2700A60045A761 /* TodayLogDetailStatusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045BCE941C2700A60045A761 /* TodayLogDetailStatusTableViewCell.m */; };
 		04C782911C1F10DC00E3C46F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7826D1C1F10DC00E3C46F /* AFHTTPRequestOperation.m */; };
 		04C782921C1F10DC00E3C46F /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7826F1C1F10DC00E3C46F /* AFHTTPRequestOperationManager.m */; };
 		04C782931C1F10DC00E3C46F /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C782711C1F10DC00E3C46F /* AFHTTPSessionManager.m */; };
@@ -141,6 +147,18 @@
 		045BCE741C267E5E0045A761 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
 		045BCE761C2685260045A761 /* CustomLoaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLoaderView.h; sourceTree = "<group>"; };
 		045BCE771C2685260045A761 /* CustomLoaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLoaderView.m; sourceTree = "<group>"; };
+		045BCE831C26E9ED0045A761 /* TodayLogDetailCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayLogDetailCustomTableViewCell.h; sourceTree = "<group>"; };
+		045BCE841C26E9ED0045A761 /* TodayLogDetailCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayLogDetailCustomTableViewCell.m; sourceTree = "<group>"; };
+		045BCE871C26EDFF0045A761 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		045BCE881C26EDFF0045A761 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		045BCE891C26EDFF0045A761 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		045BCE8A1C26EDFF0045A761 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		045BCE8B1C26EDFF0045A761 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		045BCE8C1C26EDFF0045A761 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		045BCE8D1C26EDFF0045A761 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		045BCE8E1C26EDFF0045A761 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		045BCE931C2700A60045A761 /* TodayLogDetailStatusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayLogDetailStatusTableViewCell.h; sourceTree = "<group>"; };
+		045BCE941C2700A60045A761 /* TodayLogDetailStatusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayLogDetailStatusTableViewCell.m; sourceTree = "<group>"; };
 		04C7826C1C1F10DC00E3C46F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		04C7826D1C1F10DC00E3C46F /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		04C7826E1C1F10DC00E3C46F /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -406,6 +424,21 @@
 				045BCE771C2685260045A761 /* CustomLoaderView.m */,
 			);
 			path = CustomLoader;
+			sourceTree = "<group>";
+		};
+		045BCE861C26EDFF0045A761 /* KeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				045BCE871C26EDFF0045A761 /* TPKeyboardAvoidingCollectionView.h */,
+				045BCE881C26EDFF0045A761 /* TPKeyboardAvoidingCollectionView.m */,
+				045BCE891C26EDFF0045A761 /* TPKeyboardAvoidingScrollView.h */,
+				045BCE8A1C26EDFF0045A761 /* TPKeyboardAvoidingScrollView.m */,
+				045BCE8B1C26EDFF0045A761 /* TPKeyboardAvoidingTableView.h */,
+				045BCE8C1C26EDFF0045A761 /* TPKeyboardAvoidingTableView.m */,
+				045BCE8D1C26EDFF0045A761 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				045BCE8E1C26EDFF0045A761 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = KeyboardAvoiding;
 			sourceTree = "<group>";
 		};
 		04C7826B1C1F10DC00E3C46F /* AFNetworking */ = {
@@ -779,6 +812,7 @@
 		25E116BF1C0E9A4D004385F9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				045BCE861C26EDFF0045A761 /* KeyboardAvoiding */,
 				25C9FEC81C252A7000399F7A /* CircleProgress */,
 				041CC05D1C24244D00B1885F /* CustomLoader */,
 				25ECFDA11C1FC42A006CA2B5 /* Data Utility */,
@@ -954,6 +988,10 @@
 			children = (
 				25ECFD571C1D2FD2006CA2B5 /* TodayLogCustomTableViewCell.h */,
 				25ECFD581C1D2FD2006CA2B5 /* TodayLogCustomTableViewCell.m */,
+				045BCE831C26E9ED0045A761 /* TodayLogDetailCustomTableViewCell.h */,
+				045BCE841C26E9ED0045A761 /* TodayLogDetailCustomTableViewCell.m */,
+				045BCE931C2700A60045A761 /* TodayLogDetailStatusTableViewCell.h */,
+				045BCE941C2700A60045A761 /* TodayLogDetailStatusTableViewCell.m */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -1294,6 +1332,7 @@
 				25ECFD9F1C1FC3AF006CA2B5 /* Reachability.m in Sources */,
 				2587C8461C15F50800163357 /* ChangePasswordViewController.m in Sources */,
 				25E116B91C0DEF6F004385F9 /* RegistrationFualTableViewCell.m in Sources */,
+				045BCE911C26EDFF0045A761 /* TPKeyboardAvoidingTableView.m in Sources */,
 				04E58FCA1C258E7E0026E19A /* GraphDataClass.m in Sources */,
 				04CBF11F1C21BDF700255913 /* RegisterNewVehicleDataModel.m in Sources */,
 				25E116B61C0D44D9004385F9 /* RegistrationTableViewCell.m in Sources */,
@@ -1333,6 +1372,7 @@
 				25AF26271C04BD43001FA4A8 /* main.m in Sources */,
 				04C7829C1C1F10DC00E3C46F /* UIAlertView+AFNetworking.m in Sources */,
 				25ECFD911C1FC344006CA2B5 /* ManagedObjectInstanceProvider.m in Sources */,
+				045BCE921C26EDFF0045A761 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				04E58FC01C25320A0026E19A /* GraphViewCell.m in Sources */,
 				25E117091C14817A004385F9 /* SCUIUtility.m in Sources */,
 				25E116EB1C12C941004385F9 /* LogsInfoViewController.m in Sources */,
@@ -1346,9 +1386,11 @@
 				25E116F01C134DF5004385F9 /* CustomLogSearchViewController.m in Sources */,
 				25ECFD941C1FC344006CA2B5 /* InCodeMappingProvider.m in Sources */,
 				DF2A2D7E1C1F5EC4005C232F /* AddNewDVIRCustomTableViewCell.m in Sources */,
+				045BCE851C26E9ED0045A761 /* TodayLogDetailCustomTableViewCell.m in Sources */,
 				25AF26651C04BE95001FA4A8 /* AppDelegate.m in Sources */,
 				04C782921C1F10DC00E3C46F /* AFHTTPRequestOperationManager.m in Sources */,
 				25E116B11C0D3CC1004385F9 /* UINavigationController+Addition.m in Sources */,
+				045BCE901C26EDFF0045A761 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				25ECFD2D1C1C542C006CA2B5 /* TodayLogViewController.m in Sources */,
 				04C782961C1F10DC00E3C46F /* AFURLConnectionOperation.m in Sources */,
 				25ECFD961C1FC344006CA2B5 /* ObjectMappingInfo.m in Sources */,
@@ -1360,12 +1402,14 @@
 				DF2A2D7B1C1F3DFD005C232F /* AddNewDVIRViewController.m in Sources */,
 				25E116C81C0E9E92004385F9 /* HomeViewController.m in Sources */,
 				25ECFDA41C1FC42A006CA2B5 /* SCDataUtility.m in Sources */,
+				045BCE951C2700A60045A761 /* TodayLogDetailStatusTableViewCell.m in Sources */,
 				04CBF1231C21CD1400255913 /* GetVehicleModel.m in Sources */,
 				25BE7E4D1C1A7B5C00A96D4F /* Forgot PasswordViewController.m in Sources */,
 				041CC0591C24001300B1885F /* DeleteVehicleModel.m in Sources */,
 				045BCE781C2685260045A761 /* CustomLoaderView.m in Sources */,
 				25ECFD611C1D61C7006CA2B5 /* InspectLogsViewController.m in Sources */,
 				25ECFDA81C208078006CA2B5 /* DriverActionCustomTableViewCell.m in Sources */,
+				045BCE8F1C26EDFF0045A761 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				25ECFD591C1D2FD2006CA2B5 /* TodayLogCustomTableViewCell.m in Sources */,
 				04C782A01C1F10DC00E3C46F /* UIRefreshControl+AFNetworking.m in Sources */,
 				04C782931C1F10DC00E3C46F /* AFHTTPSessionManager.m in Sources */,

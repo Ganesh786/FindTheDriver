@@ -12,5 +12,5 @@
 
 @property(strong,nonatomic)UICollectionView *gridCollectionView;
 @property(strong,nonatomic)UITableView *gridTimeTableView;
-
++(GraphView*)sharedComponent;
 @end

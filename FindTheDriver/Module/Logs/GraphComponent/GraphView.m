@@ -14,6 +14,15 @@
 
 @implementation GraphView
 
++(GraphView*)sharedComponent{
+    static GraphView *sharedComponent=nil;
+    static dispatch_once_t pred;
+    dispatch_once(&pred, ^{
+        sharedComponent=[[GraphView alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    });
+    return sharedComponent;
+}
+
 -(id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {

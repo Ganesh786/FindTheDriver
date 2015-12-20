@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *time1Btn;
 @property (weak, nonatomic) IBOutlet UIButton *time2Btn;
+@property (weak, nonatomic) IBOutlet UIView *topGraphView;
 
 @end
 
@@ -29,8 +30,13 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    GraphView *grapView=[[GraphView alloc]initWithFrame:CGRectMake(0, 60, [[UIScreen mainScreen] bounds].size.width, 140)];
-    [self.view addSubview:grapView];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    GraphView *grapView=[GraphView sharedComponent];
+    [self.topGraphView addSubview:grapView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,7 +59,6 @@
 - (IBAction)scaleTransparentBtnClicked:(id)sender {
     TodayLogDetailViewController *detailVC = [kLogsStoryboard instantiateViewControllerWithIdentifier:@"TodayLogDetailID"];
     [self.navigationController pushViewController:detailVC animated:YES];
-//    [self presentViewController:detailVC animated:NO completion:nil];
 }
 
 #pragma mark - TableView Delegate methods
