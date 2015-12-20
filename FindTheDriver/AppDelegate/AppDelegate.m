@@ -22,9 +22,10 @@
     // Override point for customization after application launch.
     
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
-
     [self.window setTintColor:kWhiteColor];
 
+    _isSideBarInspectLogsClicked = NO;
+    
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
      setTitleTextAttributes:
      @{NSForegroundColorAttributeName:kWhiteColor,

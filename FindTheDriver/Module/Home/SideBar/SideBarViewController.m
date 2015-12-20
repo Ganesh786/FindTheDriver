@@ -100,12 +100,15 @@
             [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
             break;
         }
+ 
         case 2: {
-            InspectLogsViewController *inspectLogsVC = [kLogsStoryboard instantiateViewControllerWithIdentifier:@"LogsTabBarID"];
-            [inspectLogsVC.tabBarController setSelectedIndex:2];
-
+            UIAppDelegate.isSideBarInspectLogsClicked = YES;
+            
+            UITabBarController *tabbarVC = [[UIStoryboard storyboardWithName:@"LogsStoryboard" bundle: [NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LogsTabBarID"];
+            [tabbarVC setSelectedIndex:2];
+            
             UINavigationController *navigationController = self.menuContainerViewController.centerViewController;
-            NSArray *controllers = [NSArray arrayWithObject:inspectLogsVC];
+            NSArray *controllers = [NSArray arrayWithObject:tabbarVC];
             navigationController.viewControllers = controllers;
             [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
             break;

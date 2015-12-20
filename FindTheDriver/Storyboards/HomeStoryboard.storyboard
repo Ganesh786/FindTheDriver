@@ -169,7 +169,9 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.14509803921568626" green="0.26666666666666666" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="p8G-R8-bA5"/>
+                                    <constraint firstAttribute="height" constant="1" id="p8G-R8-bA5">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                    </constraint>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -266,7 +268,9 @@
                             <constraint firstAttribute="trailing" secondItem="OaS-sN-uFQ" secondAttribute="trailing" constant="60" id="HOi-bm-4S9">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstAttribute="trailing" secondItem="AP8-eR-AFU" secondAttribute="trailing" constant="60" id="Lmx-hn-EpN"/>
+                            <constraint firstAttribute="trailing" secondItem="AP8-eR-AFU" secondAttribute="trailing" constant="60" id="Lmx-hn-EpN">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="AP8-eR-AFU" firstAttribute="leading" secondItem="qX8-np-EhO" secondAttribute="leading" id="Mdu-vl-S9U"/>
                             <constraint firstItem="BtW-66-Rc8" firstAttribute="top" secondItem="qX8-np-EhO" secondAttribute="top" constant="13" id="aRU-G2-g6K"/>
                             <constraint firstItem="ouj-lf-xR6" firstAttribute="top" secondItem="hQD-dy-7yu" secondAttribute="bottom" constant="10" id="aY7-tQ-ehv">
@@ -287,7 +291,7 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                             </constraint>
                             <constraint firstItem="BtW-66-Rc8" firstAttribute="trailing" secondItem="OaS-sN-uFQ" secondAttribute="trailing" id="sxQ-QG-egE">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-60"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="-15"/>
                             </constraint>
                             <constraint firstItem="hQD-dy-7yu" firstAttribute="top" secondItem="qX8-np-EhO" secondAttribute="top" constant="10" id="uhC-ER-IuJ">
                                 <variation key="heightClass=regular-widthClass=compact" constant="20"/>

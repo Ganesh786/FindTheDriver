@@ -2723,6 +2723,7 @@
                         <outlet property="btnAddNewDVIR" destination="y5c-aq-yhY" id="kgi-ai-V0K"/>
                         <outlet property="btnAddRemoveDefects" destination="KDk-Aj-rg7" id="pVW-Ah-xOE"/>
                         <outlet property="driverSignatureView" destination="6Mg-Zd-CZn" id="dSM-sG-HFZ"/>
+                        <outlet property="inspectLogsNavigationItem" destination="ozC-yk-zzz" id="hh7-yj-bCb"/>
                         <outlet property="lblDateOfSubmission" destination="Y4a-vA-b7I" id="grl-68-DTh"/>
                         <outlet property="lblDriverSignatureDate" destination="awn-uX-9cc" id="YRn-5I-nWm"/>
                         <outlet property="lblMechanicSignatureDate" destination="OQK-k2-kWm" id="JQp-hV-MJe"/>

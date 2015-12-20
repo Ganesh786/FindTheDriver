@@ -85,27 +85,27 @@
     switch (indexPath.row) {
         case 0: {
             AccountSettingsViewController *accSettingsVC = [kSettingsStoryboard instantiateViewControllerWithIdentifier:@"AccountSettingsID"];
-            [UIAppDelegate.navigationController pushViewController:accSettingsVC animated:YES];
+            [self.navigationController pushViewController:accSettingsVC animated:YES];
             break;
         }
         case 1: {
             SignatureViewController *signatureVC = [kSettingsStoryboard instantiateViewControllerWithIdentifier:@"SignatureID"];
-            [UIAppDelegate.navigationController pushViewController:signatureVC animated:YES];
+            [self.navigationController pushViewController:signatureVC animated:YES];
             break;
         }
         case 2: {
             NotificationsViewController *notificationVC = [kSettingsStoryboard instantiateViewControllerWithIdentifier:@"NotificationID"];
-            [UIAppDelegate.navigationController pushViewController:notificationVC animated:YES];
+            [self.navigationController pushViewController:notificationVC animated:YES];
             break;
         }
         case 3: {
             CarrierViewController *carrierVC = [kSettingsStoryboard instantiateViewControllerWithIdentifier:@"CarrierID"];
-            [UIAppDelegate.navigationController pushViewController:carrierVC animated:YES];
+            [self.navigationController pushViewController:carrierVC animated:YES];
             break;
         }
         case 4: {
             LogsViewController *logsVC = [kSettingsStoryboard instantiateViewControllerWithIdentifier:@"LogsID"];
-            [UIAppDelegate.navigationController pushViewController:logsVC animated:YES];
+            [self.navigationController pushViewController:logsVC animated:YES];
             break;
         }
         default:
