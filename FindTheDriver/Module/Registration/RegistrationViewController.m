@@ -132,7 +132,9 @@
             regModel.FuelType=isDieselSelected?@"Diesel":@"Gasoline";
             regModel.Address=@"";
             NSMutableDictionary *inputDict = [SCDataUtility getDictionaryBasaedOnObject:regModel];
+            [[CustomLoaderView sharedView] showLoader];
             [[RegistrationModel alloc]registrationAPICall:inputDict completionBlock:^(BOOL success, NSString *message, id dataDict) {
+                [[CustomLoaderView sharedView] dismissLoader];
                 DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
                 if (success) {
                     [self.navigationController popViewControllerAnimated:YES];

@@ -46,7 +46,9 @@
 
 #pragma mark:- Get Vehicles Data
 -(void)getVehiclesData{
+    [[CustomLoaderView sharedView] showLoader];
     [[GetVehicleModel alloc]getVehiclesAPICall:[NSString stringWithFormat:@"%@/%@",[SCDataUtility getUserName],[SCDataUtility getUserPassword]] completionBlock:^(BOOL success, NSString *message, id dataDict) {
+        [[CustomLoaderView sharedView] dismissLoader];
         DEBUGLOG(@"GetVehicleModel message ->%@ dataDict ->%@",message,dataDict);
         if ([dataDict isKindOfClass:[NSArray class]]) {
             vehiclesDataArray=dataDict;
@@ -129,8 +131,10 @@
                 if (driverPhNum.length>0) {
                     if ([SCUIUtility validateEmailWithString:driverEmailID]) {
                         [self.view endEditing:YES];
+                        [[CustomLoaderView sharedView] showLoader];
                         [[UpDateProfileModel alloc] upDateProfileAPICall:[NSString stringWithFormat:@"%@/%@/%@/%@",[SCDataUtility getUserName],[SCDataUtility getUserPassword],driverName,driverPhNum] params:nil completionBlock:^(BOOL success, NSString *message, id dataDict) {
                             DEBUGLOG(@"UpDateProfileModel message ->%@ dataDict ->%@",message,dataDict);
+                            [[CustomLoaderView sharedView] dismissLoader];
                             if (success) {
                                 [self showAlert:@"" message:@"Profile Update Successfully"];
                             }else{
@@ -266,8 +270,10 @@
     dataModel.RegistrationPlate=[SCUIUtility validateString:[vehicleDict valueForKey:@"RegistrationNumber"]];
     dataModel.FuelType=[SCUIUtility validateString:[vehicleDict valueForKey:@"Type"]];
     NSDictionary *dict=[SCDataUtility getDictionaryBasaedOnObject:dataModel];
+    [[CustomLoaderView sharedView] showLoader];
     [[DeleteVehicleModel alloc]deleteVehicleAPICall:[NSString stringWithFormat:@"%@/%@",[SCDataUtility getUserName],[SCDataUtility getUserPassword]] params:dict completionBlock:^(BOOL success, NSString *message, id dataDict) {
         DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
+        [[CustomLoaderView sharedView] dismissLoader];
         if (success) {
             [vehiclesDataArray removeObjectAtIndex:index];
             [_vehicleInfoTblView reloadData];
