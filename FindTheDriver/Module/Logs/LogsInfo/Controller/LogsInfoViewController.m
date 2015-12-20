@@ -9,6 +9,7 @@
 #import "LogsInfoViewController.h"
 #import "CustomLogsInfoTableViewCell.h"
 #import "TodayLogViewController.h"
+#import "MFSideMenu.h"
 
 @interface LogsInfoViewController ()  {
 
@@ -47,18 +48,13 @@
 
 #pragma mark - User defined methods
 
-- (void)revealToggle {
-    [UIAppDelegate.revealViewController revealToggleAnimated:YES];
+- (IBAction)sideBarBtnClicked:(id)sender {
+    [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
 }
 
 - (void)loadLogsViewComponents {
     [self setBackBarButtonItem];
     [self setNavigationBarNameWithNameAttribute:@"Logs"];
-    
-    UIBarButtonItem *sidebarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"sideBar"] style:UIBarButtonItemStylePlain target:UIAppDelegate.revealViewController action:@selector(revealToggle:)];
-    sidebarButton.tintColor = kWhiteColor;
-    self.navigationItem.leftBarButtonItem = sidebarButton;
-    [UIAppDelegate.revealViewController tapGestureRecognizer];
 }
 
 - (IBAction)calenderBtnClicked:(id)sender {

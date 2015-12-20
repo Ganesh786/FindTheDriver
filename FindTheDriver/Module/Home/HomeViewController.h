@@ -14,6 +14,4 @@
 
 @property(nonatomic, retain) IBOutlet CustomHomeActionViewController *customHomeActionViewController;
 
-- (void)revealToggle;
-
 @end

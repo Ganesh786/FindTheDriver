@@ -65,6 +65,10 @@
 		25BE7E491C19D9CD00A96D4F /* CustomHomeActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BE7E481C19D9CD00A96D4F /* CustomHomeActionViewController.m */; };
 		25BE7E4D1C1A7B5C00A96D4F /* Forgot PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BE7E4C1C1A7B5C00A96D4F /* Forgot PasswordViewController.m */; };
 		25C9FECB1C252A7000399F7A /* LKAddScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C9FECA1C252A7000399F7A /* LKAddScoreView.m */; };
+		25C9FED81C26A69C00399F7A /* MFSideMenuContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C9FED31C26A69C00399F7A /* MFSideMenuContainerViewController.m */; };
+		25C9FED91C26A69C00399F7A /* MFSideMenuShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C9FED51C26A69C00399F7A /* MFSideMenuShadow.m */; };
+		25C9FEDA1C26A69C00399F7A /* UIViewController+MFSideMenuAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C9FED71C26A69C00399F7A /* UIViewController+MFSideMenuAdditions.m */; };
+		25C9FEDC1C26AA3300399F7A /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25C9FEDB1C26AA3300399F7A /* HomeStoryboard.storyboard */; };
 		25E116A61C0CB853004385F9 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E116A51C0CB853004385F9 /* RegistrationViewController.m */; };
 		25E116AA1C0CBB7D004385F9 /* UIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E116A91C0CBB7D004385F9 /* UIViewController+Additions.m */; };
 		25E116AE1C0CBC69004385F9 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E116AD1C0CBC69004385F9 /* UIColor+Additions.m */; };
@@ -72,7 +76,6 @@
 		25E116B61C0D44D9004385F9 /* RegistrationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E116B51C0D44D9004385F9 /* RegistrationTableViewCell.m */; };
 		25E116B91C0DEF6F004385F9 /* RegistrationFualTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E116B81C0DEF6F004385F9 /* RegistrationFualTableViewCell.m */; };
 		25E116BC1C0E9909004385F9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25E116BB1C0E9909004385F9 /* Login.storyboard */; };
-		25E116BE1C0E994D004385F9 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25E116BD1C0E994D004385F9 /* HomeStoryboard.storyboard */; };
 		25E116C31C0E9A82004385F9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E116C21C0E9A82004385F9 /* SWRevealViewController.m */; };
 		25E116C81C0E9E92004385F9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E116C71C0E9E92004385F9 /* HomeViewController.m */; };
 		25E116CB1C0E9EA5004385F9 /* SideBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E116CA1C0E9EA5004385F9 /* SideBarViewController.m */; };
@@ -255,6 +258,14 @@
 		25BE7E4C1C1A7B5C00A96D4F /* Forgot PasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Forgot PasswordViewController.m"; sourceTree = "<group>"; };
 		25C9FEC91C252A7000399F7A /* LKAddScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAddScoreView.h; sourceTree = "<group>"; };
 		25C9FECA1C252A7000399F7A /* LKAddScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKAddScoreView.m; sourceTree = "<group>"; };
+		25C9FED11C26A69C00399F7A /* MFSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSideMenu.h; sourceTree = "<group>"; };
+		25C9FED21C26A69C00399F7A /* MFSideMenuContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSideMenuContainerViewController.h; sourceTree = "<group>"; };
+		25C9FED31C26A69C00399F7A /* MFSideMenuContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSideMenuContainerViewController.m; sourceTree = "<group>"; };
+		25C9FED41C26A69C00399F7A /* MFSideMenuShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSideMenuShadow.h; sourceTree = "<group>"; };
+		25C9FED51C26A69C00399F7A /* MFSideMenuShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSideMenuShadow.m; sourceTree = "<group>"; };
+		25C9FED61C26A69C00399F7A /* UIViewController+MFSideMenuAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MFSideMenuAdditions.h"; sourceTree = "<group>"; };
+		25C9FED71C26A69C00399F7A /* UIViewController+MFSideMenuAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MFSideMenuAdditions.m"; sourceTree = "<group>"; };
+		25C9FEDB1C26AA3300399F7A /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
 		25E116A41C0CB853004385F9 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		25E116A51C0CB853004385F9 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		25E116A81C0CBB7D004385F9 /* UIViewController+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Additions.h"; sourceTree = "<group>"; };
@@ -270,7 +281,6 @@
 		25E116B71C0DEF6F004385F9 /* RegistrationFualTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationFualTableViewCell.h; sourceTree = "<group>"; };
 		25E116B81C0DEF6F004385F9 /* RegistrationFualTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationFualTableViewCell.m; sourceTree = "<group>"; };
 		25E116BB1C0E9909004385F9 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		25E116BD1C0E994D004385F9 /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
 		25E116C11C0E9A82004385F9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		25E116C21C0E9A82004385F9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		25E116C61C0E9E92004385F9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -761,6 +771,20 @@
 			path = CircleProgress;
 			sourceTree = "<group>";
 		};
+		25C9FED01C26A69C00399F7A /* MFSideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				25C9FED11C26A69C00399F7A /* MFSideMenu.h */,
+				25C9FED21C26A69C00399F7A /* MFSideMenuContainerViewController.h */,
+				25C9FED31C26A69C00399F7A /* MFSideMenuContainerViewController.m */,
+				25C9FED41C26A69C00399F7A /* MFSideMenuShadow.h */,
+				25C9FED51C26A69C00399F7A /* MFSideMenuShadow.m */,
+				25C9FED61C26A69C00399F7A /* UIViewController+MFSideMenuAdditions.h */,
+				25C9FED71C26A69C00399F7A /* UIViewController+MFSideMenuAdditions.m */,
+			);
+			path = MFSideMenu;
+			sourceTree = "<group>";
+		};
 		25E116A31C0CB83E004385F9 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -801,8 +825,8 @@
 		25E116BA1C0E9909004385F9 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				25C9FEDB1C26AA3300399F7A /* HomeStoryboard.storyboard */,
 				25E116BB1C0E9909004385F9 /* Login.storyboard */,
-				25E116BD1C0E994D004385F9 /* HomeStoryboard.storyboard */,
 				25E116EC1C12C9B3004385F9 /* LogsStoryboard.storyboard */,
 				25E116F51C143CE9004385F9 /* SettingsStoryboard.storyboard */,
 			);
@@ -813,6 +837,7 @@
 			isa = PBXGroup;
 			children = (
 				045BCE861C26EDFF0045A761 /* KeyboardAvoiding */,
+				25C9FED01C26A69C00399F7A /* MFSideMenu */,
 				25C9FEC81C252A7000399F7A /* CircleProgress */,
 				041CC05D1C24244D00B1885F /* CustomLoader */,
 				25ECFDA11C1FC42A006CA2B5 /* Data Utility */,
@@ -1296,9 +1321,10 @@
 			files = (
 				25E116F61C143CE9004385F9 /* SettingsStoryboard.storyboard in Resources */,
 				25E116BC1C0E9909004385F9 /* Login.storyboard in Resources */,
+				041CC0731C243D7100B1885F /* blueArc.png in Resources */,
+				25C9FEDC1C26AA3300399F7A /* HomeStoryboard.storyboard in Resources */,
 				25AF26351C04BD43001FA4A8 /* Assets.xcassets in Resources */,
 				25E116ED1C12C9B3004385F9 /* LogsStoryboard.storyboard in Resources */,
-				25E116BE1C0E994D004385F9 /* HomeStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1345,12 +1371,15 @@
 				25E117011C146DD2004385F9 /* AccountSettingsViewController.m in Sources */,
 				041CC0551C23E0C800B1885F /* UpDateProfileDataModel.m in Sources */,
 				04C7EDA11C207E8F00A7B6B1 /* ChangePasswordModel.m in Sources */,
+				25C9FEDA1C26A69C00399F7A /* UIViewController+MFSideMenuAdditions.m in Sources */,
 				2587C84E1C167A0500163357 /* SignatureViewController.m in Sources */,
 				045BCE751C267E5E0045A761 /* DACircularProgressView.m in Sources */,
 				04E58FBC1C2531B40026E19A /* GraphView.m in Sources */,
 				04C7829B1C1F10DC00E3C46F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				25E116F91C1441BC004385F9 /* SettingsViewController.m in Sources */,
 				25E116AA1C0CBB7D004385F9 /* UIViewController+Additions.m in Sources */,
+				041CC0601C24246B00B1885F /* CustomLoaderViewController.m in Sources */,
+				25C9FED91C26A69C00399F7A /* MFSideMenuShadow.m in Sources */,
 				25E116E31C12B870004385F9 /* SideBarCustomTableViewCell.m in Sources */,
 				25BE7E491C19D9CD00A96D4F /* CustomHomeActionViewController.m in Sources */,
 				04C782AA1C1F11B600E3C46F /* WebServiceInvoker.m in Sources */,
@@ -1411,6 +1440,7 @@
 				25ECFDA81C208078006CA2B5 /* DriverActionCustomTableViewCell.m in Sources */,
 				045BCE8F1C26EDFF0045A761 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				25ECFD591C1D2FD2006CA2B5 /* TodayLogCustomTableViewCell.m in Sources */,
+				25C9FED81C26A69C00399F7A /* MFSideMenuContainerViewController.m in Sources */,
 				04C782A01C1F10DC00E3C46F /* UIRefreshControl+AFNetworking.m in Sources */,
 				04C782931C1F10DC00E3C46F /* AFHTTPSessionManager.m in Sources */,
 				25E1170C1C14A47B004385F9 /* VehicleInfoTableViewCell.m in Sources */,
