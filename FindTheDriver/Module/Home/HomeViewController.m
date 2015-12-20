@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "HomeWeekDayTableViewCell.h"
 #import "LKAddScoreView.h"
+#import "MFSideMenu.h"
 
 @interface HomeViewController () <SWRevealViewControllerDelegate> {
     SWRevealViewController *revealController;
@@ -39,17 +40,10 @@
     [self loadHomeViewComponents];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [revealController panGestureRecognizer];
-}
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)])
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-    
-    [revealController removePanGestureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,27 +53,12 @@
 
 #pragma mark - User defined methods
 
-- (void)revealToggle {
-    [UIAppDelegate.revealViewController revealToggleAnimated:YES];
+- (IBAction)sideBarBtnClicked:(id)sender {
+    [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
 }
 
 - (void)loadHomeViewComponents {
-    revealController = [self revealViewController];
-    revealController.delegate = self;
-    [revealController tapGestureRecognizer];
-
-    UIAppDelegate.revealViewController = self.revealViewController;
     
-    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
-    _sidebarButton.target = self.revealViewController;
-    _sidebarButton.action = @selector(revealToggle:);
-
-    self.revealViewController.toggleAnimationType = SWRevealToggleAnimationTypeEaseOut;
-    self.revealViewController.frontViewShadowRadius = 5;
-    self.revealViewController.frontViewShadowColor = kGrayColor;
-    self.revealViewController.frontViewShadowOffset = CGSizeMake(0, 1.5);
-    [self.navigationController.navigationBar setBarTintColor:kNavBarColor];
-
     _violationsView.layer.masksToBounds = YES;
     _logsView.layer.masksToBounds = YES;
     [SCUIUtility setLayerForView:_violationsView WithColor:kLightGrayColor];
@@ -128,7 +107,6 @@
     
     [self.navigationController.view addSubview:self.customHomeActionViewController.view];
     [self.customHomeActionViewController viewWillAppear:NO];
-   
 }
 
 /*

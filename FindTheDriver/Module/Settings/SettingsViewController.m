@@ -13,6 +13,7 @@
 #import "NotificationsViewController.h"
 #import "CarrierViewController.h"
 #import "LogsViewController.h"
+#import "MFSideMenu.h"
 
 @interface SettingsViewController () {
     NSArray *settingNamesArray, *settingImgArray;
@@ -36,12 +37,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.revealViewController panGestureRecognizer];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.revealViewController removePanGestureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,18 +46,13 @@
 
 #pragma mark - User defined methods
 
-- (void)revealToggle {
-    [self.revealViewController revealToggleAnimated:YES];
+- (IBAction)sideBarBtnClicked:(id)sender {
+    [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
 }
 
 - (void)loadSettingsViewComponents {
     [self setBackBarButtonItem];
     [self setNavigationBarNameWithNameAttribute:@"Settings"];
-    
-    UIBarButtonItem *sidebarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"sideBar"] style:UIBarButtonItemStylePlain target:UIAppDelegate.revealViewController action:@selector(revealToggle:)];
-    sidebarButton.tintColor = kWhiteColor;
-    self.navigationItem.leftBarButtonItem = sidebarButton;
-    [self.revealViewController tapGestureRecognizer];
     
     _settingsTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     

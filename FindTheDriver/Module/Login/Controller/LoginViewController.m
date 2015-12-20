@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "RegistrationViewController.h"
 #import "HomeViewController.h"
+#import "MFSideMenuContainerViewController.h"
 
 @interface LoginViewController () <UITextFieldDelegate>
 
@@ -31,7 +32,11 @@
     _loginBtn.clipsToBounds = YES;
     _emailTxtFld.delegate = self;
     _passwordTxtFld.delegate = self;
-    
+
+    if (DEBUG) {
+        _emailTxtFld.text = @"admin@gmail.com";
+        _passwordTxtFld.text = @"welcome";
+    }
     [self setBackBarButtonItem];
     UIAppDelegate.navigationController = self.navigationController;
 }
@@ -74,8 +79,7 @@
                             [[NSUserDefaults standardUserDefaults]setObject:email forKey:USER_NAME];
                             [[NSUserDefaults standardUserDefaults]setObject:password forKey:USER_PASSWORD];
                             [[NSUserDefaults standardUserDefaults] synchronize];
-                            HomeViewController *homeViewController = [kHomeStoryboard instantiateInitialViewController];
-                            [self.navigationController pushViewController:homeViewController animated:NO];
+                            [self loadDashboardView];
                         }else{
                             [self showAlert:@"" message:message];
                         }
@@ -93,6 +97,19 @@
     }else{
         [self showAlert:@"" message:@"Please Enter a Valid Email ID and Password"];
     }
+}
+
+- (void)loadDashboardView {
+    
+    HomeViewController *homeViewController = [kHomeStoryboard instantiateInitialViewController];
+
+    MFSideMenuContainerViewController *container = (MFSideMenuContainerViewController *)homeViewController;
+    UINavigationController *navigationController = [kHomeStoryboard instantiateViewControllerWithIdentifier:@"navigationController"];
+    UIViewController *leftSideMenuViewController = [kHomeStoryboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];
+    
+    [container setLeftMenuViewController:leftSideMenuViewController];
+    [container setCenterViewController:navigationController];
+    [self.navigationController pushViewController:homeViewController animated:NO];
 }
 
 - (IBAction)registeredBtnClicked:(id)sender {

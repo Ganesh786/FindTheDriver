@@ -17,8 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *driverSignatureView;
 @property (weak, nonatomic) IBOutlet UIImageView *mechanicSignatureView;
 @property (weak, nonatomic) IBOutlet UIButton *btnAddRemoveDefects;
+@property (weak, nonatomic) IBOutlet UIButton *btnAddNewDVIR;
+
 - (IBAction)btnAddRemoveDefectsPressed:(id)sender;
 - (IBAction)btnAddNewDVIRPressed:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *btnAddNewDVIR;
-- (void)revealToggle;
 @end

@@ -47,6 +47,7 @@
 }
 
 - (IBAction)backBtnClicked:(id)sender {
+//    [self.navigationController popViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 

@@ -14,6 +14,4 @@
 
 @property(nonatomic, retain) IBOutlet CustomLogSearchViewController *customLogSearchViewController;
 
-- (void)revealToggle;
-
 @end

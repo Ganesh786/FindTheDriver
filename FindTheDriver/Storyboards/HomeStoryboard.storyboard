@@ -5,15 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--Reveal View Controller-->
+        <!--Side Menu Container View Controller-->
         <scene sceneID="O8o-Zm-LP6">
             <objects>
-                <viewController storyboardIdentifier="SWRevealViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eLv-LZ-I2X" customClass="SWRevealViewController" sceneMemberID="viewController">
-                    <connections>
-                        <segue destination="vkH-NR-iXK" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="0os-sk-AKL"/>
-                        <segue destination="O0g-ax-bCQ" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="fm5-PO-Gsd"/>
-                    </connections>
-                </viewController>
+                <viewController storyboardIdentifier="MFSideMenuContainerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eLv-LZ-I2X" customClass="MFSideMenuContainerViewController" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZVh-Gl-ysq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="264" y="183"/>
@@ -21,7 +16,7 @@
         <!--Side Bar View Controller-->
         <scene sceneID="T5X-AL-TBN">
             <objects>
-                <viewController storyboardIdentifier="SideBarViewController" id="vkH-NR-iXK" customClass="SideBarViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="leftSideMenuViewController" id="vkH-NR-iXK" customClass="SideBarViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0TC-Gy-0Nb"/>
                         <viewControllerLayoutGuide type="bottom" id="8ck-eL-nky"/>
@@ -268,7 +263,9 @@
                             <constraint firstItem="AP8-eR-AFU" firstAttribute="top" secondItem="ouj-lf-xR6" secondAttribute="bottom" id="8MY-XQ-1gx"/>
                             <constraint firstItem="OaS-sN-uFQ" firstAttribute="top" secondItem="qX8-np-EhO" secondAttribute="top" id="8hw-ND-FRW"/>
                             <constraint firstItem="ouj-lf-xR6" firstAttribute="leading" secondItem="qX8-np-EhO" secondAttribute="leading" id="E3M-XH-1xG"/>
-                            <constraint firstAttribute="trailing" secondItem="OaS-sN-uFQ" secondAttribute="trailing" constant="60" id="HOi-bm-4S9"/>
+                            <constraint firstAttribute="trailing" secondItem="OaS-sN-uFQ" secondAttribute="trailing" constant="60" id="HOi-bm-4S9">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstAttribute="trailing" secondItem="AP8-eR-AFU" secondAttribute="trailing" constant="60" id="Lmx-hn-EpN"/>
                             <constraint firstItem="AP8-eR-AFU" firstAttribute="leading" secondItem="qX8-np-EhO" secondAttribute="leading" id="Mdu-vl-S9U"/>
                             <constraint firstItem="BtW-66-Rc8" firstAttribute="top" secondItem="qX8-np-EhO" secondAttribute="top" constant="13" id="aRU-G2-g6K"/>
@@ -279,13 +276,19 @@
                             <constraint firstItem="bsm-2u-Slh" firstAttribute="leading" secondItem="qX8-np-EhO" secondAttribute="leading" id="fV7-sV-3Yo"/>
                             <constraint firstItem="ouj-lf-xR6" firstAttribute="top" secondItem="BtW-66-Rc8" secondAttribute="bottom" constant="13" id="igB-5v-tYr"/>
                             <constraint firstItem="OaS-sN-uFQ" firstAttribute="leading" secondItem="qX8-np-EhO" secondAttribute="leading" id="nak-k5-kLL"/>
-                            <constraint firstAttribute="trailing" secondItem="ouj-lf-xR6" secondAttribute="trailing" constant="60" id="oW6-Ju-tsn"/>
+                            <constraint firstAttribute="trailing" secondItem="ouj-lf-xR6" secondAttribute="trailing" constant="60" id="oW6-Ju-tsn">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="8ck-eL-nky" firstAttribute="top" secondItem="bsm-2u-Slh" secondAttribute="bottom" id="osi-Z5-4FP"/>
-                            <constraint firstAttribute="trailing" secondItem="bsm-2u-Slh" secondAttribute="trailing" constant="60" id="qrR-yx-R2n"/>
+                            <constraint firstAttribute="trailing" secondItem="bsm-2u-Slh" secondAttribute="trailing" constant="60" id="qrR-yx-R2n">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="hQD-dy-7yu" firstAttribute="leading" secondItem="qX8-np-EhO" secondAttribute="leading" constant="20" id="skq-Lv-hYB">
                                 <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                             </constraint>
-                            <constraint firstItem="BtW-66-Rc8" firstAttribute="trailing" secondItem="OaS-sN-uFQ" secondAttribute="trailing" id="sxQ-QG-egE"/>
+                            <constraint firstItem="BtW-66-Rc8" firstAttribute="trailing" secondItem="OaS-sN-uFQ" secondAttribute="trailing" id="sxQ-QG-egE">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-60"/>
+                            </constraint>
                             <constraint firstItem="hQD-dy-7yu" firstAttribute="top" secondItem="qX8-np-EhO" secondAttribute="top" constant="10" id="uhC-ER-IuJ">
                                 <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                             </constraint>
@@ -1105,7 +1108,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="vqp-hi-aE9">
-                        <barButtonItem key="leftBarButtonItem" image="sideBar" id="ykV-6g-371"/>
+                        <barButtonItem key="leftBarButtonItem" image="sideBar" id="ykV-6g-371">
+                            <connections>
+                                <action selector="sideBarBtnClicked:" destination="K3O-Gp-9f6" id="cDa-6Z-meB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="detailView" destination="VNe-M7-QV1" id="CPb-D2-ibS"/>
@@ -1538,12 +1545,13 @@
         <!--Navigation Controller-->
         <scene sceneID="ooE-ev-MHl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O0g-ax-bCQ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigationController" automaticallyAdjustsScrollViewInsets="NO" id="O0g-ax-bCQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CvV-qh-1oe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="barTintColor" red="0.1019607843" green="0.45882352939999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

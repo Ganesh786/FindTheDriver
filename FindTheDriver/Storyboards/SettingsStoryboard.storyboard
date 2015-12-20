@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -69,8 +69,7 @@
                                                             <exclude reference="axp-JE-1st"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="45" y="11" width="160" height="21"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="axp-JE-1st"/>
                                                         </mask>
@@ -173,6 +172,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="AVR-T5-hjo">
+                        <barButtonItem key="leftBarButtonItem" image="sideBar" id="2ii-eG-uHM">
+                            <connections>
+                                <action selector="sideBarBtnClicked:" destination="gOQ-Ri-m5s" id="Cj8-XM-oen"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="settingsTblView" destination="3YJ-bi-bMm" id="fvt-of-ipE"/>
@@ -180,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xg6-Cb-Yxs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="573" y="190.5"/>
+            <point key="canvasLocation" x="1491" y="190.5"/>
         </scene>
         <!--Account Settings View Controller-->
         <scene sceneID="b4s-yp-0xT">
@@ -245,9 +251,6 @@
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="10" y="3" width="220" height="31"/>
-                                                    </variation>
                                                 </textField>
                                             </subviews>
                                             <animations/>
@@ -423,8 +426,7 @@
                                                                     <exclude reference="G7O-qb-ypt"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="66" y="4" width="110" height="21"/>
+                                                            <variation key="heightClass=regular-widthClass=compact">
                                                                 <mask key="constraints">
                                                                     <include reference="G7O-qb-ypt"/>
                                                                 </mask>
@@ -444,8 +446,7 @@
                                                                     <exclude reference="y2x-KK-vkn"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="185" y="4" width="20" height="20"/>
+                                                            <variation key="heightClass=regular-widthClass=compact">
                                                                 <mask key="constraints">
                                                                     <include reference="TMQ-Yv-44d"/>
                                                                     <include reference="y2x-KK-vkn"/>
@@ -504,8 +505,7 @@
                                                             <exclude reference="cbu-oS-S3j"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="15" y="5" width="210" height="30"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="subviews">
                                                             <include reference="4gO-9b-yf6"/>
                                                             <include reference="IzJ-yT-clO"/>
@@ -612,6 +612,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwh-Mb-PvP">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="cry-kd-UQj">
                                         <variation key="heightClass=regular-widthClass=compact" constant="50"/>
@@ -640,7 +641,7 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vfz-rq-6Wm" firstAttribute="top" secondItem="2WJ-C3-Q7H" secondAttribute="bottom" constant="10" id="1uu-dc-5kl">
                                 <variation key="heightClass=regular-widthClass=compact" constant="5"/>
@@ -701,30 +702,30 @@
                                 <exclude reference="jwh-Mb-PvP"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="wyX-Sb-gOb"/>
+                                <exclude reference="XGJ-ig-cB6"/>
+                                <exclude reference="eLH-nb-w8x"/>
+                                <exclude reference="v89-R9-Dm7"/>
+                                <exclude reference="ALC-PE-zla"/>
+                                <exclude reference="HDG-5c-Fvt"/>
+                                <exclude reference="Hhs-Ty-SkA"/>
+                                <exclude reference="7P4-wA-bHo"/>
+                                <exclude reference="Kzb-aZ-uv4"/>
+                                <exclude reference="wxF-9t-TYS"/>
+                                <exclude reference="1uu-dc-5kl"/>
+                                <exclude reference="WBS-Bq-qRZ"/>
+                                <exclude reference="aud-9a-veb"/>
+                                <exclude reference="fEu-CK-Gfp"/>
+                                <exclude reference="gKL-dV-esY"/>
+                                <exclude reference="2w6-Tb-sZF"/>
+                                <exclude reference="OW2-7W-JuU"/>
+                                <exclude reference="s13-DU-jzr"/>
                                 <exclude reference="LuF-dv-Gsu"/>
                                 <exclude reference="hXX-zV-mxZ"/>
                                 <exclude reference="p84-mj-jbA"/>
                                 <exclude reference="pc6-oV-k25"/>
-                                <exclude reference="1uu-dc-5kl"/>
-                                <exclude reference="WBS-Bq-qRZ"/>
-                                <exclude reference="XGJ-ig-cB6"/>
-                                <exclude reference="eLH-nb-w8x"/>
-                                <exclude reference="v89-R9-Dm7"/>
-                                <exclude reference="aud-9a-veb"/>
-                                <exclude reference="fEu-CK-Gfp"/>
-                                <exclude reference="gKL-dV-esY"/>
-                                <exclude reference="ALC-PE-zla"/>
-                                <exclude reference="HDG-5c-Fvt"/>
-                                <exclude reference="Hhs-Ty-SkA"/>
                                 <exclude reference="GV8-eg-lDp"/>
                                 <exclude reference="KCQ-Az-dfA"/>
-                                <exclude reference="2w6-Tb-sZF"/>
-                                <exclude reference="OW2-7W-JuU"/>
-                                <exclude reference="s13-DU-jzr"/>
-                                <exclude reference="7P4-wA-bHo"/>
-                                <exclude reference="Kzb-aZ-uv4"/>
-                                <exclude reference="wxF-9t-TYS"/>
-                                <exclude reference="wyX-Sb-gOb"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -739,30 +740,30 @@
                                 <include reference="jwh-Mb-PvP"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="wyX-Sb-gOb"/>
+                                <include reference="XGJ-ig-cB6"/>
+                                <include reference="eLH-nb-w8x"/>
+                                <include reference="v89-R9-Dm7"/>
+                                <include reference="ALC-PE-zla"/>
+                                <include reference="HDG-5c-Fvt"/>
+                                <include reference="Hhs-Ty-SkA"/>
+                                <include reference="7P4-wA-bHo"/>
+                                <include reference="Kzb-aZ-uv4"/>
+                                <include reference="wxF-9t-TYS"/>
+                                <include reference="1uu-dc-5kl"/>
+                                <include reference="WBS-Bq-qRZ"/>
+                                <include reference="aud-9a-veb"/>
+                                <include reference="fEu-CK-Gfp"/>
+                                <include reference="gKL-dV-esY"/>
+                                <include reference="2w6-Tb-sZF"/>
+                                <include reference="OW2-7W-JuU"/>
+                                <include reference="s13-DU-jzr"/>
                                 <include reference="LuF-dv-Gsu"/>
                                 <include reference="hXX-zV-mxZ"/>
                                 <include reference="p84-mj-jbA"/>
                                 <include reference="pc6-oV-k25"/>
-                                <include reference="1uu-dc-5kl"/>
-                                <include reference="WBS-Bq-qRZ"/>
-                                <include reference="XGJ-ig-cB6"/>
-                                <include reference="eLH-nb-w8x"/>
-                                <include reference="v89-R9-Dm7"/>
-                                <include reference="aud-9a-veb"/>
-                                <include reference="fEu-CK-Gfp"/>
-                                <include reference="gKL-dV-esY"/>
-                                <include reference="ALC-PE-zla"/>
-                                <include reference="HDG-5c-Fvt"/>
-                                <include reference="Hhs-Ty-SkA"/>
                                 <include reference="GV8-eg-lDp"/>
                                 <include reference="KCQ-Az-dfA"/>
-                                <include reference="2w6-Tb-sZF"/>
-                                <include reference="OW2-7W-JuU"/>
-                                <include reference="s13-DU-jzr"/>
-                                <include reference="7P4-wA-bHo"/>
-                                <include reference="Kzb-aZ-uv4"/>
-                                <include reference="wxF-9t-TYS"/>
-                                <include reference="wyX-Sb-gOb"/>
                             </mask>
                         </variation>
                     </view>
@@ -776,7 +777,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xt8-8P-m1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1224" y="-63.75"/>
+            <point key="canvasLocation" x="2142" y="-63.75"/>
         </scene>
         <!--Change Password View Controller-->
         <scene sceneID="c8O-1G-9VT">
@@ -1011,7 +1012,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FdN-Ed-y9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873.5" y="-435.75"/>
+            <point key="canvasLocation" x="2791.5" y="-435.75"/>
         </scene>
         <!--Register New Vehicle View Controller-->
         <scene sceneID="kRU-xx-ULR">
@@ -1549,7 +1550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BfV-ax-OUT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873.5" y="219"/>
+            <point key="canvasLocation" x="2791.5" y="219"/>
         </scene>
         <!--Signature View Controller-->
         <scene sceneID="QEf-V7-SbX">
@@ -1570,7 +1571,7 @@
                                     <constraint firstAttribute="height" constant="42" id="V6l-Sx-Ngb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1758,7 +1759,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tQ-Iq-aIE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2520" y="-63.75"/>
+            <point key="canvasLocation" x="3438" y="-63.75"/>
         </scene>
         <!--Notifications View Controller-->
         <scene sceneID="pqZ-Ws-ogq">
@@ -1971,7 +1972,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGm-XE-8ih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3156" y="-63.75"/>
+            <point key="canvasLocation" x="4074" y="-63.75"/>
         </scene>
         <!--Carrier-->
         <scene sceneID="kwU-9v-VDz">
@@ -1987,6 +1988,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carrier Plus" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpQ-dz-W4W">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="a7M-cU-gyY"/>
                                 </constraints>
@@ -2006,6 +2008,7 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePIC" translatesAutoresizingMaskIntoConstraints="NO" id="Sej-9T-5JN">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="QQG-Wo-jld"/>
                                     <constraint firstAttribute="height" constant="30" id="kyW-an-46z"/>
@@ -2025,12 +2028,14 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Office address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ii-2h-Fdu">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                 <color key="textColor" red="0.70588235294117641" green="0.74509803921568629" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1717 Dixie Highway Suite 200 Torrance, CA 905024" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJr-Dq-mKk">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="246" id="5Xe-tG-ude"/>
                                     <constraint firstAttribute="height" constant="107" id="zUD-Gq-mrK">
@@ -2055,6 +2060,7 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePIC" translatesAutoresizingMaskIntoConstraints="NO" id="Lol-xy-1lc">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="QPI-jO-hXe"/>
                                     <constraint firstAttribute="width" constant="30" id="elH-FZ-5sM"/>
@@ -2074,6 +2080,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home terminal address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKO-9U-b9w">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="178" id="8wG-ZH-iue"/>
                                     <constraint firstAttribute="height" constant="21" id="hwM-TD-DRu"/>
@@ -2096,6 +2103,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJg-rT-xsy">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="246" id="dg2-ud-ylQ"/>
                                     <constraint firstAttribute="height" constant="80" id="fTc-Tp-Xb3"/>
@@ -2121,6 +2129,7 @@ Torrance, CA 90504</string>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggp-G1-ntk">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="V3v-CW-F5r"/>
                                     <constraint firstAttribute="width" constant="30" id="aic-zM-z9c"/>
@@ -2147,6 +2156,7 @@ Torrance, CA 90504</string>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oc2-u9-GHk">
                                         <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Iz4-Bg-doh"/>
                                             <constraint firstAttribute="width" constant="224" id="ZdF-fP-EDI"/>
@@ -2168,6 +2178,7 @@ Torrance, CA 90504</string>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3bK-IL-x9Q">
                                         <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="UPS-p2-Qwc"/>
                                             <constraint firstAttribute="width" constant="224" id="n81-7n-uyF"/>
@@ -2189,6 +2200,7 @@ Torrance, CA 90504</string>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z6E-CP-mFb">
                                         <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="9l4-du-xEh"/>
                                             <constraint firstAttribute="width" constant="224" id="jiz-Gd-x0M"/>
@@ -2209,6 +2221,7 @@ Torrance, CA 90504</string>
                                         </variation>
                                     </textField>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Z6E-CP-mFb" secondAttribute="trailing" constant="8" id="086-SO-c2w"/>
@@ -2266,6 +2279,7 @@ Torrance, CA 90504</string>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ER3-Y1-B8o">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.1058823529" green="0.53725490200000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7Fo-LE-Qqc"/>
@@ -2291,6 +2305,7 @@ Torrance, CA 90504</string>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8M-QI-gWC">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Vog-D7-Hn1"/>
@@ -2315,6 +2330,7 @@ Torrance, CA 90504</string>
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EJg-rT-xsy" firstAttribute="top" secondItem="dKO-9U-b9w" secondAttribute="bottom" constant="16" id="1Us-Jf-0RB">
@@ -2467,7 +2483,7 @@ Torrance, CA 90504</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vwb-JR-OwR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3804" y="-64.5"/>
+            <point key="canvasLocation" x="4722" y="-64.5"/>
         </scene>
         <!--Logs View Controller-->
         <scene sceneID="r6a-f4-eap">
@@ -2483,6 +2499,7 @@ Torrance, CA 90504</string>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZT-LJ-h8M">
                                 <rect key="frame" x="0.0" y="-216" width="320" height="216"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="U81-xp-s4u"/>
                                     <constraint firstAttribute="width" constant="400" id="aY3-nD-Scw"/>
@@ -2506,6 +2523,7 @@ Torrance, CA 90504</string>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gd4-lt-CKq">
                                 <rect key="frame" x="0.0" y="-216" width="320" height="216"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="JWU-kl-DRp"/>
                                     <constraint firstAttribute="width" constant="400" id="Qhg-zS-TlA"/>
@@ -2529,6 +2547,7 @@ Torrance, CA 90504</string>
                             </pickerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YXP-ew-jt4">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="0B3-nQ-WUd"/>
@@ -2545,6 +2564,7 @@ Torrance, CA 90504</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Steering" translatesAutoresizingMaskIntoConstraints="NO" id="bJT-qE-8Eq">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="MDf-UV-DW0"/>
                                                         <constraint firstAttribute="width" constant="30" id="vji-bM-VAu"/>
@@ -2564,6 +2584,7 @@ Torrance, CA 90504</string>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Steering" translatesAutoresizingMaskIntoConstraints="NO" id="0sb-o6-H38">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="LAA-It-cfz"/>
                                                         <constraint firstAttribute="width" constant="30" id="mte-GK-R7w"/>
@@ -2583,6 +2604,7 @@ Torrance, CA 90504</string>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Terminal Time Zone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Si-dj-w9z">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="fXC-Vm-fXo"/>
                                                         <constraint firstAttribute="width" constant="269" id="rpp-4Q-dCS"/>
@@ -2605,6 +2627,7 @@ Torrance, CA 90504</string>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cycle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXw-a8-WHz">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="269" id="8q2-97-spR"/>
                                                         <constraint firstAttribute="height" constant="21" id="uKA-eC-Efk"/>
@@ -2627,6 +2650,7 @@ Torrance, CA 90504</string>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elT-se-woB">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="332" id="ha0-yR-AXy"/>
                                                         <constraint firstAttribute="height" constant="30" id="pA5-wm-tC2"/>
@@ -2650,6 +2674,7 @@ Torrance, CA 90504</string>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frT-zO-WDv">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="5bs-mg-tzU"/>
                                                         <constraint firstAttribute="width" constant="332" id="mLB-ov-T4w"/>
@@ -2672,6 +2697,7 @@ Torrance, CA 90504</string>
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="bJT-qE-8Eq" firstAttribute="top" secondItem="uTO-l6-m9k" secondAttribute="top" constant="8" id="0yT-W4-ADu"/>
                                                 <constraint firstAttribute="trailing" secondItem="frT-zO-WDv" secondAttribute="trailing" constant="8" id="2Qi-wp-IqN"/>
@@ -2741,6 +2767,7 @@ Torrance, CA 90504</string>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <connections>
                                             <outlet property="btnCycle" destination="frT-zO-WDv" id="sTD-aW-jiX"/>
                                             <outlet property="btnTimeZone" destination="elT-se-woB" id="0N7-WW-JFf"/>
@@ -2754,6 +2781,7 @@ Torrance, CA 90504</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Steering" translatesAutoresizingMaskIntoConstraints="NO" id="dm9-6R-GdI">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="2TP-vk-d4C"/>
                                                         <constraint firstAttribute="height" constant="30" id="uOq-90-K4L"/>
@@ -2773,6 +2801,7 @@ Torrance, CA 90504</string>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odometer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vtv-cf-0hv">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="XLY-Q3-SAl"/>
                                                         <constraint firstAttribute="width" constant="269" id="oPK-gb-nMz"/>
@@ -2795,6 +2824,7 @@ Torrance, CA 90504</string>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kilometers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8W-5M-yPb">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="105" id="4dp-tM-iWF"/>
                                                         <constraint firstAttribute="height" constant="21" id="YDp-0w-VnU"/>
@@ -2817,6 +2847,7 @@ Torrance, CA 90504</string>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hB2-zN-TSB">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="Dop-kq-uHR">
                                                             <variation key="heightClass=regular-widthClass=compact" constant="30"/>
@@ -2844,6 +2875,7 @@ Torrance, CA 90504</string>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ue-YY-Aii">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="UFO-bk-goE">
                                                             <variation key="heightClass=regular-widthClass=compact" constant="30"/>
@@ -2871,6 +2903,7 @@ Torrance, CA 90504</string>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYk-oL-Dbe">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Dfd-l5-89s"/>
                                                         <constraint firstAttribute="width" constant="93" id="Ed2-Rm-R66"/>
@@ -2892,6 +2925,7 @@ Torrance, CA 90504</string>
                                                     </variation>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="dm9-6R-GdI" firstAttribute="leading" secondItem="uwR-iR-HvA" secondAttribute="leading" constant="13" id="AMU-uD-lo0"/>
                                                 <constraint firstItem="hB2-zN-TSB" firstAttribute="top" secondItem="Vtv-cf-0hv" secondAttribute="bottom" constant="37" id="DFX-cW-fGA"/>
@@ -2965,6 +2999,7 @@ Torrance, CA 90504</string>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <connections>
                                             <outlet property="btnToggleOne" destination="hB2-zN-TSB" id="8HO-EY-X9H"/>
                                             <outlet property="btnToggleTwo" destination="5Ue-YY-Aii" id="PUQ-yH-LYn"/>
@@ -2993,6 +3028,7 @@ Torrance, CA 90504</string>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Pm-C3-Vo5">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="I7u-kS-WGv"/>
@@ -3016,6 +3052,7 @@ Torrance, CA 90504</string>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijc-sz-6b2">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.1058823529" green="0.53725490200000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="hcQ-uH-0uY"/>
@@ -3038,6 +3075,7 @@ Torrance, CA 90504</string>
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ijc-sz-6b2" secondAttribute="trailing" id="J29-aR-UJg"/>
@@ -3121,7 +3159,26 @@ Torrance, CA 90504</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKA-kU-XQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4480.5" y="-63.75"/>
+            <point key="canvasLocation" x="5398.5" y="-63.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9e6-Me-fga">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dr8-IQ-dAG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tOJ-VZ-iPe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gOQ-Ri-m5s" kind="relationship" relationship="rootViewController" id="7d3-cL-6va"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKF-Rf-b8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="816" y="190.5"/>
         </scene>
     </scenes>
     <resources>
@@ -3130,5 +3187,6 @@ Torrance, CA 90504</string>
         <image name="Logo_Check" width="105" height="105"/>
         <image name="Steering" width="45" height="45"/>
         <image name="profilePIC" width="70" height="70"/>
+        <image name="sideBar" width="20" height="15"/>
     </resources>
 </document>

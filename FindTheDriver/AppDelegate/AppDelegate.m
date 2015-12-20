@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "HomeViewController.h"
 #import "LoginViewController.h"
+#import "MFSideMenu.h"
 
 @interface AppDelegate ()
 
@@ -31,15 +32,25 @@
        }
      forState:UIControlStateNormal];
     
-  /*  if ([[NSUserDefaults standardUserDefaults]boolForKey:USER_LOGGEDIN]) {
+    if ([[NSUserDefaults standardUserDefaults]boolForKey:USER_LOGGEDIN]) {
+//        HomeViewController *homeViewController = [kHomeStoryboard instantiateInitialViewController];
+//        self.window.rootViewController=homeViewController;
+        
         HomeViewController *homeViewController = [kHomeStoryboard instantiateInitialViewController];
-        self.window.rootViewController=homeViewController;
+        
+        MFSideMenuContainerViewController *container = (MFSideMenuContainerViewController *)homeViewController;
+        UINavigationController *navigationController = [kHomeStoryboard instantiateViewControllerWithIdentifier:@"navigationController"];
+        UIViewController *leftSideMenuViewController = [kHomeStoryboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];
+        
+        [container setLeftMenuViewController:leftSideMenuViewController];
+        [container setCenterViewController:navigationController];
+        [self.navigationController pushViewController:homeViewController animated:NO];
+
     }else{
         LoginViewController *loginViewController = [kLoginStoryboard instantiateInitialViewController];
         self.window.rootViewController=loginViewController;
     }
     [self.window makeKeyAndVisible];
-   */
     return YES;
 }
 
