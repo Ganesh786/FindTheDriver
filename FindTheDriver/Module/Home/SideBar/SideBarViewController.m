@@ -12,6 +12,7 @@
 #import "SWRevealViewController.h"
 #import "SettingsViewController.h"
 #import "InspectLogsViewController.h"
+#import "HomeViewController.h"
 
 @interface SideBarViewController () <SWRevealViewControllerDelegate> {
     NSArray *sideBarNamesArray, *sideBarImgsArray;
@@ -89,21 +90,27 @@
 
     // Show the currosponding pages based on user action
     switch (indexPath.row) {
+        case 0: {
+            HomeViewController *homevc = [kHomeStoryboard instantiateViewControllerWithIdentifier:@"HomeID"];
+            [self.navigationController pushViewController:homevc animated:YES];
+            [homevc revealToggle];
+            break;
+        }
         case 1: {
             LogsInfoViewController *logsInfovc = [kLogsStoryboard instantiateViewControllerWithIdentifier:@"LogsInfoID"];
-            [UIAppDelegate.navigationController pushViewController:logsInfovc animated:YES];
+            [self.navigationController pushViewController:logsInfovc animated:YES];
             [logsInfovc revealToggle];
             break;
         }
         case 2: {
             InspectLogsViewController *inspectLogsVC = [kLogsStoryboard instantiateViewControllerWithIdentifier:@"LogsTabBarID"];
             [inspectLogsVC.tabBarController setSelectedIndex:2];
-            [UIAppDelegate.navigationController pushViewController:inspectLogsVC animated:YES];
+            [self.navigationController pushViewController:inspectLogsVC animated:YES];
             break;
         }
         case 3: {
             SettingsViewController *settingsVC = [kSettingsStoryboard instantiateViewControllerWithIdentifier:@"SettingsID"];
-            [UIAppDelegate.navigationController pushViewController:settingsVC animated:YES];
+            [self.navigationController pushViewController:settingsVC animated:YES];
             [settingsVC revealToggle];
             break;
         }

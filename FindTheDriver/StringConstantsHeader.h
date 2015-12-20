@@ -36,6 +36,7 @@
 #pragma mark - Font Constants
 
 #define kHelveticaNeueFontName          @"HelveticaNeue"
+#define kHelveticaNeueBoldFontName      @"HelveticaNeue-Bold"
 #define kHelveticaNeueItalicFontName    @"HelveticaNeue-Italic"
 
 //---------------------------------- Log Constants  ---------------------------

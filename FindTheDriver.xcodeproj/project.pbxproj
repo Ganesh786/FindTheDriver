@@ -58,6 +58,7 @@
 		25BE7E431C193AA700A96D4F /* HomeWeekDayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BE7E421C193AA700A96D4F /* HomeWeekDayTableViewCell.m */; };
 		25BE7E491C19D9CD00A96D4F /* CustomHomeActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BE7E481C19D9CD00A96D4F /* CustomHomeActionViewController.m */; };
 		25BE7E4D1C1A7B5C00A96D4F /* Forgot PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BE7E4C1C1A7B5C00A96D4F /* Forgot PasswordViewController.m */; };
+		25C9FECB1C252A7000399F7A /* LKAddScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C9FECA1C252A7000399F7A /* LKAddScoreView.m */; };
 		25E116A61C0CB853004385F9 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E116A51C0CB853004385F9 /* RegistrationViewController.m */; };
 		25E116AA1C0CBB7D004385F9 /* UIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E116A91C0CBB7D004385F9 /* UIViewController+Additions.m */; };
 		25E116AE1C0CBC69004385F9 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E116AD1C0CBC69004385F9 /* UIColor+Additions.m */; };
@@ -234,6 +235,8 @@
 		25BE7E481C19D9CD00A96D4F /* CustomHomeActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHomeActionViewController.m; sourceTree = "<group>"; };
 		25BE7E4B1C1A7B5C00A96D4F /* Forgot PasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Forgot PasswordViewController.h"; sourceTree = "<group>"; };
 		25BE7E4C1C1A7B5C00A96D4F /* Forgot PasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Forgot PasswordViewController.m"; sourceTree = "<group>"; };
+		25C9FEC91C252A7000399F7A /* LKAddScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAddScoreView.h; sourceTree = "<group>"; };
+		25C9FECA1C252A7000399F7A /* LKAddScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKAddScoreView.m; sourceTree = "<group>"; };
 		25E116A41C0CB853004385F9 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		25E116A51C0CB853004385F9 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		25E116A81C0CBB7D004385F9 /* UIViewController+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Additions.h"; sourceTree = "<group>"; };
@@ -716,6 +719,15 @@
 			path = Help;
 			sourceTree = "<group>";
 		};
+		25C9FEC81C252A7000399F7A /* CircleProgress */ = {
+			isa = PBXGroup;
+			children = (
+				25C9FEC91C252A7000399F7A /* LKAddScoreView.h */,
+				25C9FECA1C252A7000399F7A /* LKAddScoreView.m */,
+			);
+			path = CircleProgress;
+			sourceTree = "<group>";
+		};
 		25E116A31C0CB83E004385F9 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -767,6 +779,7 @@
 		25E116BF1C0E9A4D004385F9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				25C9FEC81C252A7000399F7A /* CircleProgress */,
 				041CC05D1C24244D00B1885F /* CustomLoader */,
 				25ECFDA11C1FC42A006CA2B5 /* Data Utility */,
 				25ECFD9A1C1FC3AF006CA2B5 /* NetworkHandler */,
@@ -1340,6 +1353,7 @@
 				04C782961C1F10DC00E3C46F /* AFURLConnectionOperation.m in Sources */,
 				25ECFD961C1FC344006CA2B5 /* ObjectMappingInfo.m in Sources */,
 				25ECFDA01C1FC3AF006CA2B5 /* SCNetworkManager.m in Sources */,
+				25C9FECB1C252A7000399F7A /* LKAddScoreView.m in Sources */,
 				04C782991C1F10DC00E3C46F /* AFURLSessionManager.m in Sources */,
 				04C7829E1C1F10DC00E3C46F /* UIImageView+AFNetworking.m in Sources */,
 				04C782911C1F10DC00E3C46F /* AFHTTPRequestOperation.m in Sources */,
