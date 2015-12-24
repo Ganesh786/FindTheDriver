@@ -30,6 +30,11 @@
     
     self.navigationController.navigationBarHidden  = NO;
     [self loadLogsViewComponents];
+    if (UIAppDelegate.isSideBarInspectLogsClicked == YES) {
+        UITabBarController *tabbarVC = [[UIStoryboard storyboardWithName:@"LogsStoryboard" bundle: [NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LogsTabBarID"];
+        [tabbarVC setSelectedIndex:2];
+        [self presentViewController:tabbarVC animated:NO completion:nil];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -42,6 +47,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.revealViewController removePanGestureRecognizer];
+  
 }
 
 - (void)didReceiveMemoryWarning {

@@ -15,8 +15,6 @@
 {
     NSMutableArray *defectsArray;
 }
-
-@property (weak, nonatomic) IBOutlet UINavigationItem *inspectLogsNavigationItem;
 @end
 
 @implementation InspectLogsViewController
@@ -26,7 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self loadInspectLogsViewComponents];
     
     defectsArray = [NSMutableArray array];
     NSMutableDictionary *dict1 = [NSMutableDictionary dictionary];
@@ -41,6 +38,7 @@
     [defectsArray addObject:dict2];
     _driverSignatureView.backgroundColor = [UIColor lightGrayColor];
     _mechanicSignatureView.backgroundColor = [UIColor lightGrayColor];
+        
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,24 +47,6 @@
 
 - (IBAction)backBtnClciked:(id)sender {
     [self dismissViewControllerAnimated:NO completion:nil];
-}
-
-- (void)sideBarBtnClicked:(id)sender {
-    [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
-
-}
-
-#pragma mark - User defined methods
-
-- (void)loadInspectLogsViewComponents {
-    
-    if (UIAppDelegate.isSideBarInspectLogsClicked == YES) {
-        UIBarButtonItem *sidebarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"sideBar.png"] style:UIBarButtonItemStylePlain target:self action:@selector(sideBarBtnClicked:)];
-        sidebarButton.tintColor = kWhiteColor;
-        _inspectLogsNavigationItem.leftBarButtonItem = sidebarButton;
-    } else
-        [self setBackBarButtonItem];
-
 }
 
 #pragma mark - TableView delegate methods

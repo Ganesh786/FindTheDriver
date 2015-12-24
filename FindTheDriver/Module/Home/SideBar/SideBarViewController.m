@@ -85,6 +85,8 @@
     // Show the currosponding pages based on user action
     switch (indexPath.row) {
         case 0: {
+            UIAppDelegate.isSideBarInspectLogsClicked = NO;
+
             HomeViewController *homevc = [kHomeStoryboard instantiateViewControllerWithIdentifier:@"HomeID"];
             UINavigationController *navigationController = self.menuContainerViewController.centerViewController;
             NSArray *controllers = [NSArray arrayWithObject:homevc];
@@ -93,6 +95,8 @@
             break;
         }
         case 1: {
+            UIAppDelegate.isSideBarInspectLogsClicked = NO;
+
             LogsInfoViewController *logsInfovc = [kLogsStoryboard instantiateViewControllerWithIdentifier:@"LogsInfoID"];
             UINavigationController *navigationController = self.menuContainerViewController.centerViewController;
             NSArray *controllers = [NSArray arrayWithObject:logsInfovc];
@@ -104,16 +108,25 @@
         case 2: {
             UIAppDelegate.isSideBarInspectLogsClicked = YES;
             
-            UITabBarController *tabbarVC = [[UIStoryboard storyboardWithName:@"LogsStoryboard" bundle: [NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LogsTabBarID"];
+            LogsInfoViewController *logsInfovc = [kLogsStoryboard instantiateViewControllerWithIdentifier:@"LogsInfoID"];
+            UINavigationController *navigationController = self.menuContainerViewController.centerViewController;
+            NSArray *controllers = [NSArray arrayWithObject:logsInfovc];
+            navigationController.viewControllers = controllers;
+            [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
+            
+          /*  UITabBarController *tabbarVC = [[UIStoryboard storyboardWithName:@"LogsStoryboard" bundle: [NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LogsTabBarID"];
             [tabbarVC setSelectedIndex:2];
             
             UINavigationController *navigationController = self.menuContainerViewController.centerViewController;
             NSArray *controllers = [NSArray arrayWithObject:tabbarVC];
             navigationController.viewControllers = controllers;
             [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
+           */
             break;
         }
         case 3: {
+            UIAppDelegate.isSideBarInspectLogsClicked = NO;
+
             SettingsViewController *settingsVC = [kSettingsStoryboard instantiateViewControllerWithIdentifier:@"SettingsID"];
             UINavigationController *navigationController = self.menuContainerViewController.centerViewController;
             NSArray *controllers = [NSArray arrayWithObject:settingsVC];

@@ -1396,7 +1396,8 @@
                                                             <exclude reference="0AU-Ie-WnI"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="144" y="5" width="89" height="28"/>
                                                         <mask key="constraints">
                                                             <include reference="0AU-Ie-WnI"/>
                                                         </mask>
@@ -3548,7 +3549,8 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Monday | October 10" id="ozC-yk-zzz">
-                        <barButtonItem key="leftBarButtonItem" image="Back" id="qsg-vV-SoC">
+                        <barButtonItem key="leftBarButtonItem" image="Back" style="plain" id="qsg-vV-SoC">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="backBtnClciked:" destination="th0-qV-hfR" id="ZhR-hO-MuZ"/>
                             </connections>
@@ -3558,7 +3560,6 @@
                         <outlet property="btnAddNewDVIR" destination="y5c-aq-yhY" id="kgi-ai-V0K"/>
                         <outlet property="btnAddRemoveDefects" destination="KDk-Aj-rg7" id="pVW-Ah-xOE"/>
                         <outlet property="driverSignatureView" destination="6Mg-Zd-CZn" id="dSM-sG-HFZ"/>
-                        <outlet property="inspectLogsNavigationItem" destination="ozC-yk-zzz" id="hh7-yj-bCb"/>
                         <outlet property="lblDateOfSubmission" destination="Y4a-vA-b7I" id="grl-68-DTh"/>
                         <outlet property="lblDriverSignatureDate" destination="awn-uX-9cc" id="YRn-5I-nWm"/>
                         <outlet property="lblMechanicSignatureDate" destination="OQK-k2-kWm" id="JQp-hV-MJe"/>
