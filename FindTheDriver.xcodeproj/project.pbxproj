@@ -20,6 +20,13 @@
 		045BCE921C26EDFF0045A761 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 045BCE8E1C26EDFF0045A761 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		045BCE951C2700A60045A761 /* TodayLogDetailStatusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045BCE941C2700A60045A761 /* TodayLogDetailStatusTableViewCell.m */; };
 		049FEB4A1C2BB9B900FA36C4 /* PasswordResetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FEB491C2BB9B900FA36C4 /* PasswordResetModel.m */; };
+		049FEB4E1C2BE0E100FA36C4 /* DefaultLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FEB4D1C2BE0E100FA36C4 /* DefaultLabelCell.m */; };
+		049FEB511C2BE4E500FA36C4 /* StartTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FEB501C2BE4E500FA36C4 /* StartTimeCell.m */; };
+		049FEB541C2BE4FB00FA36C4 /* ShippingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FEB531C2BE4FB00FA36C4 /* ShippingCell.m */; };
+		049FEB581C2C167200FA36C4 /* AddDocumentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FEB571C2C167200FA36C4 /* AddDocumentView.m */; };
+		049FEB5B1C2C168C00FA36C4 /* DeleteDocumentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FEB5A1C2C168C00FA36C4 /* DeleteDocumentView.m */; };
+		049FEB611C2C2A4500FA36C4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049FEB601C2C2A4500FA36C4 /* CoreLocation.framework */; };
+		049FEB641C2C2E9700FA36C4 /* CurrentLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FEB631C2C2E9700FA36C4 /* CurrentLocation.m */; };
 		04C782911C1F10DC00E3C46F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7826D1C1F10DC00E3C46F /* AFHTTPRequestOperation.m */; };
 		04C782921C1F10DC00E3C46F /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7826F1C1F10DC00E3C46F /* AFHTTPRequestOperationManager.m */; };
 		04C782931C1F10DC00E3C46F /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C782711C1F10DC00E3C46F /* AFHTTPSessionManager.m */; };
@@ -165,6 +172,19 @@
 		045BCE941C2700A60045A761 /* TodayLogDetailStatusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayLogDetailStatusTableViewCell.m; sourceTree = "<group>"; };
 		049FEB481C2BB9B900FA36C4 /* PasswordResetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordResetModel.h; sourceTree = "<group>"; };
 		049FEB491C2BB9B900FA36C4 /* PasswordResetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordResetModel.m; sourceTree = "<group>"; };
+		049FEB4C1C2BE0E100FA36C4 /* DefaultLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultLabelCell.h; sourceTree = "<group>"; };
+		049FEB4D1C2BE0E100FA36C4 /* DefaultLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultLabelCell.m; sourceTree = "<group>"; };
+		049FEB4F1C2BE4E500FA36C4 /* StartTimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartTimeCell.h; sourceTree = "<group>"; };
+		049FEB501C2BE4E500FA36C4 /* StartTimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartTimeCell.m; sourceTree = "<group>"; };
+		049FEB521C2BE4FB00FA36C4 /* ShippingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShippingCell.h; sourceTree = "<group>"; };
+		049FEB531C2BE4FB00FA36C4 /* ShippingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShippingCell.m; sourceTree = "<group>"; };
+		049FEB561C2C167200FA36C4 /* AddDocumentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDocumentView.h; sourceTree = "<group>"; };
+		049FEB571C2C167200FA36C4 /* AddDocumentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDocumentView.m; sourceTree = "<group>"; };
+		049FEB591C2C168C00FA36C4 /* DeleteDocumentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteDocumentView.h; sourceTree = "<group>"; };
+		049FEB5A1C2C168C00FA36C4 /* DeleteDocumentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteDocumentView.m; sourceTree = "<group>"; };
+		049FEB601C2C2A4500FA36C4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		049FEB621C2C2E9700FA36C4 /* CurrentLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentLocation.h; sourceTree = "<group>"; };
+		049FEB631C2C2E9700FA36C4 /* CurrentLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentLocation.m; sourceTree = "<group>"; };
 		04C7826C1C1F10DC00E3C46F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		04C7826D1C1F10DC00E3C46F /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		04C7826E1C1F10DC00E3C46F /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -377,6 +397,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049FEB611C2C2A4500FA36C4 /* CoreLocation.framework in Frameworks */,
 				25AF266A1C04D60F001FA4A8 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +473,39 @@
 				045BCE8E1C26EDFF0045A761 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
 			);
 			path = KeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		049FEB4B1C2BDE3900FA36C4 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				049FEB4C1C2BE0E100FA36C4 /* DefaultLabelCell.h */,
+				049FEB4D1C2BE0E100FA36C4 /* DefaultLabelCell.m */,
+				049FEB4F1C2BE4E500FA36C4 /* StartTimeCell.h */,
+				049FEB501C2BE4E500FA36C4 /* StartTimeCell.m */,
+				049FEB521C2BE4FB00FA36C4 /* ShippingCell.h */,
+				049FEB531C2BE4FB00FA36C4 /* ShippingCell.m */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		049FEB551C2C165700FA36C4 /* AdditionalPopUps */ = {
+			isa = PBXGroup;
+			children = (
+				049FEB561C2C167200FA36C4 /* AddDocumentView.h */,
+				049FEB571C2C167200FA36C4 /* AddDocumentView.m */,
+				049FEB591C2C168C00FA36C4 /* DeleteDocumentView.h */,
+				049FEB5A1C2C168C00FA36C4 /* DeleteDocumentView.m */,
+			);
+			path = AdditionalPopUps;
+			sourceTree = "<group>";
+		};
+		049FEB5C1C2C295C00FA36C4 /* LocationFinder */ = {
+			isa = PBXGroup;
+			children = (
+				049FEB621C2C2E9700FA36C4 /* CurrentLocation.h */,
+				049FEB631C2C2E9700FA36C4 /* CurrentLocation.m */,
+			);
+			path = LocationFinder;
 			sourceTree = "<group>";
 		};
 		04C7826B1C1F10DC00E3C46F /* AFNetworking */ = {
@@ -644,6 +698,7 @@
 		25AF26191C04BD43001FA4A8 = {
 			isa = PBXGroup;
 			children = (
+				049FEB601C2C2A4500FA36C4 /* CoreLocation.framework */,
 				25AF26691C04D60F001FA4A8 /* QuartzCore.framework */,
 				25AF26241C04BD43001FA4A8 /* FindTheDriver */,
 				25AF26411C04BD44001FA4A8 /* FindTheDriverTests */,
@@ -841,6 +896,7 @@
 		25E116BF1C0E9A4D004385F9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				049FEB5C1C2C295C00FA36C4 /* LocationFinder */,
 				045BCE861C26EDFF0045A761 /* KeyboardAvoiding */,
 				25C9FED01C26A69C00399F7A /* MFSideMenu */,
 				25C9FEC81C252A7000399F7A /* CircleProgress */,
@@ -1029,6 +1085,8 @@
 		25ECFD5A1C1D45CA006CA2B5 /* LogForm */ = {
 			isa = PBXGroup;
 			children = (
+				049FEB551C2C165700FA36C4 /* AdditionalPopUps */,
+				049FEB4B1C2BDE3900FA36C4 /* CustomCells */,
 				25ECFD5B1C1D45E3006CA2B5 /* LogFormViewController.h */,
 				25ECFD5C1C1D45E3006CA2B5 /* LogFormViewController.m */,
 			);
@@ -1359,6 +1417,7 @@
 				DFF375BC1C17787F0097B53C /* CarrierViewController.m in Sources */,
 				25ECFD951C1FC344006CA2B5 /* ObjectMapper.m in Sources */,
 				04CBF11C1C21BC1C00255913 /* RegisterNewVehicleModel.m in Sources */,
+				049FEB4E1C2BE0E100FA36C4 /* DefaultLabelCell.m in Sources */,
 				25ECFD9F1C1FC3AF006CA2B5 /* Reachability.m in Sources */,
 				2587C8461C15F50800163357 /* ChangePasswordViewController.m in Sources */,
 				25E116B91C0DEF6F004385F9 /* RegistrationFualTableViewCell.m in Sources */,
@@ -1368,6 +1427,7 @@
 				25E116B61C0D44D9004385F9 /* RegistrationTableViewCell.m in Sources */,
 				2587C84A1C15FC1E00163357 /* RegisterNewVehicleViewController.m in Sources */,
 				25E117051C147401004385F9 /* AccountInfoCustomTableViewCell.m in Sources */,
+				049FEB5B1C2C168C00FA36C4 /* DeleteDocumentView.m in Sources */,
 				041CC0521C23E0B200B1885F /* UpDateProfileModel.m in Sources */,
 				25ECFD681C1D664D006CA2B5 /* DriverSignatureViewController.m in Sources */,
 				DF2A2D741C1A176D005C232F /* LogsCellTwoTableViewCell.m in Sources */,
@@ -1387,8 +1447,10 @@
 				25BE7E491C19D9CD00A96D4F /* CustomHomeActionViewController.m in Sources */,
 				04C782AA1C1F11B600E3C46F /* WebServiceInvoker.m in Sources */,
 				25ECFD8F1C1FC344006CA2B5 /* NSDictionary+ObjectMapper.m in Sources */,
+				049FEB641C2C2E9700FA36C4 /* CurrentLocation.m in Sources */,
 				25ECFD5D1C1D45E3006CA2B5 /* LogFormViewController.m in Sources */,
 				DF2A2D781C1DDEAF005C232F /* InspectLogsCustomTableViewCell.m in Sources */,
+				049FEB511C2BE4E500FA36C4 /* StartTimeCell.m in Sources */,
 				25E116AE1C0CBC69004385F9 /* UIColor+Additions.m in Sources */,
 				25E116CB1C0E9EA5004385F9 /* SideBarViewController.m in Sources */,
 				25ECFD8D1C1FC344006CA2B5 /* SCDataValidation.m in Sources */,
@@ -1422,6 +1484,7 @@
 				25AF26651C04BE95001FA4A8 /* AppDelegate.m in Sources */,
 				04C782921C1F10DC00E3C46F /* AFHTTPRequestOperationManager.m in Sources */,
 				25E116B11C0D3CC1004385F9 /* UINavigationController+Addition.m in Sources */,
+				049FEB581C2C167200FA36C4 /* AddDocumentView.m in Sources */,
 				045BCE901C26EDFF0045A761 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				25ECFD2D1C1C542C006CA2B5 /* TodayLogViewController.m in Sources */,
 				04C782961C1F10DC00E3C46F /* AFURLConnectionOperation.m in Sources */,
@@ -1457,6 +1520,7 @@
 				04C782981C1F10DC00E3C46F /* AFURLResponseSerialization.m in Sources */,
 				2587C8521C1682CD00163357 /* NotificationsViewController.m in Sources */,
 				04E58FC61C258B7C0026E19A /* GridTimerViewCell.m in Sources */,
+				049FEB541C2BE4FB00FA36C4 /* ShippingCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

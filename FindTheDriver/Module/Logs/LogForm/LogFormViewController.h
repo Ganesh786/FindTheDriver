@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddDocumentView.h"
+#import "DeleteDocumentView.h"
+#import "CurrentLocation.h"
 
-@interface LogFormViewController : UIViewController
+@interface LogFormViewController : UIViewController<AddDocumentViewProtocol,DeleteDocumentViewProtocol,CoreLocationFinderDelegate>{
+    CLGeocoder *geoCoder;
+    CLPlacemark *placemark;
+}
+@property(nonatomic,retain)CurrentLocation *locationFinder;
 
 @end
