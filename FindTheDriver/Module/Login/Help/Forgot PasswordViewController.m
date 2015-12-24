@@ -8,9 +8,7 @@
 
 #import "Forgot PasswordViewController.h"
 
-@interface Forgot_PasswordViewController () {
-    BOOL isInstructionBtnClicked;
-}
+@interface Forgot_PasswordViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *sendYourInstructions;
 @property (weak, nonatomic) IBOutlet UIView *forgotPwdView;
@@ -20,13 +18,16 @@
 @end
 
 @implementation Forgot_PasswordViewController
+@synthesize userName;
 
 #pragma mark - view life cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    isInstructionBtnClicked = NO;
+    _resetPwdView.hidden = NO;
+    _emailSentView.hidden = YES;
+    [self slideIn];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,19 +36,29 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self slideIn];
 }
 
 #pragma mark - User Action methods
 
 - (IBAction)closeBtnClicked:(id)sender {
-    isInstructionBtnClicked = NO;
     [self slideOut];
 }
 
 - (IBAction)sendInstructionBtnClicked:(id)sender {
-    isInstructionBtnClicked = YES;
-    [self slideOut];
+    [[CustomLoaderView sharedView] showLoader];
+    [[PasswordResetModel alloc]passwordResetAPICall:[NSString stringWithFormat:@"%@",userName] completionBlock:^(BOOL success, NSString *message, id dataDict) {
+        [[CustomLoaderView sharedView] dismissLoader];
+        if (success) {
+            DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
+            _resetPwdView.hidden = YES;
+            _emailSentView.hidden = NO;
+            [self showAlert:@"" message:message];
+            [self slideOut];
+        }else{
+            [self showAlert:@"" message:message];
+            [self slideOut];
+        }
+    }];
 }
 
 - (void)slideIn {
@@ -65,14 +76,6 @@
     _forgotPwdView.clipsToBounds = YES;
     [SCUIUtility setLayerForView:_forgotPwdView WithColor:kClearColor];
     [SCUIUtility setLayerForView:_sendYourInstructions WithColor:kClearColor];
-
-    if (_isFirstTime) {
-        _resetPwdView.hidden = NO;
-        _emailSentView.hidden = YES;
-    } else {
-        _resetPwdView.hidden = YES;
-        _emailSentView.hidden = NO;
-    }
     [UIView commitAnimations];
 }
 
@@ -97,9 +100,6 @@
 - (void)animationDidStop:(NSString *)animationID {
     if ([animationID isEqualToString:@"removeFromSuperviewWithAnimation"]) {
         [self.view removeFromSuperview];
-        if (isInstructionBtnClicked) {
-            [_delegate dismissTheForgotPasswordView];
-        }
     }
 }
 

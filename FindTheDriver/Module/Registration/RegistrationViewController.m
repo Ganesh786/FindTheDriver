@@ -30,6 +30,8 @@
     
     self.navigationController.navigationBarHidden  = NO;
     [self setNavigationBarNameWithNameAttribute:@"Create a New Account"];
+    
+    self.view.tintColor=kNavBarColor;
 
     [self loadRegistrationViewComponents];
 }
@@ -129,7 +131,7 @@
             regModel.CarName=carNickNameTxtFld.text;
             regModel.Color=colorTxtFld.text;
             regModel.RegistrationPlate=regPlateTextFld.text;
-            regModel.FuelType=isDieselSelected?@"Diesel":@"Gasoline";
+            regModel.FuelType=isDieselSelected?@"Diesel":@"Petrol";
             regModel.Address=@"";
             NSMutableDictionary *inputDict = [SCDataUtility getDictionaryBasaedOnObject:regModel];
             [[CustomLoaderView sharedView] showLoader];
@@ -138,6 +140,7 @@
                 DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
                 if (success) {
                     [self.navigationController popViewControllerAnimated:YES];
+                    [self showAlert:@"" message:message];
                 }else{
                     [self showAlert:@"" message:message];
                 }

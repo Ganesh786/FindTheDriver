@@ -106,12 +106,14 @@
             
         case 3:
             emailIDTxtFld = txtFld;
-            emailIDTxtFld.placeholder = @"Email ID";
-            emailIDTxtFld.keyboardType = UIKeyboardTypeEmailAddress;
-            emailIDTxtFld.autocapitalizationType = UITextAutocapitalizationTypeNone;
-            emailIDTxtFld.autocorrectionType = UITextAutocorrectionTypeNo;
-            emailIDTxtFld.returnKeyType = UIReturnKeyDefault;
-            emailIDTxtFld.delegate=self;
+//            emailIDTxtFld.placeholder = @"Email ID";
+//            emailIDTxtFld.keyboardType = UIKeyboardTypeEmailAddress;
+//            emailIDTxtFld.autocapitalizationType = UITextAutocapitalizationTypeNone;
+//            emailIDTxtFld.autocorrectionType = UITextAutocorrectionTypeNo;
+//            emailIDTxtFld.returnKeyType = UIReturnKeyDefault;
+//            emailIDTxtFld.delegate=self;
+            emailIDTxtFld.text=[SCDataUtility getUserName];
+            emailIDTxtFld.enabled=NO;
             break;
 
         default:

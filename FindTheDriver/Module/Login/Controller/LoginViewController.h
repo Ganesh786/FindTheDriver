@@ -10,7 +10,7 @@
 #import "Forgot PasswordViewController.h"
 #import "LoginModel.h"
 
-@interface LoginViewController : UIViewController <ForgotPasswordDelegate>
+@interface LoginViewController : UIViewController
 
 @property (nonatomic, retain) IBOutlet Forgot_PasswordViewController *forgotPwdViewController;
 @end

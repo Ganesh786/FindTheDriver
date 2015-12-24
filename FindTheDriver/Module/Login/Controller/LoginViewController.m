@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTxtFld;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTxtFld;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+@property (weak, nonatomic) IBOutlet UIView *hideView;
 
 @end
 
@@ -28,17 +29,30 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+    _hideView.hidden=NO;
+
     _loginBtn.layer.cornerRadius = 8;
     _loginBtn.clipsToBounds = YES;
     _emailTxtFld.delegate = self;
     _passwordTxtFld.delegate = self;
 
-    if (DEBUG) {
-        _emailTxtFld.text = @"admin@gmail.com";
-        _passwordTxtFld.text = @"welcome";
-    }
+    self.view.tintColor=kNavBarColor;
+    
     [self setBackBarButtonItem];
     UIAppDelegate.navigationController = self.navigationController;
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    _hideView.hidden=YES;
+    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:USER_LOGGEDIN];
+    [[NSUserDefaults standardUserDefaults]setObject:@"shreeshailg51@gmail.com" forKey:USER_NAME];
+    [[NSUserDefaults standardUserDefaults]setObject:@"123456" forKey:USER_PASSWORD];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    if ([[NSUserDefaults standardUserDefaults]boolForKey:USER_LOGGEDIN]) {
+        [self loadDashboardView];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -117,12 +131,21 @@
 }
 
 - (IBAction)helpBtnClicked:(id)sender {
-    Forgot_PasswordViewController *myController = [self.storyboard instantiateViewControllerWithIdentifier:@"ForgotPwdID"];
-    self.forgotPwdViewController = myController;
-    self.forgotPwdViewController.isFirstTime = YES;
-    self.forgotPwdViewController.delegate = self;
-    [self.navigationController.view addSubview:self.forgotPwdViewController.view];
-    [self.forgotPwdViewController viewWillAppear:NO];
+    NSString *email=[SCUIUtility validateString:_emailTxtFld.text];
+    if (email.length>0) {
+        if ([SCUIUtility validateEmailWithString:_emailTxtFld.text]) {
+            [_emailTxtFld resignFirstResponder];
+            [_passwordTxtFld resignFirstResponder];
+            Forgot_PasswordViewController *myController = [self.storyboard instantiateViewControllerWithIdentifier:@"ForgotPwdID"];
+            self.forgotPwdViewController = myController;
+            self.forgotPwdViewController.userName=email;
+            [self.navigationController.view addSubview:self.forgotPwdViewController.view];
+        }else{
+            [self showAlert:@"" message:@"Please Enter a Valid Email ID"];
+        }
+    }else{
+        [self showAlert:@"" message:@"Please Enter Email ID"];
+    }
 }
 
 #pragma mark - UItextfiled delegate methods
@@ -151,14 +174,6 @@
     [UIView setAnimationCurve:UIViewAnimationCurveLinear];
     layoutView.frame = CGRectMake(xValue, yValue, layoutView.frame.size.width, layoutView.frame.size.height);
     [UIView commitAnimations];
-}
-
-#pragma mark - Forgot Action view delegate methods
-
-- (void)dismissTheForgotPasswordView {
-    self.forgotPwdViewController.isFirstTime = NO;
-    [self.navigationController.view addSubview:self.forgotPwdViewController.view];
-    [self.forgotPwdViewController viewWillAppear:NO];
 }
 
 @end

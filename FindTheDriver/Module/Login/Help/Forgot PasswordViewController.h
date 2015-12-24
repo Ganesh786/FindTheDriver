@@ -7,20 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@protocol ForgotPasswordDelegate <NSObject>
-
-- (void)dismissTheForgotPasswordView;
-
-@end
-
+#import "PasswordResetModel.h"
 @interface Forgot_PasswordViewController : UIViewController
-
-@property (nonatomic, weak) id<ForgotPasswordDelegate> delegate;
-@property (nonatomic, assign) BOOL isFirstTime;
-
-- (void)slideIn;
-- (void)slideOut;
-
-
+@property(nonatomic,strong)NSString *userName;
 @end
