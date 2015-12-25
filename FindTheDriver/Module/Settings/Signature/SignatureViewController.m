@@ -11,6 +11,8 @@
 @interface SignatureViewController ()
 @property (weak, nonatomic) IBOutlet UIView *signatureView;
 @property (weak, nonatomic) IBOutlet UIButton *changeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cancelBtnOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *saveBtnOutlet;
 
 @end
 
@@ -43,7 +45,7 @@
 #pragma mark - User Action methods
 
 - (IBAction)cancelBtnClicked:(id)sender {
-    
+    [self.navigationController popViewControllerAnimated:YES]; 
 }
 
 - (IBAction)saveBtnClicked:(id)sender {
@@ -51,17 +53,6 @@
 }
 
 - (IBAction)changeBtnClicked:(id)sender {
-    
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

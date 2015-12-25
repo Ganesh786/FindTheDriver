@@ -8,7 +8,7 @@
 
 #import "CarrierViewController.h"
 
-@interface CarrierViewController ()
+@interface CarrierViewController ()<UITextFieldDelegate>
 
 @end
 
@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.tintColor=kNavBarColor;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,4 +81,33 @@
                     completion:NULL];
     view.hidden = hidden;
 }
+#pragma mark - UItextfiled delegate methods
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self setLayoutViewAnimationWithView:self.view OriginX:0 OriginY:-150];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.txtAddressEdit1) {
+        [self.txtAddressEdit1 resignFirstResponder];
+        [self.txtAddressEdit2 becomeFirstResponder];
+    }else if (textField == self.txtAddressEdit2){
+        [self.txtAddressEdit2 resignFirstResponder];
+        [self.txtAddressEdit3 becomeFirstResponder];
+    }else if (textField == self.txtAddressEdit3){
+        [self.txtAddressEdit3 resignFirstResponder];
+        [self setLayoutViewAnimationWithView:self.view OriginX:0 OriginY:0];
+    }
+    return YES;
+}
+
+- (void)setLayoutViewAnimationWithView:(UIView *)layoutView OriginX:(float)xValue OriginY:(float )yValue {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.2];
+    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+    layoutView.frame = CGRectMake(xValue, yValue, layoutView.frame.size.width, layoutView.frame.size.height);
+    [UIView commitAnimations];
+}
+
+
 @end
