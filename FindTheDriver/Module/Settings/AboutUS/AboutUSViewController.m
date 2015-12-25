@@ -31,7 +31,7 @@
     self.titleLabel.text=@"UniCONTROL";
     self.titleLabel.textColor=kNavBarColor;
     
-    self.versionLabel.text=[SCUIUtility getAppVersion];
+    self.versionLabel.text=[SCDataUtility getAppVersion];
     self.versionLabel.textColor=kBlackColor;
     
     self.rightsLabel.text=@"Copyright © 2015 TTMS";

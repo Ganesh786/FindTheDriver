@@ -188,7 +188,4 @@
     return trimedstr;
 }
 
-+(NSString*)getAppVersion{
-    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
-}
 @end

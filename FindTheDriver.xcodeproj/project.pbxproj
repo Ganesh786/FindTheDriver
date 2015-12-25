@@ -260,7 +260,7 @@
 		2587C84D1C167A0500163357 /* SignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignatureViewController.m; sourceTree = "<group>"; };
 		2587C8501C1682CD00163357 /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
 		2587C8511C1682CD00163357 /* NotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsViewController.m; sourceTree = "<group>"; };
-		25AF26221C04BD43001FA4A8 /* FindTheDriver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindTheDriver.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		25AF26221C04BD43001FA4A8 /* UniControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25AF26261C04BD43001FA4A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		25AF26321C04BD43001FA4A8 /* FindTheDriver.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FindTheDriver.xcdatamodel; sourceTree = "<group>"; };
 		25AF26341C04BD43001FA4A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -722,7 +722,7 @@
 		25AF26231C04BD43001FA4A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				25AF26221C04BD43001FA4A8 /* FindTheDriver.app */,
+				25AF26221C04BD43001FA4A8 /* UniControl.app */,
 				25AF263E1C04BD44001FA4A8 /* FindTheDriverTests.xctest */,
 				25AF26491C04BD44001FA4A8 /* FindTheDriverUITests.xctest */,
 			);
@@ -1308,7 +1308,7 @@
 			);
 			name = FindTheDriver;
 			productName = FindTheDriver;
-			productReference = 25AF26221C04BD43001FA4A8 /* FindTheDriver.app */;
+			productReference = 25AF26221C04BD43001FA4A8 /* UniControl.app */;
 			productType = "com.apple.product-type.application";
 		};
 		25AF263D1C04BD44001FA4A8 /* FindTheDriverTests */ = {
@@ -1662,7 +1662,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rision.FindTheDriver;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = UniControl;
 				PROVISIONING_PROFILE = "c22793f0-0d06-4e67-bf63-db5e1cc05a54";
 			};
 			name = Debug;
@@ -1679,7 +1679,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rision.FindTheDriver;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = UniControl;
 				PROVISIONING_PROFILE = "c22793f0-0d06-4e67-bf63-db5e1cc05a54";
 			};
 			name = Release;

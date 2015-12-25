@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface NotificationsViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UISwitch *notificationSwitch;
+- (IBAction)NotificationSwitchAction:(id)sender;
 
 @end

@@ -2104,6 +2104,9 @@
                                         <include reference="rIH-Az-EuV"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="NotificationSwitchAction:" destination="ygF-vL-U1L" eventType="valueChanged" id="LCg-Gn-ImP"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HoS alerts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmq-BV-Oe6">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -2128,13 +2131,16 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cR-56-Fi7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cR-56-Fi7">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="77G-f0-Hrd"/>
+                                    <constraint firstAttribute="height" constant="30" id="77G-f0-Hrd">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <inset key="imageEdgeInsets" minX="350" minY="5" maxX="0.0" maxY="5"/>
                                 <state key="normal" title=" 30 minutes before violation">
                                     <color key="titleColor" red="0.44705882349999998" green="0.46274509800000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -2166,7 +2172,9 @@
                             <constraint firstAttribute="trailing" secondItem="Pg9-CI-Tfz" secondAttribute="trailing" constant="20" id="Ffp-yN-u0z">
                                 <variation key="heightClass=regular-widthClass=compact" constant="11"/>
                             </constraint>
-                            <constraint firstItem="1cR-56-Fi7" firstAttribute="top" secondItem="Tmq-BV-Oe6" secondAttribute="bottom" constant="13" id="IiI-pK-klc"/>
+                            <constraint firstItem="1cR-56-Fi7" firstAttribute="top" secondItem="Tmq-BV-Oe6" secondAttribute="bottom" constant="13" id="IiI-pK-klc">
+                                <variation key="heightClass=regular-widthClass=compact" constant="3"/>
+                            </constraint>
                             <constraint firstItem="gD0-Cy-05V" firstAttribute="top" secondItem="d8K-e2-b1W" secondAttribute="bottom" constant="6" id="UV5-HG-Q7g"/>
                             <constraint firstItem="Tmq-BV-Oe6" firstAttribute="top" secondItem="gD0-Cy-05V" secondAttribute="bottom" constant="49" id="Wrq-mx-6pP"/>
                             <constraint firstItem="gD0-Cy-05V" firstAttribute="top" secondItem="d8K-e2-b1W" secondAttribute="bottom" constant="6" id="XsY-qr-8DM"/>
@@ -2195,19 +2203,19 @@
                                 <exclude reference="1cR-56-Fi7"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="8KK-3y-5HF"/>
+                                <exclude reference="AIH-5g-ybq"/>
+                                <exclude reference="UV5-HG-Q7g"/>
+                                <exclude reference="XsY-qr-8DM"/>
+                                <exclude reference="oXd-PM-1AL"/>
+                                <exclude reference="Wrq-mx-6pP"/>
+                                <exclude reference="mJN-GU-Kfe"/>
                                 <exclude reference="8kJ-Nz-sok"/>
                                 <exclude reference="IiI-pK-klc"/>
                                 <exclude reference="n0Z-Ql-6Pc"/>
                                 <exclude reference="Ffp-yN-u0z"/>
                                 <exclude reference="a5I-qI-1jU"/>
                                 <exclude reference="qPy-Dn-sNN"/>
-                                <exclude reference="Wrq-mx-6pP"/>
-                                <exclude reference="mJN-GU-Kfe"/>
-                                <exclude reference="8KK-3y-5HF"/>
-                                <exclude reference="AIH-5g-ybq"/>
-                                <exclude reference="UV5-HG-Q7g"/>
-                                <exclude reference="XsY-qr-8DM"/>
-                                <exclude reference="oXd-PM-1AL"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2219,23 +2227,24 @@
                                 <include reference="1cR-56-Fi7"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="8KK-3y-5HF"/>
+                                <include reference="AIH-5g-ybq"/>
+                                <include reference="UV5-HG-Q7g"/>
+                                <include reference="XsY-qr-8DM"/>
+                                <include reference="oXd-PM-1AL"/>
+                                <include reference="Wrq-mx-6pP"/>
+                                <include reference="mJN-GU-Kfe"/>
                                 <include reference="8kJ-Nz-sok"/>
                                 <include reference="IiI-pK-klc"/>
                                 <include reference="n0Z-Ql-6Pc"/>
                                 <include reference="Ffp-yN-u0z"/>
                                 <include reference="a5I-qI-1jU"/>
                                 <include reference="qPy-Dn-sNN"/>
-                                <include reference="Wrq-mx-6pP"/>
-                                <include reference="mJN-GU-Kfe"/>
-                                <include reference="8KK-3y-5HF"/>
-                                <include reference="AIH-5g-ybq"/>
-                                <include reference="UV5-HG-Q7g"/>
-                                <include reference="XsY-qr-8DM"/>
-                                <include reference="oXd-PM-1AL"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="notificationSwitch" destination="Pg9-CI-Tfz" id="fI4-co-Xb9"/>
                         <outlet property="timeLimitBtn" destination="1cR-56-Fi7" id="HPa-3G-0h9"/>
                     </connections>
                 </viewController>

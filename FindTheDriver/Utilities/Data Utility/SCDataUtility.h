@@ -51,4 +51,15 @@
 
 //Get Logged In User Password
 +(NSString*)getUserPassword;
+
++(NSString*)getAppVersion;
+
++(NSString*)getDeviceToken;
+
++(BOOL)getNotificationStatus;
++(void)setNotificationStatus:(BOOL)status;
+
++(NSString*)getHOSNotificationAlertType;
++(void)setHOSNotificationAlertType:(NSString*)alertType;
+
 @end

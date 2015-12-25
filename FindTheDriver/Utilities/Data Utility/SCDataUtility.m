@@ -83,4 +83,29 @@
     return [[NSUserDefaults standardUserDefaults]objectForKey:USER_PASSWORD];
 }
 
++(NSString*)getAppVersion{
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+}
+
++(NSString*)getDeviceToken{
+    return [[NSUserDefaults standardUserDefaults]objectForKey:DEVICE_TOKEN];
+}
+
++(BOOL)getNotificationStatus{
+    return [[NSUserDefaults standardUserDefaults]boolForKey:NOTIFICATION_STATUS];
+}
+
++(void)setNotificationStatus:(BOOL)status{
+  [[NSUserDefaults standardUserDefaults]setBool:status forKey:NOTIFICATION_STATUS];
+  [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
++(NSString*)getHOSNotificationAlertType{
+    return [[NSUserDefaults standardUserDefaults]objectForKey:NOTIFICATION_ALERT];
+}
++(void)setHOSNotificationAlertType:(NSString*)alertType{
+    [[NSUserDefaults standardUserDefaults]setObject:alertType forKey:NOTIFICATION_ALERT];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
 @end

@@ -16,6 +16,11 @@
 #define USER_PASSWORD @"USER_PASSWORD"
 #define USER_LOGGEDIN @"USER_LOGGEDIN"
 
+// Notification
+#define DEVICE_TOKEN @"DeviceToken"
+#define NOTIFICATION_STATUS @"NotificationStatus"
+#define NOTIFICATION_ALERT @"NotificationAlert"
+
 //---------------------------------- Color Constants  ---------------------------
 #pragma mark - Color Constants
 
