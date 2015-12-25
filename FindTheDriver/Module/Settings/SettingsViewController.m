@@ -14,6 +14,7 @@
 #import "CarrierViewController.h"
 #import "LogsViewController.h"
 #import "MFSideMenu.h"
+#import "AboutUSViewController.h"
 
 @interface SettingsViewController () {
     NSArray *settingNamesArray, *settingImgArray;
@@ -105,6 +106,11 @@
         }
         case 4: {
             LogsViewController *logsVC = [kSettingsStoryboard instantiateViewControllerWithIdentifier:@"LogsID"];
+            [self.navigationController pushViewController:logsVC animated:YES];
+            break;
+        }
+        case 5: {
+            AboutUSViewController *logsVC = [kSettingsStoryboard instantiateViewControllerWithIdentifier:@"AboutUSViewController"];
             [self.navigationController pushViewController:logsVC animated:YES];
             break;
         }

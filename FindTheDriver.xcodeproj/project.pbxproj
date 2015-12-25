@@ -19,6 +19,7 @@
 		045BCE911C26EDFF0045A761 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045BCE8C1C26EDFF0045A761 /* TPKeyboardAvoidingTableView.m */; };
 		045BCE921C26EDFF0045A761 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 045BCE8E1C26EDFF0045A761 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		045BCE951C2700A60045A761 /* TodayLogDetailStatusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045BCE941C2700A60045A761 /* TodayLogDetailStatusTableViewCell.m */; };
+		04703B871C2D0D950002F720 /* AboutUSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04703B861C2D0D950002F720 /* AboutUSViewController.m */; };
 		049FEB4A1C2BB9B900FA36C4 /* PasswordResetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FEB491C2BB9B900FA36C4 /* PasswordResetModel.m */; };
 		049FEB4E1C2BE0E100FA36C4 /* DefaultLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FEB4D1C2BE0E100FA36C4 /* DefaultLabelCell.m */; };
 		049FEB511C2BE4E500FA36C4 /* StartTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FEB501C2BE4E500FA36C4 /* StartTimeCell.m */; };
@@ -170,6 +171,8 @@
 		045BCE8E1C26EDFF0045A761 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		045BCE931C2700A60045A761 /* TodayLogDetailStatusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayLogDetailStatusTableViewCell.h; sourceTree = "<group>"; };
 		045BCE941C2700A60045A761 /* TodayLogDetailStatusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayLogDetailStatusTableViewCell.m; sourceTree = "<group>"; };
+		04703B851C2D0D950002F720 /* AboutUSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUSViewController.h; sourceTree = "<group>"; };
+		04703B861C2D0D950002F720 /* AboutUSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUSViewController.m; sourceTree = "<group>"; };
 		049FEB481C2BB9B900FA36C4 /* PasswordResetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordResetModel.h; sourceTree = "<group>"; };
 		049FEB491C2BB9B900FA36C4 /* PasswordResetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordResetModel.m; sourceTree = "<group>"; };
 		049FEB4C1C2BE0E100FA36C4 /* DefaultLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultLabelCell.h; sourceTree = "<group>"; };
@@ -473,6 +476,15 @@
 				045BCE8E1C26EDFF0045A761 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
 			);
 			path = KeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		04703B841C2D0D680002F720 /* AboutUS */ = {
+			isa = PBXGroup;
+			children = (
+				04703B851C2D0D950002F720 /* AboutUSViewController.h */,
+				04703B861C2D0D950002F720 /* AboutUSViewController.m */,
+			);
+			path = AboutUS;
 			sourceTree = "<group>";
 		};
 		049FEB4B1C2BDE3900FA36C4 /* CustomCells */ = {
@@ -972,6 +984,7 @@
 		25E116E61C12C7C6004385F9 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				04703B841C2D0D680002F720 /* AboutUS */,
 				DF2A2D6A1C1A1733005C232F /* Logs */,
 				DFF375B91C1778650097B53C /* Carrier */,
 				2587C84F1C1682BF00163357 /* Notifications */,
@@ -1503,6 +1516,7 @@
 				041CC0591C24001300B1885F /* DeleteVehicleModel.m in Sources */,
 				045BCE781C2685260045A761 /* CustomLoaderView.m in Sources */,
 				25ECFD611C1D61C7006CA2B5 /* InspectLogsViewController.m in Sources */,
+				04703B871C2D0D950002F720 /* AboutUSViewController.m in Sources */,
 				25ECFDA81C208078006CA2B5 /* DriverActionCustomTableViewCell.m in Sources */,
 				045BCE8F1C26EDFF0045A761 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				25ECFD591C1D2FD2006CA2B5 /* TodayLogCustomTableViewCell.m in Sources */,

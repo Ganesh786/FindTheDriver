@@ -90,4 +90,5 @@
 +(BOOL)validateEmailWithString:(NSString *)email;
 +(BOOL)validateMobileNumber:(NSString*)number;
 +(NSString*)validateString:(NSString*)str;
++(NSString*)getAppVersion;
 @end
