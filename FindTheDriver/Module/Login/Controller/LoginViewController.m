@@ -46,10 +46,10 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     _hideView.hidden=YES;
-//    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:USER_LOGGEDIN];
-//    [[NSUserDefaults standardUserDefaults]setObject:@"shreeshailg51@gmail.com" forKey:USER_NAME];
-//    [[NSUserDefaults standardUserDefaults]setObject:@"123456" forKey:USER_PASSWORD];
-//    [[NSUserDefaults standardUserDefaults] synchronize];
+    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:USER_LOGGEDIN];
+    [[NSUserDefaults standardUserDefaults]setObject:@"shreeshailg51@gmail.com" forKey:USER_NAME];
+    [[NSUserDefaults standardUserDefaults]setObject:@"123456" forKey:USER_PASSWORD];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     if ([[NSUserDefaults standardUserDefaults]boolForKey:USER_LOGGEDIN]) {
         [self loadDashboardView];
     }

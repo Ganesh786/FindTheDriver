@@ -10,7 +10,7 @@
 #import "DefaultLabelCell.h"
 #import "StartTimeCell.h"
 #import "ShippingCell.h"
-
+#import "AddDocumentViewController.h"
 @interface LogFormViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>{
     
     NSMutableArray *tableDriverDataArray;
@@ -81,8 +81,15 @@ static NSString *kEndMessage   = @"End";
     self.tableView.tableFooterView=[[UIView alloc]initWithFrame:CGRectZero];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.navigationItem.title=@"Monday | October 10";
+}
+
 -(void)editMode{
     editData=YES;
+    self.tabBarController.tabBar.hidden=YES;
     self.navigationItem.rightBarButtonItem=nil;
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveMode)];
     [self.tableView reloadData];
@@ -90,6 +97,7 @@ static NSString *kEndMessage   = @"End";
 
 -(void)saveMode{
     editData=NO;
+    self.tabBarController.tabBar.hidden=NO;
     self.navigationItem.rightBarButtonItem=nil;
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(editMode)];
     [self.tableView reloadData];
@@ -223,6 +231,11 @@ static NSString *kEndMessage   = @"End";
 
 -(void)selectedDocumentType:(NSString*)docType{
     DEBUGLOG(@"docType->%@",docType);
+    
+    AddDocumentViewController *docViewController=[kLogsStoryboard instantiateViewControllerWithIdentifier:@"AddDocumentViewController"];
+    docViewController.docTypeString=docType;
+    self.navigationItem.title=@"";
+    [self.navigationController pushViewController:docViewController animated:YES];
 }
 
 -(void)getCurrentLocation:(UIButton *)sender{

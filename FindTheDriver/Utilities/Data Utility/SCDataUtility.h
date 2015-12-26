@@ -46,6 +46,9 @@
 
 + (NSString *)getShiftStatusFromPlistWithStatusCode:(NSString *)statusCodeStr;
 
+//Get Today Date, give formatter
++(NSString*)getTodayDate:(NSString*)formatter;
+
 //Get Logged In User Name
 +(NSString*)getUserName;
 

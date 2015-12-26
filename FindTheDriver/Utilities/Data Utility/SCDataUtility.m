@@ -75,6 +75,14 @@
     return NSLocalizedString(dict[statusCodeStr], nil);
 }
 
++(NSString*)getTodayDate:(NSString*)formatter{
+    NSDateFormatter *formater = [[NSDateFormatter alloc] init];
+    [formater setDateFormat:formatter];
+    NSDate *date = [NSDate date];
+    NSString *newDate = [formater stringFromDate:date];
+    return newDate;
+}
+
 +(NSString*)getUserName{
     return [[NSUserDefaults standardUserDefaults]objectForKey:USER_NAME];
 }

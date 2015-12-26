@@ -28,6 +28,10 @@
 		049FEB5B1C2C168C00FA36C4 /* DeleteDocumentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FEB5A1C2C168C00FA36C4 /* DeleteDocumentView.m */; };
 		049FEB611C2C2A4500FA36C4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049FEB601C2C2A4500FA36C4 /* CoreLocation.framework */; };
 		049FEB641C2C2E9700FA36C4 /* CurrentLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FEB631C2C2E9700FA36C4 /* CurrentLocation.m */; };
+		04AC99041C2E57C000DA69B0 /* AddDocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AC99031C2E57C000DA69B0 /* AddDocumentViewController.m */; };
+		04AC99081C2E584900DA69B0 /* DropDownTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AC99071C2E584900DA69B0 /* DropDownTableViewCell.m */; };
+		04AC990B1C2E586800DA69B0 /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AC990A1C2E586800DA69B0 /* TextFieldTableViewCell.m */; };
+		04AC99111C2E83C200DA69B0 /* DocumentZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AC99101C2E83C200DA69B0 /* DocumentZoomViewController.m */; };
 		04C782911C1F10DC00E3C46F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7826D1C1F10DC00E3C46F /* AFHTTPRequestOperation.m */; };
 		04C782921C1F10DC00E3C46F /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7826F1C1F10DC00E3C46F /* AFHTTPRequestOperationManager.m */; };
 		04C782931C1F10DC00E3C46F /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C782711C1F10DC00E3C46F /* AFHTTPSessionManager.m */; };
@@ -188,6 +192,14 @@
 		049FEB601C2C2A4500FA36C4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		049FEB621C2C2E9700FA36C4 /* CurrentLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentLocation.h; sourceTree = "<group>"; };
 		049FEB631C2C2E9700FA36C4 /* CurrentLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentLocation.m; sourceTree = "<group>"; };
+		04AC99021C2E57C000DA69B0 /* AddDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDocumentViewController.h; sourceTree = "<group>"; };
+		04AC99031C2E57C000DA69B0 /* AddDocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDocumentViewController.m; sourceTree = "<group>"; };
+		04AC99061C2E584900DA69B0 /* DropDownTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownTableViewCell.h; sourceTree = "<group>"; };
+		04AC99071C2E584900DA69B0 /* DropDownTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownTableViewCell.m; sourceTree = "<group>"; };
+		04AC99091C2E586800DA69B0 /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
+		04AC990A1C2E586800DA69B0 /* TextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewCell.m; sourceTree = "<group>"; };
+		04AC990F1C2E83C200DA69B0 /* DocumentZoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentZoomViewController.h; sourceTree = "<group>"; };
+		04AC99101C2E83C200DA69B0 /* DocumentZoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentZoomViewController.m; sourceTree = "<group>"; };
 		04C7826C1C1F10DC00E3C46F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		04C7826D1C1F10DC00E3C46F /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		04C7826E1C1F10DC00E3C46F /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -518,6 +530,29 @@
 				049FEB631C2C2E9700FA36C4 /* CurrentLocation.m */,
 			);
 			path = LocationFinder;
+			sourceTree = "<group>";
+		};
+		04AC99011C2E57A600DA69B0 /* AddDocument */ = {
+			isa = PBXGroup;
+			children = (
+				04AC99051C2E580000DA69B0 /* CustomCells */,
+				04AC99021C2E57C000DA69B0 /* AddDocumentViewController.h */,
+				04AC99031C2E57C000DA69B0 /* AddDocumentViewController.m */,
+				04AC990F1C2E83C200DA69B0 /* DocumentZoomViewController.h */,
+				04AC99101C2E83C200DA69B0 /* DocumentZoomViewController.m */,
+			);
+			path = AddDocument;
+			sourceTree = "<group>";
+		};
+		04AC99051C2E580000DA69B0 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				04AC99061C2E584900DA69B0 /* DropDownTableViewCell.h */,
+				04AC99071C2E584900DA69B0 /* DropDownTableViewCell.m */,
+				04AC99091C2E586800DA69B0 /* TextFieldTableViewCell.h */,
+				04AC990A1C2E586800DA69B0 /* TextFieldTableViewCell.m */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 		04C7826B1C1F10DC00E3C46F /* AFNetworking */ = {
@@ -1098,6 +1133,7 @@
 		25ECFD5A1C1D45CA006CA2B5 /* LogForm */ = {
 			isa = PBXGroup;
 			children = (
+				04AC99011C2E57A600DA69B0 /* AddDocument */,
 				049FEB551C2C165700FA36C4 /* AdditionalPopUps */,
 				049FEB4B1C2BDE3900FA36C4 /* CustomCells */,
 				25ECFD5B1C1D45E3006CA2B5 /* LogFormViewController.h */,
@@ -1444,6 +1480,7 @@
 				041CC0521C23E0B200B1885F /* UpDateProfileModel.m in Sources */,
 				25ECFD681C1D664D006CA2B5 /* DriverSignatureViewController.m in Sources */,
 				DF2A2D741C1A176D005C232F /* LogsCellTwoTableViewCell.m in Sources */,
+				04AC99081C2E584900DA69B0 /* DropDownTableViewCell.m in Sources */,
 				04C7829D1C1F10DC00E3C46F /* UIButton+AFNetworking.m in Sources */,
 				25E117011C146DD2004385F9 /* AccountSettingsViewController.m in Sources */,
 				041CC0551C23E0C800B1885F /* UpDateProfileDataModel.m in Sources */,
@@ -1453,6 +1490,7 @@
 				045BCE751C267E5E0045A761 /* DACircularProgressView.m in Sources */,
 				04E58FBC1C2531B40026E19A /* GraphView.m in Sources */,
 				04C7829B1C1F10DC00E3C46F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				04AC99041C2E57C000DA69B0 /* AddDocumentViewController.m in Sources */,
 				25E116F91C1441BC004385F9 /* SettingsViewController.m in Sources */,
 				25E116AA1C0CBB7D004385F9 /* UIViewController+Additions.m in Sources */,
 				25C9FED91C26A69C00399F7A /* MFSideMenuShadow.m in Sources */,
@@ -1478,6 +1516,7 @@
 				25E116A61C0CB853004385F9 /* RegistrationViewController.m in Sources */,
 				25AF26271C04BD43001FA4A8 /* main.m in Sources */,
 				04C7829C1C1F10DC00E3C46F /* UIAlertView+AFNetworking.m in Sources */,
+				04AC99111C2E83C200DA69B0 /* DocumentZoomViewController.m in Sources */,
 				25ECFD911C1FC344006CA2B5 /* ManagedObjectInstanceProvider.m in Sources */,
 				045BCE921C26EDFF0045A761 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				04E58FC01C25320A0026E19A /* GraphViewCell.m in Sources */,
@@ -1523,6 +1562,7 @@
 				25C9FED81C26A69C00399F7A /* MFSideMenuContainerViewController.m in Sources */,
 				04C782A01C1F10DC00E3C46F /* UIRefreshControl+AFNetworking.m in Sources */,
 				04C782931C1F10DC00E3C46F /* AFHTTPSessionManager.m in Sources */,
+				04AC990B1C2E586800DA69B0 /* TextFieldTableViewCell.m in Sources */,
 				25E1170C1C14A47B004385F9 /* VehicleInfoTableViewCell.m in Sources */,
 				049FEB4A1C2BB9B900FA36C4 /* PasswordResetModel.m in Sources */,
 				04C7ED9D1C206FCA00A7B6B1 /* RegistrationDataMadel.m in Sources */,

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "25AF26211C04BD43001FA4A8"
-               BuildableName = "FindTheDriver.app"
+               BuildableName = "UniControl.app"
                BlueprintName = "FindTheDriver"
                ReferencedContainer = "container:FindTheDriver.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "25AF26211C04BD43001FA4A8"
-            BuildableName = "FindTheDriver.app"
+            BuildableName = "UniControl.app"
             BlueprintName = "FindTheDriver"
             ReferencedContainer = "container:FindTheDriver.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "25AF26211C04BD43001FA4A8"
-            BuildableName = "FindTheDriver.app"
+            BuildableName = "UniControl.app"
             BlueprintName = "FindTheDriver"
             ReferencedContainer = "container:FindTheDriver.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "25AF26211C04BD43001FA4A8"
-            BuildableName = "FindTheDriver.app"
+            BuildableName = "UniControl.app"
             BlueprintName = "FindTheDriver"
             ReferencedContainer = "container:FindTheDriver.xcodeproj">
          </BuildableReference>
