@@ -11,16 +11,17 @@
 @implementation LogsCellOneTableViewCell
 
 - (void)awakeFromNib {
+    
+    self.cycleTextField.layer.cornerRadius=5.0f;
+    self.cycleTextField.layer.borderWidth=1.0f;
+    self.cycleTextField.layer.borderColor=kGrayColor.CGColor;
+    
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 30)];
+    self.cycleTextField.leftView = paddingView;
+    self.cycleTextField.leftViewMode = UITextFieldViewModeAlways;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-}
-
-- (IBAction)btnTimeZoneClicked:(id)sender {
-    [self.delegate showPicker:YES];
-}
-- (IBAction)btnCycleClicked:(id)sender {
-    [self.delegate showPicker:NO];
 }
 @end

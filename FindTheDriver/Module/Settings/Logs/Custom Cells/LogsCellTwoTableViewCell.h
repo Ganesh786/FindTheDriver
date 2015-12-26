@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface LogsCellTwoTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
-@property (weak, nonatomic) IBOutlet UILabel *lblToggleOne;
-@property (weak, nonatomic) IBOutlet UILabel *lblToggleTwo;
-@property (weak, nonatomic) IBOutlet UIButton *btnToggleOne;
-@property (weak, nonatomic) IBOutlet UIButton *btnToggleTwo;
-- (IBAction)btnToggleOneClicked:(id)sender;
-- (IBAction)btnToggleTwoClicked:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *steeringImgView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIView *leftView;
+@property (weak, nonatomic) IBOutlet UIButton *leftToggleBtnOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *leftToggleLabel;
+@property (weak, nonatomic) IBOutlet UIView *rightView;
+@property (weak, nonatomic) IBOutlet UIButton *rightToggleBtnOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *rightToggleLabel;
 
 @end

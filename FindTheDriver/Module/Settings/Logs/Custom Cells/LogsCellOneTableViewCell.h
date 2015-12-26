@@ -9,15 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LogsCellOneTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIButton *btnTimeZone;
-- (IBAction)btnTimeZoneClicked:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *btnCycle;
-- (IBAction)btnCycleClicked:(id)sender;
-@property (nonatomic, strong) id delegate;
-@end
-
-@protocol CellOneDelegate <NSObject>
-
--(void)showPicker:(BOOL)isTimeZone;
-
+@property (weak, nonatomic) IBOutlet UIImageView *steeringImgView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UITextField *cycleTextField;
 @end

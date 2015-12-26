@@ -87,6 +87,11 @@ static NSString *kEndMessage   = @"End";
     self.navigationItem.title=@"Monday | October 10";
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationItem.title=@"";
+}
+
 -(void)editMode{
     editData=YES;
     self.tabBarController.tabBar.hidden=YES;
@@ -234,7 +239,6 @@ static NSString *kEndMessage   = @"End";
     
     AddDocumentViewController *docViewController=[kLogsStoryboard instantiateViewControllerWithIdentifier:@"AddDocumentViewController"];
     docViewController.docTypeString=docType;
-    self.navigationItem.title=@"";
     [self.navigationController pushViewController:docViewController animated:YES];
 }
 
