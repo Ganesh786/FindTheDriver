@@ -10,7 +10,7 @@
 #import "TodayLogCustomTableViewCell.h"
 #import "TodayLogDetailViewController.h"
 
-@interface TodayLogViewController ()
+@interface TodayLogViewController ()<UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *time1Btn;
 @property (weak, nonatomic) IBOutlet UIButton *time2Btn;
@@ -25,8 +25,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIImage *image = [[UIImage imageNamed:@"OverFlowImage"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(dropDown)];
+    self.navigationItem.rightBarButtonItem=button;
+    
     [self loadTodayViewComponents];
 }
+
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -43,6 +49,28 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)dropDown{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:nil otherButtonTitles:@"Send",@"Print", nil];
+    [actionSheet showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+    if  ([buttonTitle isEqualToString:@"Send"]) {
+        //Send Methods
+    }
+    if ([buttonTitle isEqualToString:@"Print"]) {
+        //Print Method
+    }
+}
+
+
+
 
 #pragma mark - User defined methods
 
