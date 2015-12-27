@@ -194,4 +194,136 @@
    return [[NSUserDefaults standardUserDefaults]dictionaryForKey:PROFILE_INFO];
 }
 
+//Store Duty Cycle
++(void)storeDutyCycle:(id)dutyCycleDict{
+    [[NSUserDefaults standardUserDefaults]setObject:dutyCycleDict forKey:DUTY_CYCLE];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
++(id)getDutyCycleDict{
+    return [[NSUserDefaults standardUserDefaults]dictionaryForKey:DUTY_CYCLE];
+}
+
+//Store Time Zone
++(void)storeTimeZone:(id)timeZoneDict{
+    [[NSUserDefaults standardUserDefaults]setObject:timeZoneDict forKey:TIME_ZONE];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
++(id)getTimeZoneDict{
+    return [[NSUserDefaults standardUserDefaults]dictionaryForKey:TIME_ZONE];
+}
+
+//Store Carrier
++(void)storeCarrier:(id)dataDict{
+    [[NSUserDefaults standardUserDefaults]setObject:dataDict forKey:CARRIER];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
++(id)getStoreCarrierData{
+    return [[NSUserDefaults standardUserDefaults]dictionaryForKey:CARRIER];
+}
+
+//Store Exceptions
++(void)storeExceptions:(id)dataDict{
+    [[NSUserDefaults standardUserDefaults]setObject:dataDict forKey:EXCEPTIONS];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
++(id)getExceptionsData{
+    return [[NSUserDefaults standardUserDefaults]dictionaryForKey:EXCEPTIONS];
+}
+
+//Store HosStatus
++(void)storeHosStatus:(id)dataDict{
+    [[NSUserDefaults standardUserDefaults]setObject:dataDict forKey:HOS_STATUS];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
++(id)getHosStatusData{
+    return [[NSUserDefaults standardUserDefaults]dictionaryForKey:HOS_STATUS];
+}
+
+//Store VIRDefects
++(void)storeVIRDefects:(id)dataDict{
+    [[NSUserDefaults standardUserDefaults]setObject:dataDict forKey:VIR_DEFECTS];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
++(id)getVIRDefectsData{
+    return [[NSUserDefaults standardUserDefaults]dictionaryForKey:VIR_DEFECTS];
+}
+
+//Store Violations
++(void)storeViolations:(id)dataDict{
+    [[NSUserDefaults standardUserDefaults]setObject:dataDict forKey:VIOLATIONS];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
++(id)getViolationsData{
+    return [[NSUserDefaults standardUserDefaults]dictionaryForKey:VIOLATIONS];
+}
+
+//Store Settings Logs
++(void)storeSelectedTimeZone:(NSString*)str{
+    [[NSUserDefaults standardUserDefaults]setObject:str forKey:@"SelectedTimeZone"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
++(NSString*)getSelectedTimeZone{
+    NSString *str=[self validateString:[[NSUserDefaults standardUserDefaults] objectForKey:@"SelectedTimeZone"]];
+    if (str.length<=0) {
+        NSArray *arr=[[self getTimeZoneDict] objectForKey:TIME_ZONE];
+        if (arr.count>0) {
+            str=[[arr objectAtIndex:0]objectForKey:@"Name"];
+        }
+    }
+    return str;
+}
+
++(void)storeSelectedCycle:(NSString*)str{
+    [[NSUserDefaults standardUserDefaults]setObject:str forKey:@"SelectedCycle"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
++(NSString*)getSelectedCycle{
+    NSString *str=[self validateString:[[NSUserDefaults standardUserDefaults] objectForKey:@"SelectedCycle"]];
+    if (str.length<=0) {
+        NSArray *arr=[[self getDutyCycleDict] objectForKey:DUTY_CYCLE];
+        if (arr.count>0) {
+            str=[[arr objectAtIndex:0]objectForKey:@"CycleCode"];
+        }
+    }
+    return str;
+}
+
++(void)storeSelectedOdoMeter:(NSString*)str{
+    [[NSUserDefaults standardUserDefaults]setObject:str forKey:@"SelectedOdometer"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
++(NSString*)getSelectedOdometer{
+    NSString *str=[self validateString:[[NSUserDefaults standardUserDefaults] objectForKey:@"SelectedOdometer"]];
+    if (str.length<=0) {
+        str=@"KiloMeters";
+    }
+    return str;
+}
+
++(void)storeSelectedLogIncrement:(NSString*)str{
+    [[NSUserDefaults standardUserDefaults]setObject:str forKey:@"SelectedLogIncrement"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
++(NSString*)getSelectedLogIncrement{
+    NSString *str=[self validateString:[[NSUserDefaults standardUserDefaults] objectForKey:@"SelectedLogIncrement"]];
+    if (str.length<=0) {
+        str=@"1 Minute";
+    }
+    return str;
+}
+
+#pragma mark:- validate String
++(NSString*)validateString:(NSString*)str{
+    NSString *trimedstr  = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if(trimedstr == (id)[NSNull null] || [trimedstr isEqualToString:@""] || [trimedstr isKindOfClass:[NSNull class]])
+    {
+        trimedstr=@"";
+    }
+    return trimedstr;
+}
 @end

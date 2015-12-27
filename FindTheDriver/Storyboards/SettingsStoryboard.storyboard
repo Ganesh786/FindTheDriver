@@ -1015,12 +1015,15 @@
                             <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzW-18-F59">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Qt1-oF-3nR"/>
+                                    <constraint firstAttribute="height" constant="40" id="Qt1-oF-3nR">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" priority="750" constant="200" id="adm-ef-zcE"/>
                                 </constraints>
-                                <state key="normal" title="CANCEL"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="CancelBtnImage"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Qt1-oF-3nR"/>
@@ -1040,12 +1043,15 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGN-Z5-8gS">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.1058823529" green="0.53725490200000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="OMN-7q-iJZ"/>
+                                    <constraint firstAttribute="height" constant="40" id="OMN-7q-iJZ">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" priority="750" constant="200" id="wno-7c-N30"/>
                                 </constraints>
-                                <state key="normal" title="SAVE"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="SaveBtnImage"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="OMN-7q-iJZ"/>
@@ -2019,12 +2025,15 @@
                             <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esY-0v-zB1">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="750" constant="200" id="D6k-Xa-O2u"/>
-                                    <constraint firstAttribute="height" constant="40" id="POf-TE-G3X"/>
+                                    <constraint firstAttribute="height" constant="40" id="POf-TE-G3X">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                    </constraint>
                                 </constraints>
-                                <state key="normal" title="CANCEL"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="CancelBtnImage"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="D6k-Xa-O2u"/>
@@ -2044,12 +2053,15 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gy-pR-UxX">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.1058823529" green="0.53725490200000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="3wQ-nD-M14"/>
+                                    <constraint firstAttribute="height" constant="40" id="3wQ-nD-M14">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" priority="750" constant="200" id="aAd-3g-IOm"/>
                                 </constraints>
-                                <state key="normal" title="SAVE"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="SaveBtnImage"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="3wQ-nD-M14"/>
@@ -2431,7 +2443,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePIC" translatesAutoresizingMaskIntoConstraints="NO" id="Sej-9T-5JN">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Account" translatesAutoresizingMaskIntoConstraints="NO" id="Sej-9T-5JN">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
                                 <constraints>
@@ -2483,7 +2495,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePIC" translatesAutoresizingMaskIntoConstraints="NO" id="Lol-xy-1lc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Account" translatesAutoresizingMaskIntoConstraints="NO" id="Lol-xy-1lc">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
                                 <constraints>
@@ -2938,7 +2950,7 @@ Torrance, CA 90504</string>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="0B3-nQ-WUd"/>
                                     <constraint firstAttribute="height" constant="800" id="gcI-68-TOi">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="760"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="750"/>
                                     </constraint>
                                 </constraints>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -3477,11 +3489,14 @@ Torrance, CA 90504</string>
                             <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Pm-C3-Vo5">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="I7u-kS-WGv"/>
+                                    <constraint firstAttribute="height" constant="40" id="I7u-kS-WGv">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                    </constraint>
                                 </constraints>
-                                <state key="normal" title="CANCEL"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="CancelBtnImage"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="I7u-kS-WGv"/>
@@ -3501,11 +3516,14 @@ Torrance, CA 90504</string>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijc-sz-6b2">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.1058823529" green="0.53725490200000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="hcQ-uH-0uY"/>
+                                    <constraint firstAttribute="height" constant="40" id="hcQ-uH-0uY">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                    </constraint>
                                 </constraints>
-                                <state key="normal" title="SAVE"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="SaveBtnImage"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="hcQ-uH-0uY"/>
@@ -3529,7 +3547,7 @@ Torrance, CA 90504</string>
                             <constraint firstAttribute="trailing" secondItem="ijc-sz-6b2" secondAttribute="trailing" id="J29-aR-UJg"/>
                             <constraint firstItem="YXP-ew-jt4" firstAttribute="leading" secondItem="sK1-fL-3kF" secondAttribute="leading" id="K3w-Vb-skJ"/>
                             <constraint firstItem="RdT-Fb-lan" firstAttribute="top" secondItem="YXP-ew-jt4" secondAttribute="bottom" id="Uxd-qy-Cre">
-                                <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="50"/>
                             </constraint>
                             <constraint firstItem="ijc-sz-6b2" firstAttribute="leading" secondItem="1Pm-C3-Vo5" secondAttribute="trailing" id="ca3-df-vkX"/>
                             <constraint firstItem="RdT-Fb-lan" firstAttribute="top" secondItem="1Pm-C3-Vo5" secondAttribute="bottom" id="hGC-j9-A7h"/>
@@ -3607,11 +3625,12 @@ Torrance, CA 90504</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Account" width="50" height="50"/>
         <image name="Camera" width="36" height="32"/>
         <image name="CancelBtnImage" width="359" height="92"/>
         <image name="Car" width="96" height="96"/>
         <image name="Close" width="32" height="26"/>
-        <image name="Compose" width="48" height="48"/>
+        <image name="Compose" width="48" height="40"/>
         <image name="SaveBtnImage" width="360" height="92"/>
         <image name="Steering" width="45" height="45"/>
         <image name="profilePIC" width="70" height="70"/>

@@ -21,11 +21,30 @@
 #define NOTIFICATION_STATUS @"NotificationStatus"
 #define NOTIFICATION_ALERT @"NotificationAlert"
 
-// Profile Pic
+// Profile Pic and Data
 #define PROFILE_PIC @"profilePic"
-
-// Profile Data
 #define PROFILE_INFO @"ProfileInfo"
+
+//Duty Cycles
+#define DUTY_CYCLE @"DutyCycles"
+
+//Time Zone
+#define TIME_ZONE @"TimeZones"
+
+//Carrier
+#define CARRIER @"Carrier"
+
+//Exceptions
+#define EXCEPTIONS @"Exceptions"
+
+//HosStatus
+#define HOS_STATUS @"HosStatus"
+
+//VIRDefects
+#define VIR_DEFECTS @"VIRDefects"
+
+//Violations
+#define VIOLATIONS @"Violations"
 
 //---------------------------------- Color Constants  ---------------------------
 #pragma mark - Color Constants

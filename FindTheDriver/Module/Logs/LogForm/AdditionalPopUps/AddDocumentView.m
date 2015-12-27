@@ -17,7 +17,7 @@
         self.backgroundColor=[UIColor colorWithRed:0.200f green:0.200f blue:0.200f alpha:0.5f];
         
         textDataArray=[NSArray arrayWithObjects:@"Bill of Landing",@"Gas Station",@"Accident Photo",@"Citation",@"Scale Ticket",@"Other", nil];
-        imageDataArray=[NSArray arrayWithObjects:@"Calender",@"Calender",@"Calender",@"Calender",@"Calender",@"Calender", nil];
+        imageDataArray=[NSArray arrayWithObjects:@"BillLand",@"GasStation",@"AccidentPhoto",@"Citation",@"ScaleTicket",@"Other", nil];
         
         UIView *popUp=[[UIView alloc]initWithFrame:CGRectMake(10, (frame.size.height-300)/2, frame.size.width-20, 300)];
         popUp.backgroundColor=kWhiteColor;

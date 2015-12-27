@@ -18,6 +18,11 @@
     [super viewDidLoad];
     
     self.view.tintColor=kNavBarColor;
+    [_btnCancel setBackgroundImage:[UIImage imageNamed:@"CancelBtnImage"] forState:UIControlStateNormal];
+    [_btnSave setBackgroundImage:[UIImage imageNamed:@"SaveBtnImage"] forState:UIControlStateNormal];
+    [_btnCancel setTitle:@"" forState:UIControlStateNormal];
+    [_btnSave setTitle:@"" forState:UIControlStateNormal];
+
 }
 
 - (void)didReceiveMemoryWarning {

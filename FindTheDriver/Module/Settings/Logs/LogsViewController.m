@@ -47,15 +47,15 @@ static NSString *kLogIncrement   = @"Log Increment";
     self.view.tintColor=kNavBarColor;
     self.tableView.tintColor=kNavBarColor;
     
-    timePickerArray=[NSArray arrayWithObjects:@"Central Time",@"GMT",@"IST", nil];
-    cyclePickerArray=[NSArray arrayWithObjects:@"US 70 Hours/8 Days",@"US 80 Hours/8 Days",@"US 70 Hours/7 Days", nil];
+    timePickerArray=[[SCDataUtility getTimeZoneDict] objectForKey:TIME_ZONE];
+    cyclePickerArray=[[SCDataUtility getDutyCycleDict] objectForKey:DUTY_CYCLE];
 
     tableDataArray=[[NSMutableArray alloc]init];
-    [tableDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"Central Time",kTimeZone,@"Calender"] forKeys:@[kValue,kTitle,kImage]]];
-    [tableDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"US 70 Hours/8 Days",kCycle,@"Calender"] forKeys:@[kValue,kTitle,kImage]]];
+    [tableDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[[SCDataUtility getSelectedTimeZone],kTimeZone,@"TimeZone"] forKeys:@[kValue,kTitle,kImage]]];
+    [tableDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[[SCDataUtility getSelectedCycle],kCycle,@"Cycle"] forKeys:@[kValue,kTitle,kImage]]];
     
-    [tableDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"KiloMeters",kOdometer,@"Miles",@"Calender",@"KiloMeters"] forKeys:@[kValue,kTitle,kSubValue,kImage,kSelectedLogOrMeter]]];
-    [tableDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"1 Minute",kLogIncrement,@"15 Minute",@"Calender",@"1 Minute"] forKeys:@[kValue,kTitle,kSubValue,kImage,kSelectedLogOrMeter]]];
+    [tableDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"KiloMeters",kOdometer,@"Miles",@"Odometer",[SCDataUtility getSelectedOdometer]] forKeys:@[kValue,kTitle,kSubValue,kImage,kSelectedLogOrMeter]]];
+    [tableDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"1 Minute",kLogIncrement,@"15 Minute",@"LogIncrement",[SCDataUtility getSelectedLogIncrement]] forKeys:@[kValue,kTitle,kSubValue,kImage,kSelectedLogOrMeter]]];
 
 }
 
@@ -99,11 +99,11 @@ static NSString *kLogIncrement   = @"Log Increment";
     [cell2.leftToggleBtnOutlet setImage:nil forState:UIControlStateNormal];
     [cell2.rightToggleBtnOutlet setImage:nil forState:UIControlStateNormal];
     if ([[dict objectForKey:kValue] isEqualToString:[dict objectForKey:kSelectedLogOrMeter]]) {
-        [cell2.leftToggleBtnOutlet setBackgroundImage:[UIImage imageNamed:@"CheckMark"] forState:UIControlStateNormal];//Selected Image
-        [cell2.rightToggleBtnOutlet setBackgroundImage:[UIImage imageNamed:@"Close"] forState:UIControlStateNormal];// Unselected Image
+        [cell2.leftToggleBtnOutlet setBackgroundImage:[UIImage imageNamed:@"RadioCheck"] forState:UIControlStateNormal];//Selected Image
+        [cell2.rightToggleBtnOutlet setBackgroundImage:[UIImage imageNamed:@"RadioUnCheck"] forState:UIControlStateNormal];// Unselected Image
     }else{
-        [cell2.leftToggleBtnOutlet setBackgroundImage:[UIImage imageNamed:@"Close"] forState:UIControlStateNormal];//Unselected Image
-        [cell2.rightToggleBtnOutlet setBackgroundImage:[UIImage imageNamed:@"CheckMark"] forState:UIControlStateNormal];// Selected Image
+        [cell2.leftToggleBtnOutlet setBackgroundImage:[UIImage imageNamed:@"RadioUnCheck"] forState:UIControlStateNormal];//Unselected Image
+        [cell2.rightToggleBtnOutlet setBackgroundImage:[UIImage imageNamed:@"RadioCheck"] forState:UIControlStateNormal];// Selected Image
     }
     return cell2;
 }
@@ -181,8 +181,10 @@ static NSString *kLogIncrement   = @"Log Increment";
 
 -(NSString*)getPickerSelectedValueForRow:(NSInteger)row{
     NSString *datePickerTitle = [self getTitleForCurrentTextfield];
-    if ([datePickerTitle isEqualToString:kTimeZone] || [datePickerTitle isEqualToString:kCycle]) {
-        return [pickerArray objectAtIndex:row];
+    if ([datePickerTitle isEqualToString:kCycle]) {
+        return [[pickerArray objectAtIndex:row] objectForKey:@"CycleCode"];
+    }else if ([datePickerTitle isEqualToString:kTimeZone]){
+        return [[pickerArray objectAtIndex:row] objectForKey:@"Name"];
     }
     return nil;
 }
@@ -265,6 +267,23 @@ static NSString *kLogIncrement   = @"Log Increment";
 }
 
 - (IBAction)btnSaveClicked:(id)sender {
+    for (int i=0; i<tableDataArray.count; i++) {
+        NSDictionary *dict=[tableDataArray objectAtIndex:i];
+        if ([[dict objectForKey:kTitle] isEqualToString:kTimeZone]) {
+            NSString *timeZone=[dict objectForKey:kValue];
+            [SCDataUtility storeSelectedTimeZone:timeZone];
+        }else if ([[dict objectForKey:kTitle] isEqualToString:kCycle]) {
+            NSString *cycle=[dict objectForKey:kValue];
+            [SCDataUtility storeSelectedCycle:cycle];
+        }else if ([[dict objectForKey:kTitle] isEqualToString:kOdometer]) {
+            NSString *odometer=[dict objectForKey:kSelectedLogOrMeter];
+            [SCDataUtility storeSelectedOdoMeter:odometer];
+        }else if ([[dict objectForKey:kTitle] isEqualToString:kLogIncrement]) {
+            NSString *logIncrement=[dict objectForKey:kSelectedLogOrMeter];
+            [SCDataUtility storeSelectedLogIncrement:logIncrement];
+        }
+    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)btnCancelClicked:(id)sender {

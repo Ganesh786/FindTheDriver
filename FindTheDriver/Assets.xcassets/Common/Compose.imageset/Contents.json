@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Compose.png",
+      "filename" : "settings_carrier_edit.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Compose@2x.png",
+      "filename" : "settings_carrier_edit-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Compose@3x.png",
+      "filename" : "settings_carrier_edit-2.png",
       "scale" : "3x"
     }
   ],

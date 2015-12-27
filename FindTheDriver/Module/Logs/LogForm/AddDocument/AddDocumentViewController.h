@@ -11,14 +11,8 @@
 @interface AddDocumentViewController : UIViewController
 @property (weak, nonatomic) IBOutlet TPKeyboardAvoidingTableView *tableView;
 @property(nonatomic,strong)NSString *docTypeString;
-@property (weak, nonatomic) IBOutlet UIView *cancelView;
-@property (weak, nonatomic) IBOutlet UIImageView *cancelImgView;
-@property (weak, nonatomic) IBOutlet UILabel *cancelLabel;
 @property (weak, nonatomic) IBOutlet UIButton *cancelBtnOutlet;
 - (IBAction)cancelBtnAction:(id)sender;
-@property (weak, nonatomic) IBOutlet UIView *saveView;
-@property (weak, nonatomic) IBOutlet UIImageView *saveImgView;
-@property (weak, nonatomic) IBOutlet UILabel *saveLabel;
 @property (weak, nonatomic) IBOutlet UIButton *saveBtnOutlet;
 - (IBAction)saveBtnAction:(id)sender;
 @end

@@ -54,14 +54,13 @@ static NSString *kNotesMessage =@"Enter Notes";
     self.navigationItem.title=@"Add Document";
    
     tableDataArray=[[NSMutableArray alloc]init];
-    [tableDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[docTypeString,kDocType,kDocTypeMessage,@"Calender"] forKeys:@[kValue,kTitle,kMessage,kImage]]];
+    [tableDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[docTypeString,kDocType,kDocTypeMessage,@"DropDownBill"] forKeys:@[kValue,kTitle,kMessage,kImage]]];
     [tableDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[[SCDataUtility getTodayDate:@"MM/dd/yyyy"],kDate,kDateMessage,@"Calender"] forKeys:@[kValue,kTitle,kMessage,kImage]]];
-    [tableDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"",kReferenceNumber,kReferenceNumberMessage,@"Calender"] forKeys:@[kValue,kTitle,kMessage,kImage]]];
-    [tableDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"",kNotes,kNotesMessage,@"Calender"] forKeys:@[kValue,kTitle,kMessage,kImage]]];
+    [tableDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"",kReferenceNumber,kReferenceNumberMessage,@"Reference"] forKeys:@[kValue,kTitle,kMessage,kImage]]];
+    [tableDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"",kNotes,kNotesMessage,@"Notes"] forKeys:@[kValue,kTitle,kMessage,kImage]]];
     
     pickerArray=[NSArray arrayWithObjects:@"Bill of Landing",@"Gas Station",@"Accident Photo",@"Citation",@"Scale Ticket",@"Other", nil];
     
-    self.saveView.backgroundColor=kNavBarColor;
     self.tableView.tableHeaderView=[[UIView alloc]initWithFrame:CGRectZero];
     self.tableView.tableFooterView=[self footerView];
 }
@@ -89,7 +88,7 @@ static NSString *kNotesMessage =@"Enter Notes";
     if (docImage) {
         UIButton *zoomBtn=[UIButton buttonWithType:UIButtonTypeCustom];
         zoomBtn.frame=CGRectMake(tableFooterView.frame.size.width-100, 10, 40, 40);
-        [zoomBtn setBackgroundImage:[UIImage imageNamed:@"Calender"] forState:UIControlStateNormal];
+        [zoomBtn setBackgroundImage:[UIImage imageNamed:@"FullScreen"] forState:UIControlStateNormal];
         [zoomBtn addTarget:self action:@selector(zoomBtnAction) forControlEvents:UIControlEventTouchUpInside];
         [tableFooterView addSubview:zoomBtn];
     }
@@ -199,7 +198,8 @@ static NSString *kNotesMessage =@"Enter Notes";
         dropDownCell.docTextField.inputView = [self inputViewForStatus];
         dropDownCell.docTextField.inputAccessoryView=[self inputAccessoryViewForStatus];
         dropDownCell.docTextField.text=[dict objectForKey:kValue];
-        [dropDownCell.rightBtnOutlet setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+        [dropDownCell.rightBtnOutlet setImage:[UIImage imageNamed:@"DownArrow"] forState:UIControlStateNormal];
+        [dropDownCell.rightBtnOutlet setTitle:@"" forState:UIControlStateNormal];
         return dropDownCell;
     }
     TextFieldTableViewCell *commonCell=[tableView dequeueReusableCellWithIdentifier:cmnTextFieldCellIdentifier forIndexPath:indexPath];

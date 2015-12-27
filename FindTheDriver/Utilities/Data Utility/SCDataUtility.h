@@ -76,4 +76,49 @@
 +(void)storeDriverInfo:(id)profileInfoDict;
 +(id)getProfileInfoDict;
 
+//Store Duty Cycle
++(void)storeDutyCycle:(id)dutyCycleDict;
++(id)getDutyCycleDict;
+
+//Store Time Zone
++(void)storeTimeZone:(id)timeZoneDict;
++(id)getTimeZoneDict;
+
+//Store Carrier
++(void)storeCarrier:(id)dataDict;
++(id)getStoreCarrierData;
+
+//Store Exceptions
++(void)storeExceptions:(id)dataDict;
++(id)getExceptionsData;
+
+//Store HosStatus
++(void)storeHosStatus:(id)dataDict;
++(id)getHosStatusData;
+
+//Store VIRDefects
++(void)storeVIRDefects:(id)dataDict;
++(id)getVIRDefectsData;
+
+//Store Violations
++(void)storeViolations:(id)dataDict;
++(id)getViolationsData;
+
+//Store Settings Logs
++(void)storeSelectedTimeZone:(NSString*)str;
++(NSString*)getSelectedTimeZone;
+
++(void)storeSelectedCycle:(NSString*)str;
++(NSString*)getSelectedCycle;
+
++(void)storeSelectedOdoMeter:(NSString*)str;
++(NSString*)getSelectedOdometer;
+
++(void)storeSelectedLogIncrement:(NSString*)str;
++(NSString*)getSelectedLogIncrement;
 @end
+
+
+
+
+

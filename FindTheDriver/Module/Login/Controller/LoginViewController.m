@@ -92,6 +92,27 @@
                             if ([[dataDict objectForKey:@"Profile"] isKindOfClass:[NSArray class]]) {
                                 [self parseProfileData:[dataDict objectForKey:@"Profile"]];
                             }
+                            if ([[dataDict objectForKey:DUTY_CYCLE] isKindOfClass:[NSArray class]]) {
+                                [self parseDutyCycle:[dataDict objectForKey:DUTY_CYCLE]];
+                            }
+                            if ([[dataDict objectForKey:TIME_ZONE] isKindOfClass:[NSArray class]]) {
+                                [self parseTimeZone:[dataDict objectForKey:TIME_ZONE]];
+                            }
+                            if ([[dataDict objectForKey:CARRIER] isKindOfClass:[NSArray class]]) {
+                                [self parseCarrier:[dataDict objectForKey:CARRIER]];
+                            }
+                            if ([[dataDict objectForKey:VIOLATIONS] isKindOfClass:[NSArray class]]) {
+                                [self parseViolations:[dataDict objectForKey:VIOLATIONS]];
+                            }
+                            if ([[dataDict objectForKey:VIR_DEFECTS] isKindOfClass:[NSArray class]]) {
+                                [self parseVIRDefects:[dataDict objectForKey:VIR_DEFECTS]];
+                            }
+                            if ([[dataDict objectForKey:HOS_STATUS] isKindOfClass:[NSArray class]]) {
+                                [self parseHosStatus:[dataDict objectForKey:HOS_STATUS]];
+                            }
+                            if ([[dataDict objectForKey:EXCEPTIONS] isKindOfClass:[NSArray class]]) {
+                                [self parseExceptions:[dataDict objectForKey:EXCEPTIONS]];
+                            }
                             [self loadDashboardView];
                         }else{
                             [self showAlert:@"" message:message];
@@ -123,6 +144,63 @@
         }
     }
 }
+
+-(void)parseDutyCycle:(NSArray*)dutyCycleArray{
+    if (dutyCycleArray.count>0) {
+        NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
+        [dict setObject:dutyCycleArray forKey:DUTY_CYCLE];
+            [SCDataUtility storeDutyCycle:dict];
+    }
+}
+
+-(void)parseTimeZone:(NSArray*)timeZoneArray{
+    if (timeZoneArray.count>0) {
+        NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
+        [dict setObject:timeZoneArray forKey:TIME_ZONE];
+        [SCDataUtility storeTimeZone:dict];
+    }
+}
+
+-(void)parseCarrier:(NSArray*)dataArray{
+    if (dataArray.count>0) {
+        NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
+        [dict setObject:dataArray forKey:CARRIER];
+        [SCDataUtility storeCarrier:dict];
+    }
+}
+
+-(void)parseExceptions:(NSArray*)dataArray{
+    if (dataArray.count>0) {
+        NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
+        [dict setObject:dataArray forKey:EXCEPTIONS];
+        [SCDataUtility storeExceptions:dict];
+    }
+}
+
+-(void)parseHosStatus:(NSArray*)dataArray{
+    if (dataArray.count>0) {
+        NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
+        [dict setObject:dataArray forKey:HOS_STATUS];
+        [SCDataUtility storeHosStatus:dict];
+    }
+}
+
+-(void)parseVIRDefects:(NSArray*)dataArray{
+    if (dataArray.count>0) {
+        NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
+        [dict setObject:dataArray forKey:VIR_DEFECTS];
+        [SCDataUtility storeVIRDefects:dict];
+    }
+}
+
+-(void)parseViolations:(NSArray*)dataArray{
+    if (dataArray.count>0) {
+        NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
+        [dict setObject:dataArray forKey:VIOLATIONS];
+        [SCDataUtility storeViolations:dict];
+    }
+}
+
 
 - (void)loadDashboardView {
     
