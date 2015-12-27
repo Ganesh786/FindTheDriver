@@ -48,7 +48,7 @@
     
     _navBarRightBtn.layer.cornerRadius=_navBarRightBtn.frame.size.height/2;
     _navBarRightBtn.layer.masksToBounds=YES;
-    [_navBarRightBtn setImage:[SCDataUtility galleryImage:PROFILE_PIC] forState:UIControlStateNormal];
+    [_navBarRightBtn setImage:[UIImage imageNamed:@"TopUserIcon"] forState:UIControlStateNormal];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

@@ -64,7 +64,15 @@ static NSString *kEndMessage   = @"End";
     tableDriverDataArray=[[NSMutableArray alloc]init];
     tableTimeDataArray=[[NSMutableArray alloc]init];
     tableShippingDataArray=[[NSMutableArray alloc]init];
+    [self setUpView];
+}
+
+-(void)setUpView{
     
+    [tableDriverDataArray removeAllObjects];
+    [tableTimeDataArray removeAllObjects];
+    [tableShippingDataArray removeAllObjects];
+
     [tableDriverDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"Shreeshail",kDriver,kDriverMessage] forKeys:@[kValue,kTitle,kMessage]]];
     [tableDriverDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"S Ganachari",kCoDriver,kCoDriverMessage] forKeys:@[kValue,kTitle,kMessage]]];
     [tableDriverDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"KA 28 F 444",kVehicle,kVehicleMessage] forKeys:@[kValue,kTitle,kMessage]]];
@@ -78,6 +86,15 @@ static NSString *kEndMessage   = @"End";
     
     self.tableView.tableHeaderView=[[UIView alloc]initWithFrame:CGRectZero];
     self.tableView.tableFooterView=[[UIView alloc]initWithFrame:CGRectZero];
+}
+
+-(void)cancelMode{
+    editData=NO;
+    self.tabBarController.tabBar.hidden=NO;
+    self.navigationItem.rightBarButtonItem=nil;
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(editMode)];
+    [self setUpView];
+    [self.tableView reloadData];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -106,6 +123,14 @@ static NSString *kEndMessage   = @"End";
     [self.tableView reloadData];
     
     //Save Data
+}
+
+- (IBAction)backBtnClicked:(id)sender {
+    if (editData) {
+        [self cancelMode];
+    }else{
+        [self dismissViewControllerAnimated:NO completion:nil];
+    }
 }
 
 
@@ -412,10 +437,6 @@ static NSString *kEndMessage   = @"End";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)backBtnClicked:(id)sender {
-    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 @end
