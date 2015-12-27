@@ -32,6 +32,7 @@
 		04AC99081C2E584900DA69B0 /* DropDownTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AC99071C2E584900DA69B0 /* DropDownTableViewCell.m */; };
 		04AC990B1C2E586800DA69B0 /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AC990A1C2E586800DA69B0 /* TextFieldTableViewCell.m */; };
 		04AC99111C2E83C200DA69B0 /* DocumentZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AC99101C2E83C200DA69B0 /* DocumentZoomViewController.m */; };
+		04B2B62D1C2FCA3100C3276D /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2B62C1C2FCA3100C3276D /* NSData+Base64.m */; };
 		04C782911C1F10DC00E3C46F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7826D1C1F10DC00E3C46F /* AFHTTPRequestOperation.m */; };
 		04C782921C1F10DC00E3C46F /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7826F1C1F10DC00E3C46F /* AFHTTPRequestOperationManager.m */; };
 		04C782931C1F10DC00E3C46F /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C782711C1F10DC00E3C46F /* AFHTTPSessionManager.m */; };
@@ -200,6 +201,8 @@
 		04AC990A1C2E586800DA69B0 /* TextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewCell.m; sourceTree = "<group>"; };
 		04AC990F1C2E83C200DA69B0 /* DocumentZoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentZoomViewController.h; sourceTree = "<group>"; };
 		04AC99101C2E83C200DA69B0 /* DocumentZoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentZoomViewController.m; sourceTree = "<group>"; };
+		04B2B62B1C2FCA3100C3276D /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		04B2B62C1C2FCA3100C3276D /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		04C7826C1C1F10DC00E3C46F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		04C7826D1C1F10DC00E3C46F /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		04C7826E1C1F10DC00E3C46F /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -1271,6 +1274,8 @@
 		25ECFDA11C1FC42A006CA2B5 /* Data Utility */ = {
 			isa = PBXGroup;
 			children = (
+				04B2B62B1C2FCA3100C3276D /* NSData+Base64.h */,
+				04B2B62C1C2FCA3100C3276D /* NSData+Base64.m */,
 				25ECFDA21C1FC42A006CA2B5 /* SCDataUtility.h */,
 				25ECFDA31C1FC42A006CA2B5 /* SCDataUtility.m */,
 			);
@@ -1545,6 +1550,7 @@
 				25C9FECB1C252A7000399F7A /* LKAddScoreView.m in Sources */,
 				04C782991C1F10DC00E3C46F /* AFURLSessionManager.m in Sources */,
 				04C7829E1C1F10DC00E3C46F /* UIImageView+AFNetworking.m in Sources */,
+				04B2B62D1C2FCA3100C3276D /* NSData+Base64.m in Sources */,
 				04C782911C1F10DC00E3C46F /* AFHTTPRequestOperation.m in Sources */,
 				DF2A2D7B1C1F3DFD005C232F /* AddNewDVIRViewController.m in Sources */,
 				25E116C81C0E9E92004385F9 /* HomeViewController.m in Sources */,

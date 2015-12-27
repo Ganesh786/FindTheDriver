@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "top-logo.png",
+      "filename" : "unicontrol-icon.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "top-logo-1.png",
+      "filename" : "unicontrol-icon@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "top-logo-2.png",
+      "filename" : "unicontrol-icon@3x.png",
       "scale" : "3x"
     }
   ],

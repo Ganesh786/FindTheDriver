@@ -116,4 +116,82 @@
     [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
+#pragma mark:- Gallery Image Methods
++ (UIImage*)imageWithImage:(UIImage*)image
+              scaledToSize:(CGSize)newSize;
+{
+    CGFloat widthRatio = newSize.width/image.size.width;
+    CGFloat heightRatio = newSize.height/image.size.height;
+    if(widthRatio > heightRatio)
+    {
+        newSize=CGSizeMake(image.size.width*heightRatio,image.size.height*heightRatio);
+    }
+    else
+    {
+        newSize=CGSizeMake(image.size.width*widthRatio,image.size.height*widthRatio);
+    }
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
+
++(void)deleteGalleryImage{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *gallery = [paths objectAtIndex:0];
+    NSString *dataPath = [gallery stringByAppendingPathComponent:@"/aFindTheDriverImage"];
+    NSError *error = NULL;
+    NSFileManager *filemgr = [NSFileManager defaultManager];
+    if ([filemgr fileExistsAtPath:dataPath]){
+        BOOL success = [filemgr removeItemAtPath:dataPath error:&error];
+        if (success) {
+        }
+        else
+        {
+        }
+    }
+}
+
++(void)writeGalleryImage:(UIImage*)image imagename:(NSString*)imagename{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *gallery = [paths objectAtIndex:0];
+    NSString *dataPath = [gallery stringByAppendingPathComponent:@"/aFindTheDriverImage"];
+    NSError *error = NULL;
+    NSFileManager *filemgr = [NSFileManager defaultManager];
+    if (![filemgr fileExistsAtPath:dataPath])
+        [filemgr createDirectoryAtPath:dataPath withIntermediateDirectories:NO attributes:nil error:&error];
+    NSString *savedGalleryImagePath = [dataPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",imagename]];
+    NSData *galleryImageData=UIImagePNGRepresentation(image);
+    [galleryImageData writeToFile:savedGalleryImagePath atomically:YES];
+}
+
++(UIImage*)galleryImage:(NSString*)imageName{
+    UIImage *image=[[UIImage alloc]init];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *gallery = [paths objectAtIndex:0];
+    NSFileManager *filemgr = [NSFileManager defaultManager];
+    NSString *dataPath = [gallery stringByAppendingPathComponent:@"/aFindTheDriverImage"];
+    NSError *error;
+    NSArray *filelist= [filemgr contentsOfDirectoryAtPath:dataPath error:&error];
+    if ([filelist containsObject:[NSString stringWithFormat:@"%@.png",imageName]]) {
+        NSString *getImagePath = [dataPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",imageName]];
+        image=[UIImage imageWithContentsOfFile:getImagePath];
+    }else{
+        image=[UIImage imageNamed:@"profilePIC"];
+    }
+    return image;
+}
+
+//Store Profile Info
++(void)storeDriverInfo:(id)profileInfoDict{
+    [[NSUserDefaults standardUserDefaults]setObject:profileInfoDict forKey:PROFILE_INFO];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
++(id)getProfileInfoDict{
+   return [[NSUserDefaults standardUserDefaults]dictionaryForKey:PROFILE_INFO];
+}
+
 @end

@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "cam_icon.pdf",
+      "filename" : "cam_icon.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "cam_icon-1.pdf",
+      "filename" : "cam_icon-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "cam_icon-2.pdf",
+      "filename" : "cam_icon-2.png",
       "scale" : "3x"
     }
   ],

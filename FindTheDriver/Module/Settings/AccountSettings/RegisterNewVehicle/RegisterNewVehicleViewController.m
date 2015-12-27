@@ -61,7 +61,7 @@
                     dataModel.CarName=vehicleNickName;
                     dataModel.Color=vehicleColor;
                     dataModel.RegistrationPlate=vehicleRegPlate;
-                    dataModel.FuelType=isDieselSelected?@"Diesel":@"Petrol";
+                    dataModel.FuelType=isDieselSelected?@"Diesel":@"Gasoline";
                     [[CustomLoaderView sharedView] showLoader];
                     NSDictionary *dict=[SCDataUtility getDictionaryBasaedOnObject:dataModel];
                     [[RegisterNewVehicleModel alloc] newVehicleAPICall:[NSString stringWithFormat:@"%@/%@",[SCDataUtility getUserName],[SCDataUtility getUserPassword]] params:dict completionBlock:^(BOOL success, NSString *message, id dataDict) {

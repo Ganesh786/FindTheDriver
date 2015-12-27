@@ -21,6 +21,12 @@
 #define NOTIFICATION_STATUS @"NotificationStatus"
 #define NOTIFICATION_ALERT @"NotificationAlert"
 
+// Profile Pic
+#define PROFILE_PIC @"profilePic"
+
+// Profile Data
+#define PROFILE_INFO @"ProfileInfo"
+
 //---------------------------------- Color Constants  ---------------------------
 #pragma mark - Color Constants
 

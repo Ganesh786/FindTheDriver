@@ -118,7 +118,7 @@
         isDieselSelected = YES;
         [fualCell.fualSlider setValue:1];
     }
-    [_registrationTblView reloadRowsAtIndexPaths:@[indexpath] withRowAnimation:UITableViewRowAnimationNone];
+    [_registrationTblView reloadRowsAtIndexPaths:@[indexpath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 - (IBAction)registerBtnClicked:(id)sender {
@@ -131,7 +131,7 @@
             regModel.CarName=carNickNameTxtFld.text;
             regModel.Color=colorTxtFld.text;
             regModel.RegistrationPlate=regPlateTextFld.text;
-            regModel.FuelType=isDieselSelected?@"Diesel":@"Petrol";
+            regModel.FuelType=isDieselSelected?@"Diesel":@"Gasoline";
             regModel.Address=@"";
             NSMutableDictionary *inputDict = [SCDataUtility getDictionaryBasaedOnObject:regModel];
             [[CustomLoaderView sharedView] showLoader];

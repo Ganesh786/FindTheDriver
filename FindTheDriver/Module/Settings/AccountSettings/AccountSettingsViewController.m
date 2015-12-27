@@ -23,10 +23,14 @@
 @property (weak, nonatomic) IBOutlet UIButton *profilePicBtn;
 @property (weak, nonatomic) IBOutlet UIButton *changePwdBtn;
 @property (weak, nonatomic) IBOutlet UIButton *registerVehicleBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cameraBtnOutlet;
 
 @end
 
 @implementation AccountSettingsViewController
+
+#define DRIVERNAME @"DriverName"
+#define DRIVERNUMBER @"ContactNumber"
 
 #pragma mark - View life cycle
 
@@ -34,9 +38,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self loadAccountSettingsViewController];
+   
+    profileImage=[SCDataUtility galleryImage:PROFILE_PIC];
+    [_profilePicBtn setBackgroundImage:profileImage forState:UIControlStateNormal];
+
+    vehiclesDataArray=[[NSMutableArray alloc]init];
     _profilePicBtn.layer.cornerRadius=35;
     _profilePicBtn.layer.masksToBounds=YES;
-    vehiclesDataArray=[[NSMutableArray alloc]init];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -84,9 +92,10 @@
             driverNameTxtFld.autocapitalizationType=UITextAutocapitalizationTypeWords;
             driverNameTxtFld.autocorrectionType = UITextAutocorrectionTypeNo;
             driverNameTxtFld.returnKeyType = UIReturnKeyNext;
+            driverNameTxtFld.text=[self getDriveInfoForKey:DRIVERNAME];
             driverNameTxtFld.delegate=self;
             break;
-            
+      /*
         case 1:
             driverIDTxtFld = txtFld;
             driverIDTxtFld.placeholder = @"Driver ID";
@@ -95,16 +104,17 @@
             driverIDTxtFld.returnKeyType = UIReturnKeyNext;
             driverIDTxtFld.delegate=self;
             break;
-            
-        case 2:
+          */
+        case 1:
             phoneNumberTxtFld = txtFld;
             phoneNumberTxtFld.placeholder = @"Phone Number";
             phoneNumberTxtFld.keyboardType = UIKeyboardTypePhonePad;
             phoneNumberTxtFld.returnKeyType = UIReturnKeyNext;
+            phoneNumberTxtFld.text=[self getDriveInfoForKey:DRIVERNUMBER];
             phoneNumberTxtFld.delegate=self;
             break;
             
-        case 3:
+        case 2:
             emailIDTxtFld = txtFld;
 //            emailIDTxtFld.placeholder = @"Email ID";
 //            emailIDTxtFld.keyboardType = UIKeyboardTypeEmailAddress;
@@ -120,16 +130,18 @@
             break;
     }
 }
+- (IBAction)cancelBtnAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
-#pragma mark - User Action methods
-- (IBAction)updateProfileBtnClicked:(id)sender {
+- (IBAction)saveBtnAction:(id)sender {
     NSString *driverName=[SCUIUtility validateString:driverNameTxtFld.text];
     NSString *driverID=[SCUIUtility validateString:driverIDTxtFld.text];
     NSString *driverEmailID=[SCUIUtility validateString:emailIDTxtFld.text];
     NSString *driverPhNum=[SCUIUtility validateString:phoneNumberTxtFld.text];
     if (driverName.length>0 || driverID.length>0 || driverEmailID.length>0 || driverPhNum.length>0) {
         if (driverName.length>0) {
-            if (driverID.length>0) {
+//            if (driverID.length>0) {
                 if (driverPhNum.length>0) {
                     if ([SCUIUtility validateEmailWithString:driverEmailID]) {
                         [self.view endEditing:YES];
@@ -139,6 +151,9 @@
                             [[CustomLoaderView sharedView] dismissLoader];
                             if (success) {
                                 [self showAlert:@"" message:@"Profile Update Successfully"];
+                                [SCDataUtility writeGalleryImage:profileImage imagename:PROFILE_PIC];
+                                [self saveProfileInfo:driverName key:DRIVERNAME];
+                                [self saveProfileInfo:driverPhNum key:DRIVERNUMBER];
                             }else{
                                 [self showAlert:@"" message:message];
                             }
@@ -149,18 +164,40 @@
                 }else{
                     [self showAlert:@"" message:@"Please Enter Phone Number"];
                 }
-            }else{
-                [self showAlert:@"" message:@"Please Enter Driver ID"];
-            }
+//            }else{
+//                [self showAlert:@"" message:@"Please Enter Driver ID"];
+//            }
         }else{
             [self showAlert:@"" message:@"Please Enter Driver Name"];
         }
     }else{
         [self showAlert:@"" message:@"All fields are mandatory."];
     }
+ 
+}
+
+-(NSString*)getDriveInfoForKey:(NSString*)keyValue{
+    NSDictionary *dict=[SCDataUtility getProfileInfoDict];
+    return [SCUIUtility validateString:[dict objectForKey:keyValue]];
+}
+
+-(void)saveProfileInfo:(NSString*)value key:(NSString*)key{
+    NSMutableDictionary *dict=(NSMutableDictionary*)[SCDataUtility getProfileInfoDict];
+    [dict setObject:value forKey:key];
+    [SCDataUtility storeDriverInfo:dict];
+}
+
+#pragma mark - User Action methods
+- (IBAction)updateProfileBtnClicked:(id)sender {
+    [self actionSheetMethod];
 }
 
 - (IBAction)profilePicBtnClicked:(id)sender {
+    [self actionSheetMethod];
+}
+
+-(void)actionSheetMethod{
+   
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
                                                              delegate:self
                                                     cancelButtonTitle:@"Cancel"
@@ -204,7 +241,7 @@
 -(void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary*)info{
     [picker dismissViewControllerAnimated:YES completion:nil];
     profileImage=[info valueForKey:UIImagePickerControllerOriginalImage];
-    [_profilePicBtn setImage:profileImage forState:UIControlStateNormal];
+    [_profilePicBtn setBackgroundImage:profileImage forState:UIControlStateNormal];
 }
 
 -(void)image:(UIImage *)image finishedSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
@@ -223,18 +260,18 @@
 
 - (IBAction)changePwdBtnClicked:(id)sender {
     ChangePasswordViewController *chnagePwdVC = [kSettingsStoryboard instantiateViewControllerWithIdentifier:@"ChangePwd"];
-    [UIAppDelegate.navigationController pushViewController:chnagePwdVC animated:YES];
+    [self.navigationController pushViewController:chnagePwdVC animated:YES];
 }
 
 - (IBAction)registerNewVehicleBtnClicked:(id)sender {
     RegisterNewVehicleViewController *registerVc = [kSettingsStoryboard instantiateViewControllerWithIdentifier:@"RegisterVehicleID"];
-    [UIAppDelegate.navigationController pushViewController:registerVc animated:YES];
+    [self.navigationController pushViewController:registerVc animated:YES];
 }
 
 #pragma mark:- UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (tableView.tag == 1) return 4;
+    if (tableView.tag == 1) return 3;
     return vehiclesDataArray.count;
 }
 

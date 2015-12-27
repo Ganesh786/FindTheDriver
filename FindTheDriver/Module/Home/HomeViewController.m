@@ -10,6 +10,7 @@
 #import "HomeWeekDayTableViewCell.h"
 #import "LKAddScoreView.h"
 #import "MFSideMenu.h"
+#import "AccountSettingsViewController.h"
 
 @interface HomeViewController () <SWRevealViewControllerDelegate> {
     SWRevealViewController *revealController;
@@ -23,10 +24,16 @@
 @property (weak, nonatomic) IBOutlet UIView *logsView;
 @property (weak, nonatomic) IBOutlet UIButton *logsBtn;
 @property (weak, nonatomic) IBOutlet UIView *detailView;
+@property (weak, nonatomic) IBOutlet UIButton *navBarRightBtn;
 
 @end
 
 @implementation HomeViewController
+
+- (IBAction)navBarProfileBtnAction:(id)sender {
+    AccountSettingsViewController *accSettingsVC = [kSettingsStoryboard instantiateViewControllerWithIdentifier:@"AccountSettingsID"];
+    [self.navigationController pushViewController:accSettingsVC animated:YES];
+}
 
 #pragma mark - View life cycle
 
@@ -38,6 +45,10 @@
     [self setNavigationBarNameWithNameAttribute:@"Dashboard"];
     [self setBackBarButtonItem];
     [self loadHomeViewComponents];
+    
+    _navBarRightBtn.layer.cornerRadius=_navBarRightBtn.frame.size.height/2;
+    _navBarRightBtn.layer.masksToBounds=YES;
+    [_navBarRightBtn setImage:[SCDataUtility galleryImage:PROFILE_PIC] forState:UIControlStateNormal];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

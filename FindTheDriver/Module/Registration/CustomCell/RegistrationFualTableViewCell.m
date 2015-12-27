@@ -12,8 +12,10 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    
     _fualSlider.clipsToBounds = YES;
     _fualSlider.layer.cornerRadius = 17;
+    _fualSlider.layer.masksToBounds=YES;
 
     [_fualSlider setThumbImage:[_fualSlider thumbImageForState:UIControlStateNormal] forState:UIControlStateNormal];
     _fualSlider.thumbTintColor = [UIColor colorFromHexString:@"#32DAA3"];

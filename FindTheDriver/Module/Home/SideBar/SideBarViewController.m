@@ -50,9 +50,16 @@
 #pragma mark - User defined methods
 
 - (void)loadSideBarViewComponents {
+    
     sideBarNamesArray = [NSArray arrayWithObjects:@"Dashboard", @"Logs", @"Inspect Logs", @"Settings", nil];
     sideBarImgsArray = [NSArray arrayWithObjects:@"Dashboard.png", @"Logs.png", @"InspectedLog.png", @"Settings.png", nil];
     _sideBarTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    CALayer *topLayer=[CALayer layer];
+    topLayer.frame=CGRectMake(0, 0, self.view.frame.size.width, 1);
+    topLayer.backgroundColor=kGrayColor.CGColor;
+    [_logoutBtn.layer addSublayer:topLayer];
+    
     [_logoutBtn setImage:[UIImage imageNamed:@"Logout"] forState:UIControlStateNormal];
 }
 

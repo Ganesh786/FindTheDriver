@@ -48,7 +48,7 @@
     _timeLimitBtn.layer.borderWidth = 1;
     _timeLimitBtn.layer.borderColor = kLightGrayColor.CGColor;
     
-    hosAlertArray=@[@"30 minutes before voilation",@"20 minutes before voilation",@"10 minutes before voilation"];
+    hosAlertArray=@[@"Never",@"15 minutes before violation",@"30 minutes before violation",@"45 minutes before violation",@"1 hour before violation"];
     NSString *hosAlertType=[SCUIUtility validateString:[SCDataUtility getHOSNotificationAlertType]];
     if (!hosAlertType.length) {
         hosAlertType=[hosAlertArray objectAtIndex:0];

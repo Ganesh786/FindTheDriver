@@ -65,4 +65,15 @@
 +(NSString*)getHOSNotificationAlertType;
 +(void)setHOSNotificationAlertType:(NSString*)alertType;
 
+#pragma mark:- Gallery Image Methods
++(UIImage*)galleryImage:(NSString*)imageName;
++(void)writeGalleryImage:(UIImage*)image imagename:(NSString*)imagename;
++(void)deleteGalleryImage;
++ (UIImage*)imageWithImage:(UIImage*)image
+              scaledToSize:(CGSize)newSize;
+
+//Store Profile Info
++(void)storeDriverInfo:(id)profileInfoDict;
++(id)getProfileInfoDict;
+
 @end

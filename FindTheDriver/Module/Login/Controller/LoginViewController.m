@@ -46,10 +46,6 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     _hideView.hidden=YES;
-//    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:USER_LOGGEDIN];
-//    [[NSUserDefaults standardUserDefaults]setObject:@"shreeshailg51@gmail.com" forKey:USER_NAME];
-//    [[NSUserDefaults standardUserDefaults]setObject:@"123456" forKey:USER_PASSWORD];
-//    [[NSUserDefaults standardUserDefaults] synchronize];
     if ([[NSUserDefaults standardUserDefaults]boolForKey:USER_LOGGEDIN]) {
         [self loadDashboardView];
     }
@@ -92,6 +88,10 @@
                             [[NSUserDefaults standardUserDefaults]setObject:email forKey:USER_NAME];
                             [[NSUserDefaults standardUserDefaults]setObject:password forKey:USER_PASSWORD];
                             [[NSUserDefaults standardUserDefaults] synchronize];
+                            
+                            if ([[dataDict objectForKey:@"Profile"] isKindOfClass:[NSArray class]]) {
+                                [self parseProfileData:[dataDict objectForKey:@"Profile"]];
+                            }
                             [self loadDashboardView];
                         }else{
                             [self showAlert:@"" message:message];
@@ -109,6 +109,18 @@
  
     }else{
         [self showAlert:@"" message:@"Please Enter a Valid Email ID and Password"];
+    }
+}
+
+-(void)parseProfileData:(NSArray*)profileArray{
+    if (profileArray.count>0) {
+        NSDictionary *profileDict=[profileArray objectAtIndex:0];
+        if ([profileDict isKindOfClass:[NSDictionary class]]) {
+            NSData *data = [[NSData alloc] initWithData:[NSData dataFromBase64String:[profileDict objectForKey:@"ProfileImage"]]];
+            UIImage *image = [UIImage imageWithData:data];
+            [SCDataUtility writeGalleryImage:image imagename:PROFILE_PIC];
+            [SCDataUtility storeDriverInfo:profileDict];
+        }
     }
 }
 
