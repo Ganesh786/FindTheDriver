@@ -59,7 +59,6 @@ static NSString *kEndMessage   = @"End";
     self.tableView.tintColor=kNavBarColor;
     
     editData=NO;
-    
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(editMode)];
     
     tableDriverDataArray=[[NSMutableArray alloc]init];
@@ -74,8 +73,8 @@ static NSString *kEndMessage   = @"End";
     [tableTimeDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"Bangalore",kStart,kStartMessage,@"48344"] forKeys:@[kValue,kTitle,kMessage,kOdoMeter]]];
     [tableTimeDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"Mysore",kEnd,kEndMessage,@"33444"] forKeys:@[kValue,kTitle,kMessage,kOdoMeter]]];
     
-    [tableShippingDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"Bill of Landing",@"Calender"] forKeys:@[kValue,kTitle]]];
-    [tableShippingDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"Gas Station",@"Calender"] forKeys:@[kValue,kTitle]]];
+    [tableShippingDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"Bill of Landing",@"BillLand"] forKeys:@[kValue,kTitle]]];
+    [tableShippingDataArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"Gas Station",@"GasStation"] forKeys:@[kValue,kTitle]]];
     
     self.tableView.tableHeaderView=[[UIView alloc]initWithFrame:CGRectZero];
     self.tableView.tableFooterView=[[UIView alloc]initWithFrame:CGRectZero];
@@ -83,7 +82,6 @@ static NSString *kEndMessage   = @"End";
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
     self.navigationItem.title=@"Monday | October 10";
 }
 
@@ -100,13 +98,16 @@ static NSString *kEndMessage   = @"End";
     [self.tableView reloadData];
 }
 
--(void)saveMode{
+- (void)saveMode{
     editData=NO;
     self.tabBarController.tabBar.hidden=NO;
     self.navigationItem.rightBarButtonItem=nil;
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(editMode)];
     [self.tableView reloadData];
+    
+    //Save Data
 }
+
 
 #pragma mark:-UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -157,7 +158,7 @@ static NSString *kEndMessage   = @"End";
         if (editData) {
             UIButton *addBtn=[UIButton buttonWithType:UIButtonTypeCustom];
             addBtn.frame=CGRectMake(headerView.frame.size.width-35, 10, 30, 30);
-            [addBtn setImage:[UIImage imageNamed:@"Steering"] forState:UIControlStateNormal];
+            [addBtn setImage:[UIImage imageNamed:@"AddIcon"] forState:UIControlStateNormal];
             [addBtn addTarget:self action:@selector(addNewShippingDocument) forControlEvents:UIControlEventTouchUpInside];
             [headerView addSubview:addBtn];
         }
@@ -187,6 +188,7 @@ static NSString *kEndMessage   = @"End";
             cell.odometerTextField.placeholder=@"Odometer Reading";
             cell.locationTextField.text=[[tableTimeDataArray objectAtIndex:indexPath.row] objectForKey:kValue];
             cell.odometerTextField.text=[[tableTimeDataArray objectAtIndex:indexPath.row] objectForKey:kOdoMeter];
+            cell.odometerMeasureLabel.text=[SCDataUtility getSelectedOdometer];
             return cell;
         }break;
         case 2:{
@@ -231,7 +233,7 @@ static NSString *kEndMessage   = @"End";
 -(void)addNewShippingDocument{
     AddDocumentView *docView=[[AddDocumentView alloc]initWithFrame:self.view.frame];
     docView.delegate=self;
-    [self.navigationController.view addSubview:docView];
+    [self.navigationController.parentViewController.view addSubview:docView];
 }
 
 -(void)selectedDocumentType:(NSString*)docType{

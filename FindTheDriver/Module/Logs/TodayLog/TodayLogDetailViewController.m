@@ -16,6 +16,8 @@
     UIDatePicker *datePicker;
 }
 @property (weak, nonatomic) IBOutlet TPKeyboardAvoidingTableView *logDetailTableView;
+@property (weak, nonatomic) IBOutlet UILabel *saveLabel;
+@property (weak, nonatomic) IBOutlet UILabel *insertPastDutyLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *topGraphView;
 @property(nonatomic,strong)GraphView *graphComponent;
@@ -53,6 +55,8 @@ static NSString *kAddRemarkMessage =@"Add Remark";
     self.logDetailTableView.tableFooterView=[[UIView alloc]initWithFrame:CGRectZero];
     self.navigationItem.title=@"Monday | 10 Oct 2015";
     self.tabBarController.tabBar.hidden=YES;
+    
+    self.saveLabel.textColor=kNavBarColor;
     
     detailTableArray=[[NSMutableArray alloc]init];
     [detailTableArray addObject:[NSMutableDictionary dictionaryWithObjects:@[@"",kStartTime,kStartTimeMessage] forKeys:@[kValue,kTitle,kMessage]]];
@@ -104,16 +108,16 @@ static NSString *kAddRemarkMessage =@"Add Remark";
     logDetailCell.detailCellTextField.placeholder=[dict objectForKey:kTitle];
     logDetailCell.detailCellTextField.text=[dict objectForKey:kValue];
     if ([[dict objectForKey:kTitle] isEqualToString:kStartTime]) {
-        [logDetailCell.detaiCellBtnOutlet setBackgroundImage:[UIImage imageNamed:@"Timer"] forState:UIControlStateNormal];
+        [logDetailCell.detaiCellBtnOutlet setBackgroundImage:[UIImage imageNamed:@"TimerBlue"] forState:UIControlStateNormal];
         [logDetailCell.detaiCellBtnOutlet addTarget:self action:@selector(startTimeBtnAction) forControlEvents:UIControlEventTouchUpInside];
     }else if ([[dict objectForKey:kTitle] isEqualToString:kEndTime]) {
-        [logDetailCell.detaiCellBtnOutlet setBackgroundImage:[UIImage imageNamed:@"Timer"] forState:UIControlStateNormal];
+        [logDetailCell.detaiCellBtnOutlet setBackgroundImage:[UIImage imageNamed:@"TimerBlue"] forState:UIControlStateNormal];
         [logDetailCell.detaiCellBtnOutlet addTarget:self action:@selector(endTimeBtnAction) forControlEvents:UIControlEventTouchUpInside];
     }else if ([[dict objectForKey:kTitle] isEqualToString:kLocation]) {
-        [logDetailCell.detaiCellBtnOutlet setBackgroundImage:[UIImage imageNamed:@"LocationGray"] forState:UIControlStateNormal];
+        [logDetailCell.detaiCellBtnOutlet setBackgroundImage:[UIImage imageNamed:@"LocationBlue"] forState:UIControlStateNormal];
         [logDetailCell.detaiCellBtnOutlet addTarget:self action:@selector(locationBtnAction) forControlEvents:UIControlEventTouchUpInside];
     }else if ([[dict objectForKey:kTitle] isEqualToString:kAddRemark]) {
-        [logDetailCell.detaiCellBtnOutlet setBackgroundImage:[UIImage imageNamed:@"LogPreviewDisable"] forState:UIControlStateNormal];
+        [logDetailCell.detaiCellBtnOutlet setBackgroundImage:[UIImage imageNamed:@"RemarkBlue"] forState:UIControlStateNormal];
         [logDetailCell.detaiCellBtnOutlet addTarget:self action:@selector(addRemarkBtnAction) forControlEvents:UIControlEventTouchUpInside];
     }
     if ([[dict objectForKey:kTitle] isEqualToString:kStartTime] || [[dict objectForKey:kTitle] isEqualToString:kEndTime]) {
