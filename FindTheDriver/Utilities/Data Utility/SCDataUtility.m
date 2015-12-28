@@ -75,6 +75,15 @@
     return NSLocalizedString(dict[statusCodeStr], nil);
 }
 
+//Get Today Date for Dash Board
++(NSString*)getTodayDateForDashBoard{
+    NSDateFormatter *formater = [[NSDateFormatter alloc] init];
+    [formater setDateFormat:@"EEEE MM, LLL"];
+    NSDate *date = [NSDate date];
+    NSString *newDate = [formater stringFromDate:date];
+    return newDate;
+}
+
 +(NSString*)getTodayDate:(NSString*)formatter{
     NSDateFormatter *formater = [[NSDateFormatter alloc] init];
     [formater setDateFormat:formatter];

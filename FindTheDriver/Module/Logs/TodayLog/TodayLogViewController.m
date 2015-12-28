@@ -41,6 +41,8 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+    self.tabBarController.tabBar.hidden=NO;
+
     GraphView *grapView=[GraphView sharedComponent];
     [self.topGraphView addSubview:grapView];
 }

@@ -46,6 +46,9 @@
 
 + (NSString *)getShiftStatusFromPlistWithStatusCode:(NSString *)statusCodeStr;
 
+//Get Today Date for Dash Board
++(NSString*)getTodayDateForDashBoard;
+
 //Get Today Date, give formatter
 +(NSString*)getTodayDate:(NSString*)formatter;
 

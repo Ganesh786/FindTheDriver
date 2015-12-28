@@ -10,7 +10,7 @@
 
 @interface LKAddScoreView : UIImageView
 
-+(instancetype)shareInstance;
++(instancetype)shareInstance:(CGRect)frame;
 
 //-(void)showMessage:(NSString*)message subMes:(NSString*)subMes fromScore:(float)from toScore:(float)to;
 -(void)showMessage:(NSString *)message subMes:(NSString *)subMes fromScore:(float)from toScore:(float)to WithView:(UIView *)view;

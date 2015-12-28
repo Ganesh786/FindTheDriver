@@ -29,12 +29,12 @@
 
 @implementation LKAddScoreView
 
-+(instancetype)shareInstance
++(instancetype)shareInstance:(CGRect)frame
 {
     static LKAddScoreView* instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [[self alloc]initWithFrame:CGRectMake(0, 0, 86, 74)];
+        instance = [[self alloc]initWithFrame:frame];
     });
     return instance;
 }
@@ -45,7 +45,7 @@
         self.image = [UIImage imageNamed:@"record_addbg"];
         
         self.pregress = [[CAGradientLayer alloc]init];
-        _pregress.frame = CGRectMake(6,5, 84,84);
+        _pregress.frame = CGRectMake(0,0, frame.size.width,frame.size.height);
         _pregress.startPoint = CGPointMake(0.5, 1);
         _pregress.endPoint = CGPointMake(0.5, 0);
         _pregress.colors = @[(id)RGBCOLOR(111,218,180).CGColor,(id)[UIColor colorWithWhite:0.6 alpha:0.2].CGColor];

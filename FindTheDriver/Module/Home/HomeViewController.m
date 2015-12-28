@@ -15,8 +15,9 @@
 @interface HomeViewController () <SWRevealViewControllerDelegate> {
     SWRevealViewController *revealController;
     NSArray *weekDayNameArray, *timeArray;
-
+    LKAddScoreView *progressView;
 }
+@property (weak, nonatomic) IBOutlet UIView *circularView;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UIView *violationsView;
@@ -26,6 +27,37 @@
 @property (weak, nonatomic) IBOutlet UIView *detailView;
 @property (weak, nonatomic) IBOutlet UIButton *navBarRightBtn;
 @property (weak, nonatomic) IBOutlet UIButton *changeStatusBtnOutlet;
+
+@property (weak, nonatomic) IBOutlet UILabel *todayDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *selectedCycleLabel;
+
+//Top drop down view
+@property (weak, nonatomic) IBOutlet UIView *topDropDownView;
+@property (weak, nonatomic) IBOutlet UIImageView *topLeftImgView;
+@property (weak, nonatomic) IBOutlet UILabel *topDropDownLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *topDropDownImgView;
+@property (weak, nonatomic) IBOutlet UIButton *topDropDownBtnOutlet;
+
+//Break View
+@property (weak, nonatomic) IBOutlet UIView *breakView;
+@property (weak, nonatomic) IBOutlet UILabel *breakTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *breakLabel;
+@property (weak, nonatomic) IBOutlet UIView *breakLineView;
+//Drive View
+@property (weak, nonatomic) IBOutlet UIView *driveView;
+@property (weak, nonatomic) IBOutlet UILabel *driveTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *driveLabel;
+@property (weak, nonatomic) IBOutlet UIView *driveLineView;
+//Shift View
+@property (weak, nonatomic) IBOutlet UIView *shiftView;
+@property (weak, nonatomic) IBOutlet UILabel *shiftTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *shiftLabel;
+@property (weak, nonatomic) IBOutlet UIView *shiftLineView;
+//Cycle View
+@property (weak, nonatomic) IBOutlet UIView *cycleView;
+@property (weak, nonatomic) IBOutlet UILabel *cycleTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cycleLabel;
+
 
 @end
 
@@ -51,6 +83,13 @@
     _navBarRightBtn.layer.masksToBounds=YES;
     [_navBarRightBtn setImage:[UIImage imageNamed:@"TopUserIcon"] forState:UIControlStateNormal];
     
+    self.topDropDownImgView.image=[UIImage imageNamed:@"DownArrowBlue"];
+    self.topDropDownImgView.contentMode=UIViewContentModeScaleAspectFit;
+    self.topDropDownImgView.clipsToBounds=YES;
+    
+    self.selectedCycleLabel.text=[SCDataUtility getSelectedCycle];
+    self.todayDateLabel.text=[SCDataUtility getTodayDateForDashBoard];
+    
     [self.changeStatusBtnOutlet setImage:[UIImage imageNamed:@"DropDownBlue"] forState:UIControlStateNormal];
     self.changeStatusBtnOutlet.transform = CGAffineTransformMakeScale(-1.0, 1.0);
     self.changeStatusBtnOutlet.titleLabel.transform = CGAffineTransformMakeScale(-1.0, 1.0);
@@ -69,6 +108,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)topDropDownBtnAction:(id)sender {
+    
+    
+}
 
 #pragma mark - User defined methods
 
@@ -86,9 +129,15 @@
     timeArray = [NSArray arrayWithObjects:@"10.45", @"09.25", @"07.03", @"02.45", @"00.00", @"00.00", @"00.00", nil];
     
     float minutes = 45;
-    LKAddScoreView *progressView = [LKAddScoreView shareInstance];
-    [progressView setFrame:CGRectMake(6, 55, 86, 74)];
-    [_detailView addSubview:progressView];
+    CGRect rect=CGRectMake(10, 0, 110, 110);
+    progressView = [LKAddScoreView shareInstance:rect];
+//    [progressView setFrame:CGRectMake(10, 0, 110, 110)];
+    [progressView setBackgroundColor:kWhiteColor];
+    progressView.layer.cornerRadius=55.0f;
+    progressView.layer.borderWidth=5.0f;
+    progressView.layer.borderColor=kLightGrayColor.CGColor;
+    progressView.layer.masksToBounds=YES;
+    [self.circularView addSubview:progressView];
     
     [progressView showMessage:@"DRIVING" subMes:[NSString stringWithFormat:@"%0.f MIN",minutes] fromScore:0 toScore:MIN(1, minutes/100) WithView:self.view];
 }
