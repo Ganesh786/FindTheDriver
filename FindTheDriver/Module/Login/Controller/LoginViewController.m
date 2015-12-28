@@ -45,6 +45,16 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    if ([[NSUserDefaults standardUserDefaults]boolForKey:USER_LOGGEDIN]) {
+        [[CustomLoaderView sharedView]showLoader];
+        [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(taskCompleted) userInfo:nil repeats:NO];
+    }else{
+        _hideView.hidden=YES;
+    }
+}
+
+-(void)taskCompleted{
+    [[CustomLoaderView sharedView]dismissLoader];
     _hideView.hidden=YES;
     if ([[NSUserDefaults standardUserDefaults]boolForKey:USER_LOGGEDIN]) {
         [self loadDashboardView];

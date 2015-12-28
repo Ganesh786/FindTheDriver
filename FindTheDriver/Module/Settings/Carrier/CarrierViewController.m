@@ -9,6 +9,8 @@
 #import "CarrierViewController.h"
 
 @interface CarrierViewController ()<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *officeImgView;
+@property (weak, nonatomic) IBOutlet UIImageView *homeImgView;
 
 @end
 
@@ -17,9 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.officeImgView.image=[UIImage imageNamed:@"Office"];
+    self.homeImgView.image=[UIImage imageNamed:@"TimeZone"];
+
+    
     self.view.tintColor=kNavBarColor;
     [_btnCancel setBackgroundImage:[UIImage imageNamed:@"CancelBtnImage"] forState:UIControlStateNormal];
     [_btnSave setBackgroundImage:[UIImage imageNamed:@"SaveBtnImage"] forState:UIControlStateNormal];
+    [_btnCancel setBackgroundColor:kClearColor];
+    [_btnSave setBackgroundColor:kClearColor];
     [_btnCancel setTitle:@"" forState:UIControlStateNormal];
     [_btnSave setTitle:@"" forState:UIControlStateNormal];
 

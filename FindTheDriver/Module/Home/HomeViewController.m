@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *logsBtn;
 @property (weak, nonatomic) IBOutlet UIView *detailView;
 @property (weak, nonatomic) IBOutlet UIButton *navBarRightBtn;
+@property (weak, nonatomic) IBOutlet UIButton *changeStatusBtnOutlet;
 
 @end
 
@@ -49,6 +50,13 @@
     _navBarRightBtn.layer.cornerRadius=_navBarRightBtn.frame.size.height/2;
     _navBarRightBtn.layer.masksToBounds=YES;
     [_navBarRightBtn setImage:[UIImage imageNamed:@"TopUserIcon"] forState:UIControlStateNormal];
+    
+    [self.changeStatusBtnOutlet setImage:[UIImage imageNamed:@"DropDownBlue"] forState:UIControlStateNormal];
+    self.changeStatusBtnOutlet.transform = CGAffineTransformMakeScale(-1.0, 1.0);
+    self.changeStatusBtnOutlet.titleLabel.transform = CGAffineTransformMakeScale(-1.0, 1.0);
+    self.changeStatusBtnOutlet.imageView.transform = CGAffineTransformMakeScale(-1.0, 1.0);
+    self.changeStatusBtnOutlet.imageEdgeInsets = UIEdgeInsetsMake(0, 0.0, 0.0, 10.0);
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

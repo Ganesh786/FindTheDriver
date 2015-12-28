@@ -10,6 +10,7 @@
 
 @interface CustomHomeActionViewController ()
 @property (weak, nonatomic) IBOutlet UIView *actionView;
+@property (weak, nonatomic) IBOutlet UIButton *changeStatusBtnOutlet;
 
 @end
 
@@ -20,6 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.changeStatusBtnOutlet setImage:[UIImage imageNamed:@"DropUpBlue"] forState:UIControlStateNormal];
+    self.changeStatusBtnOutlet.transform = CGAffineTransformMakeScale(-1.0, 1.0);
+    self.changeStatusBtnOutlet.titleLabel.transform = CGAffineTransformMakeScale(-1.0, 1.0);
+    self.changeStatusBtnOutlet.imageView.transform = CGAffineTransformMakeScale(-1.0, 1.0);
+    self.changeStatusBtnOutlet.imageEdgeInsets = UIEdgeInsetsMake(0, 0.0, 0.0, 10.0);
 }
 
 - (void)didReceiveMemoryWarning {

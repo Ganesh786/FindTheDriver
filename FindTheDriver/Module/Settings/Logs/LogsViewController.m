@@ -184,7 +184,7 @@ static NSString *kLogIncrement   = @"Log Increment";
     if ([datePickerTitle isEqualToString:kCycle]) {
         return [[pickerArray objectAtIndex:row] objectForKey:@"CycleCode"];
     }else if ([datePickerTitle isEqualToString:kTimeZone]){
-        return [[pickerArray objectAtIndex:row] objectForKey:@"Name"];
+        return [[pickerArray objectAtIndex:row] objectForKey:@"TimeZoneId"];
     }
     return nil;
 }

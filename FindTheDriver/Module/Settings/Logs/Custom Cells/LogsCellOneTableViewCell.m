@@ -19,6 +19,13 @@
     UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 30)];
     self.cycleTextField.leftView = paddingView;
     self.cycleTextField.leftViewMode = UITextFieldViewModeAlways;
+    
+    UIImageView *dropImgView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 5, 20, 20)];
+    dropImgView.image=[UIImage imageNamed:@"DownArrow"];
+    dropImgView.contentMode=UIViewContentModeScaleAspectFit;
+    dropImgView.clipsToBounds=YES;
+    self.cycleTextField.rightView = dropImgView;
+    self.cycleTextField.rightViewMode = UITextFieldViewModeAlways;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

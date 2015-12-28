@@ -213,7 +213,11 @@ static NSString *kEndMessage   = @"End";
             cell.odometerTextField.placeholder=@"Odometer Reading";
             cell.locationTextField.text=[[tableTimeDataArray objectAtIndex:indexPath.row] objectForKey:kValue];
             cell.odometerTextField.text=[[tableTimeDataArray objectAtIndex:indexPath.row] objectForKey:kOdoMeter];
-            cell.odometerMeasureLabel.text=[SCDataUtility getSelectedOdometer];
+            cell.odometerTextField.keyboardType=UIKeyboardTypeNumberPad;
+            cell.odometerTextField.enabled=editData;
+            cell.locationTextField.enabled=editData;
+            NSString *odometer=[SCDataUtility getSelectedOdometer];
+            cell.odometerMeasureLabel.text=[odometer isEqualToString:@"Miles"]?@"Mi":@"Kms";
             return cell;
         }break;
         case 2:{
@@ -409,6 +413,13 @@ static NSString *kEndMessage   = @"End";
 }
 
 #pragma mark:-UITextFieldDelegate
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (editData) {
+        return YES;
+    }
+    return NO;
+}
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     NSIndexPath *indexPath = [self indexPathForView:textField];
     NSString *title = [self getTitleForIndexPath:indexPath];

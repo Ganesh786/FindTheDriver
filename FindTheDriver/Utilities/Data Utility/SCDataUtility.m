@@ -269,7 +269,7 @@
     if (str.length<=0) {
         NSArray *arr=[[self getTimeZoneDict] objectForKey:TIME_ZONE];
         if (arr.count>0) {
-            str=[[arr objectAtIndex:0]objectForKey:@"Name"];
+            str=[[arr objectAtIndex:0]objectForKey:@"TimeZoneId"];
         }
     }
     return str;

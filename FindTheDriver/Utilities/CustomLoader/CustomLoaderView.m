@@ -28,7 +28,7 @@
 - (id)initWithFrame:(CGRect)frame loaderHt:(NSInteger)loaderHt{
     self = [super initWithFrame:frame];
     if (self){
-        [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(progressChange)userInfo:nil repeats:YES];
+        [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(progressChange)userInfo:nil repeats:YES];
         progressView = [[DACircularProgressView alloc]initWithFrame:CGRectMake((frame.size.width-loaderHt)/2, (frame.size.height-loaderHt)/2, loaderHt, loaderHt)];
         progressView.roundedCorners = YES;
         progressView.progressTintColor=kNavBarColor;

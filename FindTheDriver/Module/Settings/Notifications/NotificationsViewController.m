@@ -54,19 +54,15 @@
         hosAlertType=[hosAlertArray objectAtIndex:0];
     }
     [self.timeLimitBtn setTitle:hosAlertType forState:UIControlStateNormal];
-    [self.timeLimitBtn setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 10.0, 0.0, 10.0)];
+//    [self.timeLimitBtn setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 10.0, 0.0, 10.0)];
+    
+    [self.timeLimitBtn setImage:[UIImage imageNamed:@"DownArrow"] forState:UIControlStateNormal];
+    self.timeLimitBtn.transform = CGAffineTransformMakeScale(-1.0, 1.0);
+    self.timeLimitBtn.titleLabel.transform = CGAffineTransformMakeScale(-1.0, 1.0);
+    self.timeLimitBtn.imageView.transform = CGAffineTransformMakeScale(-1.0, 1.0);
+    self.timeLimitBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0.0, 0.0, 20.0);
+
 //    ⌄
-    /*
-     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-     button.frame = CGRectMake(20, 20, 200, 72);
-     UIImage *image = [UIImage imageNamed:@"rob.png"];
-     [button setImage:image forState:UIControlStateNormal];
-     button.imageEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
-     [button setTitle:@"Hello" forState:UIControlStateNormal];
-     button.titleEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 0);
-     button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-     [self.view addSubview:button];
-     */
 }
 
 

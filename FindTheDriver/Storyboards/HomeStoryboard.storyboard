@@ -97,7 +97,8 @@
                                                             <exclude reference="ryj-v0-ewW"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="55" y="14" width="77" height="21"/>
                                                         <mask key="constraints">
                                                             <include reference="ryj-v0-ewW"/>
                                                         </mask>
@@ -105,8 +106,8 @@
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mC7-v5-SPO">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                                    <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="3na-4b-gFF"/>
                                                         <constraint firstAttribute="width" constant="400" id="eT5-Sy-O5Q"/>
@@ -152,6 +153,10 @@
                                                     <exclude reference="mC7-v5-SPO"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="MSL-ua-M72"/>
+                                                    <exclude reference="cys-FA-fLz"/>
+                                                    <exclude reference="eLe-VM-Mcv"/>
+                                                    <exclude reference="koo-hw-8y1"/>
                                                     <exclude reference="V46-pt-QEj"/>
                                                     <exclude reference="cZY-Ct-6OO"/>
                                                     <exclude reference="kjP-P4-UvO"/>
@@ -159,10 +164,6 @@
                                                     <exclude reference="TxR-tn-fe1"/>
                                                     <exclude reference="ggv-xd-jnW"/>
                                                     <exclude reference="hcE-vU-IXY"/>
-                                                    <exclude reference="MSL-ua-M72"/>
-                                                    <exclude reference="cys-FA-fLz"/>
-                                                    <exclude reference="eLe-VM-Mcv"/>
-                                                    <exclude reference="koo-hw-8y1"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -172,6 +173,10 @@
                                                     <include reference="mC7-v5-SPO"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="MSL-ua-M72"/>
+                                                    <include reference="cys-FA-fLz"/>
+                                                    <include reference="eLe-VM-Mcv"/>
+                                                    <include reference="koo-hw-8y1"/>
                                                     <include reference="V46-pt-QEj"/>
                                                     <include reference="cZY-Ct-6OO"/>
                                                     <include reference="kjP-P4-UvO"/>
@@ -179,10 +184,6 @@
                                                     <include reference="TxR-tn-fe1"/>
                                                     <include reference="ggv-xd-jnW"/>
                                                     <include reference="hcE-vU-IXY"/>
-                                                    <include reference="MSL-ua-M72"/>
-                                                    <include reference="cys-FA-fLz"/>
-                                                    <include reference="eLe-VM-Mcv"/>
-                                                    <include reference="koo-hw-8y1"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1166,6 +1167,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="changeStatusBtnOutlet" destination="kxe-MO-xSI" id="lhb-a6-cBB"/>
                         <outlet property="detailView" destination="VNe-M7-QV1" id="CPb-D2-ibS"/>
                         <outlet property="logsBtn" destination="s0M-uT-c9Q" id="fBh-zL-6wp"/>
                         <outlet property="logsView" destination="URg-4w-Xgl" id="Svd-9q-ZIw"/>
@@ -1588,6 +1590,7 @@
                     </view>
                     <connections>
                         <outlet property="actionView" destination="q0A-XH-5a5" id="pdX-wo-Q36"/>
+                        <outlet property="changeStatusBtnOutlet" destination="nPo-gF-4YH" id="RKe-SO-dJc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="991-NF-9wD" userLabel="First Responder" sceneMemberID="firstResponder"/>
