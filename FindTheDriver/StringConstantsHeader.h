@@ -52,6 +52,7 @@
 #define kClearColor                 ([UIColor clearColor])
 #define kWhiteColor                 ([UIColor whiteColor])
 #define kGrayColor                  ([UIColor grayColor])
+#define kDarkGrayColor              ([UIColor darkGrayColor])
 #define kOrangeColor                ([UIColor orangeColor])
 #define kGreenColor                 ([UIColor greenColor])
 #define kLightGrayColor             ([UIColor lightGrayColor])
@@ -60,8 +61,7 @@
 #define kBlackColor                 ([UIColor blackColor])
 #define kNavBarColor                ([UIColor colorFromHexString:@"#1A76CF"])
 #define kLayerColor                 ([UIColor colorFromHexString:@"#FF2200"])
-
-
+#define kDriveColor ([UIColor colorWithRed:111/255.0f green:218/255.0f blue:180/255.0f alpha:1])
 //---------------------------------- Font Constants  ---------------------------
 #pragma mark - Font Constants
 

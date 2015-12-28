@@ -12,19 +12,28 @@
 #import "MFSideMenu.h"
 #import "AccountSettingsViewController.h"
 
-@interface HomeViewController () <SWRevealViewControllerDelegate> {
+@interface HomeViewController () <SWRevealViewControllerDelegate,UIPickerViewDataSource,UIPickerViewDelegate> {
     SWRevealViewController *revealController;
     NSArray *weekDayNameArray, *timeArray;
     LKAddScoreView *progressView;
+    
+    UIPickerView *pickerView;
+    UIToolbar *accessoryBar;
+    
+    NSArray *vehiclesArray;
 }
 @property (weak, nonatomic) IBOutlet UIView *circularView;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
 @property (weak, nonatomic) IBOutlet UIView *violationsView;
 @property (weak, nonatomic) IBOutlet UIButton *violationsBtn;
+
 @property (weak, nonatomic) IBOutlet UIView *logsView;
 @property (weak, nonatomic) IBOutlet UIButton *logsBtn;
+
 @property (weak, nonatomic) IBOutlet UIView *detailView;
+
 @property (weak, nonatomic) IBOutlet UIButton *navBarRightBtn;
 @property (weak, nonatomic) IBOutlet UIButton *changeStatusBtnOutlet;
 
@@ -87,8 +96,15 @@
     self.topDropDownImgView.contentMode=UIViewContentModeScaleAspectFit;
     self.topDropDownImgView.clipsToBounds=YES;
     
+    self.topDropDownLabel.text=[SCDataUtility getSelectedVehicle];
+    
     self.selectedCycleLabel.text=[SCDataUtility getSelectedCycle];
     self.todayDateLabel.text=[SCDataUtility getTodayDateForDashBoard];
+    
+    [self.violationsBtn setTitle:@"3" forState:UIControlStateNormal];
+    [self.logsBtn setTitle:@"2" forState:UIControlStateNormal];
+    
+    self.driveTimeLabel.textColor=kDriveColor;
     
     [self.changeStatusBtnOutlet setImage:[UIImage imageNamed:@"DropDownBlue"] forState:UIControlStateNormal];
     self.changeStatusBtnOutlet.transform = CGAffineTransformMakeScale(-1.0, 1.0);
@@ -96,6 +112,12 @@
     self.changeStatusBtnOutlet.imageView.transform = CGAffineTransformMakeScale(-1.0, 1.0);
     self.changeStatusBtnOutlet.imageEdgeInsets = UIEdgeInsetsMake(0, 0.0, 0.0, 10.0);
 
+    if ([StoreManager sharedStoreManager].regVehiclesArray.count>0) {
+        vehiclesArray=[StoreManager sharedStoreManager].regVehiclesArray;
+    }else{
+        [self getVehiclesData];
+    }
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -108,10 +130,89 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)topDropDownBtnAction:(id)sender {
-    
-    
+
+#pragma mark:- Get Vehicles Data
+-(void)getVehiclesData{
+    [[CustomLoaderView sharedView] showLoader];
+    [[GetVehicleModel alloc]getVehiclesAPICall:[NSString stringWithFormat:@"%@/%@",[SCDataUtility getUserName],[SCDataUtility getUserPassword]] completionBlock:^(BOOL success, NSString *message, id dataDict) {
+        [[CustomLoaderView sharedView] dismissLoader];
+        DEBUGLOG(@"GetVehicleModel message ->%@ dataDict ->%@",message,dataDict);
+        if ([dataDict isKindOfClass:[NSArray class]]) {
+            [StoreManager sharedStoreManager].regVehiclesArray=dataDict;
+            vehiclesArray=dataDict;
+        }
+        if (!success) {
+            [self showAlert:@"" message:message];
+        }
+    }];
 }
+
+
+- (IBAction)topDropDownBtnAction:(id)sender {
+    [self.view addSubview:[self inputViewForStatus]];
+    [self.view addSubview:[self inputAccessoryViewForStatus]];
+}
+
+#pragma mark:- UIPickerView Methods
+-(UIView*)inputViewForStatus{
+    if (!pickerView) {
+        pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-200, self.view.frame.size.width, 200)];
+        pickerView.backgroundColor=[UIColor whiteColor];
+        pickerView.delegate = self;
+        pickerView.dataSource = self;
+    }
+    [pickerView reloadAllComponents];
+    return pickerView;
+}
+
+-(UIView*)inputAccessoryViewForStatus{
+    if (!accessoryBar) {
+        accessoryBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-244, self.view.frame.size.width,44)];
+        accessoryBar.backgroundColor=kNavBarColor;
+        accessoryBar.translucent=YES;
+        accessoryBar.barTintColor=kNavBarColor;
+        [[UIBarButtonItem appearance]setTintColor:kWhiteColor];        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(statusDoneAction:)];
+        UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(statusCancelAction:)];
+        UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        [accessoryBar setItems:@[cancelButton,flexibleSpace,doneButton]];
+    }
+    return accessoryBar;
+}
+
+-(void)statusDoneAction:(id)sender{
+    self.topDropDownLabel.text=[SCUIUtility validateString:[[vehiclesArray objectAtIndex:[pickerView selectedRowInComponent:0]] objectForKey:@"RegistrationNumber"]];
+    [SCDataUtility storeSelectedVehicle:self.topDropDownLabel.text];
+    [pickerView removeFromSuperview];
+    pickerView=nil;
+    [accessoryBar removeFromSuperview];
+    accessoryBar=nil;
+}
+
+-(void)statusCancelAction:(id)sender{
+    [pickerView removeFromSuperview];
+    pickerView=nil;
+    [accessoryBar removeFromSuperview];
+    accessoryBar=nil;
+}
+
+#pragma mark:- UIPickerViewDelegate
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return vehiclesArray.count;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return [SCUIUtility validateString:[[vehiclesArray objectAtIndex:row] valueForKey:@"RegistrationNumber"]];
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+}
+
+
 
 #pragma mark - User defined methods
 
@@ -128,19 +229,19 @@
     weekDayNameArray = [NSArray arrayWithObjects:@"Sunday", @"Saturday", @"Friday", @"Thursday", @"Wednesday", @"TuesDay", @"Monday", nil];
     timeArray = [NSArray arrayWithObjects:@"10.45", @"09.25", @"07.03", @"02.45", @"00.00", @"00.00", @"00.00", nil];
     
-    float minutes = 45;
     CGRect rect=CGRectMake(10, 0, 110, 110);
     progressView = [LKAddScoreView shareInstance:rect];
 //    [progressView setFrame:CGRectMake(10, 0, 110, 110)];
     [progressView setBackgroundColor:kWhiteColor];
-    progressView.layer.cornerRadius=55.0f;
+    progressView.layer.cornerRadius=rect.size.height/2;
     progressView.layer.borderWidth=5.0f;
     progressView.layer.borderColor=kLightGrayColor.CGColor;
     progressView.layer.masksToBounds=YES;
     [self.circularView addSubview:progressView];
     
-    [progressView showMessage:@"DRIVING" subMes:[NSString stringWithFormat:@"%0.f MIN",minutes] fromScore:0 toScore:MIN(1, minutes/100) WithView:self.view];
+    [self offDutyStatus];
 }
+
 
 #pragma mark - TableView Delegate methods
 
@@ -172,10 +273,62 @@
 - (IBAction)changeStatusBtnClicked:(id)sender {
     CustomHomeActionViewController *myController = [self.storyboard instantiateViewControllerWithIdentifier:@"CustomHomeAction"];
     self.customHomeActionViewController = myController;
+    self.customHomeActionViewController.delegate=self;
     
     [self.navigationController.view addSubview:self.customHomeActionViewController.view];
     [self.customHomeActionViewController viewWillAppear:NO];
 }
+
+
+#pragma mark:- CustomHomeActionViewControllerDelegate
+-(void)selectedDutyStatus:(NSInteger)changeStatus{
+    switch (changeStatus) {
+        case 1:
+            [self offDutyStatus];
+            break;
+        case 2:
+            [self sleeperStatus];
+            break;
+        case 3:
+            [self drivingStatus];
+            break;
+        case 4:
+            [self onDutyStatus];
+            break;
+        default:
+            break;
+    }
+
+}
+
+-(void)offDutyStatus{
+    [progressView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    float minutes = 50;
+    progressView.pregress.colors = @[(id)kGrayColor.CGColor,(id)kWhiteColor.CGColor];
+    [progressView showMessage:@"OFF DUTY" subMes:[NSString stringWithFormat:@"%0.f MIN",minutes] fromScore:0 toScore:MIN(1, minutes/100) WithView:self.circularView];
+}
+
+-(void)sleeperStatus{
+    [progressView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    float minutes = 50;
+    progressView.pregress.colors = @[(id)kDarkGrayColor.CGColor,(id)kWhiteColor.CGColor];
+    [progressView showMessage:@"ON DUTY" subMes:[NSString stringWithFormat:@"%0.f MIN",minutes] fromScore:0 toScore:MIN(1, minutes/100) WithView:self.circularView];
+}
+
+-(void)drivingStatus{
+    [progressView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    float minutes = 70;
+    progressView.pregress.colors = @[(id)kDriveColor.CGColor,(id)kWhiteColor.CGColor];
+    [progressView showMessage:@"DRIVING" subMes:[NSString stringWithFormat:@"%0.f MIN",minutes] fromScore:0 toScore:MIN(1, minutes/100) WithView:self.circularView];
+}
+
+-(void)onDutyStatus{
+    [progressView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    float minutes = 50;
+    progressView.pregress.colors = @[(id)kNavBarColor.CGColor,(id)kWhiteColor.CGColor];
+    [progressView showMessage:@"ON DUTY" subMes:[NSString stringWithFormat:@"%0.f MIN",minutes] fromScore:0 toScore:MIN(1, minutes/100) WithView:self.circularView];
+}
+
 
 /*
 #pragma mark - Navigation

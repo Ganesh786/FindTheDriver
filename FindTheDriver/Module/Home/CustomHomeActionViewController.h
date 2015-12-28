@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CustomHomeActionViewController : UIViewController
+@protocol CustomHomeActionViewControllerDelegate <NSObject>
+@required
+-(void)selectedDutyStatus:(NSInteger)changeStatus;
+@end
 
+@interface CustomHomeActionViewController : UIViewController
+@property(nonatomic,weak)id<CustomHomeActionViewControllerDelegate>delegate;
 @end

@@ -59,6 +59,7 @@
         [[CustomLoaderView sharedView] dismissLoader];
         DEBUGLOG(@"GetVehicleModel message ->%@ dataDict ->%@",message,dataDict);
         if ([dataDict isKindOfClass:[NSArray class]]) {
+            [StoreManager sharedStoreManager].regVehiclesArray=dataDict;
             vehiclesDataArray=dataDict;
             [_vehicleInfoTblView reloadData];
         }

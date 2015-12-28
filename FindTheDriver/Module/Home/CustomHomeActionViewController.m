@@ -89,6 +89,7 @@
     [self slideOut];
 
     UIButton *btn = sender;
+    [self.delegate selectedDutyStatus:btn.tag];
     switch (btn.tag) {
         case 1:
             DEBUGLOG(@"Off duty btn clicked");

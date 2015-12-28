@@ -326,6 +326,16 @@
     return str;
 }
 
+//Dash Board Selected Vehicle
++(void)storeSelectedVehicle:(NSString*)str{
+    [[NSUserDefaults standardUserDefaults]setObject:str forKey:@"SelectedVehicle"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
++(NSString*)getSelectedVehicle{
+    return [self validateString:[[NSUserDefaults standardUserDefaults] objectForKey:@"SelectedVehicle"]];
+}
+
 #pragma mark:- validate String
 +(NSString*)validateString:(NSString*)str{
     NSString *trimedstr  = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];

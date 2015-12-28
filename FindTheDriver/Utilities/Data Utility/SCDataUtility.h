@@ -119,6 +119,10 @@
 
 +(void)storeSelectedLogIncrement:(NSString*)str;
 +(NSString*)getSelectedLogIncrement;
+
+//Dash Board Selected Vehicle
++(void)storeSelectedVehicle:(NSString*)str;
++(NSString*)getSelectedVehicle;
 @end
 
 

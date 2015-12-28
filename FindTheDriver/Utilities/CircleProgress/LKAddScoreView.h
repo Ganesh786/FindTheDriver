@@ -10,6 +10,8 @@
 
 @interface LKAddScoreView : UIImageView
 
+@property(strong,nonatomic)CAGradientLayer* pregress;
+
 +(instancetype)shareInstance:(CGRect)frame;
 
 //-(void)showMessage:(NSString*)message subMes:(NSString*)subMes fromScore:(float)from toScore:(float)to;

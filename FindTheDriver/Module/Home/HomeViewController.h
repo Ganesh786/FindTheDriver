@@ -10,7 +10,7 @@
 #import "SWRevealViewController.h"
 #import "CustomHomeActionViewController.h"
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController<CustomHomeActionViewControllerDelegate>
 
 @property(nonatomic, retain) IBOutlet CustomHomeActionViewController *customHomeActionViewController;
 

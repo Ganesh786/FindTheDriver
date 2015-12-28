@@ -13,7 +13,6 @@
 #endif
 
 @interface LKAddScoreView()
-@property(strong,nonatomic)CAGradientLayer* pregress;
 @property float nowTo;
 @property float nextTo;
 
@@ -48,7 +47,6 @@
         _pregress.frame = CGRectMake(0,0, frame.size.width,frame.size.height);
         _pregress.startPoint = CGPointMake(0.5, 1);
         _pregress.endPoint = CGPointMake(0.5, 0);
-        _pregress.colors = @[(id)RGBCOLOR(111,218,180).CGColor,(id)[UIColor colorWithWhite:0.6 alpha:0.2].CGColor];
         _pregress.locations = @[@0,@0];
         
         CAShapeLayer* pregress_bg = [[CAShapeLayer alloc]init];
@@ -180,9 +178,9 @@
 }
 
 -(void)showMessage:(NSString *)message subMes:(NSString *)subMes fromScore:(float)from toScore:(float)to WithView:(UIView *)view {
-    [self addLabelWithText:message withColor:kBlackColor WithFrame:CGRectMake(6, 30, 84, 14) WithFont:[UIFont fontWithName:kHelveticaNeueFontName size:12]];
-    [self addLabelWithText:@"REMAINING" withColor:kWhiteColor WithFrame:CGRectMake(6, 55, 84, 14) WithFont:[UIFont fontWithName:kHelveticaNeueBoldFontName size:7]];
-    [self addLabelWithText:subMes withColor:kWhiteColor WithFrame:CGRectMake(6, 64, 84, 14) WithFont:[UIFont fontWithName:kHelveticaNeueBoldFontName size:11]];
+    [self addLabelWithText:message withColor:kDarkGrayColor WithFrame:CGRectMake(0, 20, _pregress.frame.size.width, 25) WithFont:[UIFont boldSystemFontOfSize:17]];
+    [self addLabelWithText:@"REMAINING" withColor:kWhiteColor WithFrame:CGRectMake(0, 60, _pregress.frame.size.width, 12) WithFont:[UIFont boldSystemFontOfSize:12]];
+    [self addLabelWithText:subMes withColor:kWhiteColor WithFrame:CGRectMake(0, 72, _pregress.frame.size.width, 25) WithFont:[UIFont boldSystemFontOfSize:17]];
     
     if(_fadeOut){
         [self dismiss];
