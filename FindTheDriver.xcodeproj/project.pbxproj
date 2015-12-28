@@ -222,6 +222,7 @@
 		04B29AE11C3142B5003DEC68 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		04B29AE21C3142B5003DEC68 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		04B29AE81C3143C3003DEC68 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		04B29AEA1C314B37003DEC68 /* SQLiteQueryClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLiteQueryClass.h; sourceTree = "<group>"; };
 		04B2B62B1C2FCA3100C3276D /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		04B2B62C1C2FCA3100C3276D /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		04C7826C1C1F10DC00E3C46F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -583,6 +584,7 @@
 		04B29AD31C3139DC003DEC68 /* SharedData */ = {
 			isa = PBXGroup;
 			children = (
+				04B29AEA1C314B37003DEC68 /* SQLiteQueryClass.h */,
 				04B29AD41C313A0B003DEC68 /* StoreManager.h */,
 				04B29AD51C313A0B003DEC68 /* StoreManager.m */,
 			);

@@ -89,45 +89,51 @@
                 if (password.length>0) {
                     [_emailTxtFld resignFirstResponder];
                     [_passwordTxtFld resignFirstResponder];
-                    [[CustomLoaderView sharedView] showLoader];
-                    [[LoginModel alloc]loginAPICall:[NSString stringWithFormat:@"%@/%@",email,password] completionBlock:^(BOOL success, NSString *message, id dataDict) {
-                        [[CustomLoaderView sharedView] dismissLoader];
-                        if (success) {
-                            DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
-                            [[NSUserDefaults standardUserDefaults]setBool:YES forKey:USER_LOGGEDIN];
-                            [[NSUserDefaults standardUserDefaults]setObject:email forKey:USER_NAME];
-                            [[NSUserDefaults standardUserDefaults]setObject:password forKey:USER_PASSWORD];
-                            [[NSUserDefaults standardUserDefaults] synchronize];
-                            
-                            if ([[dataDict objectForKey:@"Profile"] isKindOfClass:[NSArray class]]) {
-                                [self parseProfileData:[dataDict objectForKey:@"Profile"]];
+                    if ([[SCDataUtility getUserName] isEqualToString:email] && [[SCDataUtility getUserPassword] isEqualToString:password]) {
+                        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:USER_LOGGEDIN];
+                        [[NSUserDefaults standardUserDefaults] synchronize];
+                        [self loadDashboardView];
+                    }else{
+                        [[CustomLoaderView sharedView] showLoader];
+                        [[LoginModel alloc]loginAPICall:[NSString stringWithFormat:@"%@/%@",email,password] completionBlock:^(BOOL success, NSString *message, id dataDict) {
+                            [[CustomLoaderView sharedView] dismissLoader];
+                            if (success) {
+                                DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
+                                [[NSUserDefaults standardUserDefaults]setBool:YES forKey:USER_LOGGEDIN];
+                                [[NSUserDefaults standardUserDefaults]setObject:email forKey:USER_NAME];
+                                [[NSUserDefaults standardUserDefaults]setObject:password forKey:USER_PASSWORD];
+                                [[NSUserDefaults standardUserDefaults] synchronize];
+                                
+                                if ([[dataDict objectForKey:@"Profile"] isKindOfClass:[NSArray class]]) {
+                                    [self parseProfileData:[dataDict objectForKey:@"Profile"]];
+                                }
+                                if ([[dataDict objectForKey:DUTY_CYCLE] isKindOfClass:[NSArray class]]) {
+                                    [self parseDutyCycle:[dataDict objectForKey:DUTY_CYCLE]];
+                                }
+                                if ([[dataDict objectForKey:TIME_ZONE] isKindOfClass:[NSArray class]]) {
+                                    [self parseTimeZone:[dataDict objectForKey:TIME_ZONE]];
+                                }
+                                if ([[dataDict objectForKey:CARRIER] isKindOfClass:[NSArray class]]) {
+                                    [self parseCarrier:[dataDict objectForKey:CARRIER]];
+                                }
+                                if ([[dataDict objectForKey:VIOLATIONS] isKindOfClass:[NSArray class]]) {
+                                    [self parseViolations:[dataDict objectForKey:VIOLATIONS]];
+                                }
+                                if ([[dataDict objectForKey:VIR_DEFECTS] isKindOfClass:[NSArray class]]) {
+                                    [self parseVIRDefects:[dataDict objectForKey:VIR_DEFECTS]];
+                                }
+                                if ([[dataDict objectForKey:HOS_STATUS] isKindOfClass:[NSArray class]]) {
+                                    [self parseHosStatus:[dataDict objectForKey:HOS_STATUS]];
+                                }
+                                if ([[dataDict objectForKey:EXCEPTIONS] isKindOfClass:[NSArray class]]) {
+                                    [self parseExceptions:[dataDict objectForKey:EXCEPTIONS]];
+                                }
+                                [self loadDashboardView];
+                            }else{
+                                [self showAlert:@"" message:message];
                             }
-                            if ([[dataDict objectForKey:DUTY_CYCLE] isKindOfClass:[NSArray class]]) {
-                                [self parseDutyCycle:[dataDict objectForKey:DUTY_CYCLE]];
-                            }
-                            if ([[dataDict objectForKey:TIME_ZONE] isKindOfClass:[NSArray class]]) {
-                                [self parseTimeZone:[dataDict objectForKey:TIME_ZONE]];
-                            }
-                            if ([[dataDict objectForKey:CARRIER] isKindOfClass:[NSArray class]]) {
-                                [self parseCarrier:[dataDict objectForKey:CARRIER]];
-                            }
-                            if ([[dataDict objectForKey:VIOLATIONS] isKindOfClass:[NSArray class]]) {
-                                [self parseViolations:[dataDict objectForKey:VIOLATIONS]];
-                            }
-                            if ([[dataDict objectForKey:VIR_DEFECTS] isKindOfClass:[NSArray class]]) {
-                                [self parseVIRDefects:[dataDict objectForKey:VIR_DEFECTS]];
-                            }
-                            if ([[dataDict objectForKey:HOS_STATUS] isKindOfClass:[NSArray class]]) {
-                                [self parseHosStatus:[dataDict objectForKey:HOS_STATUS]];
-                            }
-                            if ([[dataDict objectForKey:EXCEPTIONS] isKindOfClass:[NSArray class]]) {
-                                [self parseExceptions:[dataDict objectForKey:EXCEPTIONS]];
-                            }
-                            [self loadDashboardView];
-                        }else{
-                            [self showAlert:@"" message:message];
-                        }
-                    }];
+                        }];
+                    }
                 }else{
                     [self showAlert:@"" message:@"Please Enter Password"];
                 }

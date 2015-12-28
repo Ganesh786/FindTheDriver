@@ -118,6 +118,9 @@
         [self getVehiclesData];
     }
     
+    DEBUGLOG(@"Event Table Data Time-> %@",[[StoreManager sharedStoreManager] getEventTableData]);
+    DEBUGLOG(@"Event Table Data Last 14 Days-> %@",[[StoreManager sharedStoreManager] getEventTableLastFourteenDaysData]);
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -231,7 +234,6 @@
     
     CGRect rect=CGRectMake(10, 0, 110, 110);
     progressView = [LKAddScoreView shareInstance:rect];
-//    [progressView setFrame:CGRectMake(10, 0, 110, 110)];
     [progressView setBackgroundColor:kWhiteColor];
     progressView.layer.cornerRadius=rect.size.height/2;
     progressView.layer.borderWidth=5.0f;
@@ -298,46 +300,81 @@
         default:
             break;
     }
-
 }
 
 -(void)offDutyStatus{
-    [progressView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    float minutes = 50;
-    progressView.pregress.colors = @[(id)kGrayColor.CGColor,(id)kWhiteColor.CGColor];
-    [progressView showMessage:@"OFF DUTY" subMes:[NSString stringWithFormat:@"%0.f MIN",minutes] fromScore:0 toScore:MIN(1, minutes/100) WithView:self.circularView];
+    [self writeToDB:@"OFF DUTY" forDB:@"off_duty" color:kGrayColor time:50];
 }
 
 -(void)sleeperStatus{
-    [progressView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    float minutes = 50;
-    progressView.pregress.colors = @[(id)kDarkGrayColor.CGColor,(id)kWhiteColor.CGColor];
-    [progressView showMessage:@"ON DUTY" subMes:[NSString stringWithFormat:@"%0.f MIN",minutes] fromScore:0 toScore:MIN(1, minutes/100) WithView:self.circularView];
+    [self writeToDB:@"Sleeper" forDB:@"sleeper" color:kDarkGrayColor time:50];
 }
 
 -(void)drivingStatus{
-    [progressView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    float minutes = 70;
-    progressView.pregress.colors = @[(id)kDriveColor.CGColor,(id)kWhiteColor.CGColor];
-    [progressView showMessage:@"DRIVING" subMes:[NSString stringWithFormat:@"%0.f MIN",minutes] fromScore:0 toScore:MIN(1, minutes/100) WithView:self.circularView];
+    [self writeToDB:@"DRIVING" forDB:@"driving" color:kDriveColor time:70];
 }
 
 -(void)onDutyStatus{
+    [self writeToDB:@"On Duty" forDB:@"on_duty" color:kNavBarColor time:60];
+}
+
+-(void)writeToDB:(NSString*)status forDB:(NSString*)dbStatus color:(UIColor*)color time:(float)minutes{
+    [self getCurrentLocation];
     [progressView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    float minutes = 50;
-    progressView.pregress.colors = @[(id)kNavBarColor.CGColor,(id)kWhiteColor.CGColor];
-    [progressView showMessage:@"ON DUTY" subMes:[NSString stringWithFormat:@"%0.f MIN",minutes] fromScore:0 toScore:MIN(1, minutes/100) WithView:self.circularView];
+    progressView.pregress.colors = @[(id)color.CGColor,(id)kWhiteColor.CGColor];
+    [progressView showMessage:status subMes:[NSString stringWithFormat:@"%0.f MIN",minutes] fromScore:0 toScore:MIN(1, minutes/100) WithView:self.circularView];
+    [[StoreManager sharedStoreManager]writeEventTable:[NSDate date] endTime:[NSDate date] eventType:dbStatus place:[SCUIUtility validateString:currentPlace] notes:[NSString stringWithFormat:@"Changed to %@",dbStatus] latitude:[SCUIUtility validateString:currentLatitude] longitude:[SCUIUtility validateString:currentLongitude]];
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark:-Location data
+-(void)getCurrentLocation{
+    if (!self.locationFinder) {
+        self.locationFinder = [[CurrentLocation alloc] init];
+        self.locationFinder.delegate = self;
+        [self.locationFinder.locationManager startUpdatingLocation];
+        if ([self.locationFinder.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)])
+        {
+            [self.locationFinder.locationManager requestAlwaysAuthorization];
+        }
+    }
 }
-*/
+
+#pragma mark:- CoreLocationFinderDelegate
+- (void)locationError:(NSError *)error
+{
+    DEBUGLOG(@"error while updating location --%@", [error description]);
+    self.locationFinder=nil;
+}
+
+-(void)update:(CLLocation *)location{
+    CLLocation *currentLocation=location;
+    if (nil != currentLocation) {
+        currentLatitude=[SCUIUtility validateString:[NSString stringWithFormat:@"%f",location.coordinate.latitude]];
+        currentLongitude=[SCUIUtility validateString:[NSString stringWithFormat:@"%f",location.coordinate.longitude]];
+        if (!geoCoder)
+            geoCoder = [[CLGeocoder alloc] init];
+        [geoCoder reverseGeocodeLocation:location completionHandler:
+         ^(NSArray* placemarks, NSError* error)
+         {
+             if ([placemarks count] > 0)
+             {
+                 placemark = [placemarks objectAtIndex:0];
+                 NSString  *address = [NSString stringWithFormat:@"%@\n%@\n%@\n%@\n%@\n%@\n%@\n%@",
+                                       placemark.subThoroughfare,
+                                       placemark.thoroughfare,
+                                       placemark.postalCode,
+                                       placemark.locality,
+                                       placemark.subLocality,
+                                       placemark.subAdministrativeArea,
+                                       placemark.administrativeArea,
+                                       placemark.country];
+                 DEBUGLOG(@"adress = %@",address);
+                 currentPlace=[SCUIUtility validateString:placemark.locality];
+             }
+             [self.locationFinder.locationManager stopUpdatingLocation];
+             self.locationFinder=nil;
+         }];
+    }
+}
 
 @end

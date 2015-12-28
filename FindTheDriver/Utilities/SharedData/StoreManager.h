@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FMDB.h"
 
 @interface StoreManager : NSObject
 
 @property(nonatomic,strong)NSArray *regVehiclesArray;
+
 + (StoreManager *)sharedStoreManager;
+
+//Event Table
+-(void)writeEventTable:(NSDate*)time endTime:(NSDate*)endtime eventType:(NSString*)eventtype place:(NSString*)place notes:(NSString*)notes latitude:(NSString*)latitude longitude:(NSString*)longitude;
+-(NSMutableArray*)getEventTableData;
+-(NSMutableArray*)getEventTableLastFourteenDaysData;
 
 @end

@@ -64,6 +64,8 @@
 }
 
 - (IBAction)logoutBtnClicked:(id)sender {
+    [[NSUserDefaults standardUserDefaults]setBool:NO forKey:USER_LOGGEDIN];
+    [[NSUserDefaults standardUserDefaults]synchronize];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

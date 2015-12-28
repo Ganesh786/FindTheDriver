@@ -9,8 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "SWRevealViewController.h"
 #import "CustomHomeActionViewController.h"
+#import "CurrentLocation.h"
 
-@interface HomeViewController : UIViewController<CustomHomeActionViewControllerDelegate>
+@interface HomeViewController : UIViewController<CustomHomeActionViewControllerDelegate,CoreLocationFinderDelegate>{
+    CLGeocoder *geoCoder;
+    CLPlacemark *placemark;
+    NSString *currentPlace;
+    NSString *currentLatitude;
+    NSString *currentLongitude;
+
+}
+@property(nonatomic,retain)CurrentLocation *locationFinder;
 
 @property(nonatomic, retain) IBOutlet CustomHomeActionViewController *customHomeActionViewController;
 

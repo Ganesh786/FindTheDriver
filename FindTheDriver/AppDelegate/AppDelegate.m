@@ -34,7 +34,7 @@
        NSFontAttributeName:[UIFont fontWithName:kHelveticaNeueFontName size:17]
        }
      forState:UIControlStateNormal];
-    
+   /*
     if ([[NSUserDefaults standardUserDefaults]boolForKey:USER_LOGGEDIN]) {
 //        HomeViewController *homeViewController = [kHomeStoryboard instantiateInitialViewController];
 //        self.window.rootViewController=homeViewController;
@@ -53,6 +53,9 @@
         LoginViewController *loginViewController = [kLoginStoryboard instantiateInitialViewController];
         self.window.rootViewController=loginViewController;
     }
+    */
+    LoginViewController *loginViewController = [kLoginStoryboard instantiateInitialViewController];
+    self.window.rootViewController=loginViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
