@@ -30,6 +30,8 @@
     
     self.navigationController.navigationBarHidden  = NO;
     [self setNavigationBarNameWithNameAttribute:@"Create a New Account"];
+    
+    self.view.tintColor=kNavBarColor;
 
     [self loadRegistrationViewComponents];
 }
@@ -116,11 +118,39 @@
         isDieselSelected = YES;
         [fualCell.fualSlider setValue:1];
     }
-    [_registrationTblView reloadRowsAtIndexPaths:@[indexpath] withRowAnimation:UITableViewRowAnimationNone];
+    [_registrationTblView reloadRowsAtIndexPaths:@[indexpath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 - (IBAction)registerBtnClicked:(id)sender {
-    
+    if ([SCUIUtility validateString:driverNameTxtFld.text].length>0 && [SCUIUtility validateString:driverEmailTxtFld.text].length>0 && [SCUIUtility validateString:carNickNameTxtFld.text].length>0 && [SCUIUtility validateString:colorTxtFld.text].length>0 && [SCUIUtility validateString:regPlateTextFld.text].length>0) {
+        if ([SCUIUtility validateEmailWithString:driverEmailTxtFld.text]) {
+            RegistrationDataMadel *regModel=[[RegistrationDataMadel alloc]init];
+            regModel.DriverName=driverNameTxtFld.text;
+            regModel.Email=driverEmailTxtFld.text;
+            regModel.Phoneno=driverPhoneTxtFld.text;
+            regModel.CarName=carNickNameTxtFld.text;
+            regModel.Color=colorTxtFld.text;
+            regModel.RegistrationPlate=regPlateTextFld.text;
+            regModel.FuelType=isDieselSelected?@"Diesel":@"Gasoline";
+            regModel.Address=@"";
+            NSMutableDictionary *inputDict = [SCDataUtility getDictionaryBasaedOnObject:regModel];
+            [[CustomLoaderView sharedView] showLoader];
+            [[RegistrationModel alloc]registrationAPICall:inputDict completionBlock:^(BOOL success, NSString *message, id dataDict) {
+                [[CustomLoaderView sharedView] dismissLoader];
+                DEBUGLOG(@"message ->%@ dataDict ->%@",message,dataDict);
+                if (success) {
+                    [self.navigationController popViewControllerAnimated:YES];
+                    [self showAlert:@"" message:message];
+                }else{
+                    [self showAlert:@"" message:message];
+                }
+            }];
+        }else{
+            [self showAlert:@"" message:@"Enter Valid Email ID"];
+        }
+    }else{
+        [self showAlert:@"" message:@"All fields are mandatory."];
+    }
 }
 
 #pragma mark - Tableview Delegate methods
@@ -189,6 +219,15 @@
 //        }
 //        return NO;
 //    }
+    
+    if (textField == driverPhoneTxtFld) {
+        NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:ACCEPTABLE_CHARECTERS] invertedSet];
+        NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+        NSString *updatedText = [textField.text stringByReplacingCharactersInRange:range withString:string];
+        if (updatedText.length > PHONE_NUMBER_LIMIT)
+        {return NO;}
+        return [string isEqualToString:filtered];
+    }
     return YES;
 }
 

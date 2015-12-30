@@ -8,12 +8,15 @@
 
 #import "LogsInfoViewController.h"
 #import "CustomLogsInfoTableViewCell.h"
+#import "TodayLogViewController.h"
+#import "MFSideMenu.h"
 
 @interface LogsInfoViewController ()  {
 
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *logInfoTblView;
+@property (weak, nonatomic) IBOutlet UIView *topGraphView;
 
 @end
 
@@ -27,16 +30,24 @@
     
     self.navigationController.navigationBarHidden  = NO;
     [self loadLogsViewComponents];
+    if (UIAppDelegate.isSideBarInspectLogsClicked == YES) {
+        UITabBarController *tabbarVC = [[UIStoryboard storyboardWithName:@"LogsStoryboard" bundle: [NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LogsTabBarID"];
+        [tabbarVC setSelectedIndex:2];
+        [self presentViewController:tabbarVC animated:NO completion:nil];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.revealViewController panGestureRecognizer];
+    GraphView *grapView=[GraphView sharedComponent];
+    [self.topGraphView addSubview:grapView];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.revealViewController removePanGestureRecognizer];
+  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,26 +57,27 @@
 
 #pragma mark - User defined methods
 
-- (void)revealToggle {
-    [UIAppDelegate.revealViewController revealToggleAnimated:YES];
+- (IBAction)sideBarBtnClicked:(id)sender {
+    [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
 }
 
 - (void)loadLogsViewComponents {
     [self setBackBarButtonItem];
     [self setNavigationBarNameWithNameAttribute:@"Logs"];
-    
-    UIBarButtonItem *sidebarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"sideBar"] style:UIBarButtonItemStylePlain target:UIAppDelegate.revealViewController action:@selector(revealToggle:)];
-    sidebarButton.tintColor = kWhiteColor;
-    self.navigationItem.leftBarButtonItem = sidebarButton;
-    [UIAppDelegate.revealViewController tapGestureRecognizer];
 }
 
 - (IBAction)calenderBtnClicked:(id)sender {
-    CustomLogSearchViewController *myController = [self.storyboard instantiateViewControllerWithIdentifier:@"LogSearchID"];
+    CustomLogSearchViewController *myController = [kLogsStoryboard instantiateViewControllerWithIdentifier:@"LogSearchID"];
     self.customLogSearchViewController = myController;
 
     [self.navigationController.view addSubview:self.customLogSearchViewController.view];
     [self.customLogSearchViewController viewWillAppear:NO];
+}
+
+- (IBAction)logsScaleTransaparentBtnClicked:(id)sender {
+    UITabBarController *tabbarVC = [[UIStoryboard storyboardWithName:@"LogsStoryboard" bundle: [NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LogsTabBarID"];
+    [self presentViewController:tabbarVC animated:NO completion:nil];
+//    [UIAppDelegate.navigationController pushViewController:tabbarVC animated:YES];
 }
 
 #pragma mark - Tableview Delegate methods

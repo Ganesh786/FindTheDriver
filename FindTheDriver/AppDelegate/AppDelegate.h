@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "SWRevealViewController.h"
+#import "AFNetworking.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -18,7 +19,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, assign) UINavigationController *navigationController;
-@property (nonatomic, assign) SWRevealViewController *revealViewController;
+@property (nonatomic, assign) BOOL isSideBarInspectLogsClicked;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

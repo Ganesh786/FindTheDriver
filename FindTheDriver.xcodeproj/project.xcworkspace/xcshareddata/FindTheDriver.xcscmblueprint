@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "460D6AD284929A73C5B5D8126929711A5270B68B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "460D6AD284929A73C5B5D8126929711A5270B68B" : 0,
+    "AE010B11F535DF85EE028273EC253B6B445F002D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4BE3A4DD-E999-4422-B1E8-0ABD6ABB28B1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "460D6AD284929A73C5B5D8126929711A5270B68B" : "FindTheDriver\/",
+    "AE010B11F535DF85EE028273EC253B6B445F002D" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FindTheDriver",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "FindTheDriver.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MobileSoftForU\/FindTheDriver.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "460D6AD284929A73C5B5D8126929711A5270B68B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/unicontrol\/unicontrol.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AE010B11F535DF85EE028273EC253B6B445F002D"
+    }
+  ]
+}

@@ -10,6 +10,5 @@
 
 @interface SettingsViewController : UIViewController
 
-- (void)revealToggle;
 
 @end

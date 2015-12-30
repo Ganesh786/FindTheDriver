@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "HomeViewController.h"
+#import "LoginViewController.h"
+#import "MFSideMenu.h"
 
 @interface AppDelegate ()
 
@@ -18,15 +21,42 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     [self.window setTintColor:kWhiteColor];
 
+    [self registerRemoteDevice];  // Push Notification Method
+
+    _isSideBarInspectLogsClicked = NO;
+    
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
      setTitleTextAttributes:
      @{NSForegroundColorAttributeName:kWhiteColor,
        NSFontAttributeName:[UIFont fontWithName:kHelveticaNeueFontName size:17]
        }
      forState:UIControlStateNormal];
+   /*
+    if ([[NSUserDefaults standardUserDefaults]boolForKey:USER_LOGGEDIN]) {
+//        HomeViewController *homeViewController = [kHomeStoryboard instantiateInitialViewController];
+//        self.window.rootViewController=homeViewController;
+        
+        HomeViewController *homeViewController = [kHomeStoryboard instantiateInitialViewController];
+        
+        MFSideMenuContainerViewController *container = (MFSideMenuContainerViewController *)homeViewController;
+        UINavigationController *navigationController = [kHomeStoryboard instantiateViewControllerWithIdentifier:@"navigationController"];
+        UIViewController *leftSideMenuViewController = [kHomeStoryboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];
+        
+        [container setLeftMenuViewController:leftSideMenuViewController];
+        [container setCenterViewController:navigationController];
+        [self.navigationController pushViewController:homeViewController animated:NO];
 
+    }else{
+        LoginViewController *loginViewController = [kLoginStoryboard instantiateInitialViewController];
+        self.window.rootViewController=loginViewController;
+    }
+    */
+    LoginViewController *loginViewController = [kLoginStoryboard instantiateInitialViewController];
+    self.window.rootViewController=loginViewController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
@@ -133,5 +163,69 @@
         }
     }
 }
+
+#pragma mark for registering for apple push notoification
+
+-(void)registerRemoteDevice{
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+    {
+        UIUserNotificationType types = UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge;
+        UIUserNotificationSettings * pushSettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        
+        [[UIApplication sharedApplication] registerUserNotificationSettings:pushSettings];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    }
+    else
+    {
+        //For regestering with APN
+        [[UIApplication sharedApplication]registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert |
+                                                                              UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+        
+    }
+    
+    
+}
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+    NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+    DEBUGLOG(@"My token is---%@", token);
+    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    
+    [[NSUserDefaults standardUserDefaults]setObject:token forKey:DEVICE_TOKEN];
+    [SCDataUtility setNotificationStatus:YES];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [self handleRemoteNotifications:userInfo];
+    if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
+        DEBUGLOG(@"Notification received by running app");
+    } else {
+        DEBUGLOG(@"App opened from Notification");
+    }
+}
+
+
+-(void)handleRemoteNotifications:(NSDictionary *)userInfo {
+    @try {
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        for (id key in userInfo) {
+            DEBUGLOG(@"key: %@, value: %@", key, [userInfo objectForKey:key]);
+        }
+    }
+    @catch (NSException *exception) {
+    }
+}
+
+
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
+}
+
 
 @end

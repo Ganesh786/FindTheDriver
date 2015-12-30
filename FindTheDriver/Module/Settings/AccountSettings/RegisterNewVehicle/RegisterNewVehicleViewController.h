@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RegisterNewVehicleModel.h"
+#import "RegisterNewVehicleDataModel.h"
+@interface RegisterNewVehicleViewController : UIViewController<UITextFieldDelegate>
 
-@interface RegisterNewVehicleViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *VehicleNickNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *ColorTextField;
+@property (weak, nonatomic) IBOutlet UITextField *RegistrationPlateTextField;
 
 @end

@@ -11,6 +11,9 @@
 #import "LogsInfoViewController.h"
 #import "SWRevealViewController.h"
 #import "SettingsViewController.h"
+#import "InspectLogsViewController.h"
+#import "HomeViewController.h"
+#import "MFSideMenu.h"
 
 @interface SideBarViewController () <SWRevealViewControllerDelegate> {
     NSArray *sideBarNamesArray, *sideBarImgsArray;
@@ -38,29 +41,31 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.revealViewController.delegate=self;
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    [self.revealViewController.frontViewController.view setUserInteractionEnabled:YES];
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
-    [self.revealViewController.frontViewController.view setUserInteractionEnabled:NO];
 }
 
 #pragma mark - User defined methods
 
 - (void)loadSideBarViewComponents {
+    
     sideBarNamesArray = [NSArray arrayWithObjects:@"Dashboard", @"Logs", @"Inspect Logs", @"Settings", nil];
     sideBarImgsArray = [NSArray arrayWithObjects:@"Dashboard.png", @"Logs.png", @"InspectedLog.png", @"Settings.png", nil];
     _sideBarTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    CALayer *topLayer=[CALayer layer];
+    topLayer.frame=CGRectMake(0, 0, self.view.frame.size.width, 1);
+    topLayer.backgroundColor=kGrayColor.CGColor;
+    [_logoutBtn.layer addSublayer:topLayer];
+    
     [_logoutBtn setImage:[UIImage imageNamed:@"Logout"] forState:UIControlStateNormal];
 }
 
 - (IBAction)logoutBtnClicked:(id)sender {
+    [[NSUserDefaults standardUserDefaults]setBool:NO forKey:USER_LOGGEDIN];
+    [[NSUserDefaults standardUserDefaults]synchronize];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -88,16 +93,54 @@
 
     // Show the currosponding pages based on user action
     switch (indexPath.row) {
+        case 0: {
+            UIAppDelegate.isSideBarInspectLogsClicked = NO;
+
+            HomeViewController *homevc = [kHomeStoryboard instantiateViewControllerWithIdentifier:@"HomeID"];
+            UINavigationController *navigationController = self.menuContainerViewController.centerViewController;
+            NSArray *controllers = [NSArray arrayWithObject:homevc];
+            navigationController.viewControllers = controllers;
+            [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
+            break;
+        }
         case 1: {
+            UIAppDelegate.isSideBarInspectLogsClicked = NO;
+
             LogsInfoViewController *logsInfovc = [kLogsStoryboard instantiateViewControllerWithIdentifier:@"LogsInfoID"];
-            [UIAppDelegate.navigationController pushViewController:logsInfovc animated:YES];
-            [logsInfovc revealToggle];
+            UINavigationController *navigationController = self.menuContainerViewController.centerViewController;
+            NSArray *controllers = [NSArray arrayWithObject:logsInfovc];
+            navigationController.viewControllers = controllers;
+            [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
+            break;
+        }
+ 
+        case 2: {
+            UIAppDelegate.isSideBarInspectLogsClicked = YES;
+            
+            LogsInfoViewController *logsInfovc = [kLogsStoryboard instantiateViewControllerWithIdentifier:@"LogsInfoID"];
+            UINavigationController *navigationController = self.menuContainerViewController.centerViewController;
+            NSArray *controllers = [NSArray arrayWithObject:logsInfovc];
+            navigationController.viewControllers = controllers;
+            [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
+            
+          /*  UITabBarController *tabbarVC = [[UIStoryboard storyboardWithName:@"LogsStoryboard" bundle: [NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LogsTabBarID"];
+            [tabbarVC setSelectedIndex:2];
+            
+            UINavigationController *navigationController = self.menuContainerViewController.centerViewController;
+            NSArray *controllers = [NSArray arrayWithObject:tabbarVC];
+            navigationController.viewControllers = controllers;
+            [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
+           */
             break;
         }
         case 3: {
+            UIAppDelegate.isSideBarInspectLogsClicked = NO;
+
             SettingsViewController *settingsVC = [kSettingsStoryboard instantiateViewControllerWithIdentifier:@"SettingsID"];
-            [UIAppDelegate.navigationController pushViewController:settingsVC animated:YES];
-            [settingsVC revealToggle];
+            UINavigationController *navigationController = self.menuContainerViewController.centerViewController;
+            NSArray *controllers = [NSArray arrayWithObject:settingsVC];
+            navigationController.viewControllers = controllers;
+            [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
             break;
         }
 
@@ -105,17 +148,6 @@
             break;
     }
 }
-
-#pragma mark - SWRevealViewController delegate methods
-
-- (void)revealController:(SWRevealViewController *)revealController willMoveToPosition:(FrontViewPosition)position {
-    if(position == FrontViewPositionLeft){
-        [revealController.frontViewController.view setUserInteractionEnabled:YES];
-        [revealController.frontViewController.revealViewController tapGestureRecognizer];
-    } else
-        [revealController.frontViewController.view setUserInteractionEnabled:NO];
-}
-
 
 /*
 #pragma mark - Navigation

@@ -11,12 +11,49 @@
 
 #import "AppDelegate.h"
 
+//------------------------------- NSUSerDefaults Constants  ----------------------
+#define USER_NAME @"USER_NAME"
+#define USER_PASSWORD @"USER_PASSWORD"
+#define USER_LOGGEDIN @"USER_LOGGEDIN"
+
+// Notification
+#define DEVICE_TOKEN @"DeviceToken"
+#define NOTIFICATION_STATUS @"NotificationStatus"
+#define NOTIFICATION_ALERT @"NotificationAlert"
+
+// Profile Pic and Data
+#define PROFILE_PIC @"profilePic"
+#define PROFILE_INFO @"ProfileInfo"
+#define DRIVER_SIGNATURE @"DriverSignature"
+
+//Duty Cycles
+#define DUTY_CYCLE @"DutyCycles"
+
+//Time Zone
+#define TIME_ZONE @"TimeZones"
+
+//Carrier
+#define CARRIER @"Carrier"
+
+//Exceptions
+#define EXCEPTIONS @"Exceptions"
+
+//HosStatus
+#define HOS_STATUS @"HosStatus"
+
+//VIRDefects
+#define VIR_DEFECTS @"VIRDefects"
+
+//Violations
+#define VIOLATIONS @"Violations"
+
 //---------------------------------- Color Constants  ---------------------------
 #pragma mark - Color Constants
 
 #define kClearColor                 ([UIColor clearColor])
 #define kWhiteColor                 ([UIColor whiteColor])
 #define kGrayColor                  ([UIColor grayColor])
+#define kDarkGrayColor              ([UIColor darkGrayColor])
 #define kOrangeColor                ([UIColor orangeColor])
 #define kGreenColor                 ([UIColor greenColor])
 #define kLightGrayColor             ([UIColor lightGrayColor])
@@ -25,12 +62,12 @@
 #define kBlackColor                 ([UIColor blackColor])
 #define kNavBarColor                ([UIColor colorFromHexString:@"#1A76CF"])
 #define kLayerColor                 ([UIColor colorFromHexString:@"#FF2200"])
-
-
+#define kDriveColor ([UIColor colorWithRed:111/255.0f green:218/255.0f blue:180/255.0f alpha:1])
 //---------------------------------- Font Constants  ---------------------------
 #pragma mark - Font Constants
 
 #define kHelveticaNeueFontName          @"HelveticaNeue"
+#define kHelveticaNeueBoldFontName      @"HelveticaNeue-Bold"
 #define kHelveticaNeueItalicFontName    @"HelveticaNeue-Italic"
 
 //---------------------------------- Log Constants  ---------------------------
@@ -60,5 +97,9 @@
 #define kLogsStoryboard                ([UIStoryboard storyboardWithName:@"LogsStoryboard" bundle: [NSBundle mainBundle]])
 #define kSettingsStoryboard            ([UIStoryboard storyboardWithName:@"SettingsStoryboard" bundle: [NSBundle mainBundle]])
 
+
+#define kComingSoon     @"Coming Soon"
+#define ACCEPTABLE_CHARECTERS @"0123456789"
+#define PHONE_NUMBER_LIMIT 25
 
 #endif /* StringConstantsHeader_h */
