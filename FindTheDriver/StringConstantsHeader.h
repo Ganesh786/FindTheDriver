@@ -24,6 +24,7 @@
 // Profile Pic and Data
 #define PROFILE_PIC @"profilePic"
 #define PROFILE_INFO @"ProfileInfo"
+#define DRIVER_SIGNATURE @"DriverSignature"
 
 //Duty Cycles
 #define DUTY_CYCLE @"DutyCycles"

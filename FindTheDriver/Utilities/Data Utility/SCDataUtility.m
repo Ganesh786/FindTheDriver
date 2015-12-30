@@ -188,7 +188,11 @@
         NSString *getImagePath = [dataPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",imageName]];
         image=[UIImage imageWithContentsOfFile:getImagePath];
     }else{
+        if ([imageName isEqualToString:DRIVER_SIGNATURE]) {
+            image=nil;
+        }else{
         image=[UIImage imageNamed:@"profilePIC"];
+        }
     }
     return image;
 }

@@ -20,6 +20,12 @@
 		045BCE921C26EDFF0045A761 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 045BCE8E1C26EDFF0045A761 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		045BCE951C2700A60045A761 /* TodayLogDetailStatusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045BCE941C2700A60045A761 /* TodayLogDetailStatusTableViewCell.m */; };
 		04703B871C2D0D950002F720 /* AboutUSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04703B861C2D0D950002F720 /* AboutUSViewController.m */; };
+		047255541C32F914002FDB48 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047255531C32F914002FDB48 /* UIKit.framework */; };
+		047255561C32F91F002FDB48 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047255551C32F91F002FDB48 /* CoreGraphics.framework */; };
+		047255591C32F931002FDB48 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047255571C32F931002FDB48 /* OpenAL.framework */; };
+		0472555A1C32F931002FDB48 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047255581C32F931002FDB48 /* OpenGLES.framework */; };
+		0472555C1C32F951002FDB48 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0472555B1C32F951002FDB48 /* GLKit.framework */; };
+		047255601C32F996002FDB48 /* PPSSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472555F1C32F996002FDB48 /* PPSSignatureView.m */; };
 		049FEB4A1C2BB9B900FA36C4 /* PasswordResetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FEB491C2BB9B900FA36C4 /* PasswordResetModel.m */; };
 		049FEB4E1C2BE0E100FA36C4 /* DefaultLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FEB4D1C2BE0E100FA36C4 /* DefaultLabelCell.m */; };
 		049FEB511C2BE4E500FA36C4 /* StartTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FEB501C2BE4E500FA36C4 /* StartTimeCell.m */; };
@@ -185,6 +191,13 @@
 		045BCE941C2700A60045A761 /* TodayLogDetailStatusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayLogDetailStatusTableViewCell.m; sourceTree = "<group>"; };
 		04703B851C2D0D950002F720 /* AboutUSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUSViewController.h; sourceTree = "<group>"; };
 		04703B861C2D0D950002F720 /* AboutUSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUSViewController.m; sourceTree = "<group>"; };
+		047255531C32F914002FDB48 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		047255551C32F91F002FDB48 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		047255571C32F931002FDB48 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		047255581C32F931002FDB48 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		0472555B1C32F951002FDB48 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		0472555E1C32F996002FDB48 /* PPSSignatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSSignatureView.h; sourceTree = "<group>"; };
+		0472555F1C32F996002FDB48 /* PPSSignatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSSignatureView.m; sourceTree = "<group>"; };
 		049FEB481C2BB9B900FA36C4 /* PasswordResetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordResetModel.h; sourceTree = "<group>"; };
 		049FEB491C2BB9B900FA36C4 /* PasswordResetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordResetModel.m; sourceTree = "<group>"; };
 		049FEB4C1C2BE0E100FA36C4 /* DefaultLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultLabelCell.h; sourceTree = "<group>"; };
@@ -437,6 +450,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0472555C1C32F951002FDB48 /* GLKit.framework in Frameworks */,
+				047255591C32F931002FDB48 /* OpenAL.framework in Frameworks */,
+				0472555A1C32F931002FDB48 /* OpenGLES.framework in Frameworks */,
+				047255561C32F91F002FDB48 /* CoreGraphics.framework in Frameworks */,
+				047255541C32F914002FDB48 /* UIKit.framework in Frameworks */,
 				04B29AE91C3143C3003DEC68 /* libsqlite3.tbd in Frameworks */,
 				049FEB611C2C2A4500FA36C4 /* CoreLocation.framework in Frameworks */,
 				25AF266A1C04D60F001FA4A8 /* QuartzCore.framework in Frameworks */,
@@ -523,6 +541,15 @@
 				04703B861C2D0D950002F720 /* AboutUSViewController.m */,
 			);
 			path = AboutUS;
+			sourceTree = "<group>";
+		};
+		0472555D1C32F996002FDB48 /* PPSSignatureView */ = {
+			isa = PBXGroup;
+			children = (
+				0472555E1C32F996002FDB48 /* PPSSignatureView.h */,
+				0472555F1C32F996002FDB48 /* PPSSignatureView.m */,
+			);
+			path = PPSSignatureView;
 			sourceTree = "<group>";
 		};
 		049FEB4B1C2BDE3900FA36C4 /* CustomCells */ = {
@@ -799,6 +826,11 @@
 		25AF26191C04BD43001FA4A8 = {
 			isa = PBXGroup;
 			children = (
+				0472555B1C32F951002FDB48 /* GLKit.framework */,
+				047255571C32F931002FDB48 /* OpenAL.framework */,
+				047255581C32F931002FDB48 /* OpenGLES.framework */,
+				047255551C32F91F002FDB48 /* CoreGraphics.framework */,
+				047255531C32F914002FDB48 /* UIKit.framework */,
 				04B29AE81C3143C3003DEC68 /* libsqlite3.tbd */,
 				049FEB601C2C2A4500FA36C4 /* CoreLocation.framework */,
 				25AF26691C04D60F001FA4A8 /* QuartzCore.framework */,
@@ -998,6 +1030,7 @@
 		25E116BF1C0E9A4D004385F9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0472555D1C32F996002FDB48 /* PPSSignatureView */,
 				04B29AD71C3142A4003DEC68 /* FMDB Database */,
 				04B29AD31C3139DC003DEC68 /* SharedData */,
 				049FEB5C1C2C295C00FA36C4 /* LocationFinder */,
@@ -1559,6 +1592,7 @@
 				04B29AE51C3142B5003DEC68 /* FMDatabasePool.m in Sources */,
 				04C782AA1C1F11B600E3C46F /* WebServiceInvoker.m in Sources */,
 				25ECFD8F1C1FC344006CA2B5 /* NSDictionary+ObjectMapper.m in Sources */,
+				047255601C32F996002FDB48 /* PPSSignatureView.m in Sources */,
 				049FEB641C2C2E9700FA36C4 /* CurrentLocation.m in Sources */,
 				25ECFD5D1C1D45E3006CA2B5 /* LogFormViewController.m in Sources */,
 				DF2A2D781C1DDEAF005C232F /* InspectLogsCustomTableViewCell.m in Sources */,
