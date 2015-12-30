@@ -11,12 +11,11 @@
 
 #pragma PenColor    ([UIColor blackColor])
 
-@interface DriverSignatureViewController () {
+@interface DriverSignatureViewController () <PPSSignatureViewDelegate>{
     NSArray *nameArray, *imagesArray;
-    CGPoint lastPoint;
-    BOOL mouseSwiped;
-    int mouseMoved;
 }
+
+@property (nonatomic, strong) PPSSignatureView *signatureViewInternal;
 
 @property (weak, nonatomic) IBOutlet UIButton *previewLogBtn;
 @property (weak, nonatomic) IBOutlet UIButton *addSignatureBtn;
@@ -24,7 +23,9 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *signatureNavigationItem;
 @property (weak, nonatomic) IBOutlet UIView *signatureBGView;
 @property (weak, nonatomic) IBOutlet UIImageView *signatureImgView;
-@property (nonatomic, assign) int tapCount;
+@property (weak, nonatomic) IBOutlet UIButton *signatureCloseBtnOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *cancelBtnOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *saveBtnOutlet;
 
 @end
 
@@ -47,14 +48,14 @@
     [SCUIUtility setLayerForView:_previewLogBtn WithColor:kClearColor];
     [SCUIUtility setLayerForView:_addSignatureBtn WithColor:kClearColor];
     
+    [self.signatureCloseBtnOutlet setHidden:YES];
+    [self.cancelBtnOutlet setHidden:YES];
+    [self.saveBtnOutlet setHidden:YES];
+
     nameArray = [NSArray arrayWithObjects:@"Send", @"Print", nil];
     imagesArray = [NSArray arrayWithObjects:@"Email.png", @"Printer.png", nil];
     _actionTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _signatureNavigationItem.title = @"Monday | October 10";
-    _signatureBGView.hidden = YES;
-    
-    mouseMoved = 0;
-    self.tapCount = 0;
 }
 
 #pragma mark - User Action Methods
@@ -63,77 +64,87 @@
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
-- (IBAction)touchAndSignatureBtnClicked:(id)sender {
-    _signatureBGView.hidden = NO;
-    _addSignatureBtn.hidden = YES;
-}
-
 - (IBAction)previewLogBtnClicked:(id)sender {
     [UIAlertView showAlertViewWithTitle:@"" Message:kComingSoon];
 }
 
+- (IBAction)touchAndSignatureBtnClicked:(id)sender {
+    _addSignatureBtn.hidden = YES;
+    
+    UIImage *signature=[SCDataUtility galleryImage:DRIVER_SIGNATURE];
+    if (signature != nil) {
+        self.signatureImgView.image=signature;
+        [self.signatureCloseBtnOutlet setHidden:NO];
+    }else{
+        [self closeBtnClicked:nil];
+    }
+}
+
 - (IBAction)closeBtnClicked:(id)sender {
-    _signatureBGView.hidden = YES;
-    _addSignatureBtn.hidden = NO;
+    [self.signatureCloseBtnOutlet setHidden:YES];
     _signatureImgView.image = nil;
+    _signatureImgView.hidden=YES;
+    [self clearSignature];
+    [self setupSignatureField];
+    
+    [self.cancelBtnOutlet setHidden:NO];
+    [self.saveBtnOutlet setHidden:NO];
+    self.tabBarController.tabBar.hidden=YES;
 }
 
-#pragma mark - UITouch delegate methods
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    self.tapCount = 0;
-    
-    mouseSwiped = NO;
-    UITouch *touch = [touches anyObject];
-    
-    lastPoint = [touch locationInView:self.view];
-    lastPoint.y -= 20;
+- (void)setupSignatureField {
+    self.signatureViewInternal = [[PPSSignatureView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width-40, 95) context:nil];
+    self.signatureViewInternal.signatureDelegate = self;
+    self.signatureViewInternal.backgroundColor = self.signatureBGView.backgroundColor;
+    [self.signatureBGView addSubview:self.signatureViewInternal];
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    mouseSwiped = YES;
-    UITouch *touch = [touches anyObject];
-    CGPoint currentPoint = [touch locationInView:self.view];
-    currentPoint.y -= 20;
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    [_signatureImgView.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-    
-    CGContextRef bluecontext = UIGraphicsGetCurrentContext();
-    CGContextSetLineWidth(bluecontext, 3.0);
-    CGContextSetStrokeColorWithColor(bluecontext, [UIColor blackColor].CGColor);
-    
-    CGContextBeginPath(UIGraphicsGetCurrentContext());
-    CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
-    CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
-    CGContextStrokePath(UIGraphicsGetCurrentContext());
-    _signatureImgView.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    lastPoint = currentPoint;
-    mouseMoved++;
-    if (mouseMoved == 10) {
-        mouseMoved = 0;
+- (void)signatureAvailable:(BOOL)signatureAvailable {
+    if (signatureAvailable) {
+        //Enable buttons
+    } else {
+        //disable buttons
     }
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    if(!mouseSwiped) {
-        UIGraphicsBeginImageContext(self.view.frame.size);
-        [_signatureImgView.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-        CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-        
-        CGContextRef bluecontext = UIGraphicsGetCurrentContext();
-        CGContextSetLineWidth(bluecontext, 3.0);
-        CGContextSetStrokeColorWithColor(bluecontext, [UIColor blackColor].CGColor);
-        
-        CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
-        CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
-        CGContextStrokePath(UIGraphicsGetCurrentContext());
-        CGContextFlush(UIGraphicsGetCurrentContext());
-        self.signatureImgView.image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
+-(void)clearSignature {
+    [self.signatureViewInternal erase];
+}
+
+-(UIImage *)signature {
+    return [self.signatureViewInternal signatureImage];
+}
+
+- (IBAction)saveBtnAction:(id)sender {
+    if ([self signature]) {
+        self.signatureImgView.hidden=NO;
+        self.signatureImgView.image=[self signature];
+        [SCDataUtility writeGalleryImage:[self signature] imagename:DRIVER_SIGNATURE];
+        [self.signatureCloseBtnOutlet setHidden:NO];
+        [self cancelBtnAction:nil];
+    }else{
+        [UIAlertView showAlertViewWithTitle:@"" Message:@"Please do signature to save."];
     }
 }
+
+- (IBAction)cancelBtnAction:(id)sender {
+    UIImage *signature=[SCDataUtility galleryImage:DRIVER_SIGNATURE];
+    if (signature == nil) {
+    _addSignatureBtn.hidden = NO;
+    }else{
+        self.signatureImgView.hidden=NO;
+        self.signatureImgView.image=signature;
+        [self.signatureCloseBtnOutlet setHidden:NO];
+    }
+    [self clearSignature];
+    [self.signatureViewInternal removeFromSuperview];
+    self.signatureViewInternal=nil;
+    [self.cancelBtnOutlet setHidden:YES];
+    [self.saveBtnOutlet setHidden:YES];
+    self.tabBarController.tabBar.hidden=NO;
+}
+
 
 #pragma mark - Tableview delegate methods
 

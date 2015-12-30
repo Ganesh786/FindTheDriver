@@ -50,12 +50,6 @@
     
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    
-    
-}
-
 - (void)setupSignatureField {
     self.signatureViewInternal = [[PPSSignatureView alloc] initWithFrame:self.signatureView.frame context:nil];
     self.signatureViewInternal.signatureDelegate = self;

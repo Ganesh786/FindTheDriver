@@ -64,6 +64,10 @@ static NSString *kEndMessage   = @"End";
     tableDriverDataArray=[[NSMutableArray alloc]init];
     tableTimeDataArray=[[NSMutableArray alloc]init];
     tableShippingDataArray=[[NSMutableArray alloc]init];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     [self setUpView];
 }
 
@@ -86,6 +90,7 @@ static NSString *kEndMessage   = @"End";
     
     self.tableView.tableHeaderView=[[UIView alloc]initWithFrame:CGRectZero];
     self.tableView.tableFooterView=[[UIView alloc]initWithFrame:CGRectZero];
+    [self.tableView reloadData];
 }
 
 -(void)cancelMode{
@@ -94,7 +99,6 @@ static NSString *kEndMessage   = @"End";
     self.navigationItem.rightBarButtonItem=nil;
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(editMode)];
     [self setUpView];
-    [self.tableView reloadData];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
