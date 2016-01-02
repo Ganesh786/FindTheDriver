@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04012E091C37FB4600743D0A /* InspectLogVIRCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04012E081C37FB4600743D0A /* InspectLogVIRCell.m */; };
+		04012E0C1C37FB7200743D0A /* InspectLogDefectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04012E0B1C37FB7200743D0A /* InspectLogDefectCell.m */; };
+		04012E0F1C37FB8C00743D0A /* InspectLogSignatureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04012E0E1C37FB8C00743D0A /* InspectLogSignatureCell.m */; };
+		04012E121C37FBA300743D0A /* InspectLogAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04012E111C37FBA300743D0A /* InspectLogAddCell.m */; };
 		041CC0521C23E0B200B1885F /* UpDateProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CC0511C23E0B200B1885F /* UpDateProfileModel.m */; };
 		041CC0551C23E0C800B1885F /* UpDateProfileDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CC0541C23E0C800B1885F /* UpDateProfileDataModel.m */; };
 		041CC0591C24001300B1885F /* DeleteVehicleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CC0581C24001300B1885F /* DeleteVehicleModel.m */; };
@@ -141,7 +145,6 @@
 		DF2A2D6E1C1A174B005C232F /* LogsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2A2D6D1C1A174B005C232F /* LogsViewController.m */; };
 		DF2A2D711C1A175E005C232F /* LogsCellOneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2A2D701C1A175E005C232F /* LogsCellOneTableViewCell.m */; };
 		DF2A2D741C1A176D005C232F /* LogsCellTwoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2A2D731C1A176D005C232F /* LogsCellTwoTableViewCell.m */; };
-		DF2A2D781C1DDEAF005C232F /* InspectLogsCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2A2D771C1DDEAF005C232F /* InspectLogsCustomTableViewCell.m */; };
 		DF2A2D7B1C1F3DFD005C232F /* AddNewDVIRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2A2D7A1C1F3DFD005C232F /* AddNewDVIRViewController.m */; };
 		DF2A2D7E1C1F5EC4005C232F /* AddNewDVIRCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2A2D7D1C1F5EC4005C232F /* AddNewDVIRCustomTableViewCell.m */; };
 		DFF375BC1C17787F0097B53C /* CarrierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF375BB1C17787F0097B53C /* CarrierViewController.m */; };
@@ -165,6 +168,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04012E071C37FB4600743D0A /* InspectLogVIRCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectLogVIRCell.h; sourceTree = "<group>"; };
+		04012E081C37FB4600743D0A /* InspectLogVIRCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectLogVIRCell.m; sourceTree = "<group>"; };
+		04012E0A1C37FB7200743D0A /* InspectLogDefectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectLogDefectCell.h; sourceTree = "<group>"; };
+		04012E0B1C37FB7200743D0A /* InspectLogDefectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectLogDefectCell.m; sourceTree = "<group>"; };
+		04012E0D1C37FB8C00743D0A /* InspectLogSignatureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectLogSignatureCell.h; sourceTree = "<group>"; };
+		04012E0E1C37FB8C00743D0A /* InspectLogSignatureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectLogSignatureCell.m; sourceTree = "<group>"; };
+		04012E101C37FBA200743D0A /* InspectLogAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectLogAddCell.h; sourceTree = "<group>"; };
+		04012E111C37FBA300743D0A /* InspectLogAddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectLogAddCell.m; sourceTree = "<group>"; };
 		041CC0501C23E0B200B1885F /* UpDateProfileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpDateProfileModel.h; sourceTree = "<group>"; };
 		041CC0511C23E0B200B1885F /* UpDateProfileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpDateProfileModel.m; sourceTree = "<group>"; };
 		041CC0531C23E0C800B1885F /* UpDateProfileDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpDateProfileDataModel.h; sourceTree = "<group>"; };
@@ -435,8 +446,6 @@
 		DF2A2D701C1A175E005C232F /* LogsCellOneTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogsCellOneTableViewCell.m; sourceTree = "<group>"; };
 		DF2A2D721C1A176D005C232F /* LogsCellTwoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogsCellTwoTableViewCell.h; sourceTree = "<group>"; };
 		DF2A2D731C1A176D005C232F /* LogsCellTwoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogsCellTwoTableViewCell.m; sourceTree = "<group>"; };
-		DF2A2D761C1DDEAF005C232F /* InspectLogsCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectLogsCustomTableViewCell.h; sourceTree = "<group>"; };
-		DF2A2D771C1DDEAF005C232F /* InspectLogsCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectLogsCustomTableViewCell.m; sourceTree = "<group>"; };
 		DF2A2D791C1F3DFD005C232F /* AddNewDVIRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewDVIRViewController.h; sourceTree = "<group>"; };
 		DF2A2D7A1C1F3DFD005C232F /* AddNewDVIRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewDVIRViewController.m; sourceTree = "<group>"; };
 		DF2A2D7C1C1F5EC4005C232F /* AddNewDVIRCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewDVIRCustomTableViewCell.h; sourceTree = "<group>"; };
@@ -1402,8 +1411,14 @@
 		DF2A2D751C1DDE8A005C232F /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
-				DF2A2D761C1DDEAF005C232F /* InspectLogsCustomTableViewCell.h */,
-				DF2A2D771C1DDEAF005C232F /* InspectLogsCustomTableViewCell.m */,
+				04012E071C37FB4600743D0A /* InspectLogVIRCell.h */,
+				04012E081C37FB4600743D0A /* InspectLogVIRCell.m */,
+				04012E0A1C37FB7200743D0A /* InspectLogDefectCell.h */,
+				04012E0B1C37FB7200743D0A /* InspectLogDefectCell.m */,
+				04012E0D1C37FB8C00743D0A /* InspectLogSignatureCell.h */,
+				04012E0E1C37FB8C00743D0A /* InspectLogSignatureCell.m */,
+				04012E101C37FBA200743D0A /* InspectLogAddCell.h */,
+				04012E111C37FBA300743D0A /* InspectLogAddCell.m */,
 				DF2A2D7C1C1F5EC4005C232F /* AddNewDVIRCustomTableViewCell.h */,
 				DF2A2D7D1C1F5EC4005C232F /* AddNewDVIRCustomTableViewCell.m */,
 			);
@@ -1557,6 +1572,7 @@
 				04C782951C1F10DC00E3C46F /* AFSecurityPolicy.m in Sources */,
 				041CC05C1C24002E00B1885F /* DeleteVehicleDataModel.m in Sources */,
 				DFF375BC1C17787F0097B53C /* CarrierViewController.m in Sources */,
+				04012E091C37FB4600743D0A /* InspectLogVIRCell.m in Sources */,
 				25ECFD951C1FC344006CA2B5 /* ObjectMapper.m in Sources */,
 				04CBF11C1C21BC1C00255913 /* RegisterNewVehicleModel.m in Sources */,
 				049FEB4E1C2BE0E100FA36C4 /* DefaultLabelCell.m in Sources */,
@@ -1584,6 +1600,7 @@
 				04E58FBC1C2531B40026E19A /* GraphView.m in Sources */,
 				04C7829B1C1F10DC00E3C46F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				04AC99041C2E57C000DA69B0 /* AddDocumentViewController.m in Sources */,
+				04012E121C37FBA300743D0A /* InspectLogAddCell.m in Sources */,
 				25E116F91C1441BC004385F9 /* SettingsViewController.m in Sources */,
 				25E116AA1C0CBB7D004385F9 /* UIViewController+Additions.m in Sources */,
 				25C9FED91C26A69C00399F7A /* MFSideMenuShadow.m in Sources */,
@@ -1595,7 +1612,6 @@
 				047255601C32F996002FDB48 /* PPSSignatureView.m in Sources */,
 				049FEB641C2C2E9700FA36C4 /* CurrentLocation.m in Sources */,
 				25ECFD5D1C1D45E3006CA2B5 /* LogFormViewController.m in Sources */,
-				DF2A2D781C1DDEAF005C232F /* InspectLogsCustomTableViewCell.m in Sources */,
 				049FEB511C2BE4E500FA36C4 /* StartTimeCell.m in Sources */,
 				25E116AE1C0CBC69004385F9 /* UIColor+Additions.m in Sources */,
 				25E116CB1C0E9EA5004385F9 /* SideBarViewController.m in Sources */,
@@ -1618,6 +1634,7 @@
 				04E58FC01C25320A0026E19A /* GraphViewCell.m in Sources */,
 				25E117091C14817A004385F9 /* SCUIUtility.m in Sources */,
 				25E116EB1C12C941004385F9 /* LogsInfoViewController.m in Sources */,
+				04012E0F1C37FB8C00743D0A /* InspectLogSignatureCell.m in Sources */,
 				DF2A2D6E1C1A174B005C232F /* LogsViewController.m in Sources */,
 				25E116FD1C1458A2004385F9 /* SettingsCustomTableViewCell.m in Sources */,
 				25E116C31C0E9A82004385F9 /* SWRevealViewController.m in Sources */,
@@ -1652,6 +1669,7 @@
 				25BE7E4D1C1A7B5C00A96D4F /* Forgot PasswordViewController.m in Sources */,
 				041CC0591C24001300B1885F /* DeleteVehicleModel.m in Sources */,
 				045BCE781C2685260045A761 /* CustomLoaderView.m in Sources */,
+				04012E0C1C37FB7200743D0A /* InspectLogDefectCell.m in Sources */,
 				25ECFD611C1D61C7006CA2B5 /* InspectLogsViewController.m in Sources */,
 				04703B871C2D0D950002F720 /* AboutUSViewController.m in Sources */,
 				25ECFDA81C208078006CA2B5 /* DriverActionCustomTableViewCell.m in Sources */,

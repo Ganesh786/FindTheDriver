@@ -7,38 +7,74 @@
 //
 
 #import "InspectLogsViewController.h"
-#import "InspectLogsCustomTableViewCell.h"
+#import "InspectLogVIRCell.h"
+#import "InspectLogDefectCell.h"
+#import "InspectLogSignatureCell.h"
+#import "InspectLogAddCell.h"
+
 #import "AddNewDVIRViewController.h"
 #import "MFSideMenu.h"
 
-@interface InspectLogsViewController ()
-{
-    NSMutableArray *defectsArray;
+@interface InspectLogsViewController ()<UITableViewDataSource,UITableViewDelegate>{
+    NSMutableArray *tableDataArray;
 }
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation InspectLogsViewController
+
+#define kTitle        @"Title"
+#define kValue        @"Value"
+#define kSubValue     @"SubValue"
+#define kSubTitle     @"SubTitle"
+#define kDefectStatus @"DefectStatus"
+#define kDefectCount  @"DefectCount"
+#define kDriverSign    @"DriverSign"
+#define kMechSign      @"MechSign"
+
+#define kDefectSuccess @"Success"
+#define kDefectError @"Error"
+
+static NSString *kVIR   = @"VIR";
+static NSString *kDefect   = @"Defect";
+static NSString *kSignature   = @"Signature";
+static NSString *kAddRemove   = @"AddRemove";
 
 #pragma mark - View Life Cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    tableDataArray=[[NSMutableArray alloc]init];
+    self.tableView.backgroundColor=kWhiteColor;
+    self.tableView.tableFooterView=[self tableFooterView];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self setUpView];
+}
+
+-(void)setUpView{
+  
+    [tableDataArray removeAllObjects];
     
-    
-    defectsArray = [NSMutableArray array];
-    NSMutableDictionary *dict1 = [NSMutableDictionary dictionary];
-    [dict1 setValue:@"Defects" forKey:@"Name"];
-    [dict1 setValue:@"Air Compressor" forKey:@"Title"];
-    [dict1 setValue:@"Insufficient Compression" forKey:@"Description"];
-    [defectsArray addObject:dict1];
-    NSMutableDictionary *dict2 = [NSMutableDictionary dictionary];
-    [dict2 setValue:@"Corrections" forKey:@"Name"];
-    [dict2 setValue:@"Windows" forKey:@"Title"];
-    [dict2 setValue:@"Oil Leak" forKey:@"Description"];
-    [defectsArray addObject:dict2];
-    _driverSignatureView.backgroundColor = [UIColor lightGrayColor];
-    _mechanicSignatureView.backgroundColor = [UIColor lightGrayColor];
+    for (int i=0; i<4; i++) {
         
+    NSMutableArray *array=[[NSMutableArray alloc]init];
+    [array addObject:[NSMutableDictionary dictionaryWithObjects:@[kVIR,@"2945",@"Oct. 25, 2015"] forKeys:@[kTitle,kValue,kSubValue]]];
+    
+    [array addObject:[NSMutableDictionary dictionaryWithObjects:@[kDefect,@"Defects",@"Air Compressor",@"Insufficient Compression",kDefectError,@"2"] forKeys:@[kTitle,kValue,kSubValue,kSubTitle,kDefectStatus,kDefectCount]]];
+    [array addObject:[NSMutableDictionary dictionaryWithObjects:@[kDefect,@"Corrections",@"Windows",@"Oil Leak",kDefectSuccess,@"2"] forKeys:@[kTitle,kValue,kSubValue,kSubTitle,kDefectStatus,kDefectCount]]];
+
+    [array addObject:[NSMutableDictionary dictionaryWithObjects:@[kSignature,@"Oct. 25, 2015",@"Oct, 25. 2015",@"Driver Sign URL",@"Mech Sign URL"] forKeys:@[kTitle,kValue,kSubValue,kDriverSign,kMechSign]]];
+    
+    [array addObject:[NSMutableDictionary dictionaryWithObjects:@[kAddRemove,@"Add/Remove Vehicle Defects"] forKeys:@[kTitle,kValue]]];
+        
+        [tableDataArray addObject:array];
+    }
+
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,36 +85,96 @@
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
-#pragma mark - TableView delegate methods
+#pragma mark:- UITableViewDelegate
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return tableDataArray.count;
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *dict=[[tableDataArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    if ([[dict objectForKey:kTitle] isEqualToString:kSignature]) {
+        return 160;
+    }else if ([[dict objectForKey:kTitle] isEqualToString:kAddRemove]){
+        return 50;
+    }
     return 60;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return defectsArray.count;
+    return [[tableDataArray objectAtIndex:section] count];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellOneID = @"logsCell";
-    InspectLogsCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellOneID forIndexPath:indexPath];
-    if (cell == nil)
-        cell = [[InspectLogsCustomTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellOneID];
-    NSDictionary *dict = [defectsArray objectAtIndex:indexPath.row];
-    cell.lblName.text = [dict valueForKey:@"Name"];
-    cell.lblTitle.text = [dict valueForKey:@"Title"];
-    cell.lblDescription.text = [dict valueForKey:@"Description"];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return cell;
+    static NSString *VIRCellID = @"InspectLogVIRCell";
+    static NSString *DefectCellID = @"InspectLogDefectCell";
+    static NSString *SignatureCellID = @"InspectLogSignatureCell";
+    static NSString *AddRemoveCellID = @"InspectLogAddCell";
+    NSDictionary *dict=[[tableDataArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    if ([[dict objectForKey:kTitle] isEqualToString:kVIR]) {
+        InspectLogVIRCell *virCell=[tableView dequeueReusableCellWithIdentifier:VIRCellID forIndexPath:indexPath];
+        virCell.virIDLabel.text=[SCUIUtility validateString:[dict objectForKey:kValue]];
+        virCell.daySubIDLabel.text=[SCUIUtility validateString:[dict objectForKey:kSubValue]];
+        return virCell;
+    }else if ([[dict objectForKey:kTitle] isEqualToString:kDefect]){
+        InspectLogDefectCell *defectCell=[tableView dequeueReusableCellWithIdentifier:DefectCellID forIndexPath:indexPath];
+        defectCell.defectsLabel.text=[SCUIUtility validateString:[dict objectForKey:kValue]];
+        defectCell.defectIDLabel.text=[SCUIUtility validateString:[dict objectForKey:kSubValue]];
+        defectCell.defectIDSubLabel.text=[SCUIUtility validateString:[dict objectForKey:kSubTitle]];
+        if ([[dict objectForKey:kDefectStatus] isEqualToString:kDefectSuccess]) {
+            [defectCell.defectBtnOutlet setBackgroundColor:kDriveColor];
+            [defectCell.defectBtnOutlet setTitle:@"" forState:UIControlStateNormal];
+            defectCell.defectBtnOutlet.layer.cornerRadius=0.0f;
+            defectCell.defectBtnOutlet.layer.masksToBounds=YES;
+        }else{
+            [defectCell.defectBtnOutlet setBackgroundColor:kRedColor];
+            [defectCell.defectBtnOutlet setTitle:[SCUIUtility validateString:[dict objectForKey:kDefectCount]] forState:UIControlStateNormal];
+            defectCell.defectBtnOutlet.layer.cornerRadius=20.0f;
+            defectCell.defectBtnOutlet.layer.masksToBounds=YES;
+        }
+        return defectCell;
+    }else if ([[dict objectForKey:kTitle] isEqualToString:kSignature]){
+        InspectLogSignatureCell *signatureCell=[tableView dequeueReusableCellWithIdentifier:SignatureCellID forIndexPath:indexPath];
+        signatureCell.driverSignatureDateLabel.text=[SCUIUtility validateString:[dict objectForKey:kValue]];
+        signatureCell.mechanicSignatureDateLabel.text=[SCUIUtility validateString:[dict objectForKey:kSubValue]];
+        signatureCell.driverSignImgView.image=[SCDataUtility galleryImage:DRIVER_SIGNATURE];
+        signatureCell.mechanicSignImgView.image=[SCDataUtility galleryImage:DRIVER_SIGNATURE];
+        return signatureCell;
+    }else if ([[dict objectForKey:kTitle] isEqualToString:kAddRemove]){
+        InspectLogAddCell *addCell=[tableView dequeueReusableCellWithIdentifier:AddRemoveCellID forIndexPath:indexPath];
+        [addCell.addBtnOutlet setImage:[UIImage imageNamed:@"PlusIcon"] forState:UIControlStateNormal];
+        return addCell;
+    }
+    return nil;
 }
 
-- (IBAction)btnAddRemoveDefectsPressed:(id)sender {
-    NSMutableDictionary *dict1 = [NSMutableDictionary dictionary];
-    [dict1 setValue:@"Defects Included" forKey:@"Name"];
-    [dict1 setValue:@"Tube" forKey:@"Title"];
-    [dict1 setValue:@"Leakage" forKey:@"Description"];
-    [defectsArray addObject:dict1];
-    [_tblDefects reloadData];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *dict=[[tableDataArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+   if ([[dict objectForKey:kTitle] isEqualToString:kAddRemove]){
+       DEBUGLOG(@"Add/Remove cell clicked");
+   }
+}
+
+-(UIView*)tableFooterView{
+    UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
+    view.backgroundColor=kWhiteColor;
+    
+    UIButton *addbtn=[UIButton buttonWithType:UIButtonTypeCustom];
+    addbtn.frame=CGRectMake(view.frame.size.width-80, 20, 60, 60);
+    [addbtn setImage:[UIImage imageNamed:@"AddNewDVIRIcon"] forState:UIControlStateNormal];
+    [addbtn addTarget:self action:@selector(btnAddNewDVIRPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:addbtn];
+    UILabel *addLabel=[[UILabel alloc]initWithFrame:CGRectMake(0, 35, view.frame.size.width-90, 30)];
+    addLabel.backgroundColor=kClearColor;
+    addLabel.text=@"ADD NEW DVIR";
+    addLabel.textColor=kGrayColor;
+    addLabel.textAlignment=NSTextAlignmentRight;
+    addLabel.font=[UIFont boldSystemFontOfSize:20];
+    [view addSubview:addLabel];
+    return view;
 }
 
 - (IBAction)btnAddNewDVIRPressed:(id)sender {

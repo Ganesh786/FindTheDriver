@@ -1,14 +1,14 @@
 //
-//  InspectLogsCustomTableViewCell.m
+//  InspectLogDefectCell.m
 //  FindTheDriver
 //
-//  Created by Prajoth Antonio D'sa on 13/12/15.
-//  Copyright © 2015 Endeavour. All rights reserved.
+//  Created by mac on 02/01/16.
+//  Copyright © 2016 Endeavour. All rights reserved.
 //
 
-#import "InspectLogsCustomTableViewCell.h"
+#import "InspectLogDefectCell.h"
 
-@implementation InspectLogsCustomTableViewCell
+@implementation InspectLogDefectCell
 
 - (void)awakeFromNib {
     // Initialization code
